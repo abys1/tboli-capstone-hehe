@@ -26,11 +26,11 @@ if (isset($_POST['btnAdd'])) {
     $ggender = $_POST['ggender'];
     $gnumber = $_POST['gphoneNumber'];
     $gemail = $_POST['gemail'];
-    $gaddress = $_POST['address'];
+    $gaddress = $_POST['gaddress'];
     $password = $lastname . $birthday; 
 
 
-    $sql = "INSERT INTO tbl_learner_id (learners_id) VALUES ('$learnersid')";
+    $sql = "INSERT INTO tbl_learner_id (lrn) VALUES ('$learnersid')";
 
     if ($conn->query($sql) === TRUE) {
         $learner_id = $conn->insert_id;

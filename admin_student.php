@@ -1,3 +1,40 @@
+<?php
+
+include "dbcon.php";
+
+$sql = "SELECT
+            tbl_learner.learner_id,
+            tbl_learner.level_id,
+            tbl_user_level.level,
+            tbl_userinfo.firstname,
+            tbl_userinfo.middlename,
+            tbl_userinfo.lastname,
+            tbl_userinfo.birthday,
+            tbl_user_status.status,
+            tbl_learner_id.lrn
+        FROM
+            tbl_learner
+        JOIN
+            tbl_user_level ON tbl_learner.level_id = tbl_user_level.level_id
+        JOIN
+            tbl_userinfo ON tbl_learner.user_id = tbl_userinfo.user_id
+        JOIN
+            tbl_learner_id ON tbl_learner.learner_id = tbl_learner_id.learner_id
+        JOIN
+            tbl_user_status ON tbl_learner.status_id = tbl_user_status.status_id
+        WHERE
+            tbl_user_level.level = 'LEARNER'";
+
+
+$result = mysqli_query($conn, $sql);
+
+
+if (!$result) {
+    die("Error executing the query: " . mysqli_error($conn));
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
@@ -511,94 +548,65 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div class="form-check form-checkbox-success">
-                                <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
-                                <label class="form-check-label" for="customCheckcolor2">Select</label>
-                            </div>
-                        </td>
-                        <td>001</td>
-                        <td>Laroco, Jv</td>
-                        <td>02000221067</td>
-                        <td>09/04/2018</td>
-                        <td>
+                <?php
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <tr>
+                <td>
+                    <div class="form-check form-checkbox-success">
+                        <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
+                        <label class="form-check-label" for="customCheckcolor2"></label>
+                    </div>
+                </td>
+                <td><?php echo $row['learner_id']; ?></td>
+                <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
+                <td><?php echo $row['lrn']; ?></td>
+                <td><?php echo $row['birthday']; ?></td>
+                <td>
+                <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
+                <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                    <!-- <?php
+                    if ($row['status'] == 0) {
+                        ?>
+                        <form method="POST" action="activate_admin.php">
+                            <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
+                            <input type="hidden" name="status" value="1">
     <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
+                        </form>
+                        <?php
+                    } else {
+                        ?>
+                        <form method="POST" action="activate_admin.php">
+                            <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
+                            <input type="hidden" name="status" value="0">
     <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-</td>
+                        </form>
+                        <?php
+                    }
+                    ?> -->
+                </td>
+                <td>
+                    <!-- <?php
+                    if ($row['status'] == 1) {
+                        echo '<span class="status delivered">ACTIVE</span>';
+                    } else {
+                        echo '<span class="status pending">INACTIVE</span>';
+                    }
+                    ?> -->
 
-
-                        <td>
                             <div>
                                 <span class="badge bg-success">Active</span>
                             </div>
-                        </td>
-                    </tr>
+                </td>
+            </tr>
+            <?php
+        }
+    } else {
+        echo "<tr><td colspan='6'>No records found</td></tr>";
+    }
+    ?>
                     
-                    <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor5">
-                            <label class="form-check-label" for="customCheckcolor5">Select</label>
-                          </div>
-                        </td>
-                        <td>0003</td>
-                        <td>Lopez, Ana</td>
-                        <td>02000221069</td>
-                        <td>09/04/2018</td>
-                        <td>
-    <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-</td>
-
-
-                        <td>
-                          <span class="badge bg-success">Active</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor6">
-                            <label class="form-check-label" for="customCheckcolor6">Select</label>
-                          </div>
-                        </td>
-                        <td>0004</td>
-                        <td>Santos, Mark</td>
-                        <td>02000221070</td>
-                        <td>09/04/2018</td>
-                        <td>
-    <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-</td>
-
-
-                        <td>
-                          <span class="badge bg-danger">Inactive</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor7">
-                            <label class="form-check-label" for="customCheckcolor7">Select</label>
-                          </div>
-                        </td>
-                        <td>0005</td>
-                        <td>Gomez, Sofia</td>
-                        <td>02000221071</td>
-                        <td>09/04/2018</td>
-                        <td>
-    <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-</td>
-
-
-                        <td>
-                          <span class="badge bg-success">Active</span>
-                        </td>
-                      </tr>
-                 
                 </tbody>
             </table>
 

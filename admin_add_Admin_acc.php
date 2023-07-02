@@ -33,7 +33,7 @@ if (isset($_POST['btnAdd'])) {
 
       if ($conn->query($sql) === TRUE) {
         $address_id = $conn->insert_id;
-        $sql = "INSERT INTO tbl_user_level (level) VALUES ('ADMIN')";
+        $sql = "INSERT INTO tbl_user_level (level) VALUES ('LEARNER')";
 
         if ($conn->query($sql) === TRUE) {
           $level_id = $conn->insert_id;
