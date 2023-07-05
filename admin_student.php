@@ -525,13 +525,36 @@ if (!$result) {
             </div> <!-- content -->
               
             <table id="basic-datatable" class="table table-centered mb-0">
-           <div class="row mb-2">
+  <div class="row mb-2">
     <div class="col-sm-4">
         <a href="admin_add_Student_acc.php" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add New Student</a>
     </div>     
     <div class="col-sm-4">
-        <a href="admin_student_batch_upload.php" class="btn btn-primary mb-2"><i class="mdi mdi-upload me-2"></i> Batch Upload</a>
+        <a href="#" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#batchUploadModal"><i class="mdi mdi-upload me-2"></i> Batch Upload</a>
     </div>       
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="batchUploadModal" tabindex="-1" role="dialog" aria-labelledby="batchUploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="batchUploadModalLabel">Batch Upload Modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    <div class="mb-3">
+        <label for="excelFile" class="form-label">Upload Excel File:</label>
+        <input type="file" class="form-control" id="excelFile" accept=".xlsx, .xls">
+    </div>
+</div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Upload</button>
+            </div>
+        </div>
+    </div>
 </div>
 
                 <thead>
