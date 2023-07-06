@@ -717,13 +717,9 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-hidden="true"></button>
                                     </div>
+                                    <form method="POST" action="teacher_add_quiz.php">
                                     <div class="modal-content">
-
-
-
                                         <div class="modal-body">
-
-
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="card">
@@ -746,37 +742,28 @@
                                                             <div class="tab-content">
                                                                 <div class="tab-pane show active"
                                                                     id="display-headings-preview">
-
-
-
-
-
-
-
-
                                                                     <div class="row g-2">
                                                                         <div class="mb-3 col-">
                                                                             <label for="inpuTtitle"
                                                                                 class="form-label">Title</label>
                                                                             <input type="text" class="form-control"
-                                                                                id="inputTtile">
+                                                                                id="inputTtile" name="title">
                                                                         </div>
                                                                         <div class="mb-3 col-md-2">
-                                                                            <label for="inputZip" class="form-label">Max
-                                                                                Score</label>
-                                                                            <input type="text" class="form-control"
-                                                                                id="inputscore">
-                                                                            <label for="inputZip"
-                                                                                class="form-label">Allow late?</label>
-                                                                            <input type="checkbox"
-                                                                                class="form-check-input"
-                                                                                id="inputscore">
+                                                                            <label for="inputZip" class="form-label">Max Score</label>
+                                                                            <input type="text" class="form-control" id="inputscore" name="max-score">
                                                                         </div>
+                                                                        <div>
+                                                                            <label for="allow" class="form-label">Allow late?</label>
+                                                                            <input type="checkbox" class="form-check-input" id="allow" name="allow">
+                                                                        </div>
+
+
                                                                         <div class="mb-3 col-md-3">
                                                                             <div class="mb-3 col-md-8">
                                                                                 <label for="Category"
                                                                                     class="form-label">Category</label>
-                                                                                <select id="Category"
+                                                                                <select id="Category" name="category"
                                                                                     class="form-select">
                                                                                     <option>None</option>
                                                                                     <option>Literacy</option>
@@ -786,7 +773,7 @@
                                                                             <div class="mb-3 col-md-8">
                                                                                 <label for="Grading"
                                                                                     class="form-label">Grading</label>
-                                                                                <select id="Grading"
+                                                                                <select id="Grading" name="grading"
                                                                                     class="form-select">
                                                                                     <option>None</option>
                                                                                     <option>Normal</option>
@@ -798,22 +785,22 @@
                                                                                 <label for="example-date"
                                                                                     class="form-label">Start</label>
                                                                                 <input class="form-control"
-                                                                                    id="example-date" type="datetime"
-                                                                                    name="date">
+                                                                                    id="example-date" type="datetime-local"
+                                                                                    name="date-start">
                                                                             </div>
                                                                             <div class="mb-3">
                                                                                 <label for="example-date"
                                                                                     class="form-label">Due</label>
                                                                                 <input class="form-control"
-                                                                                    id="example-date" type="date"
-                                                                                    name="date">
+                                                                                    id="example-date" type="datetime-local"
+                                                                                    name="date-due">
                                                                             </div>
                                                                         </div>
                                                                         <div class="mb-3 col-md-3">
                                                                             <div class="mb-3 col-md-8">
                                                                                 <label for="Module"
                                                                                     class="form-label">Module</label>
-                                                                                <select id="Module" class="form-select">
+                                                                                <select id="Module" name="module" class="form-select">
                                                                                     <option>None</option>
                                                                                     <option>Literacy</option>
                                                                                 </select>
@@ -822,7 +809,7 @@
                                                                                 <label for="Grading"
                                                                                     class="form-label">Grading
                                                                                     Score</label>
-                                                                                <select id="Grading"
+                                                                                <select id="Grading" name="grading-score"
                                                                                     class="form-select">
                                                                                     <option>None</option>
                                                                                     <option>Default</option>
@@ -831,16 +818,10 @@
                                                                         </div>
 
 
+                                                                        
+                                                                       
                                                                         <p>Instructions</p>
-                                                                        <!-- HTML -->
-                                                                        <div id="snow-editor" style="height: 300px;">
-
-
-
-                                                                        </div>
-
-
-
+                                                                        <div id="snow-editor" style="height: 300px;"></div>
 
 
                                                                     </div>
@@ -852,15 +833,15 @@
                                                                             &nbsp;</span>
                                                                         <div class="form-check form-check-inline">
                                                                             <input type="radio" id="customRadio3"
-                                                                                name="customRadio1"
-                                                                                class="form-check-input">
+                                                                                name="release_grade"
+                                                                                class="form-check-input" value="Instant">
                                                                             <label class="form-check-label"
                                                                                 for="customRadio3">Instant</label>
                                                                         </div>
                                                                         <div class="form-check form-check-inline">
                                                                             <input type="radio" id="customRadio4"
-                                                                                name="customRadio1"
-                                                                                class="form-check-input">
+                                                                                name="release_grade"
+                                                                                class="form-check-input"  value="Manual">
                                                                             <label class="form-check-label"
                                                                                 for="customRadio4">Manual</label>
                                                                         </div>
@@ -869,7 +850,7 @@
                                                                         <div class="form-check form-check-inline">
                                                                             <input type="checkbox"
                                                                                 class="form-check-input"
-                                                                                id="customCheck3">
+                                                                                id="customCheck3" name="time">
                                                                             <label class="form-check-label"
                                                                                 for="customCheck3">Timed</label>
                                                                         </div>
@@ -879,7 +860,7 @@
                                                                             class="form-check form-check-inline float-end">
                                                                             <input type="checkbox"
                                                                                 class="form-check-input"
-                                                                                id="customCheck4">
+                                                                                id="customCheck4" name="random">
                                                                             <label class="form-check-label"
                                                                                 for="customCheck4">Randomize
                                                                                 Order</label>
@@ -889,7 +870,7 @@
                                                                         <div class="form-check form-check-inline">
                                                                             <input type="checkbox"
                                                                                 class="form-check-input"
-                                                                                id="customCheck3">
+                                                                                id="customCheck3" name="feedback">
                                                                             <label class="form-check-label"
                                                                                 for="customCheck3">Instant
                                                                                 Feedback</label>
@@ -900,30 +881,23 @@
                                                                             class="form-check form-check-inline float-end">
                                                                             <input type="checkbox"
                                                                                 class="form-check-input"
-                                                                                id="customCheck4">
+                                                                                id="customCheck4" name="allow-review">
                                                                             <label class="form-check-label"
                                                                                 for="customCheck4">Allow Review</label>
                                                                         </div>
                                                                     </div>
                                                                     <div class="mt-2">
-                                                                        <span>Grading &nbsp; &nbsp; &nbsp; &nbsp;</span>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio3"
-                                                                                name="customRadio1"
-                                                                                class="form-check-input">
-                                                                            <label class="form-check-label"
-                                                                                for="customRadio3">Use Latest
-                                                                                Score</label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio4"
-                                                                                name="customRadio1"
-                                                                                class="form-check-input">
-                                                                            <label class="form-check-label"
-                                                                                for="customRadio4">Use Best
-                                                                                Score</label>
-                                                                        </div>
+                                                                    <span>Grading &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="radio" id="customRadio3" name="grading-radio" class="form-check-input" value="Use Latest Score">
+                                                                        <label class="form-check-label" for="customRadio3">Use Latest Score</label>
                                                                     </div>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="radio" id="customRadio4" name="grading-radio" class="form-check-input" value="Use Best Score">
+                                                                        <label class="form-check-label" for="customRadio4">Use Best Score</label>
+                                                                    </div>
+                                                                    </div>
+
                                                                     <!-- end highlight-->
                                                                 </div> <!-- end preview code-->
                                                             </div> <!-- end tab-content-->
@@ -938,9 +912,10 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-light"
                                                 data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="submit" class="btn btn-primary" name="btnSave">Save changes</button>
                                         </div>
                                     </div>
+                                </form>
                                 </div><!-- /.modal-content -->
                             </div><!-- /.modal-dialog -->
                         </div><!-- /.modal -->
