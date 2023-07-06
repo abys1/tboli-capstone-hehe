@@ -65,7 +65,7 @@
 
 
                                         <li class="side-nav-item">
-                                            <a href="admin_dashboard.php" class="side-nav-link">
+                                            <a href="learner_dashboard.php" class="side-nav-link">
                                                 <i class="uil-home"></i>
                                                 <span>Dashboard</span>
                                             </a>
@@ -270,44 +270,7 @@
                                 <div class="p-2">
                                     <div class="row g-0">
                                         <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
-                                                <span>G Suite</span>
-                                            </a>
-                                        </div>
+                                        
                                     </div> <!-- end row-->
                                 </div>
 
@@ -327,8 +290,8 @@
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Soeng Souy</span>
-                                    <span class="account-position">Founder</span>
+                                    <span class="account-user-name">Ann Watapampam</span>
+                                    <span class="account-position">IT student 77%</span>
                                 </span>
                             </a>
                             <div

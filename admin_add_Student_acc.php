@@ -87,7 +87,7 @@ if (isset($_POST['btnAdd'])) {
                     <form class="well form-horizontal" method="POST">
                         <fieldset>
                         <div class="form-group">
-                           <h1>For Learner</h1>
+                           <h1>Register Learner</h1>
                                 <label class="col-md-4 control-label">LRN</label>
                                 <div class="col-md-8 inputGroupContainer">
                                     <div class="input-group"><span class="input-group-addon"><i
@@ -134,7 +134,6 @@ if (isset($_POST['btnAdd'])) {
                                             <option value="">Select Gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
-                                            <option value="other">Other</option>
                                         </select>
                                     </div>
                                 </div>
@@ -185,91 +184,7 @@ if (isset($_POST['btnAdd'])) {
                 </td>
                 <td colspan="1">
   
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">First Name</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span><input id="fullName"
-                                            name="gfirstname" placeholder="Full Name" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Middle Name</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span><input id="middleName"
-                                            name="gmiddlename" placeholder="middle Name" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Last Name</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span><input id="fullName"
-                                            name="glastname" placeholder="Full Name" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Gender</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-venus-mars"></i>
-                                        </span>
-                                        <select id="gender" name="ggender" class="form-control" required="true">
-                                            <option value="">Select Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Birthday</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                        <input id="birthday" name="gbirthday" placeholder="Select Birthday"
-                                            class="form-control" required="true" type="date">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Phone Number</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber"
-                                            name="gphoneNumber" placeholder="Phone Number" class="form-control"
-                                            required="true" value="" type="text"></div>
-                                </div>
-                            </div>
-                              <div class="form-group">
-                                <label class="col-md-4 control-label">Email Address</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-earphone"></i></span><input id="emailAddress"
-                                            name="gemail" placeholder="Email Address" class="form-control"
-                                            required="true" value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Full address (street, barangay, city)</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-home"></i></span><input id="address"
-                                            name="gaddress" placeholder="address" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                        </fieldset>
+                        
                         <div class="form-group text-center">
     <div class="col-md-12">
         <button type="submit" class="btn btn-primary" name="btnAdd">Add Student</button>
