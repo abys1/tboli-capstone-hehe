@@ -18,6 +18,7 @@
         $valid = $_POST['validID'];
         $address = $_POST['address'];
         $password = $lastname . $birthday; 
+        $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
         $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
 
@@ -43,7 +44,7 @@
 
                         if ($conn->query($sql) === TRUE) {
                             $valid_id = $conn->insert_id;
-                            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$password')";
+                            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
 
                     if ($conn->query($sql) === TRUE) {
                     $account_id = $conn->insert_id;

@@ -9,7 +9,13 @@
         <tbody>
             <tr>
                 <td colspan="1">
-                    <form class="well form-horizontal">
+                    <form class="well form-horizontal" method="POST">
+                        <?php
+                        if(isset($_POST['btnAdd'])) {
+                            $area = $_POST['area'];
+                            
+                        }
+                        ?>
                         <fieldset>
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Add new Area</label>
@@ -25,7 +31,7 @@
                     </form>
                     <div class="form-group text-center">
     <div class="col-md-12">
-        <button type="button" class="btn btn-primary">Add Admin</button>
+        <button type="submit" class="btn btn-primary" name="btnAdd">Add Admin</button>
     </div>
 </div>
 

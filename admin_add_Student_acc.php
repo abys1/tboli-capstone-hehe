@@ -28,7 +28,7 @@ if (isset($_POST['btnAdd'])) {
     $gemail = $_POST['gemail'];
     $gaddress = $_POST['gaddress'];
     $password = $lastname . $birthday; 
-
+    $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO tbl_learner_id (lrn) VALUES ('$learnersid')";
 
@@ -58,7 +58,7 @@ if (isset($_POST['btnAdd'])) {
 
                             if ($conn->query($sql) === TRUE) {
                                 $status_id = $conn->insert_id;
-                                $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$password')";
+                                $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
                        
                                 if ($conn->query($sql) === TRUE) {
                                     $account_id = $conn->insert_id;
