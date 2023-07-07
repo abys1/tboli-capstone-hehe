@@ -43,7 +43,7 @@ if (isset($_POST['btnAdd'])) {
 
           if ($conn->query($sql) === TRUE) {
             $status_id = $conn->insert_id;
-            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$password')";
+            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
 
           if ($conn->query($sql) === TRUE) {
             $account_id = $conn->insert_id;

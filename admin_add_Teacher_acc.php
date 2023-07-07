@@ -5,69 +5,118 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
-    <?php
-    include 'dbcon.php';
-    if(isset($_POST['btnAdd'])){
-        $firstname = $_POST['firstname'];
-        $middlename = $_POST['middlename'];
-        $lastname = $_POST['lastname'];
-        $birthday = $_POST['birthday'];
-        $gender = $_POST['gender'];
-        $email = $_POST['email'];
-        $contact = $_POST['phone'];
-        $valid = $_POST['validID'];
-        $address = $_POST['address'];
-        $password = $lastname . $birthday; 
-        $encrypted = password_hash($password, PASSWORD_DEFAULT);
+<?php
+include 'dbcon.php';
 
-        $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
+if (isset($_POST['btnAdd'])) {
 
+    $firstname = $_POST['firstname'];
+    $middlename = $_POST['middlename'];
+    $lastname = $_POST['lastname'];
+    $birthday = $_POST['birthday'];
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $contact = $_POST['phoneNumber'];
+    $address = $_POST['address'];
+
+    $valid = $_FILES['valid'];
+    if (!empty($valid['name'])) {
+        $file_name = $valid['name'];
+        $file_tmp = $valid['tmp_name'];
+        $file_size = $valid['size'];
+        $file_error = $valid['error'];
+
+        // Check for any upload errors
+        if ($file_error !== UPLOAD_ERR_OK) {
+            
+        }
+
+        // Check the file size
+        if ($file_size > 10000000) {
+            die ("File size is too big");
+        }
+
+        // Generate a unique name for the uploaded image
+        $image_name = uniqid() . "_" . $file_name;
+
+        // Move the uploaded image to the desired directory
+        $target_dir = "images/";
+        $target_path = $target_dir . $image_name;
+        if (!move_uploaded_file($file_tmp, $target_path)) {
+            die ("Error moving the uploaded image. Please try again.");
+        }
+    } 
+
+    $password = $lastname . $birthday;
+    $encrypted = password_hash($password, PASSWORD_DEFAULT);
+
+    // Insert user info
+    $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) 
+            VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
+    if ($conn->query($sql) === TRUE) {
+        $user_info_id = $conn->insert_id;
+
+        // Insert user credentials
+        $sql = "INSERT INTO tbl_usercredentials (email, contact) 
+                VALUES ('$email', '$contact')";
         if ($conn->query($sql) === TRUE) {
-          $user_info_id = $conn->insert_id;
-          $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$contact')";
-      
-          if ($conn->query($sql) === TRUE) {
             $credentials_id = $conn->insert_id;
-            $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
-      
+
+            // Insert address
+            $sql = "INSERT INTO tbl_address (address) 
+                    VALUES ('$address')";
             if ($conn->query($sql) === TRUE) {
-            $address_id = $conn->insert_id;
-              $sql = "INSERT INTO tbl_user_level (level) VALUES ('TEACHER')";
-        
+                $address_id = $conn->insert_id;
+
+                // Insert user level
+                $sql = "INSERT INTO tbl_user_level (level) 
+                        VALUES ('TEACHER')";
                 if ($conn->query($sql) === TRUE) {
                     $level_id = $conn->insert_id;
-                    $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
 
-                    if($conn->query($sql) === TRUE) {
-                       $status_id = $conn->insert_id;
-                        $sql = "INSERT INTO tbl_teacher_valid(id) VALUES ('$valid')";
+                    // Insert user status
+                    $sql = "INSERT INTO tbl_user_status (status) 
+                            VALUES ('1')";
+                    if ($conn->query($sql) === TRUE) {
+                        $status_id = $conn->insert_id;
 
+                        // Insert teacher valid
+                        $sql = "INSERT INTO tbl_teacher_valid (id) 
+                                VALUES ('$image_name')";
                         if ($conn->query($sql) === TRUE) {
                             $valid_id = $conn->insert_id;
-                            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
 
-                    if ($conn->query($sql) === TRUE) {
-                    $account_id = $conn->insert_id;
-                    $sql = "INSERT INTO tbl_teachers (user_id, credentials_id, address_id, level_id, status_id, account_id, valid_id) VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id', '$valid_id')";
-                    
-                    if ($conn->query($sql) === TRUE) {
-                    header("Location:admin_teacher.php?msg=Account added successfully");
-                    exit();
-                    }
-                  }
+                            // Insert account
+                            $sql = "INSERT INTO tbl_accounts (email, password) 
+                                    VALUES ('$email', '$encrypted')";
+                            if ($conn->query($sql) === TRUE) {
+                                $account_id = $conn->insert_id;
+
+                                // Insert teacher
+                                $sql = "INSERT INTO tbl_teachers (user_id, credentials_id, address_id, level_id, status_id, account_id, valid_id) 
+                                        VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id', '$valid_id')";
+                                if ($conn->query($sql) === TRUE) {
+                                    header("Location: admin_teacher.php?msg=Account added successfully");
+                                    exit();
+                                } 
+                            } 
+                        }
+                    } 
                 }
-              }
-            }
-          }
+            } 
         }
-    }
+    } 
 }
-    ?>
+?>
+
+<!-- Your HTML code here -->
+
+
     <table class="table table-striped">
         <tbody>
             <tr>
                 <td colspan="1">
-                    <form class="well form-horizontal" method="POST">
+                    <form class="well form-horizontal" method="POST" enctype="multipart/form-data">
                         <fieldset>
                             <div class="form-group">
                                 <label class="col-md-4 control-label">First Name</label>
@@ -120,7 +169,7 @@
                                     <span class="input-group-addon">
                                         <i class="fa fa-file-upload"></i>
                                     </span>
-                                    <input id="validID" name="validID" type="file" accept="image/*" class="form-control" required="true">
+                                    <input id="valid" name="valid" type="file" class="form-control" required="true">
                                 </div>
                             </div>
                         </div>

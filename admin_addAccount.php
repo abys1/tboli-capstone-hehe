@@ -1,34 +1,6 @@
 <?php
-include "dbcon.php";
-
-$sql = "SELECT
-        tbl_admin.admin_id,
-        tbl_userinfo.firstname,
-        tbl_userinfo.middlename,
-        tbl_userinfo.lastname,
-        tbl_usercredentials.email,
-        tbl_usercredentials.contact,
-        tbl_address.address,
-        tbl_user_level.level,
-        tbl_user_status.status
-        FROM
-        tbl_admin
-        JOIN
-        tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-        JOIN
-        tbl_usercredentials ON tbl_admin.credentials_id = tbl_usercredentials.usercredentials_id
-        JOIN
-        tbl_address ON tbl_admin.address_id = tbl_address.address_id
-        JOIN
-        tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-        JOIN
-        tbl_user_status ON tbl_admin.status_id = tbl_user_status.status_id
-        WHERE
-        tbl_user_level.level = 'ADMIN'";
-
-
-$result = mysqli_query($conn, $sql);
-
+      session_start();
+      $user_id = $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -547,6 +519,22 @@ $result = mysqli_query($conn, $sql);
                 </thead>
                 <tbody>
                 <?php
+                include "dbcon.php";
+                
+                $sql = "SELECT tbl_admin.admin_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
+                        tbl_usercredentials.email, tbl_usercredentials.contact, tbl_address.address,
+                        tbl_user_level.level, tbl_user_status.status
+                        FROM tbl_admin
+                        JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+                        JOIN tbl_usercredentials ON tbl_admin.credentials_id = tbl_usercredentials.usercredentials_id
+                        JOIN tbl_address ON tbl_admin.address_id = tbl_address.address_id
+                        JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+                        JOIN tbl_user_status ON tbl_admin.status_id = tbl_user_status.status_id
+                        WHERE tbl_user_level.level = 'ADMIN' AND tbl_user_status.status = 1";
+                
+                
+                $result = mysqli_query($conn, $sql);
+                        
     if ($result && mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             ?>
@@ -563,40 +551,21 @@ $result = mysqli_query($conn, $sql);
                 <td><?php echo $row['contact']; ?></td>
                 <td><?php echo $row['address']; ?></td>
                 <td>
-                <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
-                <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-                    <!-- <?php
-                    if ($row['status'] == 0) {
-                        ?>
-                        <form method="POST" action="activate_admin.php">
-                            <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
-                            <input type="hidden" name="status" value="1">
-    <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
-                        </form>
-                        <?php
-                    } else {
-                        ?>
-                        <form method="POST" action="activate_admin.php">
-                            <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
-                            <input type="hidden" name="status" value="0">
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-                        </form>
-                        <?php
-                    }
-                    ?> -->
+                <a href="admin_subject_edit.php?admin_id=<?php echo $row['admin_id'] ?>">
+                    <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
+                </a>
+                <a href="admin_account_deactivate.php?admin_id=<?php echo $row['admin_id'] ?>" class="decline">
+                    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                </a>
                 </td>
                 <td>
-                    <!-- <?php
+                    <?php
                     if ($row['status'] == 1) {
-                        echo '<span class="status delivered">ACTIVE</span>';
+                        echo '<span class="badge bg-success">Active</span>';
                     } else {
-                        echo '<span class="status pending">INACTIVE</span>';
+                        echo '<span class="badge bg-success">Inactive</span>';
                     }
-                    ?> -->
-
-                            <div>
-                                <span class="badge bg-success">Active</span>
-                            </div>
+                    ?>
                 </td>
             </tr>
             <?php
