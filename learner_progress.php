@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Learner Progress</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -86,8 +86,8 @@
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
+                                            <a href="learner_progress.php" class="side-nav-link">
+                                                <i class="fa fa-book"></i>
                                                 <span>Progress</span>
                                             </a>
                                         </li>

@@ -86,7 +86,7 @@
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
+                                            <a href="learner_progress.php" class="side-nav-link">
                                                 <i class="uil-user-plus"></i>
                                                 <span>Progress</span>
                                             </a>
