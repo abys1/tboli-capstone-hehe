@@ -38,7 +38,7 @@
                     <p class="text-muted mb-4">Enter your username and password to access account.</p>
 
                                         <!-- form -->
-                    <form action="Teacher_index.html" method="POST" id="login-form" onsubmit="return validateForm()">
+                    <form action="Teacher_index.php" method="POST" id="login-form" onsubmit="return validateForm()">
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Username</label>
                             <input class="form-control" type="text" id="emailaddress" name="username" required placeholder="Enter your email">

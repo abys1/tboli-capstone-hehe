@@ -1,3 +1,8 @@
+            <?php
+            
+                //include("dbconn.php");
+
+            ?>
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
@@ -46,72 +51,93 @@
                 <!--- Sidemenu -->
                 <ul class="side-nav">
 
-                    
 
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                            <i class="uil-home-alt"></i>
-                            <span class="badge bg-success float-end">1</span>
-                            <span> Dashboards </span>
-                        </a>
-                        <div class="collapse" id="sidebarDashboards" style="">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="dashboard-analytics.php">Home</a>
-                                </li>
-                                
-                                
-                                
-                            </ul>
-                        </div>
-                    </li>
+                                        <li class="side-nav-item menuitem">
+                                            <a href="Teacher_index.php" class="side-nav-link ">
+                                                <i class="uil-home"></i>
+                                                <span>Dashboard</span>
+                                            </a>
+                                        </li>
 
-                    
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Users </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboards" style="">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Student</a>
+                                                    </li>
 
-                    
+                                                    <li>
+                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                                    </li>
+                                                    
 
-                    <li class="side-nav-item menuitem-active">
-                        <a href="Teacher_AddStudent.php" class="side-nav-link active">
-                            <i class="uil-user-plus"></i>
-                            <span>Create Student Account</span>
-                        </a>
-                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
 
 
-                    
-                <li class="side-nav-item">
-                        <a href="Teacher_enrollStud.php" class="side-nav-link">
-                            <i class="uil-user-plus"></i>
-                            <span>Enroll Student In Lesson</span>
-                        </a>
-                    </li>
-                    
-                    <li class="side-nav-item">
-                        <a href="Teacher_Resources.php" class="side-nav-link">
-                            <i class="uil-file-upload"></i>
-                            <span>Upload Resources</span>
-                        </a>
-                    </li>
-                    
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                            <i class="uil-folder-plus"></i>
-                            <span> Reports </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarEmail">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="apps-email-inbox.php">Progress Reports</a>
-                                </li>
-                                <li>
-                                    <a href="apps-email-read.php">Assignment Log</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                
-                </ul>
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_manage_lesson.php" class="side-nav-link">
+                                                <i class="dripicons-document-edit"></i>
+                                                <span>Manage Lesson</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_uploadlesson.php" class="side-nav-link">
+                                                <i class="uil-file-upload-alt"></i>
+                                                <span>Upload Lesson</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_quiz.php" class="side-nav-link">
+                                            <i class="dripicons-document-edit"></i>
+                                                <span>Manage Quiz</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Assign Lesson to Student</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Progress</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                                                <i class="uil-folder-plus"></i>
+                                                <span> Reports </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarEmail">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="Teacher_list_of_teacher.php">List of Teacher</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_studentlist.php">List of Learners</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Lesson w/Content</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                    </ul>
 
                 <!-- Help Box -->
                 
@@ -141,7 +167,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" required="" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" required placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
@@ -160,11 +186,11 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="Teacher_Profile.php" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar"> 
-                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                    <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Teacher Name</span>
-                                    <span class="account-position">Position</span>
+                                    <span class="account-user-name">Jillian Ward</span>
+                                    <span class="account-position">Teacher</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -174,31 +200,13 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="Teacher_Profile.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-edit me-1"></i>
-                                    <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lifebuoy me-1"></i>
-                                    <span>Support</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-outline me-1"></i>
-                                    <span>Lock Screen</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="Teacher_Login.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -212,7 +220,7 @@
                     <div class="app-search dropdown d-none d-lg-block">
                         <form>
                             <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" required="" placeholder="Search..." id="top-search">
+                                <input type="text" class="form-control dropdown-toggle" required placeholder="Search..." id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
                                 <button class="input-group-text btn-primary" type="submit">Search</button>
                             </div>
@@ -299,47 +307,48 @@
 
             </div> <!-- content -->
 
-            
+                
             <div class="col-">
                 <div class="card">
                     <div class="card-body">
                         
                         <h4>Student Information</h4>
 
-                        <form>
+                        <form action="<?php //htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
                             <div class="row g-2">
                                 
                                 <div class="mb-3">
-                                    <label for="InputID" class="form-label">Learner Id <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="InputID" required="" placeholder="02000221026">
+                                    <label for="InputID" class="form-label">LRN<sup>*</sup></label>
+                                    <input type="text" class="form-control" id="InputID" required placeholder="02000221026" name="lrn">
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required="" placeholder="First Name">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required="" placeholder="Last Name">
+                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required="" placeholder="MiddleName">
+                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
                                 </div>
                                 <div class="mb-3 col-md-6">
+                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
+                                </div>
+                                
+                                <div class="mb-3 col-md-6">
                                     <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name">
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
                                 </div>
                             </div>
 
                             <div class="row g-2">
                                 <div class="mb-3 col-md-6">
                                     <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday">
+                                    <input type="date" class="form-control" id="inputbday" name="bday">
                                 </div>
                                 <div class="mb-3 col-md-4">
                                     <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
-                                    <select id="inputGender" class="form-select">
+                                    <select id="inputGender" class="form-select" name="gender">
                                         <option>Choose</option>
                                         <option>Female</option>
                                         <option>Male</option> 
@@ -350,59 +359,54 @@
                             <h4>Location</h4>
                                         
                             <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Address <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required="" placeholder="1234 Main St">
+                                <label for="inputAddress" class="form-label">Full address (street, barangay, city) <sup>*</sup></label>
+                                <input type="text" class="form-control" id="inputAddress" required placeholder="Enter Address" name="address">
                             </div>
                             
-                                        
+                            <h4>Contact Information</h4>     
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">City <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputCity">
+                                    <label for="inputCity" class="form-label">Email <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="inputCity" name="city">
                                 </div>
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputBarangay" class="form-label">Barangay <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputBarangay">
-                                </div>
-
-                                <div class="mb-3 col-md-2">
-                                    <label for="inputZip" class="form-label">Zip <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputZip">
+                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
                                 </div>
                             </div>
 
-                            <h4>Parent/Guardian</h4>
+                            <!-- <h4>Parent/Guardian</h4>
 
 
                             <div class="row g-2">
                                 
 
-                                <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-6">
                                     <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required="" placeholder="First Name">
+                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required="" placeholder="Last Name">
+                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required="" placeholder="MiddleName">
+                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name">
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
                                 </div>
                             </div>
 
                             <div class="row g-2">
                                 <div class="mb-3 col-md-6">
                                     <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday">
+                                    <input type="date" class="form-control" id="inputbday" name="bday">
                                 </div>
                                 <div class="mb-3 col-md-4">
                                     <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
-                                    <select id="inputGender" class="form-select">
+                                    <select id="inputGender" class="form-select" name="gender">
                                         <option>Choose</option>
                                         <option>Female</option>
                                         <option>Male</option> 
@@ -414,23 +418,23 @@
                                         
                             <div class="mb-3">
                                 <label for="inputAddress" class="form-label">Address <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required="" placeholder="1234 Main St">
+                                <input type="text" class="form-control" id="inputAddress" required placeholder="1234 Main St" name="address">
                             </div>
                             
                                         
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
                                     <label for="inputCity" class="form-label">City <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputCity">
+                                    <input type="text" class="form-control" id="inputCity" name="city">
                                 </div>
                                 <div class="mb-3 col-md-5">
                                     <label for="inputBarangay" class="form-label">Barangay <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputBarangay">
+                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
                                 </div>
 
                                 <div class="mb-3 col-md-2">
                                     <label for="inputZip" class="form-label">Zip <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputZip">
+                                    <input type="text" class="form-control" id="inputZip" name="zip">
                                 </div>
                             </div>
 
@@ -438,19 +442,19 @@
 
                             <div class="mb-3">
                                 <label for="inputAddress" class="form-label">Phone Number/Tel Number <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required="" placeholder="1234 Main St">
+                                <input type="text" class="form-control" id="inputAddress" required placeholder="1234 Main St">
                             </div>
 
                             <div class="mb-3">
                                 <label for="inputAddress" class="form-label">Email address <sup>Optional</sup></label>
-                                <input type="email" class="form-control" id="inputAddress" required="" placeholder="1234 Main St">
-                            </div>
+                                <input type="email" class="form-control" id="inputAddress" required placeholder="1234 Main St">
+                            </div> -->
 
 
 
                         
                                         
-                            <button type="submit" class="btn btn-primary">Create Account</button>
+                            <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
                         </form>
 
                         
@@ -601,3 +605,77 @@
         </body>
     
     </html>
+
+
+    <?php
+    
+    /*if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        $LID = filter_input(INPUT_POST, "LID", FILTER_SANITIZE_SPECIAL_CHARS);
+        $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_SPECIAL_CHARS);
+        $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_SPECIAL_CHARS);
+        $midname = filter_input(INPUT_POST, "midname", FILTER_SANITIZE_SPECIAL_CHARS);
+        $sufname = filter_input(INPUT_POST, "sufname", FILTER_SANITIZE_SPECIAL_CHARS);
+        $bday = filter_input(INPUT_POST, "bday", FILTER_SANITIZE_SPECIAL_CHARS);
+        $gender = filter_input(INPUT_POST, "gender", FILTER_SANITIZE_SPECIAL_CHARS);
+        $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
+        $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_SPECIAL_CHARS);
+        $barrgy = filter_input(INPUT_POST, "barrgy", FILTER_SANITIZE_SPECIAL_CHARS);
+        $zip = filter_input(INPUT_POST, "zip", FILTER_SANITIZE_SPECIAL_CHARS);
+        
+        if (empty($LID) || empty($firstname) || empty($lastname) || empty($midname) || empty($bday) || empty($gender) || empty($address) || empty($city) || empty($barrgy) || empty($zip)) {
+            echo '<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Please fill in all the missing fields.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var modal = new bootstrap.Modal(document.getElementById("errorModal"));
+                modal.show();
+            });
+        </script>';
+        }
+        else{
+            $sql = "INSERT INTO student_regis (lerner_id , firstname, lastname, midname, sufname, bday, gender, address, city, barrgy, zip) 
+                VALUES ('$LID', '$firstname', '$lastname', '$midname', '$sufname', '$bday', '$gender', '$address', '$city', '$barrgy', '$zip')";
+                mysqli_query($conn,$sql);
+                echo '<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="errorModalLabel">Success</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        Student account has been created!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    var modal = new bootstrap.Modal(document.getElementById("errorModal"));
+                    modal.show();
+                });
+            </script>';
+        }
+    }
+
+    mysqli_close($conn);*/
+    
+    ?>

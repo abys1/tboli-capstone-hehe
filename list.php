@@ -1,30 +1,37 @@
-﻿<!DOCTYPE html>
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
-    <title>Project Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <!-- App css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
-    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
+<!-- third party css -->
+<link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+<link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+<!-- third party css end -->
+
+<!-- App css -->
+<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+<link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+
+
 
 </head>
 
-<body class="" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" style="visibility: visible;" data-leftbar-theme="dark">
+<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="leftside-menu">
+        <div class="leftside-menu menuitem-active">
 
             <!-- LOGO -->
             <a href="index.php" class="logo text-center logo-light">
                 <span class="logo-lg">
-                    <img src="assets/images/" alt="" height="16">
+                    <img src="assets/images/logo.png" alt="" height="16">
                 </span>
                 <span class="logo-sm">
                     <img src="assets/images/logo_sm.png" alt="" height="16">
@@ -41,14 +48,14 @@
                 </span>
             </a>
 
-            <div class="h-100" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px;">
+            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
 
                 <!--- Sidemenu -->
                 <ul class="side-nav">
 
 
                                         <li class="side-nav-item menuitem-active">
-                                            <a href="Teacher_index.php" class="side-nav-link active">
+                                            <a href="admin_dashboard.php" class="side-nav-link active">
                                                 <i class="uil-home"></i>
                                                 <span>Dashboard</span>
                                             </a>
@@ -63,13 +70,10 @@
                                             </a>
                                             <div class="collapse" id="sidebarDashboards" style="">
                                                 <ul class="side-nav-second-level">
-                                                <li>
-                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Student</a>
-                                                    </li>
-
                                                     <li>
-                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                                        <a href="admin_student.php">Student</a>
                                                     </li>
+                                                    \
 
                                                 </ul>
                                             </div>
@@ -77,22 +81,15 @@
 
 
                                         <li class="side-nav-item">
-                                            <a href="Teacher_manage_lesson.php" class="side-nav-link">
-                                                <i class="dripicons-document-edit"></i>
+                                            <a href="admin_module_request.php" class="side-nav-link">
+                                                <i class="fa fa-book"></i>
                                                 <span>Manage Lesson</span>
                                             </a>
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="Teacher_uploadlesson.php" class="side-nav-link">
-                                                <i class="uil-file-upload-alt"></i>
-                                                <span>Upload Lesson</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="Teacher_quiz.php" class="side-nav-link">
-                                            <i class="dripicons-document-edit"></i>
+                                            <a href="Teacher_Resources.php" class="side-nav-link">
+                                                <i class="fa fa-book"></i>
                                                 <span>Manage Quiz</span>
                                             </a>
                                         </li>
@@ -132,20 +129,21 @@
                                         </li>
 
                                     </ul>
-
+                <!-- Help Box -->
                 
+                <!-- end Help Box -->
                 <!-- End Sidebar -->
 
                 <div class="clearfix"></div>
 
-            </div></div></div></div><div class="simplebar-placeholder" style="width: 260px; height: 1512px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 344px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+            </div></div></div></div><div class="simplebar-required placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
             <!-- Sidebar -left -->
 
         </div>
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->
-        <!-- Start Page Content here -->
+        hello
         <!-- ============================================================== -->
 
         <div class="content-page">
@@ -159,12 +157,15 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" required="" placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
                         
 
+                        
+
+                        
 
                         <li class="notification-list">
                             <a class="nav-link end-bar-toggle" href="javascript: void(0);">
@@ -175,11 +176,11 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="Teacher_Profile.php" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar"> 
-                                    <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Jillian Ward</span>
-                                    <span class="account-position">Teacher</span>
+                                    <span class="account-user-name">Teacher Name</span>
+                                    <span class="account-position">Position</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -209,7 +210,7 @@
                     <div class="app-search dropdown d-none d-lg-block">
                         <form>
                             <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                <input type="text" class="form-control dropdown-toggle" required="" placeholder="Search..." id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
                                 <button class="input-group-text btn-primary" type="submit">Search</button>
                             </div>
@@ -248,7 +249,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic required placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Erwin Brown</h5>
                                             <span class="font-12 mb-0">UI Designer</span>
@@ -259,7 +260,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic required placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Jacob Deo</h5>
                                             <span class="font-12 mb-0">Developer</span>
@@ -281,59 +282,118 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tboli</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                        <li class="breadcrumb-item active">Teacher Dashboard</li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Enroll Student In Lesson</a></li>
+                                        
+                                        <li class="breadcrumb-item active">Manage Student</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Projects</h4>
+                                <h4 class="page-title">Manage Student</h4>
                             </div>
                         </div>
                     </div>     
                     <!-- end page title --> 
-
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3">
-            
-                            <!-- Simple card -->
-                            <div class="card d-block">
-                                <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Literacy</h5>
-                                    <p class="card-text">When: Feb 13 - June 2024</p><a href="Teacher_Module.php" class="btn btn-primary">View Module</a>
-                                </div> <!-- end card-body-->
-                            </div> <!-- end card-->
-                        </div>
-
-                        
-
-                        
-
-
-                        <div class="col-md-6 col-lg-3">
-            
-                            <!-- Simple card -->
-                            <div class="card d-block">
-                                <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Numeracy</h5>
-                                    <p class="card-text">When: Feb 13 - June 2024</p><a href="Teacher_Module.php" class="btn btn-primary">View Module</a>
-                                </div> <!-- end card-body-->
-                            </div> <!-- end card-->
-                        </div><!-- end col -->
-                    </div>
-
                     
                 </div> <!-- container -->
 
             </div> <!-- content -->
+
+            
+            
+            
+            <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <div class="row mb-2">
+                                            <div class="col-sm-4">
+                                                <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Sellers</a>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class="text-sm-end">
+                                                    <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog"></i></button>
+                                                    <button type="button" class="btn btn-light mb-2 me-1">Import</button>
+                                                    <button type="button" class="btn btn-light mb-2">Export</button>
+                                                </div>
+                                            </div>
+                                            end col
+                                        </div> -->
+                
+                                        <div class="table-responsive">
+                                            <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap" id="products-datatable">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th style="width: 20px;">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                                <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                                                            </div>
+                                                        </th>
+                                                        <th>LRN</th>
+                                                        <th>Student Name</th>
+                                                        <th>Birthdate</th>
+                                                        <th>Gender</th>
+                                                        <th>Full Address</th>
+                                                        <th>Phone</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" id="customCheck2">
+                                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            02000221026
+                                                        </td>
+                                                        <td class="table-user">
+                                                            <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                                                            <a href="javascript:void(0);" class="text-body fw-semibold">Paul J. Friend</a>
+                                                        </td>
+                                                        <td>
+                                                            <span class="fw-semibold"> 09/04/2001</span>
+                                                        </td>
+                                                        
+                                                        <td>
+                                                            male
+                                                        </td>
+
+                                                        <td>
+                                                            gensan city
+                                                        </td>
+                                                        
+                                                        <td>
+                                                        09217381873
+                                                        </td>
+                                                            
+                                                        <td>
+                                                            jvlaroco@gmail.com
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+            
+            
+                        
+            
+
+            
 
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper - Coderthemes.com
+                            <script>document.write(new Date().getFullYear())</script>20232023202320232023202320232023 © Hyper - Coderthemes.com
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">
@@ -347,14 +407,14 @@
             </footer>
             <!-- end Footer -->
 
-        </div>
+        
 
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
 
 
-    </div>
+    
     <!-- END wrapper -->
 
 
@@ -381,12 +441,12 @@
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked="">
-                    <label class="form-check-label" for="light-mode-check">Light Mode</label>
+                    <label class="form-check-label" for="light-mode-check">Light Mode <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
-                    <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
+                    <label class="form-check-label" for="dark-mode-check">Dark Mode <sup>*</sup></label>
                 </div>
    
 
@@ -395,12 +455,12 @@
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked="">
-                    <label class="form-check-label" for="fluid-check">Fluid</label>
+                    <label class="form-check-label" for="fluid-check">Fluid <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
-                    <label class="form-check-label" for="boxed-check">Boxed</label>
+                    <label class="form-check-label" for="boxed-check">Boxed <sup>*</sup></label>
                 </div>
     
 
@@ -409,32 +469,32 @@
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
-                    <label class="form-check-label" for="default-check">Default</label>
+                    <label class="form-check-label" for="default-check">Default <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="light" id="light-check" checked="">
-                    <label class="form-check-label" for="light-check">Light</label>
+                    <label class="form-check-label" for="light-check">Light <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-3">
                     <input class="form-check-input" type="checkbox" name="theme" value="dark" id="dark-check">
-                    <label class="form-check-label" for="dark-check">Dark</label>
+                    <label class="form-check-label" for="dark-check">Dark <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="fixed" id="fixed-check" checked="">
-                    <label class="form-check-label" for="fixed-check">Fixed</label>
+                    <label class="form-check-label" for="fixed-check">Fixed <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="condensed" id="condensed-check">
-                    <label class="form-check-label" for="condensed-check">Condensed</label>
+                    <label class="form-check-label" for="condensed-check">Condensed <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="scrollable" id="scrollable-check">
-                    <label class="form-check-label" for="scrollable-check">Scrollable</label>
+                    <label class="form-check-label" for="scrollable-check">Scrollable <sup>*</sup></label>
                 </div>
 
                 <div class="d-grid mt-4">
@@ -444,28 +504,35 @@
                 </div>
             </div> <!-- end padding-->
 
-        </div></div></div></div><div class="simplebar-placeholder" style="width: 263px; height: 776px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 653px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+        </div></div></div></div><div class="simplebar-required placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
     </div>
 
     <div class="rightbar-overlay"></div>
     <!-- /End-bar -->
 
-    <!-- bundle -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
 
-    <!-- third party js -->
-    <script src="assets/js/vendor/Chart.bundle.min.js"></script>
-    <!-- third party js ends -->
+   <!-- bundle -->
+   <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
 
-    <!-- demo app -->
-    <script src="assets/js/pages/demo.dashboard-projects.js"></script>
-    <!-- end demo js-->
+        <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+        <script src="assets/js/vendor/apexcharts.min.js"></script>
+        <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.sellers.js"></script>
+        <!-- end demo js-->
 
 
 
 
-
-
-
-</body></html>
+</div>
+    </div>
+        
+    
+    </body></html>
