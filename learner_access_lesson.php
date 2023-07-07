@@ -63,7 +63,6 @@
                                     <!--- Sidemenu -->
                                     <ul class="side-nav">
 
-
                                         <li class="side-nav-item">
                                             <a href="learner_dashboard.php" class="side-nav-link">
                                                 <i class="uil-home"></i>
@@ -91,9 +90,6 @@
                                                 <span>Progress</span>
                                             </a>
                                         </li>
-
-       
-
                                     </ul>
 
 
@@ -180,77 +176,6 @@
                                                                 <small class="text-muted">1 min ago</small>
                                                             </p>
                                                         </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-info">
-                                                                <i class="mdi mdi-account-plus"></i>
-                                                            </div>
-                                                            <p class="notify-details">New user registered.
-                                                                <small class="text-muted">5 hours ago</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon">
-                                                                <img src="assets/images/users/avatar-2.jpg"
-                                                                    class="img-fluid rounded-circle" alt="">
-                                                            </div>
-                                                            <p class="notify-details">Cristina Pride</p>
-                                                            <p class="text-muted mb-0 user-msg">
-                                                                <small>Hi, How are you? What about our next
-                                                                    meeting</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-primary">
-                                                                <i class="mdi mdi-comment-account-outline"></i>
-                                                            </div>
-                                                            <p class="notify-details">Caleb Flakelar commented on Admin
-                                                                <small class="text-muted">4 days ago</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon">
-                                                                <img src="assets/images/users/avatar-4.jpg"
-                                                                    class="img-fluid rounded-circle" alt="">
-                                                            </div>
-                                                            <p class="notify-details">Karen Robinson</p>
-                                                            <p class="text-muted mb-0 user-msg">
-                                                                <small>Wow ! this admin looks good and awesome
-                                                                    design</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-info">
-                                                                <i class="mdi mdi-heart"></i>
-                                                            </div>
-                                                            <p class="notify-details">Carlos Crouch liked
-                                                                <b>Admin</b>
-                                                                <small class="text-muted">13 days ago</small>
-                                                            </p>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div>
-                                    </div>
-                                    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-                                        <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
-                                    </div>
-                                    <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
-                                        <div class="simplebar-scrollbar" style="height: 0px; display: none;"></div>
-                                    </div>
-                                </div>
-
                                 <!-- All-->
                                 <a href="javascript:void(0);"
                                     class="dropdown-item text-center text-primary notify-item notify-all">
@@ -321,22 +246,6 @@
                         </form>
 
                         <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-notes font-16 me-1"></i>
-                                <span>Analytics Report</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-life-ring font-16 me-1"></i>
-                                <span>How can I help you?</span>
-                            </a>
 
                             <!-- item-->
                             <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -396,8 +305,8 @@
                                 <h4 class="page-title">Projects</h4>
                             </div>
                         </div>
-                    </div>     
-                    <!-- end page title --> 
+                    </div>
+                    <!-- end page title -->
 
                     <div class="row">
                         <div class="col-md-6 col-lg-3">
@@ -407,15 +316,23 @@
                                 <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Literacy</h5>
-                                    <p class="card-text">When: Feb 13 - June 2024</p><a href="Teacher_Module.html" class="btn btn-primary">View Module</a>
+                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1">
+                                                View Contents
+                                            </a>
+                                            <div class="collapse" id="collapseExample1" style="">
+                                            <div class="card card-body mb-0">
+                                                <span>
+                                                    <a href="#">01 Handout</a>
+                                                </span>
+                                                <span>
+                                                    <a href="#">01 Quiz 1</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                            
                                 </div> <!-- end card-body-->
                             </div> <!-- end card-->
                         </div>
-
-                        
-
-                        
-
 
                         <div class="col-md-6 col-lg-3">
             
@@ -424,8 +341,21 @@
                                 <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Numeracy</h5>
-                                    <p class="card-text">When: Feb 13 - June 2024</p><a href="Teacher_Module.html" class="btn btn-primary">View Module</a>
+                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2">
+                                                View Contents
+                                            </a>
+                                            <div class="collapse" id="collapseExample2" style="">
+                                            <div class="card card-body mb-0">
+                                                <span>
+                                                    <a href="#">01 Handout</a>
+                                                </span>
+                                                <span>
+                                                    <a href="#">01 Quiz 1</a>
+                                                </span>
+                                            </div>
+                                        </div>
                                 </div> <!-- end card-body-->
+                                
                             </div> <!-- end card-->
                         </div><!-- end col -->
                     </div>

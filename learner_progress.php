@@ -87,7 +87,7 @@
 
                                         <li class="side-nav-item">
                                             <a href="learner_progress.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
+                                                <i class="uil-user-plus"></i>
                                                 <span>Progress</span>
                                             </a>
                                         </li>
@@ -98,7 +98,6 @@
 
 
                                     <!-- End Sidebar -->
-                                    
 
                                     <div class="clearfix"></div>
 
@@ -142,6 +141,126 @@
                                 </form>
                             </div>
                         </li>
+                       
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-bell noti-icon"></i>
+                                <span class="noti-icon-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
+
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="m-0">
+                                        <span class="float-end">
+                                            <a href="javascript: void(0);" class="text-dark">
+                                                <small>Clear All</small>
+                                            </a>
+                                        </span>Notification
+                                    </h5>
+                                </div>
+
+                                <div style="max-height: 230px;" data-simplebar="init">
+                                    <div class="simplebar-wrapper" style="margin: 0px;">
+                                        <div class="simplebar-height-auto-observer-wrapper">
+                                            <div class="simplebar-height-auto-observer"></div>
+                                        </div>
+                                        <div class="simplebar-mask">
+                                            <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                                <div class="simplebar-content-wrapper"
+                                                    style="height: auto; overflow: hidden;">
+                                                    <div class="simplebar-content" style="padding: 0px;">
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                            <div class="notify-icon bg-primary">
+                                                                <i class="mdi mdi-comment-account-outline"></i>
+                                                            </div>
+                                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                                <small class="text-muted">1 min ago</small>
+                                                            </p>
+                                                        </a>
+
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                            <div class="notify-icon bg-info">
+                                                                <i class="mdi mdi-account-plus"></i>
+                                                            </div>
+                                                            <p class="notify-details">New user registered.
+                                                                <small class="text-muted">5 hours ago</small>
+                                                            </p>
+                                                        </a>
+
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                            <div class="notify-icon">
+                                                                <img src="assets/images/users/avatar-2.jpg"
+                                                                    class="img-fluid rounded-circle" alt="">
+                                                            </div>
+                                                            <p class="notify-details">Cristina Pride</p>
+                                                            <p class="text-muted mb-0 user-msg">
+                                                                <small>Hi, How are you? What about our next
+                                                                    meeting</small>
+                                                            </p>
+                                                        </a>
+
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                            <div class="notify-icon bg-primary">
+                                                                <i class="mdi mdi-comment-account-outline"></i>
+                                                            </div>
+                                                            <p class="notify-details">Caleb Flakelar commented on Admin
+                                                                <small class="text-muted">4 days ago</small>
+                                                            </p>
+                                                        </a>
+
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                            <div class="notify-icon">
+                                                                <img src="assets/images/users/avatar-4.jpg"
+                                                                    class="img-fluid rounded-circle" alt="">
+                                                            </div>
+                                                            <p class="notify-details">Karen Robinson</p>
+                                                            <p class="text-muted mb-0 user-msg">
+                                                                <small>Wow ! this admin looks good and awesome
+                                                                    design</small>
+                                                            </p>
+                                                        </a>
+
+                                                        <!-- item-->
+                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                                            <div class="notify-icon bg-info">
+                                                                <i class="mdi mdi-heart"></i>
+                                                            </div>
+                                                            <p class="notify-details">Carlos Crouch liked
+                                                                <b>Admin</b>
+                                                                <small class="text-muted">13 days ago</small>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div>
+                                    </div>
+                                    <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                                        <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                                    </div>
+                                    <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+                                        <div class="simplebar-scrollbar" style="height: 0px; display: none;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- All-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item text-center text-primary notify-item notify-all">
+                                    View All
+                                </a>
+
+                            </div>
+                        </li>
+
+                        
 
 
                         <li class="dropdown notification-list">
@@ -151,15 +270,15 @@
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Soeng Souy</span>
-                                    <span class="account-position">Founder</span>
+                                    <span class="account-user-name">Ann Watapampam</span>
+                                    <span class="account-position">IT student 77%</span>
                                 </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                 <!-- item-->
                                 <div class=" dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
+                                    <h6 class="text-overflow m-0">HI LEARNER</h6>
                                 </div>
 
                                 <!-- item-->
@@ -179,7 +298,6 @@
                                     <i class="mdi mdi-lifebuoy me-1"></i>
                                     <span>Support</span>
                                 </a>
-
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">

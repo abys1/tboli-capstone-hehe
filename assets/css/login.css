@@ -159,6 +159,10 @@ a {
     .border-line {
         border-right: none;
     }
+    .scrollable-content {
+        height: 100px;
+        overflow: scroll;
+    }
 
     .card2 {
         border-top: 1px solid #EEEEEE !important;
