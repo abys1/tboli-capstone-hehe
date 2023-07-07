@@ -276,7 +276,7 @@
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                 <!-- item-->
                                 <div class=" dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
+                                    <h6 class="text-overflow m-0">HI LEARNER</h6>
                                 </div>
 
                                 <!-- item-->
@@ -297,11 +297,6 @@
                                     <span>Support</span>
                                 </a>
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-outline me-1"></i>
-                                    <span>Lock Screen</span>
-                                </a>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -395,7 +390,7 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tboli</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                        <li class="breadcrumb-item active">Teacher Dashboard</li>
+                                        <li class="breadcrumb-item active">Learner Dashboard</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Projects</h4>
