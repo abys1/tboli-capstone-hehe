@@ -19,6 +19,8 @@ if (isset($_POST['btnAdd'])) {
   $email = $_POST['email'];
   $contact = $_POST['phone'];
   $address = $_POST['address'];
+  $password = $lastname . $birthday;
+  $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
   $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
 
@@ -33,23 +35,30 @@ if (isset($_POST['btnAdd'])) {
 
       if ($conn->query($sql) === TRUE) {
         $address_id = $conn->insert_id;
-        $sql = "INSERT INTO tbl_user_level (level) VALUES ('LEARNER')";
+        $sql = "INSERT INTO tbl_user_level (level) VALUES ('ADMIN')";
 
         if ($conn->query($sql) === TRUE) {
           $level_id = $conn->insert_id;
           $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
+
           if ($conn->query($sql) === TRUE) {
             $status_id = $conn->insert_id;
-            $sql = "INSERT INTO tbl_admin (user_id, credentials_id, address_id, level_id, status_id) VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id')";
-            if ($conn->query($sql) === TRUE) {
-            header("Location:admin_addAccount.php?msg=Account added successfully");
-            exit();
+            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$password')";
+
+          if ($conn->query($sql) === TRUE) {
+            $account_id = $conn->insert_id;
+            $sql = "INSERT INTO tbl_admin (user_id, credentials_id, address_id, level_id, status_id, account_id) VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id')";
+           
+                if ($conn->query($sql) === TRUE) {
+                header("Location:admin_addAccount.php?msg=Account added successfully");
+                exit();
+                }
             }
-          }
+            }
         }
-      }
+        }
     }
-  }
+    }
 }
 ?>
 

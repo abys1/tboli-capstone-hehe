@@ -1,3 +1,15 @@
+<?php 
+      session_start();
+      $user_id = $_SESSION['user_id'];
+
+      if (isset($_GET['logout'])) {
+      session_unset();
+      session_destroy();
+      header("Location: login.php?Logout");
+      exit();
+      }
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active">
 
@@ -420,7 +432,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>

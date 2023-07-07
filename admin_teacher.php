@@ -397,7 +397,7 @@ if (!$result) {
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -498,7 +498,7 @@ if (!$result) {
             <table id="basic-datatable" class="table table-centered mb-0">
             <div class="row mb-2">
     <div class="col-sm-4">
-        <a href="admin_add_Student_acc.php" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add New Student</a>
+        <a href="admin_add_Teacher_acc.php" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add New Student</a>
     </div>     
     <div class="col-sm-4">
         <a href="#" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#batchUploadModal"><i class="mdi mdi-upload me-2"></i> Batch Upload</a>

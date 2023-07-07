@@ -2,29 +2,29 @@
 include "dbcon.php";
 
 $sql = "SELECT
-            tbl_admin.admin_id,
-            tbl_userinfo.firstname,
-            tbl_userinfo.middlename,
-            tbl_userinfo.lastname,
-            tbl_usercredentials.email,
-            tbl_usercredentials.contact,
-            tbl_address.address,
-            tbl_user_level.level,
-            tbl_user_status.status
+        tbl_admin.admin_id,
+        tbl_userinfo.firstname,
+        tbl_userinfo.middlename,
+        tbl_userinfo.lastname,
+        tbl_usercredentials.email,
+        tbl_usercredentials.contact,
+        tbl_address.address,
+        tbl_user_level.level,
+        tbl_user_status.status
         FROM
-            tbl_admin
+        tbl_admin
         JOIN
-            tbl_userinfo ON tbl_admin.admin_id = tbl_userinfo.user_id
+        tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
         JOIN
-            tbl_usercredentials ON tbl_admin.admin_id = tbl_usercredentials.usercredentials_id
+        tbl_usercredentials ON tbl_admin.credentials_id = tbl_usercredentials.usercredentials_id
         JOIN
-            tbl_address ON tbl_admin.admin_id = tbl_address.address_id
+        tbl_address ON tbl_admin.address_id = tbl_address.address_id
         JOIN
-            tbl_user_level ON tbl_admin.admin_id = tbl_user_level.level_id
+        tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
         JOIN
-            tbl_user_status ON tbl_admin.admin_id = tbl_user_status.status_id
+        tbl_user_status ON tbl_admin.status_id = tbl_user_status.status_id
         WHERE
-            tbl_user_level.level = 'ADMIN'";
+        tbl_user_level.level = 'ADMIN'";
 
 
 $result = mysqli_query($conn, $sql);
@@ -423,7 +423,7 @@ $result = mysqli_query($conn, $sql);
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
