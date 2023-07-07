@@ -44,74 +44,104 @@
             <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
 
                 <!--- Sidemenu -->
+                
+
+                    
+                <!--- Sidemenu -->
                 <ul class="side-nav">
 
-                    
 
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                            <i class="uil-home-alt"></i>
-                            <span class="badge bg-success float-end">1</span>
-                            <span> Dashboards </span>
-                        </a>
-                        <div class="collapse" id="sidebarDashboards" style="">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="dashboard-analytics.php">Home</a>
-                                </li>
-                                
-                                
-                                
-                            </ul>
-                        </div>
-                    </li>
+                                        <li class="side-nav-item ">
+                                            <a href="Teacher_index.php" class="side-nav-link">
+                                                <i class="uil-home"></i>
+                                                <span>Dashboard</span>
+                                            </a>
+                                        </li>
 
-                    
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Users </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboards" style="">
+                                                <ul class="side-nav-second-level">
+                                                <li>
+                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Student</a>
+                                                    </li>
 
-                    
+                                                    <li>
+                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                                    </li>
 
-                    <li class="side-nav-item menuitem-active">
-                        <a href="Teacher_AddStudent.php" class="side-nav-link active">
-                            <i class="uil-user-plus"></i>
-                            <span>Create Student Account</span>
-                        </a>
-                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
 
 
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_manage_lesson.php" class="side-nav-link">
+                                                <i class="dripicons-document-edit"></i>
+                                                <span>Manage Lesson</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_uploadlesson.php" class="side-nav-link">
+                                                <i class="uil-file-upload-alt"></i>
+                                                <span>Upload Lesson</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_quiz.php" class="side-nav-link">
+                                            <i class="dripicons-document-edit"></i>
+                                                <span>Manage Quiz</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Assign Lesson to Student</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Progress</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                                                <i class="uil-folder-plus"></i>
+                                                <span> Reports </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarEmail">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="Teacher_list_of_teacher.php">List of Teacher</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_studentlist.php">List of Learners</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Lesson w/Content</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+
                     
-                <li class="side-nav-item">
-                        <a href="Teacher_enrollStud.php" class="side-nav-link">
-                            <i class="uil-user-plus"></i>
-                            <span>Enroll Student In Lesson</span>
-                        </a>
-                    </li>
+
                     
-                    <li class="side-nav-item">
-                        <a href="Teacher_Resources.php" class="side-nav-link">
-                            <i class="uil-file-upload"></i>
-                            <span>Upload Resources</span>
-                        </a>
-                    </li>
+
                     
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                            <i class="uil-folder-plus"></i>
-                            <span> Reports </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarEmail">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="apps-email-inbox.php">Progress Reports</a>
-                                </li>
-                                <li>
-                                    <a href="apps-email-read.php">Assignment Log</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                
-                </ul>
 
                 <!-- Help Box -->
                 
@@ -160,11 +190,11 @@
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="Teacher_Profile.php" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar"> 
-                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                    <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Teacher Name</span>
-                                    <span class="account-position">Position</span>
+                                    <span class="account-user-name">Jillian Ward</span>
+                                    <span class="account-position">Teacher</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -174,31 +204,13 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="Teacher_Profile.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-edit me-1"></i>
-                                    <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lifebuoy me-1"></i>
-                                    <span>Support</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-outline me-1"></i>
-                                    <span>Lock Screen</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="Teacher_Login.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -283,13 +295,9 @@
                         <div class="col-12">
                             <div class="page-title-box">
                                 <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Create Student Account</a></li>
-                                        
-                                        <li class="breadcrumb-item active">Create Account</li>
-                                    </ol>
+                                    
                                 </div>
-                                <h4 class="page-title">Student Account Registration</h4>
+                                <h3 class="page-title"> Teacher Profile</h3>
                             </div>
                         </div>
                     </div>     
@@ -303,19 +311,19 @@
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Profile -->
-                    <div class="card bg-primary">
+                    <div class="card bg-dark">
                         <div class="card-body profile-user-box">
                             <div class="row">
                                 <div class="col-sm-8">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <div class="avatar-lg">
-                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="rounded-circle img-thumbnail">
+                                                <img src="assets/images/users/Jillian-Ward.jpg" alt="" class="rounded-circle img-thumbnail">
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div>
-                                                <h4 class="mt-1 mb-1 text-white">Michael Franklin</h4>
+                                                <h4 class="mt-1 mb-1 text-white">Jillian Ward</h4>
                                                 <p class="font-13 text-white-50"> Authorised Teacher</p>
 
                                                 
@@ -327,6 +335,9 @@
 
                                 <div class="col-sm-4">
                                     <div class="text-center mt-sm-0 mt-3 text-sm-end">
+
+                                    <span class="badge badge-outline-info">Teacher</span> <br> <br> <br>
+
                                         <button type="button" class="btn btn-light">
                                             <i class="mdi mdi-account-edit me-1"></i> Edit Profile
                                         </button>
@@ -352,13 +363,13 @@
                             <hr>
 
                             <div class="text-start">
-                                <p class="text-muted"><strong>Full Name :</strong> <span class="ms-2">Michael A. Franklin</span></p>
+                                <p class="text-muted"><strong>Full Name :</strong> <span class="ms-2">Jhyllianne Wardë Penzon</span></p>
 
                                 <p class="text-muted"><strong>Mobile :</strong><span class="ms-2">(+12) 123 1234 567</span></p>
 
-                                <p class="text-muted"><strong>Email :</strong> <span class="ms-2">coderthemes@gmail.com</span></p>
+                                <p class="text-muted"><strong>Email :</strong> <span class="ms-2">Jhyllianne@gmail.com</span></p>
 
-                                <p class="text-muted"><strong>Location :</strong> <span class="ms-2">USA</span></p>
+                                <p class="text-muted"><strong>Location :</strong> <span class="ms-2">Phillipines</span></p>
 
                                 <p class="text-muted"><strong>Languages :</strong>
                                     <span class="ms-2"> English, German, Spanish </span>

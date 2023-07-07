@@ -13,20 +13,16 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
 
-    <!-- Quill css -->
-    <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
-
 </head>
 
-<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed" style="visibility: visible;">
+<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
         <div class="leftside-menu menuitem-active">
 
             <!-- LOGO -->
-            <a href="index.php" class="logo text-center logo-light">
+            <a href="index.html" class="logo text-center logo-light">
                 <span class="logo-lg">
                     <img src="assets/images/logo.png" alt="" height="16">
                 </span>
@@ -36,7 +32,7 @@
             </a>
 
             <!-- LOGO -->
-            <a href="index.php" class="logo text-center logo-dark">
+            <a href="index.html" class="logo text-center logo-dark">
                 <span class="logo-lg">
                     <img src="assets/images/logo-dark.png" alt="" height="16">
                 </span>
@@ -61,7 +57,7 @@
                         <div class="collapse" id="sidebarDashboards" style="">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="dashboard-analytics.php">Home</a>
+                                    <a href="Teacher_index.html">Home</a>
                                 </li>
                                 
                                 
@@ -75,7 +71,7 @@
                     
 
                     <li class="side-nav-item">
-                        <a href="Teacher_AddStudent.php" class="side-nav-link">
+                        <a href="Teacher_AddStudent.html" class="side-nav-link">
                             <i class="uil-user-plus"></i>
                             <span>Create Student Account</span>
                         </a>
@@ -84,14 +80,14 @@
 
                     
                 <li class="side-nav-item">
-                        <a href="Teacher_enrollStud.php" class="side-nav-link">
+                        <a href="Teacher_enrollStud.html" class="side-nav-link">
                             <i class="uil-user-plus"></i>
                             <span>Enroll Student In Lesson</span>
                         </a>
                     </li>
                     
-                    <li class="side-nav-item menuitem-active">
-                        <a href="Teacher_Resources.php" class="side-nav-link">
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
                             <i class="uil-file-upload"></i>
                             <span>Upload Resources</span>
                         </a>
@@ -106,10 +102,10 @@
                         <div class="collapse" id="sidebarEmail">
                             <ul class="side-nav-second-level">
                                 <li>
-                                    <a href="#">Progress Reports</a>
+                                    <a href="apps-email-inbox.html">Progress Reports</a>
                                 </li>
                                 <li>
-                                    <a href="#">Assignment Log</a>
+                                    <a href="apps-email-read.html">Assignment Log</a>
                                 </li>
                             </ul>
                         </div>
@@ -117,19 +113,21 @@
                 
                 </ul>
 
-              
+                <!-- Help Box -->
+                
+                <!-- end Help Box -->
                 <!-- End Sidebar -->
 
                 <div class="clearfix"></div>
 
-            </div></div></div></div><div class="simplebar-placeholder" style="width: 70px; height: 1150px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+            </div></div></div></div><div class="simplebar-placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
             <!-- Sidebar -left -->
 
         </div>
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->
-        <!-- Start Page Content here -->
+        hello
         <!-- ============================================================== -->
 
         <div class="content-page">
@@ -332,7 +330,7 @@
                                 </span>
                                 <span>
                                     <span class="account-user-name">Teacher Name</span>
-                                    <span class="account-position">Teacher</span>
+                                    <span class="account-position">Position</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -452,368 +450,114 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="Teacher_Module.php">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashbaord</a></li>
                                         
-                                        <li class="breadcrumb-item active">Upload Resources</li>
+                                        <li class="breadcrumb-item active">Module</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Resources</h4>
+                                <h4 class="page-title">Module</h4>
                             </div>
                         </div>
-                    </div>    
+                    </div>     
                     <!-- end page title --> 
                     
                 </div> <!-- container -->
 
             </div> <!-- content -->
 
-            <div class="modal-header">
-                
-                  <!-- Standard modal -->
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#standard-modal-add"><i class="mdi mdi-plus-circle me-2"></i>Add</button>
-                    <div id="standard-modal-add" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel-add" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="standard-modalLabel-add">Modal Heading</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="list-group">
-                                        
-                                        
-                                        <button type="button" class="list-group-item list-group-item-action">
-                                            
-                                                <i class="uil-users-alt"></i>
-                                                <h6 class="text-primary">  &emsp13; Attendance</h6>
-                                                <span>Award points base on attendance</span>
-                                            
-                                        </button>
-
-                                        <button type="button" class="list-group-item list-group-item-action">
-                                            
-                                                <i class="uil-wifi"></i>
-                                                <h6 class="text-primary">&emsp13; Offline Quiz</h6>
-                                                <span>Take an Online Quiz</span>
-                                            
-                                        </button>
-
-                                        <button type="button" class="list-group-item list-group-item-action">
-                                            
-                                                <i class="uil-wifi-slash"></i>
-                                                <h6 class="text-primary">&emsp13; Quiz</h6>
-                                                <span>Take an Offline Quiz</span>
-                                            
-                                        </button>
-                                        
-                                        
-                                        
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
-            </div>
-
             
-
-            <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
-                <li class="nav-item">
-                    <a href="#Assignment" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                        <i class="mdi mdi-home-variant d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Assignment</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Questions" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                        <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Questions</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Grades" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Grades</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Submission" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Submission Status</span>
-                    </a>
-                </li>
-
-               
-            </ul>
-            
-            <div class="tab-content">
-                <!-- Assignment -->
-                <div class="tab-pane  show active" id="Assignment">
-
-                   
-
-                    
-
-                    <table class="table table-centered mb-0">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" class="form-check-input" id="customCheckcolor1"> &emsp; All</th>
-                                <th>Assignment</th>
-                                <th>Start date</th>
-                                <th>Due</th>
-                                <th>Status</th>
-                                <th>Max score</th>
-                                <th>%Of Overall</th>
-                                <th>To Grade/Submitted</th>
-                                <th>Grade Release</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="form-check-input" id="customCheckcolor1"></td>
-                                <td>
-                                    <h6>
-                                        <Span>08 Quiz 1</Span>
-                                    </h6>
-                                    <Span>Literacy</Span>
-                                </td>
-                                <td>Apr 12</td>
-                                <td>Apr 10</td>
-                                <td><span><i class="uil-check-circle"></i></span></td>
-                                <td><span>100</span></td>
-                                <td><span>6.7</span></td>
-                                <td><span>17</span></td>
-                                <td><span>Instant</span></td>
-                                
-                            
-                        </tbody>
-                    </table>
-
-
-
-
-
-                </div>
-                <!-- Questions -->
-                <div class="tab-pane" id="Questions">
-                   
-                    
-
-                    
-                    <!-- Center modal -->
-<div class="col- float-end modal-header">
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#centermodal">Add quiz assignment</button>
-<div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myCenterModalLabel">Add quiz Assignment</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-            </div>
-            <div class="modal-content">
-
-
-            
-                <div class="modal-body">
-    
-                    
-                    <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            
-                                            
-                            
-                                            <ul class="nav nav-tabs nav-bordered mb-3">
-                                                <li class="nav-item">
-                                                    <a href="#display-headings-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">Overview</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#display-headings-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link">Options</a>
-                                                </li>
-                                            </ul> <!-- end nav-->
-                                            <div class="tab-content">
-                                                <div class="tab-pane show active" id="display-headings-preview">
-                                                    
-                                                    
-            
-                                                    
-            
-    
-            
-                                                    
-                                                    <div class="row g-2"> 
-                                                        <div class="mb-3 col-"> 
-                                                            <label for="inpuTtitle" class="form-label">Title</label> 
-                                                            <input type="text" class="form-control" id="inputTtile"> 
-                                                    </div>
-                                                     <div class="mb-3 col-md-2"> 
-                                                        <label for="inputZip" class="form-label">Max Score</label> 
-                                                        <input type="text" class="form-control" id="inputscore"> 
-                                                        <label for="inputZip" class="form-label">Allow late?</label> 
-                                                        <input type="checkbox" class="form-check-input" id="inputscore"> 
-                                                    </div>
-                                                     <div class="mb-3 col-md-3"> <div class="mb-3 col-md-8"> 
-                                                        <label for="Category" class="form-label">Category</label> 
-                                                        <select id="Category" class="form-select"> 
-                                                            <option>None</option> 
-                                                            <option>Literacy</option> 
-                                                            <option>Numeracy</option>
-                                                         </select> </div> <div class="mb-3 col-md-8"> 
-                                                            <label for="Grading" class="form-label">Grading</label> 
-                                                            <select id="Grading" class="form-select"> 
-                                                                <option>None</option> 
-                                                                <option>Normal</option>
-                                                             </select> 
-                                                            </div> 
-                                                    </div> 
-                                                    <div class="mb-3 col-sm-3"> 
-                                                        <div class="mb-3"> 
-                                                            <label for="example-date" class="form-label">Start</label> 
-                                                            <input class="form-control" id="example-date" type="datetime" name="date">
-                                                         </div>
-                                                     <div class="mb-3">
-                                                         <label for="example-date" class="form-label">Due</label> 
-                                                         <input class="form-control" id="example-date" type="date" name="date"> 
-                                                        </div> 
-                                                    </div>
-                                                     <div class="mb-3 col-md-3"> 
-                                                        <div class="mb-3 col-md-8"> 
-                                                            <label for="Module" class="form-label">Module</label> 
-                                                            <select id="Module" class="form-select"> <option>None</option> 
-                                                                <option>Literacy</option> </select> </div>
-                                                     <div class="mb-3 col-md-8"> 
-                                                        <label for="Grading" class="form-label">Grading Score</label>
-                                                         <select id="Grading" class="form-select"> 
-                                                            <option>None</option> <option>Default</option>
-                                                         </select> </div> 
-                                                    </div> 
-                                                     
-                                                   
-                                                    <p>Instructions</p> 
-                                                    <!-- HTML --> 
-                                                    <div id="snow-editor" style="height: 300px;">
-                                                    
-                                                    
-                                                    
-                                                    </div>
-                                                     
-    
-    
-                                                    
-                                                    
-                                                     </div>  
-                                                </div> <!-- end preview-->
-                                            
-                                                <div class="tab-pane" id="display-headings-code">
-                                                    <div class="mt-2">
-                                                    <span>Release Grade &nbsp; &nbsp; &nbsp; &nbsp;</span> 
-                                                <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio3">Instant</label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio4">Manual</label>
-                                                    </div>
-                                                </div> <div class="mt-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck3">
-                                                        <label class="form-check-label" for="customCheck3">Timed</label>
-                                                    </div>
-                                                
-                                                    
-                                                    <div class="form-check form-check-inline float-end">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck4">
-                                                        <label class="form-check-label" for="customCheck4">Randomize Order</label>
-                                                    </div>
-                                                </div><div class="mt-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck3">
-                                                        <label class="form-check-label" for="customCheck3">Instant Feedback</label>
-                                                    </div>
-                                                
-                                                    
-                                                    <div class="form-check form-check-inline float-end">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck4">
-                                                        <label class="form-check-label" for="customCheck4">Allow Review</label>
-                                                    </div>
-                                                </div><div class="mt-2">
-                                                    <span>Grading &nbsp; &nbsp; &nbsp; &nbsp;</span> 
-                                                <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio3">Use Latest Score</label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio4">Use Best Score</label>
-                                                    </div>
-                                                </div>
-    <!-- end highlight-->
-                                                </div> <!-- end preview code-->
-                                            </div> <!-- end tab-content-->
-                                        </div> <!-- end card-body -->
-                                    </div> <!-- end card-->
-                                </div> <!-- end col -->
-                            </div>
-                        
-                        
-    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div> 
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-</div>
-
-
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                Multiple Choice
-                            </div>
+            <div class="col-">
+                <div class="card">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-2">
+                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
                             <div class="card-body">
-                                <blockquote class="card-bodyquote col-md-3">
-                                    <img class="card-img-top " src="assets/images/multiple.png" alt="Card image cap">
-                                </blockquote>
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
+                                <h3 class="card-title">Literacy</h3>
+                                <p class="card-text">Modules and sections can be completed in any order.</p>
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="collapse-preview1">
+                                        <p>
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                                                View Module
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="collapseExample1" style="">
+                                            <div class="card card-body mb-0">
+                                                <span>
+                                                    <a href="#" download>01 Handout</a>
+                                                </span>
+                                                <span>
+                                                    <a href="#" download>01 Quiz 1</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end preview-->
+            
+                                    <div class="tab-pane" id="collapse-code1">
+                                        <pre class="mb-0">                                            <!-- Your code here -->
+                                        </pre>
+                                    </div> <!-- end preview code-->
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-
-
-
-
-
-
-
-
-                </div>
-                <!-- Grades -->
-                <div class="tab-pane" id="Grades">
-                    <p>...</p>
-                </div>
-
-                <div class="tab-pane" id="Submission">
-                    <p>...</p>
                 </div>
             </div>
+            
+            <div class="col-">
+                <div class="card">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-2">
+                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">Numeracy</h3>
+                                <p class="card-text">Modules and sections can be completed in any order.</p>
+                                <div class="tab-content">
+                                    <div class="tab-pane show active" id="collapse-preview2">
+                                        <p>
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                                View Module
+                                            </a>
+                                        </p>
+                                        <div class="collapse" id="collapseExample2" style="">
+                                            <div class="card card-body mb-0">
+                                                <span>
+                                                    <a href="#">01 Handout</a>
+                                                </span>
+                                                <span>
+                                                    <a href="#">01 Quiz 1</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end preview-->
+            
+                                    <div class="tab-pane" id="collapse-code2">
+                                        <pre class="mb-0">                                            <!-- Your code here -->
+                                        </pre>
+                                    </div> <!-- end preview code-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+                        
+            
+
+            
 
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>2023 © Hyper - Coderthemes.com
+                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper - Coderthemes.com
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">
@@ -827,14 +571,14 @@
             </footer>
             <!-- end Footer -->
 
-        </div>
+        
 
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
 
 
-    </div>
+    
     <!-- END wrapper -->
 
 
@@ -934,11 +678,6 @@
     <!-- bundle -->
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/app.min.js"></script>
-
-    <!-- quill js -->
-    <script src="assets/js/vendor/quill.min.js"></script>
-    <!-- quill Init js-->
-    <script src="assets/js/pages/demo.quilljs.js"></script>
     
 
 

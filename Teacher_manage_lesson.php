@@ -8,10 +8,17 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <!-- App css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
-    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
+<!-- third party css -->
+<link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+<link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+<!-- third party css end -->
+
+<!-- App css -->
+<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+<link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+<link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+
+
 
 </head>
 
@@ -48,7 +55,7 @@
 
 
                                         <li class="side-nav-item menuitem">
-                                            <a href="Teacher_index.php" class="side-nav-link ">
+                                            <a href="Teacher_index.php" class="side-nav-link">
                                                 <i class="uil-home"></i>
                                                 <span>Dashboard</span>
                                             </a>
@@ -70,7 +77,6 @@
                                                     <li>
                                                         <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
                                                     </li>
-                                                    
 
                                                 </ul>
                                             </div>
@@ -133,7 +139,6 @@
                                         </li>
 
                                     </ul>
-
                 <!-- Help Box -->
                 
                 <!-- end Help Box -->
@@ -141,7 +146,7 @@
 
                 <div class="clearfix"></div>
 
-            </div></div></div></div><div class="simplebar-placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+            </div></div></div></div><div class="simplebar-required placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
             <!-- Sidebar -left -->
 
         </div>
@@ -162,181 +167,15 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" required="" placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
-                                <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
+                        
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                                </a>
+                        
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                                </a>
-
-                            </div>
-                        </li>
-
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="noti-icon-badge"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="javascript: void(0);" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
-
-                                <div style="max-height: 230px;" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">1 min ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-account-plus"></i>
-                                        </div>
-                                        <p class="notify-details">New user registered.
-                                            <small class="text-muted">5 hours ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Cristina Pride</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Hi, How are you? What about our next meeting</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">4 days ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Karen Robinson</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Wow ! this admin looks good and awesome design</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-heart"></i>
-                                        </div>
-                                        <p class="notify-details">Carlos Crouch liked
-                                            <b>Admin</b>
-                                            <small class="text-muted">13 days ago</small>
-                                        </p>
-                                    </a>
-                                </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
-
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
-
-                        <li class="dropdown notification-list d-none d-sm-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-view-apps noti-icon"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
-                                                <span>G Suite</span>
-                                            </a>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div>
-
-                            </div>
-                        </li>
+                        
 
                         <li class="notification-list">
                             <a class="nav-link end-bar-toggle" href="javascript: void(0);">
@@ -381,7 +220,7 @@
                     <div class="app-search dropdown d-none d-lg-block">
                         <form>
                             <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                <input type="text" class="form-control dropdown-toggle" required="" placeholder="Search..." id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
                                 <button class="input-group-text btn-primary" type="submit">Search</button>
                             </div>
@@ -420,7 +259,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic required placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Erwin Brown</h5>
                                             <span class="font-12 mb-0">UI Designer</span>
@@ -431,7 +270,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic required placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Jacob Deo</h5>
                                             <span class="font-12 mb-0">Developer</span>
@@ -453,12 +292,12 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashbaord</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Enroll Student In Lesson</a></li>
                                         
-                                        <li class="breadcrumb-item active">Module</li>
+                                        <li class="breadcrumb-item active">Manage Student</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Module</h4>
+                                <h4 class="page-title">Manage Lesson</h4>
                             </div>
                         </div>
                     </div>     
@@ -469,87 +308,86 @@
             </div> <!-- content -->
 
             
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview1">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample1" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#" download>01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#" download>01 Quiz 1</a>
-                                                </span>
+            
+            
+            <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- <div class="row mb-2">
+                                            <div class="col-sm-4">
+                                                <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Sellers</a>
                                             </div>
-                                        </div>
-                                    </div> <!-- end preview-->
-            
-                                    <div class="tab-pane" id="collapse-code1">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Numeracy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview2">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample2" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#">01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">01 Quiz 1</a>
-                                                </span>
+                                            <div class="col-sm-8">
+                                                <div class="text-sm-end">
+                                                    <button type="button" class="btn btn-success mb-2 me-1"><i class="mdi mdi-cog"></i></button>
+                                                    <button type="button" class="btn btn-light mb-2 me-1">Import</button>
+                                                    <button type="button" class="btn btn-light mb-2">Export</button>
+                                                </div>
                                             </div>
+                                            end col
+                                        </div> -->
+                
+                                        <div class="table-responsive">
+                                            <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap" id="products-datatable">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th style="width: 20px;">
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                                <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                                                            </div>
+                                                        </th>
+                                                        <th>LRN</th>
+                                                        <th>Student Name</th>
+                                                        <th>Birthdate</th>
+                                                        <th>Gender</th>
+                                                        <th>Full Address</th>
+                                                        <th>Phone</th>
+                                                        <th>Email</th>
+                                                        <th>Action</th>
+                                                        <th>Status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <input type="checkbox" class="form-check-input" id="customCheck2">
+                                                                <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                                            </div>
+                                                        </td>
+                                                        <td>02000221026</td>
+                                                        <td class="table-user">
+                                                            <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                                                            <a href="javascript:void(0);" class="text-body fw-semibold">Paul J. Friend</a>
+                                                        </td>
+                                                        <td><span class="fw-semibold"> 09/04/2001</span>
+                                                        </td>
+                                                        <td>male</td>
+                                                        <td>gensan city</td>
+                                                        <td>09217381873</td>   
+                                                        <td>jvlaroco@gmail.com</td>
+                                                        <td>
+                                                            <a href="javascript:void(0);" class="action-icon"> <i class="uil-eye"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge badge-danger-lighten">Hidden</span>
+                                                        </td>
+                                                    </tr>
+                                                    
+                                                </tbody>
+                                            </table>
                                         </div>
-                                    </div> <!-- end preview-->
-            
-                                    <div class="tab-pane" id="collapse-code2">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
-                            </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
                         </div>
-                    </div>
-                </div>
-            </div>
+                        <!-- end row -->
             
-
+            
                         
             
 
@@ -560,7 +398,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper - Coderthemes.com
+                            <script>document.write(new Date().getFullYear())</script>20232023202320232023202320232023 © Hyper - Coderthemes.com
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">
@@ -608,12 +446,12 @@
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked="">
-                    <label class="form-check-label" for="light-mode-check">Light Mode</label>
+                    <label class="form-check-label" for="light-mode-check">Light Mode <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
-                    <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
+                    <label class="form-check-label" for="dark-mode-check">Dark Mode <sup>*</sup></label>
                 </div>
    
 
@@ -622,12 +460,12 @@
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked="">
-                    <label class="form-check-label" for="fluid-check">Fluid</label>
+                    <label class="form-check-label" for="fluid-check">Fluid <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
-                    <label class="form-check-label" for="boxed-check">Boxed</label>
+                    <label class="form-check-label" for="boxed-check">Boxed <sup>*</sup></label>
                 </div>
     
 
@@ -636,32 +474,32 @@
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
-                    <label class="form-check-label" for="default-check">Default</label>
+                    <label class="form-check-label" for="default-check">Default <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="light" id="light-check" checked="">
-                    <label class="form-check-label" for="light-check">Light</label>
+                    <label class="form-check-label" for="light-check">Light <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-3">
                     <input class="form-check-input" type="checkbox" name="theme" value="dark" id="dark-check">
-                    <label class="form-check-label" for="dark-check">Dark</label>
+                    <label class="form-check-label" for="dark-check">Dark <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="fixed" id="fixed-check" checked="">
-                    <label class="form-check-label" for="fixed-check">Fixed</label>
+                    <label class="form-check-label" for="fixed-check">Fixed <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="condensed" id="condensed-check">
-                    <label class="form-check-label" for="condensed-check">Condensed</label>
+                    <label class="form-check-label" for="condensed-check">Condensed <sup>*</sup></label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="scrollable" id="scrollable-check">
-                    <label class="form-check-label" for="scrollable-check">Scrollable</label>
+                    <label class="form-check-label" for="scrollable-check">Scrollable <sup>*</sup></label>
                 </div>
 
                 <div class="d-grid mt-4">
@@ -671,17 +509,35 @@
                 </div>
             </div> <!-- end padding-->
 
-        </div></div></div></div><div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+        </div></div></div></div><div class="simplebar-required placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
     </div>
 
     <div class="rightbar-overlay"></div>
     <!-- /End-bar -->
 
 
-    <!-- bundle -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
+   <!-- bundle -->
+   <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+        <script src="assets/js/vendor/apexcharts.min.js"></script>
+        <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.sellers.js"></script>
+        <!-- end demo js-->
+
+
+
+
+</div>
+    </div>
+        
     
-
-
-</body></html>
+    </body></html>
