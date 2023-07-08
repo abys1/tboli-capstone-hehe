@@ -44,6 +44,7 @@
             <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
 
                 <!--- Sidemenu -->
+                <!--- Sidemenu -->
                 <ul class="side-nav">
 
 
@@ -58,13 +59,17 @@
                                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
-                                                <span> Enrollment Services </span>
+                                                <span> Enrolment Services </span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <div class="collapse" id="sidebarDashboards" style="">
                                                 <ul class="side-nav-second-level">
-                                                <li>
-                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Student</a>
+                                                    <li>
+                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
                                                     </li>
 
                                                     <li>
@@ -78,11 +83,35 @@
 
 
                                         <li class="side-nav-item">
-                                            <a href="Teacher_manage_lesson.php" class="side-nav-link">
+                                            <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
                                                 <i class="dripicons-document-edit"></i>
-                                                <span>Manage Lesson</span>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Lesson </span>
+                                                <span class="menu-arrow"></span>
                                             </a>
+                                            <div class="collapse" id="sidebarLessons" style="">
+                                                <ul class="side-nav-second-level">
+
+                                                    <li>
+                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Add Lesson</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_manage_lesson.php"><i class=" uil-plus-circle"></i> Edit Lesson</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
+                                                    </li>
+
+                                                    
+                                                    
+
+                                                </ul>
+                                            </div>
                                         </li>
+
+
+                                        
 
                                         <li class="side-nav-item">
                                             <a href="Teacher_uploadlesson.php" class="side-nav-link">
@@ -307,7 +336,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h3 class="card-title">Literacy</h3>
+                                <h3 class="card-title">Lesson 1-Literacy</h3>
                                 <p class="card-text">Modules and sections can be completed in any order.</p>
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="collapse-preview1">
@@ -347,7 +376,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h3 class="card-title">Numeracy</h3>
+                                <h3 class="card-title">Lesson 2-Literacy</h3>
                                 <p class="card-text">Modules and sections can be completed in any order.</p>
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="collapse-preview2">
