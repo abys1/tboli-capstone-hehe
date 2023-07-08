@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- <link rel="shortcut icon" href="assets/images/users/Jillian-Ward.jpg"> -->
 
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
 
+    <!-- Quill css -->
+    <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css">
+
+    <!-- third party css -->
+    <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+    <!-- third party css end -->
+
+    
+
+
 </head>
 
 <body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
     <!-- Begin page -->
-    <div class="wrapper">
+    <div class="wrapper menuitem-active">
         <!-- ========== Left Sidebar Start ========== -->
-        <div class="leftside-menu menuitem-active">
+        <div class="leftside-menu menuitem-active show">
 
             <!-- LOGO -->
             <a href="index.php" class="logo text-center logo-light">
@@ -41,7 +53,7 @@
                 </span>
             </a>
 
-            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper menuitem-active" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask show"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper menuitem-active" style="height: 100%; overflow: hidden;"><div class="simplebar-content show" style="padding: 0px;">
 
                 <!--- Sidemenu -->
                 <ul class="side-nav">
@@ -185,27 +197,19 @@
 
                                     </ul>
 
-                    
-
-                    
-
-                    
-
-                <!-- Help Box -->
-                
-                <!-- end Help Box -->
+              
                 <!-- End Sidebar -->
 
                 <div class="clearfix"></div>
 
-            </div></div></div></div><div class="simplebar-required placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+            </div></div></div></div><div class="simplebar-placeholder" style="width: 70px; height: 1150px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
             <!-- Sidebar -left -->
 
         </div>
         <!-- Left Sidebar End -->
 
         <!-- ============================================================== -->
-        hello
+        <!-- Start Page Content here -->
         <!-- ============================================================== -->
 
         <div class="content-page">
@@ -219,7 +223,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" required="" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
@@ -236,7 +240,7 @@
                         </li>
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="Teacher_Profile.php" role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar"> 
                                     <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
@@ -272,9 +276,9 @@
                     <div class="app-search dropdown d-none d-lg-block">
                         <form>
                             <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" required="" placeholder="Search..." id="top-search">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
-                                <button class="input-group-text btn-primary" type="submit">Search</button>
+                                <button class="input-group-text btn-primary" type="supmit">Search</button>
                             </div>
                         </form>
 
@@ -311,7 +315,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic required placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Erwin Brown</h5>
                                             <span class="font-12 mb-0">UI Designer</span>
@@ -322,7 +326,7 @@
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic required placeholder image" height="32">
+                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
                                         <div class="w-100">
                                             <h5 class="m-0 font-14">Jacob Deo</h5>
                                             <span class="font-12 mb-0">Developer</span>
@@ -343,107 +347,157 @@
                         <div class="col-12">
                             <div class="page-title-box">
                                 <div class="page-title-right">
-                                    
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="Teacher_Module.php">Dashboard</a></li>
+                                        
+                                        <li class="breadcrumb-item active">Upload Lesson</li>
+                                    </ol>
                                 </div>
-                                <h3 class="page-title"> Teacher Profile</h3>
+                                <h4 class="page-title">Upload Lesson</h4>
                             </div>
                         </div>
-                    </div>     
+                    </div>    
                     <!-- end page title --> 
                     
                 </div> <!-- container -->
 
             </div> <!-- content -->
 
-            
             <div class="row">
-                <div class="col-sm-12">
-                    <!-- Profile -->
-                    <div class="card bg-dark">
-                        <div class="card-body profile-user-box">
-                            <div class="row">
-                                <div class="col-sm-8">
-                                    <div class="row align-items-center">
-                                        <div class="col-auto">
-                                            <div class="avatar-lg">
-                                                <img src="assets/images/users/Jillian-Ward.jpg" alt="" class="rounded-circle img-thumbnail">
-                                            </div>
-                                        </div>
-                                        <div class="col">
-                                            <div>
-                                                <h4 class="mt-1 mb-1 text-white">Jillian Ward</h4>
-                                                <p class="font-13 text-white-50"> Authorised Teacher</p>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="col-xl-6">
+                                                <div class="mb-3">
+                                                    <label for="projectname" class="form-label">Lesson Title <sup>*</sup></label>
+                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="project-overview" class="form-label">Content Descriptions <sup>*</sup></label></label>
+                                                    <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
+                                                </div>
+
+                                                <!-- Date View -->
+                                                
 
                                                 
+
+                                                <div class="mb-0">
+                                                    <label for="project-overview" class="form-label">Upload Student in?</label>
+                                                    
+                                                    <select class="form-control select2" data-toggle="select2">
+                                                        <option>Select</option>
+                                                        <option value="AZ">Literacy</option>
+                                                        <option value="CO">Numeracy</option>
+                                                        
+                                                    </select>
+
+                                                    
+        
+                                                </div>
+
+                                                <div class="mb-3 position-relative" id="datepicker2">
+                                                        <br>
+                                                        <input type="button" class="form-control btn-primary" value="Add">
+                                                    </div>
+
+                                            </div> <!-- end col-->
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-3 mt-3 mt-xl-0">
+                                                    <label for="projectname" class="mb-0">Upload Audio <sup>Optional</sup></label>
+                                                   
+
+                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                                                        <div class="fallback">
+                                                            <input name="audio" type="file">
+                                                        </div>
+
+                                                        <div class="dz-message needsclick">
+                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
+                                                            <h4>Drop files here or click to upload.</h4>
+                                                        </div>
+                                                    </form>
+
+                                                    <label for="projectname" class="mb-0">Upload Video <sup>Optional</sup> </label>
+
+                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                                                        <div class="fallback">
+                                                            <input name="video" type="file">
+                                                        </div>
+
+                                                        <div class="dz-message needsclick">
+                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
+                                                            <h4>Drop files here or click to upload </h4>
+                                                        </div>
+                                                    </form>
+
+                                                    <label for="projectname" class="mb-0"> Upload Image </label>
+
+                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                                                        <div class="fallback">
+                                                            <input name="file" type="file">
+                                                        </div>
+
+                                                        <div class="dz-message needsclick">
+                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
+                                                            <h4>Drop files here or click to upload.</h4>
+                                                        </div>
+                                                    </form>
+
+                                                    
+
+                                                    <!-- Preview -->
+                                                    <div class="dropzone-previews mt-3" id="file-previews"></div>
+
+                                                    <!-- file preview template -->
+                                                    <div class="d-none" id="uploadPreviewTemplate">
+                                                        <div class="card mt-1 mb-0 shadow-none border">
+                                                            <div class="p-2">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-auto">
+                                                                        <img data-dz-thumbnail="" src="#" class="avatar-sm rounded bg-light" alt="">
+                                                                    </div>
+                                                                    <div class="col ps-0">
+                                                                        <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name=""></a>
+                                                                        <p class="mb-0" data-dz-size=""></p>
+                                                                    </div>
+                                                                    <div class="col-auto">
+                                                                        <!-- Button -->
+                                                                        <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove="">
+                                                                            <i class="dripicons-cross"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end file preview template -->
+                                                </div>
+
+                                                <!-- Date View -->
                                                 
-                                            </div>
+                                            </div> <!-- end col-->
                                         </div>
-                                    </div>
-                                </div> <!-- end col-->
+                                        <!-- end row -->
 
-                                <div class="col-sm-4">
-                                    <div class="text-center mt-sm-0 mt-3 text-sm-end">
-
-                                    <span class="badge badge-outline-info">Teacher</span> <br> <br> <br>
-
-                                        <button type="button" class="btn btn-light">
-                                            <i class="mdi mdi-account-edit me-1"></i> Edit Profile
-                                        </button>
-                                    </div>
-                                </div> <!-- end col-->
-                            </div> <!-- end row -->
-
-                        </div> <!-- end card-body/ profile-user-box-->
-                    </div><!--end profile/ card -->
-                </div> <!-- end col-->
-            </div>
-
-            <div class="row">
-                <div class="col-xl-4">
-                    <!-- Personal-Information -->
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title mt-0 mb-3">Teacher Information</h4>
-                            <p class="text-muted font-13">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores iusto dignissimos doloribus architecto, quas tenetur libero rerum accusamus. Quibusdam, porro voluptatum sint voluptatibus corrupti id ullam eaque illum aut nulla alias est eum, cumque aliquid? Eos illum eaque quisquam provident dicta accusamus odit nulla, qui fugiat odio neque omnis et pariatur dolorum ut repellendus adipisci. Dignissimos, cum cumque quo error excepturi a veniam qui ducimus animi, accusamus eos iste repellat quaerat aliquid labore sint, voluptatum facilis placeat repudiandae reiciendis modi esse! Placeat, amet voluptas autem ipsum ullam rem incidunt. Dolorem nostrum laboriosam quis illo distinctio. A corrupti provident minima esse?
-                            </p>
-
-                            <hr>
-
-                            <div class="text-start">
-                                <p class="text-muted"><strong>Full Name :</strong> <span class="ms-2">Jhyllianne Wardë Penzon</span></p>
-
-                                <p class="text-muted"><strong>Mobile :</strong><span class="ms-2">(+12) 123 1234 567</span></p>
-
-                                <p class="text-muted"><strong>Email :</strong> <span class="ms-2">Jhyllianne@gmail.com</span></p>
-
-                                <p class="text-muted"><strong>Location :</strong> <span class="ms-2">Phillipines</span></p>
-
-                                <p class="text-muted"><strong>Languages :</strong>
-                                    <span class="ms-2"> English, German, Spanish </span>
-                                </p>
-                                <p class="text-muted mb-0" id="tooltip-container"><strong>Elsewhere :</strong>
-                                    <a class="d-inline-block ms-2 text-muted" data-bs-container="#tooltip-container" data-bs-placement="top" data-bs-toggle="tooltip" href="" title="Facebook"><i class="mdi mdi-facebook"></i></a>
-                                    <a class="d-inline-block ms-2 text-muted" data-bs-container="#tooltip-container" data-bs-placement="top" data-bs-toggle="tooltip" href="" title="Twitter"><i class="mdi mdi-twitter"></i></a>
-                                    <a class="d-inline-block ms-2 text-muted" data-bs-container="#tooltip-container" data-bs-placement="top" data-bs-toggle="tooltip" href="" title="Skype"><i class="mdi mdi-skype"></i></a>
-                                </p>
-
-                            </div>
+                                    </div> <!-- end card-body -->
+                                </div> <!-- end card-->
+                            </div> <!-- end col-->
                         </div>
-                    </div>
-                    <!-- Personal-Information -->
+                        <!-- end row-->
 
-                    
-                     <!-- end card-->
+            
 
-                </div> <!-- end col-->
+            
 
-                <div class="col-xl-8">
+            
 
-                </div>
-                <!-- end col -->
-
-            </div>
+            
+            
             
 
             <!-- Footer Start -->
@@ -451,7 +505,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>202320232023202320232023 © Hyper - Coderthemes.com
+                            <script>document.write(new Date().getFullYear())</script>20232023 © Hyper - Coderthemes.com
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">
@@ -465,14 +519,14 @@
             </footer>
             <!-- end Footer -->
 
-        
+        </div>
 
         <!-- ============================================================== -->
         <!-- End Page content -->
         <!-- ============================================================== -->
 
 
-    
+    </div>
     <!-- END wrapper -->
 
 
@@ -499,12 +553,12 @@
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked="">
-                    <label class="form-check-label" for="light-mode-check">Light Mode <sup>*</sup></label>
+                    <label class="form-check-label" for="light-mode-check">Light Mode</label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
-                    <label class="form-check-label" for="dark-mode-check">Dark Mode <sup>*</sup></label>
+                    <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
                 </div>
    
 
@@ -513,12 +567,12 @@
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked="">
-                    <label class="form-check-label" for="fluid-check">Fluid <sup>*</sup></label>
+                    <label class="form-check-label" for="fluid-check">Fluid</label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
-                    <label class="form-check-label" for="boxed-check">Boxed <sup>*</sup></label>
+                    <label class="form-check-label" for="boxed-check">Boxed</label>
                 </div>
     
 
@@ -527,32 +581,32 @@
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
-                    <label class="form-check-label" for="default-check">Default <sup>*</sup></label>
+                    <label class="form-check-label" for="default-check">Default</label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="light" id="light-check" checked="">
-                    <label class="form-check-label" for="light-check">Light <sup>*</sup></label>
+                    <label class="form-check-label" for="light-check">Light</label>
                 </div>
 
                 <div class="form-check form-switch mb-3">
                     <input class="form-check-input" type="checkbox" name="theme" value="dark" id="dark-check">
-                    <label class="form-check-label" for="dark-check">Dark <sup>*</sup></label>
+                    <label class="form-check-label" for="dark-check">Dark</label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="fixed" id="fixed-check" checked="">
-                    <label class="form-check-label" for="fixed-check">Fixed <sup>*</sup></label>
+                    <label class="form-check-label" for="fixed-check">Fixed</label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="condensed" id="condensed-check">
-                    <label class="form-check-label" for="condensed-check">Condensed <sup>*</sup></label>
+                    <label class="form-check-label" for="condensed-check">Condensed</label>
                 </div>
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="compact" value="scrollable" id="scrollable-check">
-                    <label class="form-check-label" for="scrollable-check">Scrollable <sup>*</sup></label>
+                    <label class="form-check-label" for="scrollable-check">Scrollable</label>
                 </div>
 
                 <div class="d-grid mt-4">
@@ -562,7 +616,7 @@
                 </div>
             </div> <!-- end padding-->
 
-        </div></div></div></div><div class="simplebar-required placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+        </div></div></div></div><div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
     </div>
 
     <div class="rightbar-overlay"></div>
@@ -573,8 +627,14 @@
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/app.min.js"></script>
 
-</div>
-    </div>
-        </body>
+    <!-- quill js -->
+    <script src="assets/js/vendor/quill.min.js"></script>
+    <!-- quill Init js-->
+    <script src="assets/js/pages/demo.quilljs.js"></script>
+
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <script src="assets/js/ui/component.fileupload.js"></script>
     
-    </html>
+
+
+</body></html>

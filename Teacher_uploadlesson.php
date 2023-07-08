@@ -56,8 +56,7 @@
             <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper menuitem-active" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask show"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper menuitem-active" style="height: 100%; overflow: hidden;"><div class="simplebar-content show" style="padding: 0px;">
 
                 <!--- Sidemenu -->
-                
-                                    <ul class="side-nav">
+                <ul class="side-nav">
 
 
                                         <li class="side-nav-item menuitem">
@@ -65,6 +64,30 @@
                                                 <i class="uil-home"></i>
                                                 <span>Dashboard</span>
                                             </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Users</span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarUsers" style="">
+                                                <ul class="side-nav-second-level">
+
+                                                    <li>
+                                                        <a href="Teacher_Learners.php"> <i class=" uil-user-circle" ></i> Learner</a>
+                                                    </li>
+                                                    
+
+                                                    <li>
+                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                                    </li>
+                                                    
+
+                                                </ul>
+                                            </div>
                                         </li>
 
                                         <li class="side-nav-item">
@@ -84,9 +107,7 @@
                                                         <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
                                                     </li>
 
-                                                    <li>
-                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
-                                                    </li>
+                                                    
                                                     
 
                                                 </ul>
@@ -108,7 +129,7 @@
                                                         <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
                                                     </li>
                                                     <li>
-                                                        <a href="Teacher_manage_lesson.php"><i class=" uil-plus-circle"></i> Edit Lesson</a>
+                                                        <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
                                                     </li>
 
                                                     <li>
@@ -121,8 +142,14 @@
                                                 </ul>
                                             </div>
                                         </li>
+                                        
 
-
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_ManageContent.php" class="side-nav-link">
+                                                <i class="uil-file-upload-alt"></i>
+                                                <span>Manage Content</span>
+                                            </a>
+                                        </li>
                                         
 
                                         
@@ -169,7 +196,6 @@
                                         </li>
 
                                     </ul>
-
               
                 <!-- End Sidebar -->
 

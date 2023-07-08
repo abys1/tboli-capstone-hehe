@@ -50,125 +50,147 @@
 
             <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
 
-                <!--- Sidemenu -->
-                <!--- Sidemenu -->
-                <ul class="side-nav">
+               <!--- Sidemenu -->
+               <ul class="side-nav">
 
 
-                                        <li class="side-nav-item menuitem">
-                                            <a href="Teacher_index.php" class="side-nav-link ">
-                                                <i class="uil-home"></i>
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
+                    <li class="side-nav-item menuitem">
+                        <a href="Teacher_index.php" class="side-nav-link ">
+                            <i class="uil-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                                                <i class="uil-user-plus"></i>
-                                                <span class="badge bg-success float-end"></span>
-                                                <span> Enrolment Services </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarDashboards" style="">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
-                                                    </li>
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link collapsed">
+                            <i class="uil-user-plus"></i>
+                            <span class="badge bg-success float-end"></span>
+                            <span> Manage Users</span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarUsers" style="">
+                            <ul class="side-nav-second-level">
 
-                                                    <li>
-                                                        <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
-                                                    </li>
+                                <li>
+                                    <a href="Teacher_Learners.php"> <i class=" uil-user-circle" ></i> Learner</a>
+                                </li>
+                                
 
-                                                    <li>
-                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
-                                                    </li>
-                                                    
+                                <li>
+                                    <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                </li>
+                                
 
-                                                </ul>
-                                            </div>
-                                        </li>
+                            </ul>
+                        </div>
+                    </li>
 
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                            <i class="uil-user-plus"></i>
+                            <span class="badge bg-success float-end"></span>
+                            <span> Enrolment Services </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarDashboards" style="">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
+                                </li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
-                                                <i class="dripicons-document-edit"></i>
-                                                <span class="badge bg-success float-end"></span>
-                                                <span> Manage Lesson </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarLessons" style="">
-                                                <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
+                                </li>
 
-                                                    <li>
-                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Add Lesson</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="Teacher_manage_lesson.php"><i class=" uil-plus-circle"></i> Edit Lesson</a>
-                                                    </li>
+                                
+                                
 
-                                                    <li>
-                                                        <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
-                                                    </li>
-
-                                                    
-                                                    
-
-                                                </ul>
-                                            </div>
-                                        </li>
+                            </ul>
+                        </div>
+                    </li>
 
 
-                                        
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
+                            <i class="dripicons-document-edit"></i>
+                            <span class="badge bg-success float-end"></span>
+                            <span> Manage Lesson </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarLessons" style="">
+                            <ul class="side-nav-second-level">
 
-                                        <li class="side-nav-item">
-                                            <a href="Teacher_uploadlesson.php" class="side-nav-link">
-                                                <i class="uil-file-upload-alt"></i>
-                                                <span>Upload Lesson</span>
-                                            </a>
-                                        </li>
+                                <li>
+                                    <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
+                                </li>
+                                <li>
+                                    <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
+                                </li>
 
-                                        <li class="side-nav-item">
-                                            <a href="Teacher_quiz.php" class="side-nav-link">
-                                            <i class="dripicons-document-edit"></i>
-                                                <span>Manage Quiz</span>
-                                            </a>
-                                        </li>
+                                <li>
+                                    <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
+                                </li>
 
-                                        <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Assign Lesson to Student</span>
-                                            </a>
-                                        </li>
-                                        <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Progress</span>
-                                            </a>
-                                        </li>
+                                
+                                
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                                                <i class="uil-folder-plus"></i>
-                                                <span> Reports </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarEmail">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="Teacher_list_of_teacher.php">List of Teacher</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="Teacher_studentlist.php">List of Learners</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Lesson w/Content</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+                            </ul>
+                        </div>
+                    </li>
 
-                                    </ul>
+
+                    <li class="side-nav-item">
+                        <a href="Teacher_ManageContent.php" class="side-nav-link">
+                            <i class="uil-file-upload-alt"></i>
+                            <span>Manage Content</span>
+                        </a>
+                    </li>
+
+
+
+
+                    <li class="side-nav-item">
+                        <a href="Teacher_quiz.php" class="side-nav-link">
+                        <i class="dripicons-document-edit"></i>
+                            <span>Manage Quiz</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-user-plus"></i>
+                            <span>Assign Lesson to Student</span>
+                        </a>
+                    </li>
+                    <li class="side-nav-item">
+                        <a href="#" class="side-nav-link">
+                            <i class="uil-user-plus"></i>
+                            <span>Progress</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-item">
+                        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                            <i class="uil-folder-plus"></i>
+                            <span> Reports </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarEmail">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="Teacher_list_of_teacher.php">List of Teacher</a>
+                                </li>
+                                <li>
+                                    <a href="Teacher_studentlist.php">List of Learners</a>
+                                </li>
+                                <li>
+                                    <a href="#">List of Lesson w/Content</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    </ul>
                 <!-- Help Box -->
                 
                 <!-- end Help Box -->
