@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
 
 <!-- third party css -->
 <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
@@ -55,7 +55,7 @@
 
 
                                         <li class="side-nav-item menuitem">
-                                            <a href="Teacher_index.php" class="side-nav-link">
+                                            <a href="Teacher_index.php" class="side-nav-link ">
                                                 <i class="uil-home"></i>
                                                 <span>Dashboard</span>
                                             </a>
@@ -65,18 +65,23 @@
                                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
-                                                <span> Users </span>
+                                                <span> Enrolment Services </span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <div class="collapse" id="sidebarDashboards" style="">
                                                 <ul class="side-nav-second-level">
-                                                <li>
-                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Student</a>
+                                                    <li>
+                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
                                                     </li>
 
                                                     <li>
                                                         <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
                                                     </li>
+                                                    
 
                                                 </ul>
                                             </div>
@@ -84,11 +89,35 @@
 
 
                                         <li class="side-nav-item">
-                                            <a href="Teacher_manage_lesson.php" class="side-nav-link">
+                                            <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
                                                 <i class="dripicons-document-edit"></i>
-                                                <span>Manage Lesson</span>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Lesson </span>
+                                                <span class="menu-arrow"></span>
                                             </a>
+                                            <div class="collapse" id="sidebarLessons" style="">
+                                                <ul class="side-nav-second-level">
+
+                                                    <li>
+                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Add Lesson</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_manage_lesson.php"><i class=" uil-plus-circle"></i> Edit Lesson</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
+                                                    </li>
+
+                                                    
+                                                    
+
+                                                </ul>
+                                            </div>
                                         </li>
+
+
+                                        
 
                                         <li class="side-nav-item">
                                             <a href="Teacher_uploadlesson.php" class="side-nav-link">
@@ -292,9 +321,10 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Enroll Student In Lesson</a></li>
+                                        <li class="breadcrumb-item"><a href="Teacher_index.php">Dashboard</a></li>
                                         
-                                        <li class="breadcrumb-item active">Manage Student</li>
+                                        <li class="breadcrumb-item active">Manage Lessons</li>
+                                        
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Manage Lesson</h4>

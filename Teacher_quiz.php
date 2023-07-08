@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
 
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
@@ -49,39 +49,72 @@
 
                 <!--- Sidemenu -->
                 <ul class="side-nav">
-                                            <li class="side-nav-item menuitem">
-                                                <a href="Teacher_index.php" class="side-nav-link">
-                                                    <i class="uil-home"></i>
-                                                    <span>Dashboard</span>
-                                                </a>
-                                            </li>
 
-                                            <li class="side-nav-item">
-                                                <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                                                    <i class="uil-user-plus"></i>
-                                                    <span class="badge bg-success float-end"></span>
-                                                    <span> Users </span>
-                                                    <span class="menu-arrow"></span>
-                                                </a>
-                                                <div class="collapse" id="sidebarDashboards" style="">
-                                                    <ul class="side-nav-second-level">
+
+                                        <li class="side-nav-item menuitem">
+                                            <a href="Teacher_index.php" class="side-nav-link ">
+                                                <i class="uil-home"></i>
+                                                <span>Dashboard</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Enrolment Services </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboards" style="">
+                                                <ul class="side-nav-second-level">
                                                     <li>
-                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Student</a>
+                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
                                                     </li>
 
                                                     <li>
                                                         <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
                                                     </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
+                                                    
 
-                                            <li class="side-nav-item">
-                                            <a href="Teacher_manage_lesson.php" class="side-nav-link">
-                                                <i class="dripicons-document-edit"></i>
-                                                <span>Manage Lesson</span>
-                                            </a>
+                                                </ul>
+                                            </div>
                                         </li>
+
+
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
+                                                <i class="dripicons-document-edit"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Lesson </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarLessons" style="">
+                                                <ul class="side-nav-second-level">
+
+                                                    <li>
+                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Add Lesson</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_manage_lesson.php"><i class=" uil-plus-circle"></i> Edit Lesson</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
+                                                    </li>
+
+                                                    
+                                                    
+
+                                                </ul>
+                                            </div>
+                                        </li>
+
+
+                                        
 
                                         <li class="side-nav-item">
                                             <a href="Teacher_uploadlesson.php" class="side-nav-link">
@@ -97,40 +130,41 @@
                                             </a>
                                         </li>
 
-                                            <li class="side-nav-item">
-                                                <a href="#" class="side-nav-link">
-                                                    <i class="uil-user-plus"></i>
-                                                    <span>Assign Lesson to Student</span>
-                                                </a>
-                                            </li>
-                                            <li class="side-nav-item">
-                                                <a href="#" class="side-nav-link">
-                                                    <i class="uil-user-plus"></i>
-                                                    <span>Progress</span>
-                                                </a>
-                                            </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Assign Lesson to Student</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Progress</span>
+                                            </a>
+                                        </li>
 
-                                            <li class="side-nav-item">
-                                                <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                                                    <i class="uil-folder-plus"></i>
-                                                    <span> Reports </span>
-                                                    <span class="menu-arrow"></span>
-                                                </a>
-                                                <div class="collapse" id="sidebarEmail">
-                                                    <ul class="side-nav-second-level">
-                                                        <li>
-                                                            <a href="Teacher_list_of_teacher.php">List of Teacher</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="Teacher_studentlist.php">List of Learners</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">List of Lesson w/Content</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                </ul>
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                                                <i class="uil-folder-plus"></i>
+                                                <span> Reports </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarEmail">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="Teacher_list_of_teacher.php">List of Teacher</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_studentlist.php">List of Learners</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Lesson w/Content</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                    </ul>
 
               
                 <!-- End Sidebar -->
@@ -162,177 +196,7 @@
                                 </form>
                             </div>
                         </li>
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
-                                <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                                </a>
-
-                            </div>
-                        </li>
-
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="noti-icon-badge"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="javascript: void(0);" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
-
-                                <div style="max-height: 230px;" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">1 min ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-account-plus"></i>
-                                        </div>
-                                        <p class="notify-details">New user registered.
-                                            <small class="text-muted">5 hours ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Cristina Pride</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Hi, How are you? What about our next meeting</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">4 days ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Karen Robinson</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Wow ! this admin looks good and awesome design</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-heart"></i>
-                                        </div>
-                                        <p class="notify-details">Carlos Crouch liked
-                                            <b>Admin</b>
-                                            <small class="text-muted">13 days ago</small>
-                                        </p>
-                                    </a>
-                                </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
-
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
-
-                        <li class="dropdown notification-list d-none d-sm-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-view-apps noti-icon"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
-                                                <span>G Suite</span>
-                                            </a>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div>
-
-                            </div>
-                        </li>
+                        
 
                         <li class="notification-list">
                             <a class="nav-link end-bar-toggle" href="javascript: void(0);">
@@ -427,7 +291,7 @@
 
                             <!-- item-->
                             <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
+                                <h6 class="text-overflow mb-2 text-uppercase">Enrollment Services</h6>
                             </div>
 
                             <div class="notification-list">
@@ -467,9 +331,9 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="Teacher_Module.php">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="Teacher_Module.php">Dashboard</a></li>
                                         
-                                        <li class="breadcrumb-item active">Upload Resources</li>
+                                        <li class="breadcrumb-item active">Manage Quiz</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Manage Quiz</h4>
