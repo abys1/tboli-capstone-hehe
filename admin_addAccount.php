@@ -551,7 +551,7 @@
                 <td><?php echo $row['contact']; ?></td>
                 <td><?php echo $row['address']; ?></td>
                 <td>
-                <a href="admin_subject_edit.php?admin_id=<?php echo $row['admin_id'] ?>">
+                <a href="admind_edit_admin_acc.php?admin_id=<?php echo $row['admin_id'] ?>">
                     <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
                 </a>
                 <a href="admin_account_deactivate.php?admin_id=<?php echo $row['admin_id'] ?>" class="decline">
