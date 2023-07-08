@@ -405,28 +405,18 @@ $user_id = $_SESSION['user_id'];
                                                     <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
                                                 </div>
 
-                                                <!-- Date View -->
-                                                
-
-                                                
-
                                                 <div class="mb-0">
                                                     <label for="project-overview" class="form-label">Type of lesson</label>
                                                     
                                                     <select class="form-control select2" data-toggle="select2">
                                                         <option>Select</option>
                                                         <option value="AZ">Literacy</option>
-                                                        <option value="CO">Numeracy</option>
-                                                        
+                                                        <option value="CO">Numeracy</option>                                       
                                                     </select>
-
-                                                    
-        
                                                 </div>
-
                                                 <div class="mb-3 position-relative" id="datepicker2">
                                                         <br>
-                                                        <input type="button" class="form-control btn-primary" value="Add">
+                                                        <input type="submit" class="form-control btn-primary" value="Add" name="btnAdd">
                                                     </div>
 
                                             </div> <!-- end col-->
@@ -445,7 +435,7 @@ $user_id = $_SESSION['user_id'];
                                                             <i class="h3 text-muted dripicons-cloud-upload"></i>
                                                             <h4>Drop files here or click to upload.</h4>
                                                         </div>
-                                                    </form>
+                                                    </form>     
 
                                                     
 
