@@ -180,7 +180,7 @@ $user_id = $_SESSION['user_id'];
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
+                                            <a href="Teacher_AssignLesson.php" class="side-nav-link">
                                                 <i class="uil-user-plus"></i>
                                                 <span>Assign Lesson to Student</span>
                                             </a>
