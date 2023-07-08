@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
 
 <!-- third party css -->
 <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
@@ -65,7 +65,7 @@
                                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
-                                                <span> Users </span>
+                                                <span> Enrolment Services </span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <div class="collapse" id="sidebarDashboards" style="">
@@ -293,12 +293,13 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Enroll Student In Lesson</a></li>
+                                        <li class="breadcrumb-item"><a href="Teacher_index.php">Dashboard</a></li>
                                         
                                         <li class="breadcrumb-item active">Manage Student</li>
+                                        <li class="breadcrumb-item active">Student Batch Upload</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Manage Lesson</h4>
+                                <h4 class="page-title">Student Batch Upload</h4>
                             </div>
                         </div>
                     </div>     

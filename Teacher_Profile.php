@@ -62,7 +62,7 @@
                                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
-                                                <span> Users </span>
+                                                <span> Enrollment Services </span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <div class="collapse" id="sidebarDashboards" style="">
