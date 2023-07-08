@@ -357,8 +357,12 @@
                 <div class="col-sm-12">
                     <div class="text-sm-end">
                      
-                      <a href="javascript:void(0);" class="btn btn-success mb-2"><i class="uil-edit-alt"></i> Approve</a>
-                      <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="uil-edit-alt"></i> Decline</a>
+                      <a href="javascript:void(0);">
+                       <button type="button"class="btn btn-success mb-2"><i class="uil-edit-alt"></i>Approve</button>
+                    </a>
+                    <a href="javascript:void(0);">
+                    <button type="button" class="btn btn-danger mb-2"><i class="uil-edit-alt"></i>Decline</button>
+                    </a>
 
                     </div>
                 </div><!-- end col-->
@@ -418,9 +422,6 @@
                             <td>
                             <a href="admin_module_accept.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="accept">
                                 <button type="button" class="btn btn-primary"><i class="uil-check"></i> </button>
-                            </a>
-                            <a href="admin_module_archive.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="archive">
-                                <button type="button" class="btn btn-warning"><i class="mdi mdi-archive"></i> </button>
                             </a>
                             <a href="admin_module_decline.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="decline">
                                 <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
