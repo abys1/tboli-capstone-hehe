@@ -171,72 +171,7 @@
                                                 <div class="simplebar-content-wrapper"
                                                     style="height: auto; overflow: hidden;">
                                                     <div class="simplebar-content" style="padding: 0px;">
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-primary">
-                                                                <i class="mdi mdi-comment-account-outline"></i>
-                                                            </div>
-                                                            <p class="notify-details">Caleb Flakelar commented on Admin
-                                                                <small class="text-muted">1 min ago</small>
-                                                            </p>
-                                                        </a>
 
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-info">
-                                                                <i class="mdi mdi-account-plus"></i>
-                                                            </div>
-                                                            <p class="notify-details">New user registered.
-                                                                <small class="text-muted">5 hours ago</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon">
-                                                                <img src="assets/images/users/avatar-2.jpg"
-                                                                    class="img-fluid rounded-circle" alt="">
-                                                            </div>
-                                                            <p class="notify-details">Cristina Pride</p>
-                                                            <p class="text-muted mb-0 user-msg">
-                                                                <small>Hi, How are you? What about our next
-                                                                    meeting</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-primary">
-                                                                <i class="mdi mdi-comment-account-outline"></i>
-                                                            </div>
-                                                            <p class="notify-details">Caleb Flakelar commented on Admin
-                                                                <small class="text-muted">4 days ago</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon">
-                                                                <img src="assets/images/users/avatar-4.jpg"
-                                                                    class="img-fluid rounded-circle" alt="">
-                                                            </div>
-                                                            <p class="notify-details">Karen Robinson</p>
-                                                            <p class="text-muted mb-0 user-msg">
-                                                                <small>Wow ! this admin looks good and awesome
-                                                                    design</small>
-                                                            </p>
-                                                        </a>
-
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-info">
-                                                                <i class="mdi mdi-heart"></i>
-                                                            </div>
-                                                            <p class="notify-details">Carlos Crouch liked
-                                                                <b>Admin</b>
-                                                                <small class="text-muted">13 days ago</small>
-                                                            </p>
-                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -322,56 +257,7 @@
                         </form>
 
                         <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-notes font-16 me-1"></i>
-                                <span>Analytics Report</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-life-ring font-16 me-1"></i>
-                                <span>How can I help you?</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-cog font-16 me-1"></i>
-                                <span>User profile settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                            </div>
-
-                            <div class="notification-list">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
-                                            alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Erwin Brown</h5>
-                                            <span class="font-12 mb-0">UI Designer</span>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
-                                            alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Jacob Deo</h5>
-                                            <span class="font-12 mb-0">Developer</span>
-                                        </div>
+                            
                                     </div>
                                 </a>
                             </div>

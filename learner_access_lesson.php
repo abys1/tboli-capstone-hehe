@@ -137,7 +137,7 @@
                                 </form>
                             </div>
                         </li>
-                       
+
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
                                 role="button" aria-haspopup="false" aria-expanded="false">
@@ -167,15 +167,7 @@
                                                 <div class="simplebar-content-wrapper"
                                                     style="height: auto; overflow: hidden;">
                                                     <div class="simplebar-content" style="padding: 0px;">
-                                                        <!-- item-->
-                                                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                            <div class="notify-icon bg-primary">
-                                                                <i class="mdi mdi-comment-account-outline"></i>
-                                                            </div>
-                                                            <p class="notify-details">Caleb Flakelar commented on Admin
-                                                                <small class="text-muted">1 min ago</small>
-                                                            </p>
-                                                        </a>
+                                                        
                                 <!-- All-->
                                 <a href="javascript:void(0);"
                                     class="dropdown-item text-center text-primary notify-item notify-all">
@@ -248,38 +240,13 @@
                         <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
 
                             <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-cog font-16 me-1"></i>
-                                <span>User profile settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                            </div>
+                            
 
                             <div class="notification-list">
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
-                                            alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Erwin Brown</h5>
-                                            <span class="font-12 mb-0">UI Designer</span>
-                                        </div>
-                                    </div>
-                                </a>
 
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
-                                            alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Jacob Deo</h5>
-                                            <span class="font-12 mb-0">Developer</span>
-                                        </div>
+
+                                
                                     </div>
                                 </a>
                             </div>
@@ -299,10 +266,10 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tboli</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                        <li class="breadcrumb-item active">Learner Dashboard</li>
+                                        <li class="breadcrumb-item active">Learner Modules</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Projects</h4>
+                                <h4 class="page-title">Modules</h4>
                             </div>
                         </div>
                     </div>
