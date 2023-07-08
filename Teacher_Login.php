@@ -38,10 +38,59 @@
                     <p class="text-muted mb-4">Enter your username and password to access account.</p>
 
                                         <!-- form -->
-                    <form action="Teacher_index.php" method="POST" id="login-form" onsubmit="return validateForm()">
+                    <form  method="POST">
+                        <?php 
+                        session_start();
+                        include 'dbcon.php';
+
+                        if (isset($_POST['btnLogin'])) {
+                            $email = $_POST['email'];
+                            $password = $_POST['password'];
+
+                            if (empty($email)) {
+                                header("Location: login.php?error=Email must be filled");
+                                exit();
+                            } elseif (empty($password)) {
+                                header("Location: login.php?error=Password must be filled");
+                                exit();
+                            } else {
+                                $sql = "SELECT tbl_userinfo.user_id, tbl_accounts.email, tbl_accounts.password, tbl_user_level.level, tbl_user_status.status
+                                FROM tbl_teachers 
+                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                                JOIN tbl_accounts ON tbl_teachers.account_id = tbl_accounts.account_id
+                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                                JOIN tbl_user_status ON tbl_teachers.status_id = tbl_user_status.status_id
+                                WHERE tbl_accounts.email = '$email'
+                                AND tbl_user_status.status = 1 AND tbl_user_level.level = 'TEACHER'";
+
+                                $result = mysqli_query($conn, $sql);
+
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    $row = mysqli_fetch_assoc($result);
+                                    $storedPassword = $row['password'];
+                                    $level = $row['level'];
+
+                                    if (password_verify($password, $storedPassword) && $row['status'] == 1) {
+                                        $_SESSION['user_id'] = $row['user_id'];
+                                        $_SESSION['email'] = $email;
+                                        $_SESSION['user_level'] = $level;
+
+                                        if ($level === 'TEACHER') {
+                                            header("Location: Teacher_index.php?Login Sucessfully");
+                                            exit();
+                                        }
+                                    }
+                                }
+                                header("Location: Teacher_Login.php?error=Invalid email or password");
+                                exit();
+                            }
+
+                        }
+
+                        ?>
                         <div class="mb-3">
-                            <label for="emailaddress" class="form-label">Username</label>
-                            <input class="form-control" type="text" id="emailaddress" name="username" required placeholder="Enter your email">
+                            <label for="emailaddress" class="form-label">Email</label>
+                            <input class="form-control" type="text" id="emailaddress" name="email" required placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
@@ -51,32 +100,12 @@
                         </div>
                         
                         <div class="d-grid mb-0 text-center">
-                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-login"></i> Log In </button>
+                            <button class="btn btn-primary" type="submit" name="btnLogin"><i class="mdi mdi-login"></i> Log In </button>
                         </div>
                         <!-- social-->
                         
                     </form>
                     <!-- end form-->
-
-                    <script>
-                        function validateForm() {
-                            var username = document.getElementById("emailaddress").value;
-                            var password = document.getElementById("password").value;
-                            var passwordError = document.getElementById("password-error");
-
-                            // Perform your validation here
-                            // For example, check if the password is correct
-                            if (password !== "correct") {
-                                passwordError.style.display = "block";
-                                return false; // Prevent form submission
-                            }
-
-                            return true; // Allow form submission
-                        }
-                    </script>
-
-
-                   
 
                 </div> <!-- end .card-body -->
             </div> <!-- end .align-items-center.d-flex.h-100-->

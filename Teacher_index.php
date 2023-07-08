@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+      session_start();
+      $user_id = $_SESSION['user_id'];
+
+      if (isset($_GET['logout'])) {
+      session_unset();
+      session_destroy();
+      header("Location: Teacher_Login.php?Logout");
+      exit();
+      }
+?>
+<!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
     <!-- <title>Project Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
@@ -207,8 +218,34 @@
                                     <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Jillian Ward</span>
-                                    <span class="account-position">Teacher</span>
+                                    <?php
+                                    include 'dbcon.php';
+
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
+                                    
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                FROM tbl_teachers
+                                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                                                WHERE tbl_user_level.level = 'TEACHER' AND tbl_userinfo.user_id = '$user_id'
+                                                LIMIT 1;";
+                                    
+                                        $result = mysqli_query($conn, $sql);
+                                    
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                    
+                                    
+                                        } else {
+                                            echo "No records found in tbl_admin";
+                                        }
+                                    } else {
+                                        echo "No user ID provided";
+                                    }
+                                    ?>
+                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                    <span class="account-position"><?php echo $row['level'];?></span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -224,7 +261,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="Teacher_Login.php" class="dropdown-item notify-item">
+                                <a href="Teacher_Login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>

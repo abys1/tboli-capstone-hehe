@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    $user_id = $_SESSION['user_id'];
+?>
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
@@ -235,7 +239,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="Teacher_Login.php" class="dropdown-item notify-item">
+                                <a href="Teacher_Login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>

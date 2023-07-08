@@ -519,10 +519,11 @@
                             </div>
                         </th>
                         <th>ID</th>
-                        <th>Teacher From</th>
-                        <th>Type of Content</th>
-                        <th>Description</th>
+                        <th>Lesson Name</th>
+                        <th>Objective</th>
+                        <th>Type of Lesson</th>
                         <th>Lesson</th>
+                        <th>Added by</th>
                         <th>Action</th>
                         <th>Status</th>
                     </tr>
@@ -539,91 +540,19 @@
                         <td>Laroco, Jv</td>
                         <td>02000221067</td>
                         <td>sdd</td>
+                        <td>pakyu</td>
                         <td>09/04/2018</td>
                         <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-eye"></i></button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
-    <button type="button" class="btn btn-success"><i class="uil-check"></i></button>
-</td>
-
-
+                            <button type="button" class="btn btn-info"><i class="mdi mdi-eye"></i></button>
+                            <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
+                            <button type="button" class="btn btn-success"><i class="uil-check"></i></button>
+                        </td>
                         <td>
                             <div>
                                 <span class="badge bg-success">Approved</span>
                             </div>
                         </td>
                     </tr>
-                    
-                    <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor5">
-                            <label class="form-check-label" for="customCheckcolor5">Select</label>
-                          </div>
-                        </td>
-                        <td>0003</td>
-                        <td>Lopez, Ana</td>
-                        <td>02000221069</td>
-                        <td></td>
-                        <td>09/04/2018</td>
-                        <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-eye"></i></button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
-    <button type="button" class="btn btn-success"><i class="uil-check"></i></button>
-</td>
-
-
-                        <td>
-                          <span class="badge bg-success">Approved</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor6">
-                            <label class="form-check-label" for="customCheckcolor6">Select</label>
-                          </div>
-                        </td>
-                        <td>0004</td>
-                        <td>Santos, Mark</td>
-                        <td>02000221070</td>
-                        <td></td>
-                        <td>09/04/2018</td>
-                        <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-eye"></i></button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
-    <button type="button" class="btn btn-success"><i class="uil-check"></i></button>
-</td>
-
-
-                        <td>
-                          <span class="badge bg-danger">Decline</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor7">
-                            <label class="form-check-label" for="customCheckcolor7">Select</label>
-                          </div>
-                        </td>
-                        <td>0005</td>
-                        <td>Gomez, Sofia</td>
-                        <td>02000221071</td>
-                        <td></td>
-                        <td>09/04/2018</td>
-                        <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-eye"></i></button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
-    <button type="button" class="btn btn-success"><i class="uil-check"></i></button>
-</td>
-
-
-                        <td>
-                          <span class="badge bg-danger">Decline</span>
-                        </td>
-                      </tr>
-                 
                 </tbody>
             </table>
 

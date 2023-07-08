@@ -80,7 +80,7 @@
                                     }
                                 }
                             }
-                            header("Location: login.php?error=Invalid username or password");
+                            header("Location: login.php?error=Invalid email or password");
                             exit();
                         }
                     }
