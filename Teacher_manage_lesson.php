@@ -66,6 +66,30 @@
                                         </li>
 
                                         <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Users</span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarUsers" style="">
+                                                <ul class="side-nav-second-level">
+
+                                                    <li>
+                                                        <a href="Teacher_Learners.php"> <i class=" uil-user-circle" ></i> Learner</a>
+                                                    </li>
+                                                    
+
+                                                    <li>
+                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                                    </li>
+                                                    
+
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                        <li class="side-nav-item">
                                             <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
@@ -82,9 +106,7 @@
                                                         <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
                                                     </li>
 
-                                                    <li>
-                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
-                                                    </li>
+                                                    
                                                     
 
                                                 </ul>
@@ -103,10 +125,10 @@
                                                 <ul class="side-nav-second-level">
 
                                                     <li>
-                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Add Lesson</a>
+                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
                                                     </li>
                                                     <li>
-                                                        <a href="Teacher_manage_lesson.php"><i class=" uil-plus-circle"></i> Edit Lesson</a>
+                                                        <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
                                                     </li>
 
                                                     <li>
@@ -119,16 +141,17 @@
                                                 </ul>
                                             </div>
                                         </li>
-
-
                                         
 
                                         <li class="side-nav-item">
-                                            <a href="Teacher_uploadlesson.php" class="side-nav-link">
+                                            <a href="Teacher_ManageContent.php" class="side-nav-link">
                                                 <i class="uil-file-upload-alt"></i>
-                                                <span>Upload Lesson</span>
+                                                <span>Manage Content</span>
                                             </a>
                                         </li>
+                                        
+
+                                        
 
                                         <li class="side-nav-item">
                                             <a href="Teacher_quiz.php" class="side-nav-link">
@@ -431,7 +454,8 @@
                                                         <td>
                                                             <a href="javascript:void(0);" class="action-icon"> <i class="uil-eye"></i></a>
                                                             <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon"> <i class="mdi mdi-archive-arrow-down-outline"></i></a>
+                                                            
                                                         </td>
                                                         <td>
                                                             <span class="badge badge-danger-lighten">Hidden</span>

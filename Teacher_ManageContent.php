@@ -1,8 +1,3 @@
-<?php
-session_start();
-$user_id = $_SESSION['user_id'];
-?>
-
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
@@ -201,6 +196,7 @@ $user_id = $_SESSION['user_id'];
                                         </li>
 
                                     </ul>
+
               
                 <!-- End Sidebar -->
 
@@ -232,6 +228,11 @@ $user_id = $_SESSION['user_id'];
                             </div>
                         </li>
                         
+
+                        
+
+                        
+
                         <li class="notification-list">
                             <a class="nav-link end-bar-toggle" href="javascript: void(0);">
                                 <i class="dripicons-gear noti-icon"></i>
@@ -244,34 +245,8 @@ $user_id = $_SESSION['user_id'];
                                     <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <?php
-                                    include 'dbcon.php';
-
-                                    if (isset($_SESSION['user_id'])) {
-                                        $user_id = $_SESSION['user_id'];
-                                    
-                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_teachers
-                                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'TEACHER' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
-                                    
-                                        $result = mysqli_query($conn, $sql);
-                                    
-                                        if ($result && mysqli_num_rows($result) > 0) {
-                                            $row = mysqli_fetch_assoc($result);
-                                    
-                                    
-                                        } else {
-                                            echo "No records found in tbl_admin";
-                                        }
-                                    } else {
-                                        echo "No user ID provided";
-                                    }
-                                    ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level'];?></span>
+                                    <span class="account-user-name">Jillian Ward</span>
+                                    <span class="account-position">Teacher</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -287,7 +262,7 @@ $user_id = $_SESSION['user_id'];
                                 </a>
 
                                 <!-- item-->
-                                <a href="Teacher_Login.php?logout=true" class="dropdown-item notify-item">
+                                <a href="Teacher_Login.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -303,7 +278,7 @@ $user_id = $_SESSION['user_id'];
                             <div class="input-group">
                                 <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
-                                <button class="input-group-text btn-primary" type="submit">Search</button>
+                                <button class="input-group-text btn-primary" type="supmit">Search</button>
                             </div>
                         </form>
 
@@ -396,12 +371,12 @@ $user_id = $_SESSION['user_id'];
                                         <div class="row">
                                             <div class="col-xl-6">
                                                 <div class="mb-3">
-                                                    <label for="projectname" class="form-label">Name</label>
+                                                    <label for="projectname" class="form-label">Lesson Title <sup>*</sup></label>
                                                     <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="project-overview" class="form-label">Objective</label>
+                                                    <label for="project-overview" class="form-label">Content Descriptions <sup>*</sup></label></label>
                                                     <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
                                                 </div>
 
@@ -411,7 +386,7 @@ $user_id = $_SESSION['user_id'];
                                                 
 
                                                 <div class="mb-0">
-                                                    <label for="project-overview" class="form-label">Type of lesson</label>
+                                                    <label for="project-overview" class="form-label">Upload Student in?</label>
                                                     
                                                     <select class="form-control select2" data-toggle="select2">
                                                         <option>Select</option>
@@ -433,8 +408,34 @@ $user_id = $_SESSION['user_id'];
 
                                             <div class="col-xl-6">
                                                 <div class="mb-3 mt-3 mt-xl-0">
-                                                    <label for="projectname" class="mb-0">Upload Lesson</label>
+                                                    <label for="projectname" class="mb-0">Upload Audio <sup>Optional</sup></label>
                                                    
+
+                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                                                        <div class="fallback">
+                                                            <input name="audio" type="file">
+                                                        </div>
+
+                                                        <div class="dz-message needsclick">
+                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
+                                                            <h4>Drop files here or click to upload.</h4>
+                                                        </div>
+                                                    </form>
+
+                                                    <label for="projectname" class="mb-0">Upload Video <sup>Optional</sup> </label>
+
+                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
+                                                        <div class="fallback">
+                                                            <input name="video" type="file">
+                                                        </div>
+
+                                                        <div class="dz-message needsclick">
+                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
+                                                            <h4>Drop files here or click to upload </h4>
+                                                        </div>
+                                                    </form>
+
+                                                    <label for="projectname" class="mb-0"> Upload Image </label>
 
                                                     <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
                                                         <div class="fallback">

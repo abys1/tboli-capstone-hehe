@@ -1,7 +1,3 @@
-<?php 
-    session_start();
-    $user_id = $_SESSION['user_id'];
-?>
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
@@ -54,147 +50,147 @@
 
             <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
 
-               <!--- Sidemenu -->
-               <ul class="side-nav">
+                <!--- Sidemenu -->
+                <ul class="side-nav">
 
 
-                    <li class="side-nav-item menuitem">
-                        <a href="Teacher_index.php" class="side-nav-link ">
-                            <i class="uil-home"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
+                                        <li class="side-nav-item menuitem">
+                                            <a href="Teacher_index.php" class="side-nav-link ">
+                                                <i class="uil-home"></i>
+                                                <span>Dashboard</span>
+                                            </a>
+                                        </li>
 
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link collapsed">
-                            <i class="uil-user-plus"></i>
-                            <span class="badge bg-success float-end"></span>
-                            <span> Manage Users</span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarUsers" style="">
-                            <ul class="side-nav-second-level">
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Users</span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarUsers" style="">
+                                                <ul class="side-nav-second-level">
 
-                                <li>
-                                    <a href="Teacher_Learners.php"> <i class=" uil-user-circle" ></i> Learner</a>
-                                </li>
-                                
+                                                    <li>
+                                                        <a href="Teacher_Learners.php"> <i class=" uil-user-circle" ></i> Learner</a>
+                                                    </li>
+                                                    
 
-                                <li>
-                                    <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
-                                </li>
-                                
+                                                    <li>
+                                                        <a href="Teacher_batchUpload.php"> <i class=" uil-list-ul" ></i> Student Batch Upload</a>
+                                                    </li>
+                                                    
 
-                            </ul>
-                        </div>
-                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
 
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                            <i class="uil-user-plus"></i>
-                            <span class="badge bg-success float-end"></span>
-                            <span> Enrolment Services </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarDashboards" style="">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
-                                </li>
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Enrolment Services </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboards" style="">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
+                                                    </li>
 
-                                <li>
-                                    <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
-                                </li>
+                                                    <li>
+                                                        <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
+                                                    </li>
 
-                                
-                                
+                                                    
+                                                    
 
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
-                            <i class="dripicons-document-edit"></i>
-                            <span class="badge bg-success float-end"></span>
-                            <span> Manage Lesson </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarLessons" style="">
-                            <ul class="side-nav-second-level">
-
-                                <li>
-                                    <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
-                                </li>
-                                <li>
-                                    <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
-                                </li>
-
-                                <li>
-                                    <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
-                                </li>
-
-                                
-                                
-
-                            </ul>
-                        </div>
-                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
 
 
-                    <li class="side-nav-item">
-                        <a href="Teacher_ManageContent.php" class="side-nav-link">
-                            <i class="uil-file-upload-alt"></i>
-                            <span>Manage Content</span>
-                        </a>
-                    </li>
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
+                                                <i class="dripicons-document-edit"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Lesson </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarLessons" style="">
+                                                <ul class="side-nav-second-level">
 
+                                                    <li>
+                                                        <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
+                                                    </li>
 
+                                                    <li>
+                                                        <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
+                                                    </li>
 
+                                                    
+                                                    
 
-                    <li class="side-nav-item">
-                        <a href="Teacher_quiz.php" class="side-nav-link">
-                        <i class="dripicons-document-edit"></i>
-                            <span>Manage Quiz</span>
-                        </a>
-                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        
 
-                    <li class="side-nav-item">
-                        <a href="#" class="side-nav-link">
-                            <i class="uil-user-plus"></i>
-                            <span>Assign Lesson to Student</span>
-                        </a>
-                    </li>
-                    <li class="side-nav-item">
-                        <a href="#" class="side-nav-link">
-                            <i class="uil-user-plus"></i>
-                            <span>Progress</span>
-                        </a>
-                    </li>
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_ManageContent.php" class="side-nav-link">
+                                                <i class="uil-file-upload-alt"></i>
+                                                <span>Manage Content</span>
+                                            </a>
+                                        </li>
+                                        
 
-                    <li class="side-nav-item">
-                        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-                            <i class="uil-folder-plus"></i>
-                            <span> Reports </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="sidebarEmail">
-                            <ul class="side-nav-second-level">
-                                <li>
-                                    <a href="Teacher_list_of_teacher.php">List of Teacher</a>
-                                </li>
-                                <li>
-                                    <a href="Teacher_studentlist.php">List of Learners</a>
-                                </li>
-                                <li>
-                                    <a href="#">List of Lesson w/Content</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                                        
 
-                    </ul>
+                                        <li class="side-nav-item">
+                                            <a href="Teacher_quiz.php" class="side-nav-link">
+                                            <i class="dripicons-document-edit"></i>
+                                                <span>Manage Quiz</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Assign Lesson to Student</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Progress</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+                                                <i class="uil-folder-plus"></i>
+                                                <span> Reports </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarEmail">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="Teacher_list_of_teacher.php">List of Teacher</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="Teacher_studentlist.php">List of Learners</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Lesson w/Content</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                    </ul>
                 <!-- Help Box -->
                 
                 <!-- end Help Box -->
@@ -245,34 +241,8 @@
                                     <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <?php
-                                    include 'dbcon.php';
-
-                                    if (isset($_SESSION['user_id'])) {
-                                        $user_id = $_SESSION['user_id'];
-                                    
-                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_teachers
-                                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'TEACHER' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
-                                    
-                                        $result = mysqli_query($conn, $sql);
-                                    
-                                        if ($result && mysqli_num_rows($result) > 0) {
-                                            $row = mysqli_fetch_assoc($result);
-                                    
-                                    
-                                        } else {
-                                            echo "No records found in tbl_admin";
-                                        }
-                                    } else {
-                                        echo "No user ID provided";
-                                    }
-                                    ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level'];?></span>
+                                    <span class="account-user-name">Jillian Ward</span>
+                                    <span class="account-position">Teacher</span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -288,7 +258,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="Teacher_Login.php?logout=true" class="dropdown-item notify-item">
+                                <a href="Teacher_Login.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -401,105 +371,7 @@
                                             <div class="col-sm-4">
                                                 <a href="Teacher_AddStudent.php" class="btn btn-danger mb-2 me-2"><i class="mdi mdi-plus-circle me-2"></i> Add Student</a>
                                                 
-                                                <button  type="button" class="btn btn-light mb-2 me-1" data-bs-toggle="modal" data-bs-target="#scrollable-modal">Batch Upload</button>
-                                                <div class="modal fade" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="scrollableModalTitle">Upload Files Here!</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                               
-
-
-                                                            <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        
-                                            
                                                 
-                                                
-
-                                                
-
-                                                
-
-                                                
-
-                                            
-                                                <div class="mb-3 mt-3 mt-xl-0">
-                                                    <label for="projectname" class="mb-0">Upload Lesson</label>
-                                                   
-
-                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
-                                                        <div class="fallback">
-                                                            <input name="file" type="file">
-                                                        </div>
-
-                                                        <div class="dz-message needsclick">
-                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
-                                                            <h4>Drop files here or click to upload.</h4>
-                                                        </div>
-                                                    </form>
-
-                                                    
-
-                                                    <!-- Preview -->
-                                                    <div class="dropzone-previews mt-3" id="file-previews"></div>
-
-                                                    <!-- file preview template -->
-                                                    <div class="d-none" id="uploadPreviewTemplate">
-                                                        <div class="card mt-1 mb-0 shadow-none border">
-                                                            <div class="p-2">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-auto">
-                                                                        
-                                                                        <i  class="  uil-file-upload-alt " ></i>
-                                                                    </div>
-                                                                    <div class="col ps-0">
-                                                                        <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name=""></a>
-                                                                        <p class="mb-0" data-dz-size=""></p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <!-- Button -->
-                                                                        <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove="">
-                                                                            <i class="dripicons-cross"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end file preview template -->
-                                                </div>
-
-                                                <!-- Date View -->
-                                                
-                                            
-                                        
-                                        <!-- end row -->
-
-                                    
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
-                        </div>
-                        <!-- end row-->
-
-
-
-                                                            
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Add</button>
-                                                            </div>
-                                                        </div><!-- /.modal-content -->
-                                                    </div><!-- /.modal-dialog -->
-                                                </div><!-- /.modal -->
-                                            </div>
                                             <div class="col-sm-8">
                                                 <div class="text-sm-end">
                                                     
