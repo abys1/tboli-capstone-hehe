@@ -245,8 +245,34 @@
                                     <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name">Jillian Ward</span>
-                                    <span class="account-position">Teacher</span>
+                                    <?php
+                                    include 'dbcon.php';
+
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
+                                    
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                FROM tbl_teachers
+                                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                                                WHERE tbl_user_level.level = 'TEACHER' AND tbl_userinfo.user_id = '$user_id'
+                                                LIMIT 1;";
+                                    
+                                        $result = mysqli_query($conn, $sql);
+                                    
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                    
+                                    
+                                        } else {
+                                            echo "No records found in tbl_admin";
+                                        }
+                                    } else {
+                                        echo "No user ID provided";
+                                    }
+                                    ?>
+                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></span>
+                                    <span class="account-position"><?php echo $row['level'];?></span>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -282,59 +308,7 @@
                             </div>
                         </form>
 
-                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-notes font-16 me-1"></i>
-                                <span>Analytics Report</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-life-ring font-16 me-1"></i>
-                                <span>How can I help you?</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-cog font-16 me-1"></i>
-                                <span>User profile settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                            </div>
-
-                            <div class="notification-list">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic required placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Erwin Brown</h5>
-                                            <span class="font-12 mb-0">UI Designer</span>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic required placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Jacob Deo</h5>
-                                            <span class="font-12 mb-0">Developer</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <!-- end Topbar -->
@@ -562,7 +536,7 @@
                 <div class="d-grid mt-4">
                     <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
         
-                    <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
+                    
                 </div>
             </div> <!-- end padding-->
 
