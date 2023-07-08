@@ -320,31 +320,6 @@
 
 </div><!-- end preview-->
                 <!-- Right Sidebar -->
-                <div class="end-bar">
-
-                    <div class="rightbar-title">
-                        <a href="javascript:void(0);" class="end-bar-toggle float-end">
-                            <i class="dripicons-cross noti-icon"></i>
-                        </a>
-                        <h5 class="m-0">Settings</h5>
-                    </div>
-
-                    <div class="rightbar-content h-100" data-simplebar="init">
-                        <div class="simplebar-wrapper" style="margin: 0px;">
-                            <div class="simplebar-height-auto-observer-wrapper">
-                                <div class="simplebar-height-auto-observer"></div>
-                            </div>
-                            <div class="simplebar-mask">
-                                <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                    <div class="simplebar-content-wrapper"
-                                        style="height: 100%; overflow: hidden scroll;">
-                                        <div class="simplebar-content" style="padding: 0px;">
-
-                                            <div class="p-3">
-                                                <div class="alert alert-warning" role="alert">
-                                                    <strong>Customize </strong> the overall color scheme, sidebar menu,
-                                                    etc.
-                                                </div>
 
                 <!-- bundle -->
                 <script src="assets/js/vendor.min.js"></script>
