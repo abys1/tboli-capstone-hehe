@@ -143,7 +143,7 @@
                                 </form>
                             </div>
                         </li>
-                       
+
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
                                 role="button" aria-haspopup="false" aria-expanded="false">
@@ -256,7 +256,7 @@
                         </form>
 
                         <div class="scrollable-content">
-                        <div class="row g-0 align-items-center">
+                        <div class="column g-0 align-items-center">
                                         <div class="col-md-3">
                                             <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
                                         </div>
@@ -270,7 +270,7 @@
                                         </div> <!-- end col -->
                                     </div>
                                     <br>
-                                    <div class="row g-0 align-items-center">
+                                    <div class="column g-0 align-items-center">
                                         <div class="col-md-3">
                                             <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
                                         </div>
@@ -317,6 +317,7 @@
                                                 </ul>
                                             </div>
 </div>
+
 </div><!-- end preview-->
                 <!-- Right Sidebar -->
                 <div class="end-bar">
