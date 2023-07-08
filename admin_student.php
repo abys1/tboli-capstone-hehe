@@ -544,7 +544,7 @@
                 <?php
                 include "dbcon.php";
 
-                $sql = "SELECT tbl_learner.learner_id, tbl_learner.level_id, tbl_user_level.level, tbl_userinfo.firstname,
+                $sql = "SELECT tbl_userinfo.user_id, tbl_learner.learner_id, tbl_learner.level_id, tbl_user_level.level, tbl_userinfo.firstname,
                             tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_userinfo.birthday, tbl_user_status.status,
                             tbl_learner_id.lrn
                         FROM tbl_learner
@@ -575,7 +575,7 @@
                             <td><?php echo $row['lrn']; ?></td>
                             <td><?php echo $row['birthday']; ?></td>
                             <td>
-                            <a href="admin_subject_edit.php?learner_id=<?php echo $row['learner_id'] ?>">
+                            <a href="admin_edit_student_acc.php?user_id=<?php echo $row['user_id'] ?>">
                                 <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
                             </a>
                             <a href="admin_student_deactivate.php?learner_id=<?php echo $row['learner_id'] ?>" class="decline">

@@ -521,7 +521,7 @@
                 <?php
                 include "dbcon.php";
                 
-                $sql = "SELECT tbl_admin.admin_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
+                $sql = "SELECT tbl_admin.admin_id, tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
                         tbl_usercredentials.email, tbl_usercredentials.contact, tbl_address.address,
                         tbl_user_level.level, tbl_user_status.status
                         FROM tbl_admin
@@ -551,10 +551,10 @@
                 <td><?php echo $row['contact']; ?></td>
                 <td><?php echo $row['address']; ?></td>
                 <td>
-                <a href="admind_edit_admin_acc.php?admin_id=<?php echo $row['admin_id'] ?>">
+                <a href="admin_edit_admin_acc.php?user_id=<?php echo $row['user_id'] ?>">
                     <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
                 </a>
-                <a href="admin_account_deactivate.php?admin_id=<?php echo $row['admin_id'] ?>" class="decline">
+                <a href="admin_account_deactivate.php?user_id=<?php echo $row['user_id'] ?>" class="decline">
                     <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
                 </a>
                 </td>
