@@ -289,11 +289,11 @@
                       <li class="breadcrumb-item">
                         <a href="Teacher_index.php">Dashboard</a>
                       </li>
-                      <li class="breadcrumb-item active">Manage Student</li>
-                      <li class="breadcrumb-item active">Student Batch Upload</li>
+                      
+                      <li class="breadcrumb-item active">Assign Lesson to Students</li>
                     </ol>
                   </div>
-                  <h4 class="page-title">Student Batch Upload</h4>
+                  <h4 class="page-title">Assign Lesson to Students</h4>
                 </div>
               </div>
             </div>
