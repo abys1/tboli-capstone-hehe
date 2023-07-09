@@ -27,7 +27,20 @@ $user_id = $_SESSION['user_id'];
     <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
     <!-- third party css end -->
 
-    
+    <style>
+    .file-container {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+
+    .remove-button {
+        margin-left: auto;
+        color: red;
+        cursor: pointer;
+    }
+    </style>
 
 
 </head>
@@ -167,7 +180,7 @@ $user_id = $_SESSION['user_id'];
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
+                                            <a href="Teacher_AssignLesson.php" class="side-nav-link">
                                                 <i class="uil-user-plus"></i>
                                                 <span>Assign Lesson to Student</span>
                                             </a>
@@ -270,7 +283,7 @@ $user_id = $_SESSION['user_id'];
                                         echo "No user ID provided";
                                     }
                                     ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></span>
                                     <span class="account-position"><?php echo $row['level'];?></span>
                                 </span>
                             </a>
@@ -307,59 +320,7 @@ $user_id = $_SESSION['user_id'];
                             </div>
                         </form>
 
-                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h5 class="text-overflow mb-2">Found <span class="text-danger">17</span> results</h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-notes font-16 me-1"></i>
-                                <span>Analytics Report</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-life-ring font-16 me-1"></i>
-                                <span>How can I help you?</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="uil-cog font-16 me-1"></i>
-                                <span>User profile settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <div class="dropdown-header noti-title">
-                                <h6 class="text-overflow mb-2 text-uppercase">Users</h6>
-                            </div>
-
-                            <div class="notification-list">
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Erwin Brown</h5>
-                                            <span class="font-12 mb-0">UI Designer</span>
-                                        </div>
-                                    </div>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <div class="d-flex">
-                                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
-                                        <div class="w-100">
-                                            <h5 class="m-0 font-14">Jacob Deo</h5>
-                                            <span class="font-12 mb-0">Developer</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 <!-- end Topbar -->
@@ -375,7 +336,7 @@ $user_id = $_SESSION['user_id'];
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="Teacher_Module.php">Dashboard</a></li>
                                         
-                                        <li class="breadcrumb-item active">Upload Lesson</li>
+                                        <li class="breadcrumb-item">Upload Lesson</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Upload Lesson</h4>
@@ -388,96 +349,52 @@ $user_id = $_SESSION['user_id'];
 
             </div> <!-- content -->
 
-            <div class="row">
+                        <div class="row">
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-
+                                        <form action="teacher_upload_lesson.php" method="POST" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-xl-6">
-                                                <div class="mb-3">
-                                                    <label for="projectname" class="form-label">Name</label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
+                                            <div class="mb-3">
+                                                <label for="projectname" class="form-label">Name</label>
+                                                <input type="text" name="name" id="projectname" class="form-control" placeholder="Enter Lesson name" required>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="project-overview" class="form-label">Objective</label>
+                                                <textarea class="form-control" name="objective" id="project-overview" rows="5" placeholder="Enter some brief about the project.." required></textarea>
+                                            </div>
+
+                                            <div class="mb-0">
+                                                <label for="project-type" class="form-label">Type of lesson</label>
+                                                <select class="form-control" name="type" id="project-type" required>
+                                                    <option selected disabled>Select</option>
+                                                    <option value="Literacy">Literacy</option>
+                                                    <option value="Numeracy">Numeracy</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-3 position-relative" id="datepicker2">
+                                                    <br>
+                                                    <input type="submit" class="form-control btn-primary" name="btnAdd">
                                                 </div>
 
-                                                <div class="mb-3">
-                                                    <label for="project-overview" class="form-label">Objective</label>
-                                                    <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
-                                                </div>
-
-                                                <div class="mb-0">
-                                                    <label for="project-overview" class="form-label">Type of lesson</label>
-                                                    
-                                                    <select class="form-control select2" data-toggle="select2">
-                                                        <option>Select</option>
-                                                        <option value="AZ">Literacy</option>
-                                                        <option value="CO">Numeracy</option>                                       
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 position-relative" id="datepicker2">
-                                                        <br>
-                                                        <input type="submit" class="form-control btn-primary" value="Add" name="btnAdd">
-                                                    </div>
-
-                                            </div> <!-- end col-->
-
+                                            </div> 
                                             <div class="col-xl-6">
-                                                <div class="mb-3 mt-3 mt-xl-0">
-                                                    <label for="projectname" class="mb-0">Upload Lesson</label>
-                                                   
-
-                                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews" data-upload-preview-template="#uploadPreviewTemplate">
-                                                        <div class="fallback">
-                                                            <input name="file" type="file">
-                                                        </div>
-
-                                                        <div class="dz-message needsclick">
-                                                            <i class="h3 text-muted dripicons-cloud-upload"></i>
-                                                            <h4>Drop files here or click to upload.</h4>
-                                                        </div>
-                                                    </form>     
-
-                                                    
-
-                                                    <!-- Preview -->
-                                                    <div class="dropzone-previews mt-3" id="file-previews"></div>
-
-                                                    <!-- file preview template -->
-                                                    <div class="d-none" id="uploadPreviewTemplate">
-                                                        <div class="card mt-1 mb-0 shadow-none border">
-                                                            <div class="p-2">
-                                                                <div class="row align-items-center">
-                                                                    <div class="col-auto">
-                                                                        <img data-dz-thumbnail="" src="#" class="avatar-sm rounded bg-light" alt="">
-                                                                    </div>
-                                                                    <div class="col ps-0">
-                                                                        <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name=""></a>
-                                                                        <p class="mb-0" data-dz-size=""></p>
-                                                                    </div>
-                                                                    <div class="col-auto">
-                                                                        <!-- Button -->
-                                                                        <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove="">
-                                                                            <i class="dripicons-cross"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end file preview template -->
-                                                </div>
-
-                                                <!-- Date View -->
-                                                
-                                            </div> <!-- end col-->
-                                        </div>
-                                        <!-- end row -->
-
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
+                                            <div class="mb-3 mt-3 mt-xl-0">
+                                                <label for="file-upload" class="form-label">Upload Files</label>
+                                                <input type="file" name="lesson[]" id="file-upload" class="form-control" multiple required>
+                                                <small class="text-muted">You can select multiple files. Limit: 10 files.</small>
+                                                <div class="file-list-container" id="selected-files"></div>
+                                            </div>
+                                            </div>
+                                        </div>                                     
+                                    </form>
+                                    </div> 
+                                </div>
+                            </div> 
                         </div>
-                        <!-- end row-->
+                        
 
             
 
@@ -601,7 +518,7 @@ $user_id = $_SESSION['user_id'];
                 <div class="d-grid mt-4">
                     <button class="btn btn-primary" id="resetBtn">Reset to Default</button>
         
-                    <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
+                    
                 </div>
             </div> <!-- end padding-->
 
@@ -624,6 +541,49 @@ $user_id = $_SESSION['user_id'];
     <script src="assets/js/vendor/dropzone.min.js"></script>
     <script src="assets/js/ui/component.fileupload.js"></script>
     
+    <script>
+  // Function to handle file selection and display
+  function handleFileSelect(event) {
+    const files = event.target.files; // Get selected files
+    const fileListContainer = document.getElementById('selected-files');
+
+    // Check if the file limit has been reached
+    if (fileListContainer.children.length + files.length > 10) {
+      alert('You can only upload up to 10 files.');
+      return;
+    }
+
+    // Iterate through selected files
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+
+      // Create a new container for each file
+      const fileContainer = document.createElement('div');
+      fileContainer.classList.add('file-container');
+      fileListContainer.appendChild(fileContainer);
+
+      // Display file name
+      const fileName = document.createElement('span');
+      fileName.innerText = file.name;
+      fileContainer.appendChild(fileName);
+
+      // Create remove button (x icon) for each file
+      const removeButton = document.createElement('span');
+      removeButton.innerHTML = '&#10006;'; // X icon
+      removeButton.classList.add('remove-button');
+      removeButton.addEventListener('click', function () {
+        // Remove file container when the remove button is clicked
+        fileContainer.remove();
+      });
+      fileContainer.appendChild(removeButton);
+    }
+  }
+
+  // Add event listener to file input
+  const fileInput = document.getElementById('file-upload');
+  fileInput.addEventListener('change', handleFileSelect);
+</script>
+
 
 
 </body></html>

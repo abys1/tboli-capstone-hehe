@@ -189,6 +189,12 @@
 
                                     </ul>
 
+                    
+
+                    
+
+                    
+
                 <!-- Help Box -->
                 
                 <!-- end Help Box -->
@@ -217,7 +223,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" required placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" required="" placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
@@ -296,7 +302,7 @@
                     <div class="app-search dropdown d-none d-lg-block">
                         <form>
                             <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" required placeholder="Search..." id="top-search">
+                                <input type="text" class="form-control dropdown-toggle" required="" placeholder="Search..." id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
                                 <button class="input-group-text btn-primary" type="submit">Search</button>
                             </div>
@@ -315,14 +321,9 @@
                         <div class="col-12">
                             <div class="page-title-box">
                                 <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="Teacher_index.php">Dashboard</a></li>
-                                        
-                                        <li class="breadcrumb-item active">Enrollment Services</li>
-                                        <li class="breadcrumb-item active">Add Parents</li>
-                                    </ol>
+                                    
                                 </div>
-                                <h4 class="page-title">Parent Account Registration</h4>
+                                <h3 class="page-title"> Edit Profile</h3>
                             </div>
                         </div>
                     </div>     
@@ -332,152 +333,299 @@
 
             </div> <!-- content -->
 
-                
-            <div class="col-">
-                <div class="card">
+            
+                        <div class="row">
+                <div class="col-sm-2 mb-2 mb-sm-0">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active show" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">
+                            <i class="mdi mdi-home-variant d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Password and security</span>
+                        </a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">
+                            <i class="mdi mdi-account-circle d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Personal Details</span>
+                        </a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
+                            <i class="mdi mdi-settings-outline d-md-none d-block"></i>
+                            <span class="d-none d-md-block">Change Profile Picture</span>
+                        </a>
+                    </div>
+                </div> <!-- end col-->
+
+                <div class="col-sm-10">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+                        <h3>Password and security</h3>
+                        <table class="table table-centered mb-0" >
+                            <tbody>
+                            <tr>
+                                <td> <h4>Change password</h4> </td>
+                                <td>
+
+                                    <div class="d-grid">
+
+                                    <!-- Signup modal-->
+                                    <button type="button" class="btn btn-info btn-rounded" data-bs-toggle="modal" data-bs-target="#change-pass">Change</button>
+                                        <div id="change-pass" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                            <a href="index.html" class="text-success">
+                                                                <span><img src="assets/images/hacker.gif" alt="" height="100px"></span>
+                                                                <h3>Change Password</h3>
+                                                            </a>
+                                                        </div>
+
+                                                        <form class="ps-3 pe-3" action="#">
+
+                                                    <div class="mb-3">
+                                                        <label for="Current-password" class="form-label">Current password</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input type="password" id="Current-password" class="form-control" placeholder="Enter your current password">
+                                                                <div class="input-group-text" data-password="false">
+                                                                    <span class="password-eye"></span>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="new-password" class="form-label">New password</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input type="password" id="new-password" class="form-control" placeholder="Enter your new password">
+                                                                <div class="input-group-text" data-password="false">
+                                                                    <span class="password-eye"></span>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+
+                                                    <div class="mb-3">
+                                                        <label for="password" class="form-label">Re-type new password</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input type="password" id="password" class="form-control" placeholder="Re-type your password">
+                                                                <div class="input-group-text" data-password="false">
+                                                                    <span class="password-eye"></span>
+                                                                </div>
+                                                            </div>
+                                                    </div>
+
+                                                            
+
+                                                            <div class="mb-3 text-center">
+                                                                <button class="btn btn-primary" type="submit">Change password</button>
+                                                            </div>
+
+                                                        </form>
+
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+                                        
+                                    </div>
+
+                                        
+
+
+                                </td>
+                            </tr>
+
+                            <!-- ennddd -->
+
+                            <tr>
+                                <td> <h4>Change email address</h4> </td>
+                                <td>
+
+                                
+
+                                    <div class="d-grid">
+
+                                    <!-- Signup modal-->
+                                    <button type="button" class="btn btn-info btn-rounded" data-bs-toggle="modal" data-bs-target="#Change-email">Change</button>
+                                        <div id="Change-email" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                            <a href="index.html" class="text-success">
+                                                                <span><img src="assets/images/email.gif" alt="" height="100px"></span>
+                                                                <h3>Change Email Address</h3>
+                                                            </a>
+                                                        </div>
+
+                                                        <form class="ps-3 pe-3" action="#">
+
+                                                            <div class="mb-3">
+                                                                <label for="username" class="form-label">Current email address</label>
+                                                                <input class="form-control" type="email" id="username" required="" placeholder="Enter your Email">
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="emailaddress" class="form-label">Email address</label>
+                                                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your new email">
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="password" class="form-label">Re-type your email</label>
+                                                                <input class="form-control" type="email" required="" id="password" placeholder="Re-type your email">
+                                                            </div>
+
+                                                            
+
+                                                            <div class="mb-3 text-center">
+                                                                <button class="btn btn-primary" type="submit">Change Email</button>
+                                                            </div>
+
+                                                        </form>
+
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+                                        
+                                    </div>
+
+                                        
+
+
+                                </td>
+                            </tr>
+
+                            <!-- enddd -->
+
+                            <tr>
+                                <td> <h4>Personal informations</h4> </td>
+                                <td>
+
+                                    <div class="d-grid">
+
+                                    <!-- Signup modal-->
+                                    <button type="button" class="btn btn-info btn-rounded" data-bs-toggle="modal" data-bs-target="#Personal-info">Change</button>
+                                        <div id="Personal-info" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                    <div class="modal-body">
+                                                        <div class="text-center mt-2 mb-4">
+                                                            <a href="index.html" class="text-success">
+                                                                <span><img src="assets/images/speech-bubble.gif" alt="" height="100px"></span>
+                                                                <h3>Change Personal Information</h3>
+                                                            </a>
+                                                        </div>
+
+                                                        <form class="ps-3 pe-3" action="#">
+
+                                                            <div class="mb-3">
+                                                                <label for="username" class="form-label">Name</label>
+                                                                <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="emailaddress" class="form-label">Email address</label>
+                                                                <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                                            </div>
+
+                                                            <div class="mb-3">
+                                                                <label for="password" class="form-label">Password</label>
+                                                                <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                                            </div>
+
+                                                            
+
+                                                            <div class="mb-3 text-center">
+                                                                <button class="btn btn-primary" type="submit">Change Personal Info</button>
+                                                            </div>
+
+                                                        </form>
+
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+                                        
+                                    </div>
+
+                                        
+
+
+                                </td>
+                            </tr>
+                            
+                                
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            
+
+
+                        <div class="col-">
+                    <div class="card">
                     <div class="card-body">
                         
-                        <h4>Parents Information</h4>
+                        <h4>Personal Information</h4>
 
-                        <form action="<?php //htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
+                        
                             <div class="row g-2">
                                 
                                 
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
+                                    <label for="FName" class="form-label">First Name </label>
+                                    <h4 class="form-control" >Jillian</h4>
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
+                                    <label for="MiddleName" class="form-label">Middle Name </label>
+                                    <h4 class="form-control" >Penzon</h4>
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
+                                    <label for="LName" class="form-label">Last Name </label>
+                                    <h4 class="form-control" >Ward</h4>
                                 </div>
                                 
                                 <div class="mb-3 col-md-6">
-                                    <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
+                                    <label for="SuffiName" class="form-label">Suffix Name </label>
+                                    <h4 class="form-control" >None</h4>
                                 </div>
                             </div>
 
                             <div class="row g-2">
                                 <div class="mb-3 col-md-6">
-                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                    <label for="inputbday" class="form-label">Birthdate </label>
+                                    <h4 class="form-control" >February 23, 2005</h4>
                                 </div>
                                 <div class="mb-3 col-md-4">
-                                    <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
-                                    <select id="inputGender" class="form-select" name="gender">
-                                        <option>Choose</option>
-                                        <option>Female</option>
-                                        <option>Male</option> 
-                                    </select>
+                                    <label for="inputGender" class="form-label">Gender </label>
+                                    <h4 class="form-control" >Female</h4>
                                 </div>
                             </div>
 
                             <h4>Location</h4>
                                         
                             <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Full address (street, barangay, city) <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required placeholder="Enter Address" name="address">
+                                <label for="inputAddress" class="form-label">Full address (street, barangay, city) </label>
+                                <h4 class="form-control" >Laguilayan, Isulan, Sultan Kudarat, Purok 5</h4>
                             </div>
                             
                             <h4>Contact Information</h4>     
                             <div class="row g-2">
-                                <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputCity" name="city">
-                                </div>
-                                <div class="mb-3 col-md-5">
-                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
-                                </div>
-                            </div>
-
-                            <!-- <h4>Parent/Guardian</h4>
-
-
-                            <div class="row g-2">
-                                
-
-                            <div class="mb-3 col-md-6">
-                                    <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
+                                <div class="mb-3 col-md-6">
+                                    <label for="inputCity" class="form-label">Email </label>
+                                    <h4 class="form-control" >Jillianward@gmail.com</h4>
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
+                                    <label for="inputBarangay" class="form-label">Phone Number </label>
+                                    <h4 class="form-control" >09217381873</h4>
                                 </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
-                                </div>
-                            </div>
-
-                            <div class="row g-2">
-                                <div class="mb-3 col-md-6">
-                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday" name="bday">
-                                </div>
-                                <div class="mb-3 col-md-4">
-                                    <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
-                                    <select id="inputGender" class="form-select" name="gender">
-                                        <option>Choose</option>
-                                        <option>Female</option>
-                                        <option>Male</option> 
-                                    </select>
-                                </div>
-                            </div>
-
-                            <h4>Location</h4>
-                                        
-                            <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Address <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required placeholder="1234 Main St" name="address">
-                            </div>
+                            </div>                              
                             
-                                        
-                            <div class="row g-2">
-                                <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">City <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputCity" name="city">
-                                </div>
-                                <div class="mb-3 col-md-5">
-                                    <label for="inputBarangay" class="form-label">Barangay <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
-                                </div>
-
-                                <div class="mb-3 col-md-2">
-                                    <label for="inputZip" class="form-label">Zip <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputZip" name="zip">
-                                </div>
-                            </div>
-
-                            <h4>Parent/Guardian Contact Infotmation</h4>
-
-                            <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Phone Number/Tel Number <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required placeholder="1234 Main St">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Email address <sup>Optional</sup></label>
-                                <input type="email" class="form-control" id="inputAddress" required placeholder="1234 Main St">
-                            </div> -->
-
-
-
                         
-                                        
-                            <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
-                        </form>
 
                         
 
@@ -488,10 +636,73 @@
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div>
-            
-
                         
-            
+
+
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            
+
+                                    <h4>Upload your picture here!</h4>
+                                    <div class="d-grid">
+                                        <button type="button" class="btn btn-info">Change Profile</button>
+                                        
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <!-- File Upload -->
+                                    <form action="/" method="post" class="dropzone" id="myAwesomeDropzone" data-plugin="dropzone" data-previews-container="#file-previews"
+                                        data-upload-preview-template="#uploadPreviewTemplate">
+
+                                        
+                                        <div class="fallback">
+                                            <input name="file" type="file"/>
+                                        </div>
+
+                                        <div class="dz-message needsclick">
+                                            <i class="h1 text-muted dripicons-cloud-upload"></i>
+                                            <h3>Drop files here or click to upload.</h3>
+                                            <span class="text-muted font-13">(This is just a demo dropzone. Selected files are
+                                                <strong>not</strong> actually uploaded.)</span>
+                                        </div>
+
+                                        
+                                    </form>
+
+                                    <!-- Preview -->
+                                    <div class="dropzone-previews mt-3" id="file-previews"></div>
+
+                                    <!-- file preview template -->
+                                    <div class="d-none" id="uploadPreviewTemplate">
+                                        <div class="card mt-1 mb-0 shadow-none border">
+                                            <div class="p-2">
+                                                <div class="row align-items-center">
+                                                    <div class="col-auto">
+                                                        <img data-dz-thumbnail src="#" class="avatar-sm rounded bg-light" alt="">
+                                                    </div>
+                                                    <div class="col ps-0">
+                                                        <a href="javascript:void(0);" class="text-muted fw-bold" data-dz-name></a>
+                                                        <p class="mb-0" data-dz-size></p>
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <!-- Button -->
+                                                        <a href="" class="btn btn-link btn-lg text-muted" data-dz-remove>
+                                                            <i class="dripicons-cross"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                        </div>
+                    </div> <!-- end tab-content-->
+                </div> <!-- end col-->
+            </div>
+            <!-- end row-->
 
             
 
@@ -622,82 +833,13 @@
     <script src="assets/js/vendor.min.js"></script>
     <script src="assets/js/app.min.js"></script>
 
+    <!-- plugin js -->
+    <script src="assets/js/vendor/dropzone.min.js"></script>
+    <!-- init js -->
+    <script src="assets/js/ui/component.fileupload.js"></script>
+
 </div>
     </div>
         </body>
     
     </html>
-
-
-    <?php
-    
-    /*if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-        $LID = filter_input(INPUT_POST, "LID", FILTER_SANITIZE_SPECIAL_CHARS);
-        $firstname = filter_input(INPUT_POST, "firstname", FILTER_SANITIZE_SPECIAL_CHARS);
-        $lastname = filter_input(INPUT_POST, "lastname", FILTER_SANITIZE_SPECIAL_CHARS);
-        $midname = filter_input(INPUT_POST, "midname", FILTER_SANITIZE_SPECIAL_CHARS);
-        $sufname = filter_input(INPUT_POST, "sufname", FILTER_SANITIZE_SPECIAL_CHARS);
-        $bday = filter_input(INPUT_POST, "bday", FILTER_SANITIZE_SPECIAL_CHARS);
-        $gender = filter_input(INPUT_POST, "gender", FILTER_SANITIZE_SPECIAL_CHARS);
-        $address = filter_input(INPUT_POST, "address", FILTER_SANITIZE_SPECIAL_CHARS);
-        $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_SPECIAL_CHARS);
-        $barrgy = filter_input(INPUT_POST, "barrgy", FILTER_SANITIZE_SPECIAL_CHARS);
-        $zip = filter_input(INPUT_POST, "zip", FILTER_SANITIZE_SPECIAL_CHARS);
-        
-        if (empty($LID) || empty($firstname) || empty($lastname) || empty($midname) || empty($bday) || empty($gender) || empty($address) || empty($city) || empty($barrgy) || empty($zip)) {
-            echo '<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="errorModalLabel">Error</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Please fill in all the missing fields.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var modal = new bootstrap.Modal(document.getElementById("errorModal"));
-                modal.show();
-            });
-        </script>';
-        }
-        else{
-            $sql = "INSERT INTO student_regis (lerner_id , firstname, lastname, midname, sufname, bday, gender, address, city, barrgy, zip) 
-                VALUES ('$LID', '$firstname', '$lastname', '$midname', '$sufname', '$bday', '$gender', '$address', '$city', '$barrgy', '$zip')";
-                mysqli_query($conn,$sql);
-                echo '<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="errorModalLabel">Success</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                        Student account has been created!
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var modal = new bootstrap.Modal(document.getElementById("errorModal"));
-                    modal.show();
-                });
-            </script>';
-        }
-    }
-
-    mysqli_close($conn);*/
-    
-    ?>

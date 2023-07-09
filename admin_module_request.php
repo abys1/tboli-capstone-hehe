@@ -88,14 +88,30 @@
     </li>
 
     
-    <li class="side-nav-item">
-<a href="admin_module_request.php" class="side-nav-link">
-<i class="fa fa-book"></i>
-<span>Manage Lesson</span>
-</a>
-</li>
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Lessons </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboardsLessons" style="">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="admin_accepted_lessons.php">Accepted Lessons</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="admin_pending_lessons.php">Pending Lessons</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="admin_archive_lessons.php">Archive Lessons</a>
+                                                    </li>                            
+                                                    
+                                                </ul>
+                                            </div>
+                                        </li>
 
-<li class="side-nav-item">
+                                        <li class="side-nav-item">
                                             <a href="admin_quiz.php" class="side-nav-link">
                                                 <i class="fa fa-book"></i>
                                                 <span>Manage Quiz</span>
@@ -179,35 +195,6 @@
                                 </form>
                             </div>
                         </li>
-                        <li class="dropdown notification-list topbar-dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12"> 
-                                <span class="align-middle d-none d-sm-inline-block">English</span> <i class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu">
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">German</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Italian</span>
-                                </a>
-            
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Spanish</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span class="align-middle">Russian</span>
-                                </a>
-
-                            </div>
-                        </li>
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -216,7 +203,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
 
-                                <!-- item-->
+                                
                                 <div class="dropdown-item noti-title">
                                     <h5 class="m-0">
                                         <span class="float-end">
@@ -228,125 +215,7 @@
                                 </div>
 
                                 <div style="max-height: 230px;" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">1 min ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-account-plus"></i>
-                                        </div>
-                                        <p class="notify-details">New user registered.
-                                            <small class="text-muted">5 hours ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Cristina Pride</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Hi, How are you? What about our next meeting</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-primary">
-                                            <i class="mdi mdi-comment-account-outline"></i>
-                                        </div>
-                                        <p class="notify-details">Caleb Flakelar commented on Admin
-                                            <small class="text-muted">4 days ago</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon">
-                                            <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt=""> </div>
-                                        <p class="notify-details">Karen Robinson</p>
-                                        <p class="text-muted mb-0 user-msg">
-                                            <small>Wow ! this admin looks good and awesome design</small>
-                                        </p>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                        <div class="notify-icon bg-info">
-                                            <i class="mdi mdi-heart"></i>
-                                        </div>
-                                        <p class="notify-details">Carlos Crouch liked
-                                            <b>Admin</b>
-                                            <small class="text-muted">13 days ago</small>
-                                        </p>
-                                    </a>
                                 </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
-
-                                <!-- All-->
-                                <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
-
-                        <li class="dropdown notification-list d-none d-sm-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-view-apps noti-icon"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg p-0">
-
-                                <div class="p-2">
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/slack.png" alt="slack">
-                                                <span>Slack</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/github.png" alt="Github">
-                                                <span>GitHub</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dribbble.png" alt="dribbble">
-                                                <span>Dribbble</span>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="row g-0">
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
-                                                <span>Bitbucket</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/dropbox.png" alt="dropbox">
-                                                <span>Dropbox</span>
-                                            </a>
-                                        </div>
-                                        <div class="col">
-                                            <a class="dropdown-icon-item" href="#">
-                                                <img src="assets/images/brands/g-suite.png" alt="G Suite">
-                                                <span>G Suite</span>
-                                            </a>
-                                        </div>
-                                    </div> <!-- end row-->
-                                </div>
 
                             </div>
                         </li>
@@ -395,34 +264,10 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                 <!-- item-->
-                                <div class=" dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome !</h6>
-                                </div>
-
-                                <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
-                                    <span>My Account</span>
+                                    <span>Profile Settings</span>
                                 </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-edit me-1"></i>
-                                    <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lifebuoy me-1"></i>
-                                    <span>Support</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lock-outline me-1"></i>
-                                    <span>Lock Screen</span>
-                                </a>
-
                                 <!-- item-->
                                 <a href="login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
@@ -528,8 +373,12 @@
                 <div class="col-sm-12">
                     <div class="text-sm-end">
                      
-                      <a href="javascript:void(0);" class="btn btn-success mb-2"><i class="uil-edit-alt"></i> Approve</a>
-                      <a href="javascript:void(0);" class="btn btn-danger mb-2"><i class="uil-edit-alt"></i> Decline</a>
+                      <a href="javascript:void(0);">
+                       <button type="button"class="btn btn-success mb-2"><i class="uil-edit-alt"></i>Approve</button>
+                    </a>
+                    <a href="javascript:void(0);">
+                    <button type="button" class="btn btn-danger mb-2"><i class="uil-edit-alt"></i>Decline</button>
+                    </a>
 
                     </div>
                 </div><!-- end col-->
@@ -555,30 +404,65 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div class="form-check form-checkbox-success">
-                                <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
-                                <label class="form-check-label" for="customCheckcolor2">Select</label>
-                            </div>
-                        </td>
-                        <td>001</td>
-                        <td>Laroco, Jv</td>
-                        <td>02000221067</td>
-                        <td>sdd</td>
-                        <td>pakyu</td>
-                        <td>09/04/2018</td>
-                        <td>
-                            <button type="button" class="btn btn-info"><i class="mdi mdi-eye"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
-                            <button type="button" class="btn btn-success"><i class="uil-check"></i></button>
-                        </td>
-                        <td>
-                            <div>
-                                <span class="badge bg-success">Approved</span>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php
+                    include 'dbcon.php';
+
+                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_content_status.status FROM tbl_lesson
+                    JOIN tbl_userinfo ON tbl_lesson.lesson_id = tbl_userinfo.user_id
+                    JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
+                    JOIN tbl_content_status ON tbl_lesson.lesson_id = tbl_content_status.content_status_id
+                    WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_content_status.status IN (1, 2)";
+
+                    $result = mysqli_query($conn, $sql);
+
+                    if (!$result) {
+                        die ("Error executing the query: " . mysqli_error($conn));
+                    }
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
+                                                    <tr>
+                            <td>
+                                <div class="form-check form-checkbox-success">
+                                    <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
+                                    <label class="form-check-label" for="customCheckcolor2"></label>
+                                </div>
+                            </td>
+                            <td><?php echo $row['lesson_id']; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['objective']; ?></td>
+                            <td><?php echo $row['type']; ?></td>
+                            <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo $row['lesson']; ?></a></td>
+                            <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
+                            <td>
+                            <a href="admin_module_accept.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="accept">
+                                <button type="button" class="btn btn-primary"><i class="uil-check"></i> </button>
+                            </a>
+                            <a href="admin_module_decline.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="decline">
+                                <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
+                            </a>
+                            </td>
+                            <td>
+                                <?php
+                                if ($row['status'] == 1) {
+                                    echo '<span class="badge bg-success">Active</span>';
+                                } elseif($row['status'] == 2) {
+                                    echo '<span class="badge bg-warning">Pending</span>';
+                                }
+                                 else {
+                                    echo '<span class="badge bg-danger">Inactive</span>';
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            echo "<tr><td colspan='6'>No records found</td></tr>";
+                        }
+                        ?>
+                    </td>
                 </tbody>
             </table>
 

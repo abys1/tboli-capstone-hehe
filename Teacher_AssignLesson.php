@@ -6,16 +6,20 @@
 <html lang="en" class="menuitem-active">
   <head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+    <!-- third party css -->
+    <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+    <!-- third party css end -->
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
-    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
   </head>
   <body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
     <!-- Begin page -->
@@ -252,12 +256,6 @@
                     <i class="mdi mdi-account-circle me-1"></i>
                     <span>My Account</span>
                   </a>
-
-                  <!-- item-->
-                  <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="mdi mdi-lock-outline me-1"></i>
-                    <span>Lock Screen</span>
-                  </a>
                   <!-- item-->
                   <a href="Teacher_Login.php?logout=true" class="dropdown-item notify-item">
                     <i class="mdi mdi-logout me-1"></i>
@@ -286,8 +284,16 @@
             <div class="row">
               <div class="col-12">
                 <div class="page-title-box">
-                  <div class="page-title-right"></div>
-                  <h3 class="page-title"> Teacher Profile</h3>
+                  <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                      <li class="breadcrumb-item">
+                        <a href="Teacher_index.php">Dashboard</a>
+                      </li>
+                      
+                      <li class="breadcrumb-item active">Assign Lesson to Students</li>
+                    </ol>
+                  </div>
+                  <h4 class="page-title">Assign Lesson to Students</h4>
                 </div>
               </div>
             </div>
@@ -297,180 +303,92 @@
         </div>
         <!-- content -->
         <div class="row">
-          <div class="col-sm-12">
-            <!-- Profile -->
-            <div class="card bg-dark">
-              <div class="card-body profile-user-box">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <div class="row align-items-center">
-                      <div class="col-auto">
-                        <div class="avatar-lg">
-                          <img src="assets/images/users/Jillian-Ward.jpg" alt="" class="rounded-circle img-thumbnail">
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div>
-                          <h4 class="mt-1 mb-1 text-white">Jillian Ward</h4>
-                          <p class="font-13 text-white-50"> Authorised Teacher</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end col-->
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row mb-2">
                   <div class="col-sm-4">
-                    <div class="text-center mt-sm-0 mt-3 text-sm-end">
-                      <span class="badge badge-outline-info">Teacher</span>
-                      <br>
-                      <br>
-                      <br>
-                      <a href="Teacher_Edit_Profile.php">
-                        <button type="button" class="btn btn-info">
-                          <i class="mdi mdi-account-edit me-1"></i> Edit Profile </button>
-                      </a>
+                    <!-- Single Select -->
+                    <select class="form-control select2" data-toggle="select2">
+                      <option>Select</option>
+                      <option value="AK">Literacy</option>
+                      <option value="HI">Numeracy</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-8">
+                    <div class="text-sm-end">
+                      <button type="button" class="btn btn-info mb-2">Assign Learners</button>
                     </div>
                   </div>
-                  <!-- end col-->
+                  <!-- end col -->
                 </div>
-                <!-- end row -->
+                <div class="table-responsive">
+                  <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap" id="products-datatable">
+                    <thead class="table-light">
+                      <tr>
+                        <th style="width: 20px;">
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheck1">
+                            <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                          </div>
+                        </th>
+                        <th>LRN</th>
+                        <th>Student Name</th>
+                        <th>Birthdate</th>
+                        <th>Gender</th>
+                        <th>Full Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheck2">
+                            <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                          </div>
+                        </td>
+                        <td>02000221026</td>
+                        <td class="table-user">
+                          <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                          <a href="javascript:void(0);" class="text-body fw-semibold">Paul J. Friend</a>
+                        </td>
+                        <td>
+                          <span class="fw-semibold"> 09/04/2001</span>
+                        </td>
+                        <td>male</td>
+                        <td>gensan city</td>
+                        <td>09217381873</td>
+                        <td>jvlaroco@gmail.com</td>
+                        <td>
+                          <a href="javascript:void(0);" class="action-icon">
+                            <i class="uil-eye"></i>
+                          </a>
+                          <a href="javascript:void(0);" class="action-icon">
+                            <i class="mdi mdi-square-edit-outline"></i>
+                          </a>
+                          <a href="javascript:void(0);" class="action-icon">
+                            <i class="mdi mdi-delete"></i>
+                          </a>
+                        </td>
+                        <td>
+                          <span class="badge bg-success">Active</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <!-- end card-body/ profile-user-box-->
+              <!-- end card-body-->
             </div>
-            <!--end profile/ card -->
+            <!-- end card-->
           </div>
-          <!-- end col-->
+          <!-- end col -->
         </div>
-        <div class="row">
-          <div class="col-sm-4 mb-2 mb-sm-0">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link active show" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                <i class="mdi mdi-home-variant d-md-none d-block"></i>
-                <span class="d-none d-md-block">Overview</span>
-              </a>
-              <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                <span class="d-none d-md-block">Contact and basic Info</span>
-              </a>
-              <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">
-                <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                <span class="d-none d-md-block">Achivements</span>
-              </a>
-            </div>
-          </div>
-          <!-- end col-->
-          <div class="col-sm-8">
-            <div class="tab-content" id="v-pills-tabContent">
-              <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <h2>Overview</h2>
-                <br>
-                <br>
-                <span class="h4">
-                  <i class=" uil-graduation-hat"></i> &nbsp;Studied at Mindanao Polytechnic College </span>
-                <br>
-                <br>
-                <span class="h4">
-                  <i class=" uil-building"></i> &nbsp;Lives in General Santos, General Santos, Philippines </span>
-                <br>
-                <br>
-                <span class="h4">
-                  <i class="  uil-location"></i> &nbsp;From Laguilayan, Sultan Kudarat, Philippines </span>
-                <br>
-                <br>
-                <span class="h4">
-                  <i class="  uil-heart"></i> &nbsp;Single</span>
-                <br>
-                <br>
-                <span class="h4">
-                  <i class="mdi mdi-cellphone-android"></i> &nbsp;09217381873 </span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile<br>
-                <br>
-              </div>
-              <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                
-
-              <h2>Contact and basic Info</h2>
-                <br>
-                
-                <p class="h3 text-info" >Contact</p>
-                <br>
-                <span class="h4">
-                <i class="mdi mdi-cellphone-android"></i> &nbsp;09217381873 </span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobile<br>
-                <br>
-
-                <span class="h4">
-                <i class="mdi mdi-email"></i> &nbsp;Jillianxward@gmail.com </span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email<br>
-                <br>
-
-                <p class="h3 text-info" >Websites and social links</p><br>
-                
-                <span class="h4">
-                <i class="mdi mdi-facebook"></i> &nbsp;Jillian Ward  </span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facebook<br>
-                <br>
-                <span class="h4">
-                <i class="mdi mdi-instagram"></i> &nbsp;Jillianxdward</span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram<br>
-                <br>
-
-                <p class="h3 text-info" >Basic info</p><br>
-
-                <span class="h4">
-                <i class="dripicons-user"></i> &nbsp;Female</span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gender<br>
-                <br>
-                <span class="h4">
-                  <i class="mdi mdi-cake-variant"></i> &nbsp;February 23, 2005 </span>
-                <br>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Birth-date<br>
-                <br>
-
-
-
-              </div>
-              <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                
-                <div class="card ribbon-box">
-                    <div class="card-body">
-                        <div class="ribbon ribbon-info float-end"><i class="mdi mdi-trophy-award" ><span>Certified</span> </i> </div>
-                        <p class="mb-0">Certificate of Eligibility from the Professional Regulation Commission (PRC). 
-                            This certificate confirms that they have met the basic qualifications and prerequisites for the licensure examination.
-                        </p>
-                    </div> <!-- end card-body -->
-                </div> <!-- end card-->
-
-                <div class="card ribbon-box">
-                    <div class="card-body">
-                        <div class="ribbon ribbon-success float-end"><i class="mdi mdi-trophy-award" ><span>Certified</span> </i> </div>
-                        <p class="mb-0">"This year, the esteemed accolade of 'Best Teacher of the Year' was rightfully bestowed upon our exceptional educator, as their 
-                                        unwavering dedication, passion, and profound impact on students' lives made them stand out as the epitome of excellence in the teaching profession."
-                        </p>
-                    </div> <!-- end card-body -->
-                </div> <!-- end card-->
-
-                <div class="card ribbon-box">
-                    <div class="card-body">
-                        <div class="ribbon ribbon-warning float-end"><i class="mdi mdi-trophy-award" ><span>Certified</span> </i> </div>
-                        <p class="mb-0">"With a rare blend of expertise, compassion, and creativity, our teacher has left an indelible mark on the hearts and minds of students, leading to their well-deserved
-                             distinction as the 'Best Teacher of the Year' and exemplifying the pinnacle of educational excellence."
-                        </p>
-                    </div> <!-- end card-body -->
-                </div> <!-- end card-->
-
-
-
-                
-              
-              </div>
-            </div>
-            <!-- end tab-content-->
-          </div>
-          <!-- end col-->
-        </div>
-        <!-- end row-->
-
-
-
+        <!-- end row -->
         <!-- Footer Start -->
         <footer class="footer">
           <div class="container-fluid">
@@ -478,7 +396,7 @@
               <div class="col-md-6">
                 <script>
                   document.write(new Date().getFullYear())
-                </script>202320232023202320232023 © Hyper - Coderthemes.com
+                </script>20232023202320232023202320232023 © Hyper - Coderthemes.com
               </div>
               <div class="col-md-6">
                 <div class="text-md-end footer-links d-none d-md-block">
@@ -599,6 +517,17 @@
         <!-- bundle -->
         <script src="assets/js/vendor.min.js"></script>
         <script src="assets/js/app.min.js"></script>
+        <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+        <script src="assets/js/vendor/apexcharts.min.js"></script>
+        <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+        <!-- third party js ends -->
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.AssignLesson.js"></script>
+        <!-- end demo js-->
       </div>
     </div>
   </body>
