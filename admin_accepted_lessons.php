@@ -56,38 +56,39 @@
                 <!--- Sidemenu -->
                 <ul class="side-nav">
 
-                    
-<li class="side-nav-item">
-        <a href="admin_dashboard.php" class="side-nav-link">
-            <i class="uil-home"></i>
-            <span>Dashboard</span>
-        </a>
-    </li>
 
-    <li class="side-nav-item">
-        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-            <i class="uil-user-plus"></i>
-            <span class="badge bg-success float-end"></span>
-            <span> Users </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <div class="collapse" id="sidebarDashboards" style="">
-            <ul class="side-nav-second-level">
-                <li>
-                    <a href="admin_addAccount.php">Admin</a>
-                </li>
-                <li>
-                    <a href="admin_student.php">Student</a>
-                </li>
-                <li>
-                    <a href="admin_teacher.php">Teacher</a>
-                </li>                            
-                
-            </ul>
-        </div>
-    </li>
+                                        <li class="side-nav-item">
+                                            <a href="admin_dashboard.php" class="side-nav-link">
+                                                <i class="uil-home"></i>
+                                                <span>Dashboard</span>
+                                            </a>
+                                        </li>
 
-    
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
+                                                aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Users </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboards" style="">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="admin_addAccount.php">Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="admin_student.php">Student</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="admin_teacher.php">Teacher</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </li>
+
+
                                         <li class="side-nav-item">
                                             <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
@@ -118,50 +119,51 @@
                                             </a>
                                         </li>
 
-    <li class="side-nav-item">
-        <a href="#" class="side-nav-link">
-            <i class="uil-user-plus"></i>
-            <span>Assign Lesson to Teacher</span>
-        </a>
-    </li>
-    <li class="side-nav-item">
-        <a href="admin_manage_area.php" class="side-nav-link">
-            <i class="uil-user-plus"></i>
-            <span>Manage Area</span>
-        </a>
-    </li>
-    <li class="side-nav-item">
-        <a href="#" class="side-nav-link">
-            <i class="uil-user-plus"></i>
-            <span>Progress</span>
-        </a>
-    </li>
-    
-    <li class="side-nav-item">
-        <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
-            <i class="uil-folder-plus"></i>
-            <span> Reports </span>
-            <span class="menu-arrow"></span>
-        </a>
-        <div class="collapse" id="sidebarEmail">
-            <ul class="side-nav-second-level">
-                <li>
-                    <a href="#">List of Teacher</a>
-                </li>
-                <li>
-                    <a href="#">List of Admin</a>
-                </li>
-                <li>
-                    <a href="#">List of Learners</a>
-                </li>
-                <li>
-                    <a href="#">List of Lesson w/Content</a>
-                </li>
-            </ul>
-        </div>
-    </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Assign Lesson to Teacher</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="admin_manage_area.php" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Manage Area</span>
+                                            </a>
+                                        </li>
+                                        <li class="side-nav-item">
+                                            <a href="#" class="side-nav-link">
+                                                <i class="uil-user-plus"></i>
+                                                <span>Progress</span>
+                                            </a>
+                                        </li>
 
-</ul>
+                                        <li class="side-nav-item">
+                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
+                                                aria-controls="sidebarEmail" class="side-nav-link">
+                                                <i class="uil-folder-plus"></i>
+                                                <span> Reports </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarEmail">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="#">List of Teacher</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Admin</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Learners</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">List of Lesson w/Content</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+
+                                    </ul>
 
 
 
@@ -407,11 +409,12 @@
                     <?php
                     include 'dbcon.php';
 
-                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_content_status.status FROM tbl_lesson
-                    JOIN tbl_userinfo ON tbl_lesson.lesson_id = tbl_userinfo.user_id
+                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.type, tbl_lesson.added_by,
+                    tbl_lesson_files.lesson, tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
+                    FROM tbl_lesson
+                    JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
                     JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
-                    JOIN tbl_content_status ON tbl_lesson.lesson_id = tbl_content_status.content_status_id
-                    WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_content_status.status IN (1)";
+                    WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_lesson_files.status = 1";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -433,14 +436,11 @@
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['objective']; ?></td>
                             <td><?php echo $row['type']; ?></td>
-                            <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo $row['lesson']; ?></a></td>
+                            <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a></td>
                             <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
                             <td>
-                            <a href="admin_module_accept.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="accept">
-                                <button type="button" class="btn btn-primary"><i class="uil-check"></i> </button>
-                            </a>
-                            <a href="admin_module_decline.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="decline">
-                                <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
+                            <a href="admin_lesson_archive.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="archive">
+                                <button type="button" class="btn btn-warning"><i class="uil-archive"></i> </button>
                             </a>
                             </td>
                             <td>
