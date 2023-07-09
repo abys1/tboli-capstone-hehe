@@ -1,175 +1,123 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<div class="container">
+    <link rel="stylesheet" href="admin_add_Admin_acc.css">
 
-<?php
-include 'dbcon.php';
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+<body>
+    <div class="container-fluid">
+        <?php
+        include 'dbcon.php';
 
-if (isset($_POST['btnAdd'])) {
+        if (isset($_POST['btnAdd'])) {
+            $firstname = $_POST['firstname'];
+            $middlename = $_POST['middlename'];
+            $lastname = $_POST['lastname'];
+            $birthday = $_POST['birthday'];
+            $gender = $_POST['gender'];
+            $email = $_POST['email'];
+            $contact = $_POST['phone'];
+            $address = $_POST['address'];
+            $password = $lastname . $birthday;
+            $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
-  $firstname = $_POST['firstname'];
-  $middlename = $_POST['middlename'];
-  $lastname = $_POST['lastname'];
-  $birthday = $_POST['birthday'];
-  $gender = $_POST['gender'];
-  $email = $_POST['email'];
-  $contact = $_POST['phone'];
-  $address = $_POST['address'];
-  $password = $lastname . $birthday;
-  $encrypted = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
 
-  $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
+            if ($conn->query($sql) === TRUE) {
+                $user_info_id = $conn->insert_id;
+                $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$contact')";
 
-  if ($conn->query($sql) === TRUE) {
-    $user_info_id = $conn->insert_id;
-    $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$contact')";
-
-    if ($conn->query($sql) === TRUE) {
-
-      $credentials_id = $conn->insert_id;
-      $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
-
-      if ($conn->query($sql) === TRUE) {
-        $address_id = $conn->insert_id;
-        $sql = "INSERT INTO tbl_user_level (level) VALUES ('ADMIN')";
-
-        if ($conn->query($sql) === TRUE) {
-          $level_id = $conn->insert_id;
-          $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
-
-          if ($conn->query($sql) === TRUE) {
-            $status_id = $conn->insert_id;
-            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
-
-          if ($conn->query($sql) === TRUE) {
-            $account_id = $conn->insert_id;
-            $sql = "INSERT INTO tbl_admin (user_id, credentials_id, address_id, level_id, status_id, account_id) VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id')";
-           
                 if ($conn->query($sql) === TRUE) {
-                header("Location:admin_addAccount.php?msg=Account added successfully");
-                exit();
+                    $credentials_id = $conn->insert_id;
+                    $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
+
+                    if ($conn->query($sql) === TRUE) {
+                        $address_id = $conn->insert_id;
+                        $sql = "INSERT INTO tbl_user_level (level) VALUES ('ADMIN')";
+
+                        if ($conn->query($sql) === TRUE) {
+                            $level_id = $conn->insert_id;
+                            $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
+
+                            if ($conn->query($sql) === TRUE) {
+                                $status_id = $conn->insert_id;
+                                $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
+
+                                if ($conn->query($sql) === TRUE) {
+                                    $account_id = $conn->insert_id;
+                                    $sql = "INSERT INTO tbl_admin (user_id, credentials_id, address_id, level_id, status_id, account_id) VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id')";
+
+                                    if ($conn->query($sql) === TRUE) {
+                                        header("Location:admin_addAccount.php?msg=Account added successfully");
+                                        exit();
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            }
         }
-        }
-    }
-    }
-}
-?>
+        ?>
 
-        <table class="table table-striped">
-            <tbody>
-                <tr>
-                    <td colspan="1">
-                        <form class="well form-horizontal" method="post">
-                            <fieldset>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">First Name</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-user"></i></span><input id="firstName"
-                                                name="firstname" placeholder="First Name" class="form-control"
-                                                required="true" value="" type="text"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Last Name</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-user"></i></span><input id="lastName"
-                                                name="lastname" placeholder="Last Name" class="form-control"
-                                                required="true" value="" type="text"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Gender</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-venus-mars"></i>
-                                            </span>
-                                            <select id="gender" name="gender" class="form-control" required="true">
-                                                <option value="">Select Gender</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Phone Number</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber"
-                                                name="phone" placeholder="Phone Number" class="form-control"
-                                                required="true" value="" type="text"></div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                    </td>
-                    <td colspan="1">
-                            <fieldset>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Middle Name</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-user"></i></span><input id="middleName"
-                                                name="middlename" placeholder="Middle Name" class="form-control"
-                                                required="true" value="" type="text"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Birthday</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                            <input id="birthday" name="birthday" placeholder="Select Birthday"
-                                                class="form-control" required="true" type="date">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Email Address</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-envelope"></i></span><input id="email"
-                                                name="email" placeholder="Email" class="form-control" required="true"
-                                                value="" type="text"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-4 control-label">Full address (street, barangay, city)</label>
-                                    <div class="col-md-8 inputGroupContainer">
-                                        <div class="input-group"><span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-home"></i></span><input id="address"
-                                                name="address" placeholder="Address" class="form-control"
-                                                required="true" value="" type="text"></div>
-                                    </div>
-                                </div>
-                                <!-- Add Admin Button -->
-                                <div class="form-group text-center">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary" name="btnAdd">Add Admin</button>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="wrapper rounded bg-white">
+            <div class="h3">Add Admin</div>
+
+            <div class="form">
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Middle Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Birthday</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class=" col-md-6 mt-md-0 mt-3">
+                        <label>Gender</label>
+                        <select id="sub" required>
+                            <option value="" selected hidden>Choose Option</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Full Address (street, barangay, city)</label>
+                        <input type="address" class="form-control" required>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary mt-3" value="Add Admin">
+            </div>
+        </div>
     </div>
-
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+</body>
+</html>
