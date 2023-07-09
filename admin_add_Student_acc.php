@@ -2,6 +2,12 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link rel="stylesheet" href="admin_add_Admin_acc.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 <!------ Include the above in your HEAD tag ---------->
 
 
@@ -79,8 +85,7 @@ if (isset($_POST['btnAdd'])) {
 }
 ?>
 
-
-    <table class="table table-striped">
+    <!-- <table class="table table-striped">
         <tbody>
             <tr>
                 <td colspan="1">
@@ -196,5 +201,111 @@ if (isset($_POST['btnAdd'])) {
                 </td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+
+    <div class="wrapper rounded bg-white">
+            <div class="h3">Register Learner</div>
+
+            <div class="form">
+                <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                        <label>LRN</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Middle Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Birthday</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class=" col-md-6 mt-md-0 mt-3">
+                        <label>Gender</label>
+                        <select id="sub" required>
+                            <option value="" selected hidden>Choose Option</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                  
+                    <div class="my-md-2 my-3">
+                        <label>Full Address (street, barangay, city)</label>
+                        <input type="address" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="h3">Guardian Information</div>
+
+<div class="form">
+    <div class="row">
+  
+        <div class="col-md-6 mt-md-0 mt-3">
+            <label>First Name</label>
+            <input type="text" class="form-control" required>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-3">
+            <label>Middle Name</label>
+            <input type="text" class="form-control" required>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-3">
+            <label>Last Name</label>
+            <input type="text" class="form-control" required>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-3">
+            <label>Phone Number</label>
+            <input type="tel" class="form-control" required>
+        </div>
+        <div class="col-md-6 mt-md-0 mt-3">
+            <label>Email</label>
+            <input type="email" class="form-control" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mt-md-0 mt-3">
+            <label>Birthday</label>
+            <input type="date" class="form-control" required>
+        </div>
+        <div class=" col-md-6 mt-md-0 mt-3">
+            <label>Gender</label>
+            <select id="sub" required>
+                <option value="" selected hidden>Choose Option</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+      
+        <div class="my-md-2 my-3">
+            <label>Full Address (street, barangay, city)</label>
+            <input type="address" class="form-control" required>
+        </div>
+    </div>
+                <input type="submit" class="btn btn-primary mt-3" value="Add Account">
+            </div>
+        </div>
+    </div>
+
+
 </div>
