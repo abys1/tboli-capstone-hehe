@@ -75,7 +75,7 @@
                                         $_SESSION['email'] = $email;
                                         $_SESSION['user_level'] = $level;
 
-                                        if ($level === 'Teacher') {
+                                        if ($level === 'TEACHER') {
                                             header("Location: Teacher_index.php?Login Sucessfully");
                                             exit();
                                         }

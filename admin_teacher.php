@@ -86,15 +86,30 @@
                         </div>
                     </li>
 
-                    
                     <li class="side-nav-item">
-    <a href="admin_module_request.php" class="side-nav-link">
-        <i class="fa fa-book"></i>
-        <span>Manage Lesson</span>
-    </a>
-</li>
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                                <i class="uil-user-plus"></i>
+                                                <span class="badge bg-success float-end"></span>
+                                                <span> Manage Lessons </span>
+                                                <span class="menu-arrow"></span>
+                                            </a>
+                                            <div class="collapse" id="sidebarDashboardsLessons" style="">
+                                                <ul class="side-nav-second-level">
+                                                    <li>
+                                                        <a href="admin_accepted_lessons.php">Accepted Lessons</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="admin_pending_lessons.php">Pending Lessons</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="admin_archive_lessons.php">Archive Lessons</a>
+                                                    </li>                            
+                                                    
+                                                </ul>
+                                            </div>
+                                        </li>
 
-<li class="side-nav-item">
+                                        <li class="side-nav-item">
                                             <a href="admin_quiz.php" class="side-nav-link">
                                                 <i class="fa fa-book"></i>
                                                 <span>Manage Quiz</span>

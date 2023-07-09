@@ -42,7 +42,7 @@ if (isset($_SESSION['user_id'])) {
             die("Error moving the uploaded file.");
         }
 
-        $sql = "INSERT INTO tbl_lesson_files (lesson, added_by) VALUES ('$lesson_name', '$user_id')";
+        $sql = "INSERT INTO tbl_lesson_files (lesson, added_by, status) VALUES ('$lesson_name', '$user_id', 2)";
 
         if ($conn->query($sql) === TRUE) {
             $lesson_files_ids[] = $conn->insert_id;
@@ -61,15 +61,10 @@ if (isset($_SESSION['user_id'])) {
 
             $sql = "INSERT INTO tbl_module (module_name, module_description, category) VALUES (' ', ' ', ' ')";
 
-            if ($conn->query($sql) === TRUE) {
-                $module_id = $conn->insert_id;
-
-                $sql = "INSERT INTO tbl_content_status (status) VALUES (2)";
-
                 if ($conn->query($sql) === TRUE) {
-                    $content_status_id = $conn->insert_id;
+                    $module_id = $conn->insert_id;
 
-                    $sql = "INSERT INTO tbl_content (lesson_id, module_id, content_status_id) VALUES ('$lesson_id', '$module_id', '$content_status_id')";
+                    $sql = "INSERT INTO tbl_content (lesson_id, module_id) VALUES ('$lesson_id', '$module_id')";
 
                     if ($conn->query($sql) === TRUE) {
                         header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
@@ -78,18 +73,15 @@ if (isset($_SESSION['user_id'])) {
                         die("Error inserting data into tbl_content: " . $conn->error);
                     }
                 } else {
-                    die("Error inserting data into tbl_content_status: " . $conn->error);
+                    die("Error inserting data into tbl_module: " . $conn->error);
                 }
             } else {
-                die("Error inserting data into tbl_module: " . $conn->error);
+                die("Error inserting data into tbl_lesson: " . $conn->error);
             }
         } else {
-            die("Error inserting data into tbl_lesson: " . $conn->error);
+            die("Please select at least one file.");
         }
     } else {
-        die("Please select at least one file.");
-    }
-} else {
-    echo "No user ID provided";
+        echo "No user ID provided";
 }
 ?>
