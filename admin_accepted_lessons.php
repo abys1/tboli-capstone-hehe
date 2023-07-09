@@ -439,7 +439,7 @@
                             <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a></td>
                             <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
                             <td>
-                            <a href="admin_lesson_archive.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="archive">
+                            <a href="admin_lesson_archive.php?lesson=<?php echo $row['lesson'] ?>" class="archive">
                                 <button type="button" class="btn btn-warning"><i class="uil-archive"></i> </button>
                             </a>
                             </td>

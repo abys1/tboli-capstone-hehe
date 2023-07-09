@@ -439,10 +439,10 @@
                             <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a></td>
                             <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
                             <td>
-                            <a href="admin_module_accept.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="accept">
-                                <button type="button" class="btn btn-primary"><i class="uil-check"></i> </button>
+                            <a href="admin_lesson_accept.php?lesson=<?php echo $row['lesson'] ?>" class="accept">
+                                <button type="button" class="btn btn-primary"><i class="uil-check"></i></button>
                             </a>
-                            <a href="admin_module_decline.php?lesson_id=<?php echo $row['lesson_id'] ?>" class="decline">
+                            <a href="admin_lesson_decline.php?lesson=<?php echo $row['lesson'] ?>" class="decline">
                                 <button type="button" class="btn btn-danger"><i class="mdi mdi-window-close"></i></button>
                             </a>
                             </td>
