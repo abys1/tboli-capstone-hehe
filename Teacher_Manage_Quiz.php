@@ -365,17 +365,17 @@
 
 
                 <div class="row">
-                    <div class="col-sm-2 mb-2 mb-sm-0">
-                        <div class="nav flex-column nav-pills h4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <div class="col-sm-3 mb-2 mb-sm-0">
+                        <div class="nav flex-column nav-pills h5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link active show" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home"
                                 aria-selected="true">
                                 <i class="mdi mdi-home-variant d-md-none d-block"></i>
-                                <span class="d-none d-md-block"> <i class="uil-plus-circle" ></i> &nbsp; Add quiz</span>
+                                <span class="d-none d-md-block"> <i class="uil-plus-circle" ></i> &nbsp; Create Assignment</span>
                             </a>
                             <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                 aria-selected="false">
                                 <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                                <span class="d-none d-md-block">Profile</span>
+                                <span class="d-none d-md-block"> <i class="uil-plus-circle" ></i> &nbsp; Create Multiple Choice Quiz</span>
                             </a>
                             <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
                                 aria-selected="false">
@@ -385,7 +385,7 @@
                         </div>
                     </div> <!-- end col-->
 
-                    <div class="col-sm-10">
+                    <div class="col-sm-9">
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade active show" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                 <div class="row" >
@@ -396,7 +396,7 @@
                                         <div class="card-body" >
 
                                         <!-- form start -->
-                                    <form action="">
+                                    <form action="#">
 
 
                                     <div class="mb-3 me-5 ms-4">
@@ -411,7 +411,7 @@
                                                     <input type="text" id="Max Score" class="form-control"> 
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 me-5" >
+                                            <div class="col-lg-3 me-4" >
                                                 <div class="mb-3">
                                                     <label for="inputState" class="form-label">Category</label>
                                                     <select id="inputState" class="form-select">
@@ -451,7 +451,7 @@
                                                         <label for="customCheck1" class="form-check-label">Allow Late?</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-3 me-5" >
+                                                <div class="col-lg-3 me-4" >
                                                     <div class="mb-3">
                                                         <label for="Grading" class="form-label">Grading</label>
                                                         <select id="Grading" class="form-select">
@@ -470,7 +470,7 @@
                                                     </div>
                                             </div>
 
-                                            <div class="col-lg-2 me-5" >
+                                            <div class="col-lg-2 me-4" >
                                                 <div class="mb-3">
                                                     <label for="inputState" class="form-label">Grading Score</label>
                                                     <select id="inputState" class="form-select">
@@ -482,6 +482,76 @@
                                                 </div>
                                             </div>
 
+
+                                            <h3 class="ms-4 mt-3 mb-3" >Options</h3>
+
+                                            <!-- start options -->
+                                            <div class="row" >
+
+
+
+                                            <div class="mb-1 me-5 ms-4">
+                                            <label for="simpleinput" class="form-label">Release Grade</label>
+                                        </div>
+
+
+                                        <div class="mb-3 me-5 ms-4">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio3" name="release" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio3">Instant</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio4" name="release" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio4">Manual</label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-lg-6 ms-4 mb-2">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="customCheck3">
+                                                    <label class="form-check-label" for="customCheck3">Timed</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="customCheck4">
+                                                    <label class="form-check-label" for="customCheck4">Randomize Order</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 ms-4 mb-3">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="customCheck5">
+                                                    <label class="form-check-label" for="customCheck5">Instant Feedback</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input" id="customCheck6">
+                                                    <label class="form-check-label" for="customCheck6">Allow Review</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-1 me-5 ms-4">
+                                            <label for="simpleinput" class="form-label">Grading</label>
+                                        </div>
+
+
+                                        <div class="mb-3 me-5 ms-4">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio5" name="grading" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio5">Use Latest Score</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio6" name="grading" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio6">Use Best Score</label>
+                                            </div>
+                                        </div>
+
+
+                                                
+                                            </div>
+                                            <!-- end options -->
 
 
                                             </div>
@@ -505,12 +575,13 @@
 
                                             <div class="card-footer col-sm-4 ms-2 mt-2 d-grid">
                                     <div class="row" >
-                                        <div class="col-sm-3" >
-                                            <input type="submit" class="btn btn-primary" value="Submit"/>
+                                    <div class="col-sm-3" >
+                                            <input type="reset" class="btn btn-primary text-center"  Value="Clear"/>
                                         </div>
                                         <div class="col-sm-3" >
-                                            <input type="reset" class="btn btn-primary"  Value="Clear"/>
+                                            <input type="submit" class="btn btn-primary " value="Submit"/>
                                         </div>
+                                        
                                     </div>
 
 
@@ -548,11 +619,110 @@
 
                             </div>
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                <p class="mb-0">...</p>
+                                <!-- start content heade -->
+
+
+                                
+                                
+
+                                <div class="row" >
+                                    <div class="card-header">
+
+                                        <h3>Create multiple choice</h3>
+
+                                        <div class="card-body" >
+
+                                        <!-- form start -->
+                                    <form action="#">
+
+
+                                        <div class="mb-3 me-5 ms-4">
+                                            <label for="simpleinput" class="form-label">Questions</label>
+                                            <input type="text" id="simpleinput" class="form-control" placeholder="Enter questions">
+                                        </div>
+
+
+                                        <div class="row me-5 ms-2" >
+                                            <!-- Radios--> 
+
+
+                                                <div class="mt-3">
+                                                    <div class="form-check form-radio-info mb-2">
+                                                        <input type="radio" id="customRadio1" name="customRadio" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio1">A: is correct?</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Enter your text"> 
+                                                    </div>
+                                                    <div class="form-check form-radio-info mb-2">
+                                                    <input type="radio" id="customRadio1" name="customRadio" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio1">B: is correct?</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Enter your text"> 
+                                                    </div>
+                                                    <div class="form-check form-radio-info mb-2">
+                                                    <input type="radio" id="customRadio1" name="customRadio" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio1">C: is correct?</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Enter your text"> 
+                                                    </div>
+                                                    <div class="form-check form-radio-info mb-2">
+                                                    <input type="radio" id="customRadio1" name="customRadio" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio1">D: is correct?</label>
+                                                        <input type="text" id="simpleinput" class="form-control" placeholder="Enter your text"> 
+                                                    </div>
+                                                </div> 
+
+                                        </div>
+
+                                        
+                                            
+
+
+                                 
+
+                                    
+                                    
+                                    
+                                    </div>
+
+                                    <div class="card-footer" >
+                                        <input type="button" class=" btn btn-info" value="Submit">
+                                        <input type="reset" class=" btn btn-info" value="reset">
+                                    </div>
+
+                                        </form>
+                                        <!-- endd form -->
+                                
+                            
+
+                                        
+
+                                        </div>
+                                        <!-- end card-body-->
+
+                                    </div>
+                                    <!--end card header -->
+
+                                    
+
+                                    
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+                                <!-- end content here -->
                             </div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                 <p class="mb-0">...</p>
-                            </div>
+                            </div> -->
                         </div> <!-- end tab-content-->
                     </div> <!-- end col-->
                 </div>
