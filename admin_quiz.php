@@ -98,6 +98,12 @@
                                             </div>
                                         </li>
 
+                                        <li class="side-nav-item">
+                                            <a href="admin_manage_lesson.php" class="side-nav-link">
+                                                <i class="fa fa-book"></i>
+                                                <span>Manage Lesson</span>
+                                            </a>
+                                        </li>
 
                                         <li class="side-nav-item">
                                             <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">

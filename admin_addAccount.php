@@ -88,10 +88,17 @@
                     </li>
 
                     <li class="side-nav-item">
+                                            <a href="admin_manage_lesson.php" class="side-nav-link">
+                                                <i class="fa fa-book"></i>
+                                                <span>Manage Lesson</span>
+                                            </a>
+                                        </li>
+
+                    <li class="side-nav-item">
                                             <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
-                                                <span> Manage Lessons </span>
+                                                <span> Manage Request Lessons </span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <div class="collapse" id="sidebarDashboardsLessons" style="">
