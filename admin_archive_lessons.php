@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
-    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <title>Archive Lesson</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -88,12 +88,17 @@
                                             </div>
                                         </li>
 
-
+                                        <li class="side-nav-item">
+                                            <a href="admin_manage_lesson.php" class="side-nav-link">
+                                                <i class="fa fa-book"></i>
+                                                <span>Manage Lesson</span>
+                                            </a>
+                                        </li>
                                         <li class="side-nav-item">
                                             <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
-                                                <span> Manage Lessons </span>
+                                                <span> Manage Request Lessons </span>
                                                 <span class="menu-arrow"></span>
                                             </a>
                                             <div class="collapse" id="sidebarDashboardsLessons" style="">
