@@ -90,7 +90,7 @@
                         ?>
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Email</label>
-                            <input class="form-control" type="text" id="emailaddress" name="email" required placeholder="Enter your email">
+                            <input class="form-control" type="email" id="emailaddress" name="email" required placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
