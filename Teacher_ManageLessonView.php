@@ -93,10 +93,10 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="Teacher_Module.php">Dashboard</a></li>
                                         
-                                        <li class="breadcrumb-item active">Manage Lesson</li>
+                                        <li class="breadcrumb-item active">Upload Lesson</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Add Module</h4>
+                                <h4 class="page-title">Upload Lesson</h4>
                             </div>
                         </div>
                     </div>    
@@ -112,44 +112,77 @@
                                     <div class="card-body">
 
                                         <div class="row">
-                                            <div class="col-xl-12">
+                                            <div class="col-xl-6">
+                                            
                                                 <div class="mb-3">
-                                                    <label for="projectname" class="form-label">Module Name</label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Module Name">
+                                                    <label for="projectname" class="form-label"> Title <sup>*</sup></label>
+                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="project-overview" class="form-label">Description</label>
+                                                    <label for="project-overview" class="form-label">Content Descriptions <sup>*</sup></label></label>
                                                     <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
                                                 </div>
 
                                                 <!-- Date View -->
+
+
+                                                
                                                 
 
                                                 
 
-                                                <div class="mb-0">
-                                                    <label for="project-overview" class="form-label">Please select subject</label>
-                                                    
-                                                    <select class="form-control select2" data-toggle="select2">
-                                                        <option>Select Category</option>
-                                                        <option value="AZ">Literacy</option>
-                                                        <option value="CO">Numeracy</option>
-                                                        
-                                                    </select>
+                                                
 
-                                                    
-        
-                                                </div>
-
-                                                <div class="mb-3 position-relative" >
-                                                        <br>
-                                                        <input type="button" class="form-control btn-primary" value="Create Module">
-                                                    </div>
+                                                
 
                                             </div> <!-- end col-->
 
                                             
+
+                                            <div class="col-xl-6">
+                                                <div class="mb-3 mt-3 mt-xl-0">
+                                                    
+                                                   
+                                                
+
+                                                <div class="mb-3">
+                                                    <label for="example-fileinput" class="form-label">Upload Handout</label>
+                                                    <input type="file" id="example-fileinput" class="form-control">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="example-fileinput" class="form-label">Upload Audio MP3</label>
+                                                    <input type="file" id="example-fileinput" class="form-control">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="example-fileinput" class="form-label">Upload Video MP4</label>
+                                                    <input type="file" id="example-fileinput" class="form-control">
+                                                </div>
+
+                                                
+                                                
+
+                                                
+
+
+                                                
+                                                    
+                                                
+
+                                                    
+
+                                                    
+
+                                                    
+
+                                                    
+                                                </div>
+
+                                                
+                                                
+                                            </div> <!-- end col-->
                                         </div>
                                         <!-- end row -->
 
@@ -215,7 +248,7 @@
                 
 
                 <!-- Settings -->
-               
+                
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked="">

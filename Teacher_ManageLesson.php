@@ -93,10 +93,10 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="Teacher_Module.php">Dashboard</a></li>
                                         
-                                        <li class="breadcrumb-item active">Manage Lesson</li>
+                                        <li class="breadcrumb-item active">Upload Lesson</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Add Module</h4>
+                                <h4 class="page-title">Upload Lesson</h4>
                             </div>
                         </div>
                     </div>    
@@ -106,58 +106,123 @@
 
             </div> <!-- content -->
 
-            <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
 
-                                        <div class="row">
-                                            <div class="col-xl-12">
-                                                <div class="mb-3">
-                                                    <label for="projectname" class="form-label">Module Name</label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Module Name">
-                                                </div>
 
-                                                <div class="mb-3">
-                                                    <label for="project-overview" class="form-label">Description</label>
-                                                    <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
-                                                </div>
+            <div class="row" >
+                <div class="col-lg-12" >
 
-                                                <!-- Date View -->
-                                                
+                
+                    <div class="card-header" >
 
-                                                
+                        <div class="row float-end me-sm-2 mb-3" >
+                            <!-- <a href="javascript: void(0);" class="btn btn-info">Add Lesson</a> -->
 
-                                                <div class="mb-0">
-                                                    <label for="project-overview" class="form-label">Please select subject</label>
+
+                           <!-- Upload -->
+                                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#signup-modal">Add Lesson</button>
+                                    <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+
+                                                <div class="modal-body">
                                                     
-                                                    <select class="form-control select2" data-toggle="select2">
-                                                        <option>Select Category</option>
-                                                        <option value="AZ">Literacy</option>
-                                                        <option value="CO">Numeracy</option>
+
+                                                    <form class="ps-3 pe-3" action="#">
+
+                                                        <div class="mb-3">
+                                                            <label for="username" class="form-label">Title</label>
+                                                            <input class="form-control" type="text">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="emailaddress" class="form-label">Lesson Objectives</label>
+                                                            <input class="form-control" type="email">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                        <label for="project-overview" class="form-label">Level of learning</label>
+                                                        <select class="form-control select1" data-toggle="select1">
+                                                                <option>Select</option>
+                                                                <option >basic</option>
+                                                                <option >intermidiate</option>
+                                                                <option >advance</option>
+                                                            </select>
+                                                        </div>
+
                                                         
-                                                    </select>
 
-                                                    
-        
+                                                        <div class="mb-0 text-md-end">
+                                                            <button class="btn btn-info" type="submit">Save</button>
+                                                        </div>
+
+                                                    </form>
+
                                                 </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
 
-                                                <div class="mb-3 position-relative" >
-                                                        <br>
-                                                        <input type="button" class="form-control btn-primary" value="Create Module">
-                                                    </div>
 
-                                            </div> <!-- end col-->
 
-                                            
-                                        </div>
-                                        <!-- end row -->
-
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col-->
                         </div>
-                        <!-- end row-->
+
+                        <div class="row mt-4" >
+
+                        <div class="col-lg-12" >
+
+                        <div class="row" >
+
+                        <div class="col-lg-9 mt-3 ms-0  float-end" >
+                        <button class="btn btn-info me-1" type="submit">Literacy</button>
+                        <button class="btn btn-info" type="submit">Numeracy</button>
+                        </div>
+
+                        <div class="col-lg-3 text-center  float-end pt-3" >
+                                <form>
+                                    <input type="text" class="form-control" placeholder="Search ...">
+                                </form>
+                        </div>
+
+                        </div>
+                        </div>
+
+                        
+
+                        
+                           
+                        </div>
+
+                    </div>
+                    
+                    <div class="card-body" >
+
+                        <!-- card-content -->
+                        <div cla ></div>
+
+                        <div class="col-md-6 col-lg-3">
+                                <!-- Simple card -->
+                                <div class="card d-block">
+                                    <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <!-- <h5 class="card-title">Card title</h5> -->
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content. </p>
+                                        <a href="Teacher_ManageLessonView.php" class="btn btn-info">View</a>
+                                        <a href="Teacher_ManageLessonUpload.php" class="btn btn-info">Upload</a>
+                                        <a href="javascript: void(0);" class="btn btn-info">Archive</a>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                        </div><!-- end col -->
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            
 
             
 
@@ -215,7 +280,7 @@
                 
 
                 <!-- Settings -->
-               
+                
 
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="light" id="light-mode-check" checked="">
