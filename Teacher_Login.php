@@ -40,20 +40,30 @@
                                         <!-- form -->
                     <form  method="POST">
                         <?php 
+
+                        $mailError = "";
+                        
                         session_start();
                         include 'dbcon.php';
+
+                        
 
                         if (isset($_POST['btnLogin'])) {
                             $email = $_POST['email'];
                             $password = $_POST['password'];
 
-                            if (empty($email)) {
-                                header("Location: login.php?error=Email must be filled");
-                                exit();
-                            } elseif (empty($password)) {
-                                header("Location: login.php?error=Password must be filled");
-                                exit();
-                            } else {
+                            
+                        
+                            if (empty($password)) {
+                                $mailError = "Your password is empty";
+                            } elseif (empty($email)) {
+                                $mailError = "Your email is empty";
+                            } 
+                        
+                        
+                            
+                            
+                             else {
                                 $sql = "SELECT tbl_userinfo.user_id, tbl_accounts.email, tbl_accounts.password, tbl_user_level.level, tbl_user_status.status
                                 FROM tbl_teachers 
                                 JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
@@ -81,8 +91,7 @@
                                         }
                                     }
                                 }
-                                header("Location: Teacher_Login.php?error=Invalid email or password");
-                                exit();
+                                $mailError = "Invalid email or password";
                             }
 
                         }
@@ -90,13 +99,14 @@
                         ?>
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Email</label>
-                            <input class="form-control" type="email" id="emailaddress" name="email" required placeholder="Enter your email">
+                            <input class="form-control" type="email" id="emailaddress" name="email"  placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
                             <a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
                             <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password" required id="password" name="password" placeholder="Enter your password"> <br> 
-                            <div id="password-error" class="text-danger text-center" style="display: none;">Incorrect username or password</div>
+                            <input class="form-control" type="password"  id="password" name="password" placeholder="Enter your password"> <br> 
+                            <div id="password-error" class="h4 text-center"><span class="badge bg-danger" ><?php echo $mailError  ?></span> </div>
+                            
                         </div>
                         
                         <div class="d-grid mb-0 text-center">
