@@ -116,12 +116,12 @@
                                             
                                                 <div class="mb-3">
                                                     <label for="projectname" class="form-label"> Title <sup>*</sup></label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
+                                                    <input type="text" id="projectname" class="form-control" readonly placeholder="Enter Lesson name">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="project-overview" class="form-label">Content Descriptions <sup>*</sup></label></label>
-                                                    <textarea class="form-control" id="project-overview" rows="5" placeholder="Enter some brief about project.."></textarea>
+                                                    <textarea class="form-control" id="project-overview" readonly rows="5" placeholder="Enter some brief about project.."></textarea>
                                                 </div>
 
                                                 <!-- Date View -->
@@ -147,18 +147,18 @@
                                                 
 
                                                 <div class="mb-3">
-                                                    <label for="example-fileinput" class="form-label">Upload Handout</label>
-                                                    <input type="file" id="example-fileinput" class="form-control">
+                                                    <label for="example-fileinput" class="form-control">Upload Handout</label>
+                                                    
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="example-fileinput" class="form-label">Upload Audio MP3</label>
-                                                    <input type="file" id="example-fileinput" class="form-control">
+                                                    <label for="example-fileinput" class="form-control">Upload Audio MP3</label>
+                                                    
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="example-fileinput" class="form-label">Upload Video MP4</label>
-                                                    <input type="file" id="example-fileinput" class="form-control">
+                                                    <label for="example-fileinput" class="form-control">Upload Video MP4</label>
+                                                    
                                                 </div>
 
                                                 
