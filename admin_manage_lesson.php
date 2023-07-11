@@ -1,13 +1,13 @@
-<?php 
-      session_start();
-      $user_id = $_SESSION['user_id'];
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
 
-      if (isset($_GET['logout'])) {
-      session_unset();
-      session_destroy();
-      header("Location: login.php?Logout");
-      exit();
-      }
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: login.php?Logout");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -108,14 +108,16 @@
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="admin_quiz.php" class="side-nav-link">
+                                            <a href="admin_manage_lesson.php" class="side-nav-link">
                                                 <i class="fa fa-book"></i>
                                                 <span>Manage Lesson</span>
                                             </a>
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                                            <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons"
+                                                aria-expanded="false" aria-controls="sidebarDashboards"
+                                                class="side-nav-link collapsed">
                                                 <i class="uil-user-plus"></i>
                                                 <span class="badge bg-success float-end"></span>
                                                 <span> Manage Request Lessons </span>
@@ -131,8 +133,8 @@
                                                     </li>
                                                     <li>
                                                         <a href="admin_archive_lessons.php">Archive Lessons</a>
-                                                    </li>                            
-                                                    
+                                                    </li>
+
                                                 </ul>
                                             </div>
                                         </li>
@@ -145,7 +147,7 @@
                                         </li>
 
                                         <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
+                                            <a href="admin_assign_lesson_to_teacher.php" class="side-nav-link">
                                                 <i class="uil-user-plus"></i>
                                                 <span>Assign Lesson to Teacher</span>
                                             </a>
@@ -280,25 +282,25 @@
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                <?php
+                                    <?php
                                     include 'dbcon.php';
 
                                     if (isset($_SESSION['user_id'])) {
                                         $user_id = $_SESSION['user_id'];
-                                    
+
                                         $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
                                                 FROM tbl_admin
                                                 JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
                                                 JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
                                                 WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
                                                 LIMIT 1;";
-                                    
+
                                         $result = mysqli_query($conn, $sql);
-                                    
+
                                         if ($result && mysqli_num_rows($result) > 0) {
                                             $row = mysqli_fetch_assoc($result);
-                                    
-                                    
+
+
                                         } else {
                                             echo "No records found in tbl_admin";
                                         }
@@ -306,9 +308,13 @@
                                         echo "No user ID provided";
                                     }
                                     ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level'];?></span>
+                                    <span class="account-user-name">
+                                        <?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?>
                                     </span>
+                                    <span class="account-position">
+                                        <?php echo $row['level']; ?>
+                                    </span>
+                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -349,146 +355,204 @@
                 </div>
                 <!-- end Topbar -->
 
-                <!-- Right Sidebar -->
-                <div class="end-bar">
-
-                    <div class="rightbar-title">
-                        <a href="javascript:void(0);" class="end-bar-toggle float-end">
-                            <i class="dripicons-cross noti-icon"></i>
-                        </a>
-                        <h5 class="m-0">Settings</h5>
+                <!-- Start Content -->
+                <div class="container-fluid">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title">Modules</h4>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="rightbar-content h-100" data-simplebar="init">
-                        <div class="simplebar-wrapper" style="margin: 0px;">
-                            <div class="simplebar-height-auto-observer-wrapper">
-                                <div class="simplebar-height-auto-observer"></div>
-                            </div>
-                            <div class="simplebar-mask">
-                                <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                    <div class="simplebar-content-wrapper"
-                                        style="height: 100%; overflow: hidden scroll;">
-                                        <div class="simplebar-content" style="padding: 0px;">
-
-                                            <div class="p-3">
-                                                <div class="alert alert-warning" role="alert">
-                                                    <strong>Customize </strong> the overall color scheme, sidebar menu,
-                                                    etc.
-                                                </div>
-
-                                                <!-- Settings -->
-                                                <h5 class="mt-3">Color Scheme</h5>
-                                                <hr class="mt-1">
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        name="color-scheme-mode" value="light" id="light-mode-check"
-                                                        checked="">
-                                                    <label class="form-check-label" for="light-mode-check">Light
-                                                        Mode</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox"
-                                                        name="color-scheme-mode" value="dark" id="dark-mode-check">
-                                                    <label class="form-check-label" for="dark-mode-check">Dark
-                                                        Mode</label>
-                                                </div>
-
-
-                                                <!-- Width -->
-                                                <h5 class="mt-4">Width</h5>
-                                                <hr class="mt-1">
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="width"
-                                                        value="fluid" id="fluid-check" checked="">
-                                                    <label class="form-check-label" for="fluid-check">Fluid</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="width"
-                                                        value="boxed" id="boxed-check">
-                                                    <label class="form-check-label" for="boxed-check">Boxed</label>
-                                                </div>
-
-
-                                                <!-- Left Sidebar-->
-                                                <h5 class="mt-4">Left Sidebar</h5>
-                                                <hr class="mt-1">
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="theme"
-                                                        value="default" id="default-check">
-                                                    <label class="form-check-label" for="default-check">Default</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="theme"
-                                                        value="light" id="light-check" checked="">
-                                                    <label class="form-check-label" for="light-check">Light</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-3">
-                                                    <input class="form-check-input" type="checkbox" name="theme"
-                                                        value="dark" id="dark-check">
-                                                    <label class="form-check-label" for="dark-check">Dark</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="compact"
-                                                        value="fixed" id="fixed-check" checked="">
-                                                    <label class="form-check-label" for="fixed-check">Fixed</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="compact"
-                                                        value="condensed" id="condensed-check">
-                                                    <label class="form-check-label"
-                                                        for="condensed-check">Condensed</label>
-                                                </div>
-
-                                                <div class="form-check form-switch mb-1">
-                                                    <input class="form-check-input" type="checkbox" name="compact"
-                                                        value="scrollable" id="scrollable-check">
-                                                    <label class="form-check-label"
-                                                        for="scrollable-check">Scrollable</label>
-                                                </div>
-
-                                                <div class="d-grid mt-4">
-                                                    <button class="btn btn-primary" id="resetBtn">Reset to
-                                                        Default</button>
-
-                                                    
-                                                </div>
-                                            </div> <!-- end padding-->
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div>
-                        </div>
-                        <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
-                            <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
-                        </div>
-                        <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
-                            <div class="simplebar-scrollbar"
-                                style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <a href="admin_manage_lesson_add_lesson.php" style="position: relative; display: inline-block;">
+                                <button type="button" class="btn btn-success mb-2" id="add-lesson-btn"><i
+                                        class="uil-edit-alt"></i>Add Lesson</button>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="rightbar-overlay"></div>
-                <!-- /End-bar -->
+
+                <!-- end page title -->
+
+                <div class="row">
+
+                <div class="col-md-6 col-lg-3">
+    <!-- Simple card -->
+    <div class="card d-block">
+        <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Literacy</h5>
+            <div class="d-flex justify-content-between gap-1">
+                <a class="btn btn-primary" href="#">View</a>
+                <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a>
+                <a class="btn btn-warning" href="#">Archieve</a>
+            </div>
+        </div> <!-- end card-body-->
+    </div> <!-- end card-->
+</div><!-- end col -->
+
+<div class="col-md-6 col-lg-3">
+    <!-- Simple card -->
+    <div class="card d-block">
+        <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Numeracy</h5>
+            <div class="d-flex justify-content-between gap-1">
+                <a class="btn btn-primary" href="#">View</a>
+                <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a>
+                <a class="btn btn-warning" href="#">Archieve</a>
+            </div>
+        </div> <!-- end card-body-->
+    </div> <!-- end card-->
+</div><!-- end col -->
+
+                </div>
 
 
-                <!-- bundle -->
-                <script src="assets/js/vendor.min.js"></script>
-                <script src="assets/js/app.min.js"></script>
+            </div> <!-- container -->
 
-                <!-- quill js -->
-                <script src="assets/js/vendor/quill.min.js"></script>
-                <!-- quill Init js-->
-                <script src="assets/js/pages/demo.quilljs.js"></script>
+        </div> <!-- content -->
+
+        <!-- Right Sidebar -->
+        <div class="end-bar">
+
+            <div class="rightbar-title">
+                <a href="javascript:void(0);" class="end-bar-toggle float-end">
+                    <i class="dripicons-cross noti-icon"></i>
+                </a>
+                <h5 class="m-0">Settings</h5>
+            </div>
+
+            <div class="rightbar-content h-100" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: 0px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 0px;">
+
+                                    <div class="p-3">
+                                        <div class="alert alert-warning" role="alert">
+                                            <strong>Customize </strong> the overall color scheme, sidebar menu,
+                                            etc.
+                                        </div>
+
+                                        <!-- Settings -->
+                                        <h5 class="mt-3">Color Scheme</h5>
+                                        <hr class="mt-1">
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="color-scheme-mode"
+                                                value="light" id="light-mode-check" checked="">
+                                            <label class="form-check-label" for="light-mode-check">Light
+                                                Mode</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="color-scheme-mode"
+                                                value="dark" id="dark-mode-check">
+                                            <label class="form-check-label" for="dark-mode-check">Dark
+                                                Mode</label>
+                                        </div>
+
+
+                                        <!-- Width -->
+                                        <h5 class="mt-4">Width</h5>
+                                        <hr class="mt-1">
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="width" value="fluid"
+                                                id="fluid-check" checked="">
+                                            <label class="form-check-label" for="fluid-check">Fluid</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="width" value="boxed"
+                                                id="boxed-check">
+                                            <label class="form-check-label" for="boxed-check">Boxed</label>
+                                        </div>
+
+
+                                        <!-- Left Sidebar-->
+                                        <h5 class="mt-4">Left Sidebar</h5>
+                                        <hr class="mt-1">
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="theme" value="default"
+                                                id="default-check">
+                                            <label class="form-check-label" for="default-check">Default</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="theme" value="light"
+                                                id="light-check" checked="">
+                                            <label class="form-check-label" for="light-check">Light</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" name="theme" value="dark"
+                                                id="dark-check">
+                                            <label class="form-check-label" for="dark-check">Dark</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="compact" value="fixed"
+                                                id="fixed-check" checked="">
+                                            <label class="form-check-label" for="fixed-check">Fixed</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="compact"
+                                                value="condensed" id="condensed-check">
+                                            <label class="form-check-label" for="condensed-check">Condensed</label>
+                                        </div>
+
+                                        <div class="form-check form-switch mb-1">
+                                            <input class="form-check-input" type="checkbox" name="compact"
+                                                value="scrollable" id="scrollable-check">
+                                            <label class="form-check-label" for="scrollable-check">Scrollable</label>
+                                        </div>
+
+                                        <div class="d-grid mt-4">
+                                            <button class="btn btn-primary" id="resetBtn">Reset to
+                                                Default</button>
+
+
+                                        </div>
+                                    </div> <!-- end padding-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: visible;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightbar-overlay"></div>
+        <!-- /End-bar -->
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- quill js -->
+        <script src="assets/js/vendor/quill.min.js"></script>
+        <!-- quill Init js-->
+        <script src="assets/js/pages/demo.quilljs.js"></script>
 
 
 
