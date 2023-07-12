@@ -116,16 +116,16 @@
                                             <form action="">
                                                 <div class="mb-3">
                                                     <label for="projectname" class="form-label">Lesson Title <sup>*</sup></label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
+                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter title ">
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="projectname" class="form-label">Content <sup>*</sup></label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
+                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter content ">
                                                 </div>
 
                                                 <div class="mb-3">
                                                     <label for="projectname" class="form-label">Topic <sup>*</sup></label>
-                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter Lesson name">
+                                                    <input type="text" id="projectname" class="form-control" placeholder="Enter topic ">
                                                 </div>
 
                                                 

@@ -199,11 +199,11 @@
                         <!-- card-content -->
                         <div cla ></div>
 
-                        <div class="col-md-6 col-lg-3">
+                        <div class="col-md-12 col-lg-4">
                                 <!-- Simple card -->
                                 <div class="card d-block">
                                     <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
-                                    <div class="card-body">
+                                    <div class="card-body text-center">
                                         <!-- <h5 class="card-title">Card title</h5> -->
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the card's content. </p>

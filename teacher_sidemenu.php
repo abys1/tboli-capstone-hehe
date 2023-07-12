@@ -94,7 +94,7 @@
 <li class="side-nav-item">
     <a href="Teacher_quiz.php" class="side-nav-link">
     <i class="dripicons-document-edit"></i>
-        <span>Manage Quiz</span>
+        <span>Grade Book</span>
     </a>
 </li>
 

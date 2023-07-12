@@ -161,14 +161,76 @@
                             <h4>Contact Information</h4>     
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email <sup>*</sup></label>
+                                    <label for="inputCity" class="form-label">Email <sup>Optional</sup></label>
                                     <input type="text" class="form-control" id="inputCity" name="city">
                                 </div>
                                 <div class="mb-3 col-md-5">
                                     <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
                                     <input type="text" class="form-control" id="inputBarangay" name="barrgy">
                                 </div>
-                            </div>                              
+                            </div> 
+                            
+                            
+
+
+                            <h3>Parents Information</h3>
+
+                            <div class="row g-2">
+                                
+                                
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="FName" class="form-label">First Name <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
+                                </div>
+                                <div class="mb-3 col-md-6">
+                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
+                                </div>
+                                
+                                <div class="mb-3 col-md-6">
+                                    <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
+                                </div>
+                            </div>
+
+                            <div class="row g-2">
+                                <div class="mb-3 col-md-6">
+                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
+                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                </div>
+                                <div class="mb-3 col-md-4">
+                                    <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
+                                    <select id="inputGender" class="form-select" name="gender">
+                                        <option>Choose</option>
+                                        <option>Female</option>
+                                        <option>Male</option> 
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h4>Location</h4>
+                                        
+                            <div class="mb-3">
+                                <label for="inputAddress" class="form-label">Full address (street, barangay, city) <sup>*</sup></label>
+                                <input type="text" class="form-control" id="inputAddress" required placeholder="Enter Address" name="address">
+                            </div>
+                            
+                            <h4>Contact Information</h4>     
+                            <div class="row g-2">
+                                <div class="mb-3 col-md-5">
+                                    <label for="inputCity" class="form-label">Email <sup>Optional</sup></label>
+                                    <input type="text" class="form-control" id="inputCity" name="city">
+                                </div>
+                                <div class="mb-3 col-md-5">
+                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
+                                </div>
+                            </div> 
                             <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
                         </form>
 
