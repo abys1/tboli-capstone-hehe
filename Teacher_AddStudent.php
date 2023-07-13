@@ -107,7 +107,7 @@
                 <div class="card">
                     <div class="card-body">
                         
-                        <h4>Student Information</h4>
+                        <h3>Student Information</h3>
 
                         <form    method="POST">
                             <div class="row g-2">
@@ -161,7 +161,7 @@
                             <h4>Contact Information</h4>     
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email <sup>Optional</sup></label>
+                                    <label for="inputCity" class="form-label">Email Address <sup>*</sup></label>
                                     <input type="text" class="form-control" id="inputCity" name="city">
                                 </div>
                                 <div class="mb-3 col-md-5">
@@ -223,7 +223,7 @@
                             <h4>Contact Information</h4>     
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email <sup>Optional</sup></label>
+                                    <label for="inputCity" class="form-label">Email Address  <sup>Optional</sup></label>
                                     <input type="text" class="form-control" id="inputCity" name="city">
                                 </div>
                                 <div class="mb-3 col-md-5">

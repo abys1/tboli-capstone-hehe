@@ -46,9 +46,9 @@
                 <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
             </li>
 
-            <li>
+            <!-- <li>
                 <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
-            </li>
+            </li> -->
 
             
             
@@ -77,6 +77,10 @@
 
             <li>
                 <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
+            </li>
+
+            <li>
+                <a href="Teacher_Manage_Quiz.php"><i class=" uil-plus-circle"></i> Add quiz assignment</a>
             </li>
 
             <li>
