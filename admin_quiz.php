@@ -664,7 +664,7 @@
                 <div class="form-group">
                     <label for="quiz-type">Quiz Type:</label>
                     <div class="btn-group" role="group" aria-label="Quiz Type">
-                        <a href="#" class="btn btn-primary" role="button" data-choice="true-false">True or False</a><br>
+                        <a href="admin_true_false.php" class="btn btn-primary" role="button" data-choice="true-false">True or False</a><br>
                         <a href="admin_multiple_choice.php" class="btn btn-primary" role="button" data-choice="multiple-choice">Multiple Choice</a>
                     </div>
                 </div>
