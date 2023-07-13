@@ -104,7 +104,13 @@
                         <div class="mb-3">
                             <a href="pages-recoverpw-2.html" class="text-muted float-end"><small>Forgot your password?</small></a>
                             <label for="password" class="form-label">Password</label>
-                            <input class="form-control" type="password"  id="password" name="password" placeholder="Enter your password"> <br> 
+                            <div class="input-group input-group-merge">
+                                <input class="form-control" type="password"  id="password" name="password" placeholder="Enter your password"> <br> 
+                            <div class="input-group-text bg-light" data-password="false">
+                                <span class="password-eye"></span>
+                            </div>
+                            </div>
+
                             <div id="password-error" class="h4 text-center"><span class="badge bg-danger" ><?php echo $mailError  ?></span> </div>
                             
                         </div>
