@@ -222,8 +222,8 @@ if (isset($_GET['logout'])) {
 
         <div class="content-page">
             <div class="content">
-                <!-- Topbar Start -->
-                <div class="navbar-custom">
+                 <!-- Topbar Start -->
+                 <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
@@ -238,42 +238,9 @@ if (isset($_GET['logout'])) {
                             </div>
                         </li>
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="noti-icon-badge"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="javascript: void(0);" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
+                  
 
 
-                                <!-- All-->
-                                <a href="javascript:void(0);"
-                                    class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
-
-
-
-                        <li class="notification-list">
-                            <a class="nav-link end-bar-toggle" href="javascript: void(0);">
-                                <i class="dripicons-gear noti-icon"></i>
-                            </a>
-                        </li>
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
@@ -282,25 +249,25 @@ if (isset($_GET['logout'])) {
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <?php
+                                <?php
                                     include 'dbcon.php';
 
                                     if (isset($_SESSION['user_id'])) {
                                         $user_id = $_SESSION['user_id'];
-
+                                    
                                         $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
                                                 FROM tbl_admin
                                                 JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
                                                 JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
                                                 WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
                                                 LIMIT 1;";
-
+                                    
                                         $result = mysqli_query($conn, $sql);
-
+                                    
                                         if ($result && mysqli_num_rows($result) > 0) {
                                             $row = mysqli_fetch_assoc($result);
-
-
+                                    
+                                    
                                         } else {
                                             echo "No records found in tbl_admin";
                                         }
@@ -308,13 +275,9 @@ if (isset($_GET['logout'])) {
                                         echo "No user ID provided";
                                     }
                                     ?>
-                                    <span class="account-user-name">
-                                        <?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?>
+                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                    <span class="account-position"><?php echo $row['level'];?></span>
                                     </span>
-                                    <span class="account-position">
-                                        <?php echo $row['level']; ?>
-                                    </span>
-                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -324,7 +287,7 @@ if (isset($_GET['logout'])) {
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="admin_profile.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
@@ -340,18 +303,7 @@ if (isset($_GET['logout'])) {
                     <button class="button-menu-mobile open-left">
                         <i class="mdi mdi-menu"></i>
                     </button>
-                    <div class="app-search dropdown d-none d-lg-block">
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
-                                    id="top-search">
-                                <span class="mdi mdi-magnify search-icon"></span>
-                                <button class="input-group-text btn-primary" type="submit">Search</button>
-                            </div>
-                        </form>
-
-
-                    </div>
+                   
                 </div>
                 <!-- end Topbar -->
 
@@ -369,7 +321,7 @@ if (isset($_GET['logout'])) {
                         <div class="col-sm-12">
                             <a href="admin_manage_lesson_add_lesson.php" style="position: relative; display: inline-block;">
                                 <button type="button" class="btn btn-success mb-2" id="add-lesson-btn"><i
-                                        class="uil-edit-alt"></i>Add Lesson</button>
+                                        class="uil-edit-alt"></i>Add Module</button>
                             </a>
                         </div>
                     </div>
@@ -387,8 +339,8 @@ if (isset($_GET['logout'])) {
         <div class="card-body">
             <h5 class="card-title">Literacy</h5>
             <div class="d-flex justify-content-between gap-1">
-                <a class="btn btn-primary" href="#">View</a>
-                <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a>
+                <a class="btn btn-primary" href="#">Manage</a>
+                <!-- <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a> -->
                 <a class="btn btn-warning" href="#">Archieve</a>
             </div>
         </div> <!-- end card-body-->
@@ -402,8 +354,8 @@ if (isset($_GET['logout'])) {
         <div class="card-body">
             <h5 class="card-title">Numeracy</h5>
             <div class="d-flex justify-content-between gap-1">
-                <a class="btn btn-primary" href="#">View</a>
-                <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a>
+                <a class="btn btn-primary" href="#">Manage</a>
+                <!-- <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a> -->
                 <a class="btn btn-warning" href="#">Archieve</a>
             </div>
         </div> <!-- end card-body-->
