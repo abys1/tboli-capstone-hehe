@@ -18,14 +18,20 @@
     <form method="post" action="/">
     <div>
         <label for="title">
-            <span class="required">Title: *</span>
+            <span class="required">Lesson Title: *</span>
             <input type="text" id="title" name="title" value="" placeholder="Title" required="required" tabindex="1" autofocus="autofocus" />
         </label>
     </div>
     <div>
-        <label for="objective">
-            <span class="required">Lesson Objective: *</span>
-            <textarea id="objective" name="objective" placeholder="Please write objectives here." tabindex="5" required="required"></textarea>
+        <label for="content">
+            <span class="required">Content: *</span>
+            <textarea id="content" name="content" placeholder="Please write content here." tabindex="5" required="required"></textarea>
+        </label>
+    </div>
+    <div>
+        <label for="topic">
+            <span class="required">Topic: *</span>
+            <textarea id="topic" name="topic" placeholder="Please write topic here." tabindex="5" required="required"></textarea>
         </label>
     </div>
     <div>

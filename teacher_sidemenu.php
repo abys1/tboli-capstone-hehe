@@ -46,9 +46,9 @@
                 <a href="Teacher_AddStudent.php"><i class=" uil-plus-circle"></i> Add Students</a>
             </li>
 
-            <li>
+            <!-- <li>
                 <a href="Teacher_Add_Parents.php"><i class=" uil-plus-circle"></i> Add Parents</a>
-            </li>
+            </li> -->
 
             
             
@@ -80,6 +80,10 @@
             </li>
 
             <li>
+                <a href="Teacher_Manage_Quiz.php"><i class=" uil-plus-circle"></i> Add quiz assignment</a>
+            </li>
+
+            <li>
                 <a href="Teacher_ManageLesson.php"><i class=" uil-plus-circle"></i> Manage Lessons</a>
             </li>
 
@@ -94,7 +98,7 @@
 <li class="side-nav-item">
     <a href="Teacher_quiz.php" class="side-nav-link">
     <i class="dripicons-document-edit"></i>
-        <span>Manage Quiz</span>
+        <span>Grade Book</span>
     </a>
 </li>
 

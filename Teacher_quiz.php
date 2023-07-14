@@ -12,14 +12,22 @@
     <!-- App favicon -->
     <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
 
+    <link href="assets/css/vendor/dataTables.bootstrap5.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/vendor/responsive.bootstrap5.css" rel="stylesheet" type="text/css">
+    <!-- third party css end -->
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
-    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
     <!-- Quill css -->
     <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
+
+    
+
+    
+    <!-- third party css end -->
 
 </head>
 
@@ -88,7 +96,7 @@
                                         <li class="breadcrumb-item active">Manage Quiz</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Manage Quiz</h4>
+                                <h4 class="page-title">Grade Book</h4>
                             </div>
                         </div>
                     </div>    
@@ -98,346 +106,92 @@
 
             </div> <!-- content -->
 
-            <div class="modal-header">
-                
-                  <!-- Standard modal -->
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#standard-modal-add"><i class="mdi mdi-plus-circle me-2"></i>Add</button>
-                    <div id="standard-modal-add" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel-add" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="standard-modalLabel-add">Modal Heading</h4>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="list-group">
-                                        
-                                        
-                                        <button type="button" class="list-group-item list-group-item-action">
-                                            
-                                                <i class="uil-users-alt"></i>
-                                                <h6 class="text-primary">  &emsp13; Attendance</h6>
-                                                <span>Award points base on attendance</span>
-                                            
-                                        </button>
 
-                                        <button type="button" class="list-group-item list-group-item-action">
-                                            
-                                                <i class="uil-wifi"></i>
-                                                <h6 class="text-primary">&emsp13; Offline Quiz</h6>
-                                                <span>Take an Online Quiz</span>
-                                            
-                                        </button>
-
-                                        <button type="button" class="list-group-item list-group-item-action">
-                                            
-                                                <i class="uil-wifi-slash"></i>
-                                                <h6 class="text-primary">&emsp13; Quiz</h6>
-                                                <span>Take an Offline Quiz</span>
-                                            
-                                        </button>
-                                        
-                                        
-                                        
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
-            </div>
-
-            
-
-            <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
-                <li class="nav-item">
-                    <a href="#Assignment" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                        <i class="mdi mdi-home-variant d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Assignment</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Questions" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                        <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Questions</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Grades" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Grades</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Submission" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Submission Status</span>
-                    </a>
-                </li>
-
-               
-            </ul>
-            
-            <div class="tab-content">
-                <!-- Assignment -->
-                <div class="tab-pane  show active" id="Assignment">
-
-                   
-
-                    
-
-                    <table class="table table-centered mb-0">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" class="form-check-input" id="customCheckcolor1"> &emsp; All</th>
-                                <th>Assignment</th>
-                                <th>Start date</th>
-                                <th>Due</th>
-                                <th>Status</th>
-                                <th>Max score</th>
-                                <th>%Of Overall</th>
-                                <th>To Grade/Submitted</th>
-                                <th>Grade Release</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="form-check-input" id="customCheckcolor1"></td>
-                                <td>
-                                    <h6>
-                                        <Span>08 Quiz 1</Span>
-                                    </h6>
-                                    <Span>Literacy</Span>
-                                </td>
-                                <td>Apr 12</td>
-                                <td>Apr 10</td>
-                                <td><span><i class="uil-check-circle"></i></span></td>
-                                <td><span>100</span></td>
-                                <td><span>6.7</span></td>
-                                <td><span>17</span></td>
-                                <td><span>Instant</span></td>
-                                
-                            
-                        </tbody>
-                    </table>
-
-
-
-
-
-                </div>
-                <!-- Questions -->
-                <div class="tab-pane" id="Questions">
-                   
-                    
-
-                    
-                    <!-- Center modal -->
-<div class="col- float-end modal-header">
-    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#centermodal">Add quiz assignment</button>
-<div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="myCenterModalLabel">Add quiz Assignment</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
-            </div>
-            <div class="modal-content">
-
-
-            
-                <div class="modal-body">
-    
-                    
-                    <div class="row">
-                                <div class="col-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            
-                                            
-                            
-                                            <ul class="nav nav-tabs nav-bordered mb-3">
-                                                <li class="nav-item">
-                                                    <a href="#display-headings-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">Overview</a>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#display-headings-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link">Options</a>
-                                                </li>
-                                            </ul> <!-- end nav-->
-                                            <div class="tab-content">
-                                                <div class="tab-pane show active" id="display-headings-preview">
-                                                    
-                                                    
-            
-                                                    
-            
-    
-            
-                                                    
-                                                    <div class="row g-2"> 
-                                                        <div class="mb-3 col-"> 
-                                                            <label for="inpuTtitle" class="form-label">Title</label> 
-                                                            <input type="text" class="form-control" id="inputTtile"> 
-                                                    </div>
-                                                     <div class="mb-3 col-md-2"> 
-                                                        <label for="inputZip" class="form-label">Max Score</label> 
-                                                        <input type="text" class="form-control" id="inputscore"> 
-                                                        <label for="inputZip" class="form-label">Allow late?</label> 
-                                                        <input type="checkbox" class="form-check-input" id="inputscore"> 
-                                                    </div>
-                                                     <div class="mb-3 col-md-3"> <div class="mb-3 col-md-8"> 
-                                                        <label for="Category" class="form-label">Category</label> 
-                                                        <select id="Category" class="form-select"> 
-                                                            <option>None</option> 
-                                                            <option>Literacy</option> 
-                                                            <option>Numeracy</option>
-                                                         </select> </div> <div class="mb-3 col-md-8"> 
-                                                            <label for="Grading" class="form-label">Grading</label> 
-                                                            <select id="Grading" class="form-select"> 
-                                                                <option>None</option> 
-                                                                <option>Normal</option>
-                                                             </select> 
-                                                            </div> 
-                                                    </div> 
-                                                    <div class="mb-3 col-sm-3"> 
-                                                        <div class="mb-3"> 
-                                                            <label for="example-date" class="form-label">Start</label> 
-                                                            <input class="form-control" id="example-date" type="datetime" name="date">
-                                                         </div>
-                                                     <div class="mb-3">
-                                                         <label for="example-date" class="form-label">Due</label> 
-                                                         <input class="form-control" id="example-date" type="date" name="date"> 
-                                                        </div> 
-                                                    </div>
-                                                     <div class="mb-3 col-md-3"> 
-                                                        <div class="mb-3 col-md-8"> 
-                                                            <label for="Module" class="form-label">Module</label> 
-                                                            <select id="Module" class="form-select"> <option>None</option> 
-                                                                <option>Literacy</option> </select> </div>
-                                                     <div class="mb-3 col-md-8"> 
-                                                        <label for="Grading" class="form-label">Grading Score</label>
-                                                         <select id="Grading" class="form-select"> 
-                                                            <option>None</option> <option>Default</option>
-                                                         </select> </div> 
-                                                    </div> 
-                                                     
-                                                   
-                                                    <p>Instructions</p> 
-                                                    <!-- HTML --> 
-                                                    <div id="snow-editor" style="height: 300px;">
-                                                    
-                                                    
-                                                    
-                                                    </div>
-                                                     
-    
-    
-                                                    
-                                                    
-                                                     </div>  
-                                                </div> <!-- end preview-->
-                                            
-                                                <div class="tab-pane" id="display-headings-code">
-                                                    <div class="mt-2">
-                                                    <span>Release Grade &nbsp; &nbsp; &nbsp; &nbsp;</span> 
-                                                <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio3">Instant</label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio4">Manual</label>
-                                                    </div>
-                                                </div> <div class="mt-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck3">
-                                                        <label class="form-check-label" for="customCheck3">Timed</label>
-                                                    </div>
-                                                
-                                                    
-                                                    <div class="form-check form-check-inline float-end">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck4">
-                                                        <label class="form-check-label" for="customCheck4">Randomize Order</label>
-                                                    </div>
-                                                </div><div class="mt-2">
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck3">
-                                                        <label class="form-check-label" for="customCheck3">Instant Feedback</label>
-                                                    </div>
-                                                
-                                                    
-                                                    <div class="form-check form-check-inline float-end">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck4">
-                                                        <label class="form-check-label" for="customCheck4">Allow Review</label>
-                                                    </div>
-                                                </div><div class="mt-2">
-                                                    <span>Grading &nbsp; &nbsp; &nbsp; &nbsp;</span> 
-                                                <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio3">Use Latest Score</label>
-                                                    </div>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio4">Use Best Score</label>
-                                                    </div>
-                                                </div>
-    <!-- end highlight-->
-                                                </div> <!-- end preview code-->
-                                            </div> <!-- end tab-content-->
-                                        </div> <!-- end card-body -->
-                                    </div> <!-- end card-->
-                                </div> <!-- end col -->
-                            </div>
+            <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-centered table-borderless table-hover w-100 dt-responsive nowrap" id="products-datatable">
+                    <thead class="table-light">
+                      <tr>
+                        <th style="width: 20px;">
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheck1">
+                            <label class="form-check-label" for="customCheck1">&nbsp;</label>
+                          </div>
+                        </th>
+                        <th>Student</th>
+                        <th>Assignment</th>
+                        <th>Start date</th>
+                        <th>Due</th>
+                        <th>Status</th>
+                        <th>Max score</th>
+                        <th>%Of Overall</th>
+                        <th>To Grade/Submitted</th>
+                        <th>Grade Release</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheck2">
+                            <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                          </div>
+                        </td>
                         
+                        <td class="table-user">
+                          <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                          <a href="javascript:void(0);" class="text-body fw-semibold">Paul J. Friend</a>
+                        </td>
+                        <td>
+                          <span class="fw-semibold">08 Quiz 1Literacy</span>
+                        </td>
+                        <td>Apr 12</td>
+                        <td>Apr 10</td>
+                        <td>..</td>
+                        <td>100</td>
+                        <td>6.7</td>
+                        <td>17</td>
+                        <td>Instant</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheck2">
+                            <label class="form-check-label" for="customCheck3">&nbsp;</label>
+                          </div>
+                        </td>
                         
-    
+                        <td class="table-user">
+                          <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                          <a href="javascript:void(0);" class="text-body fw-semibold">Evan Grace</a>
+                        </td>
+                        <td>
+                          <span class="fw-semibold">08 Quiz 1Literacy</span>
+                        </td>
+                        <td>Apr 12</td>
+                        <td>Apr 10</td>
+                        <td>..</td>
+                        <td>100</td>
+                        <td>6.7</td>
+                        <td>17</td>
+                        <td>Instant</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div> 
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-</div>
-
-
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                Multiple Choice
-                            </div>
-                            <div class="card-body">
-                                <blockquote class="card-bodyquote col-md-3">
-                                    <img class="card-img-top " src="assets/images/multiple.png" alt="Card image cap">
-                                </blockquote>
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
-                    </div>
-                    
-
-
-
-
-
-
-
-
-                </div>
-                <!-- Grades -->
-                <div class="tab-pane" id="Grades">
-                    <p>...</p>
-                </div>
-
-                <div class="tab-pane" id="Submission">
-                    <p>...</p>
-                </div>
+              </div>
+              <!-- end card-body-->
             </div>
+            <!-- end card-->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+
+            
 
             <!-- Footer Start -->
             <footer class="footer">
@@ -566,6 +320,18 @@
     <script src="assets/js/vendor/quill.min.js"></script>
     <!-- quill Init js-->
     <script src="assets/js/pages/demo.quilljs.js"></script>
+
+    <!-- third party js -->
+    <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap5.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap5.min.js"></script>
+        <script src="assets/js/vendor/apexcharts.min.js"></script>
+        <script src="assets/js/vendor/dataTables.checkboxes.min.js"></script>
+        <!-- third party js ends -->
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.gradebook.js"></script>
+        <!-- end demo js-->
     
 
 

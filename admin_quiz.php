@@ -23,6 +23,10 @@
     <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-pzjw8+ua9bmDXzKrQl/Mv6D5stvOBbhddb5y3p4e9fJ8D4w5erhPvj6M2ybp7l3b"
+        crossorigin="anonymous">
 </head>
 
 <body class="show"
@@ -63,128 +67,127 @@
                             <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;">
                                 <div class="simplebar-content" style="padding: 0px;">
 
-                                    <!--- Sidemenu -->
-                                    <ul class="side-nav">
+                                   <!--- Sidemenu -->
+                                   <ul class="side-nav">
 
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_dashboard.php" class="side-nav-link">
-                                                <i class="uil-home"></i>
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_dashboard.php" class="side-nav-link">
+        <i class="uil-home"></i>
+        <span>Dashboard</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
-                                                aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                                                <i class="uil-user-plus"></i>
-                                                <span class="badge bg-success float-end"></span>
-                                                <span> Users </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarDashboards" style="">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="admin_addAccount.php">Admin</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_student.php">Student</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_teacher.php">Teacher</a>
-                                                    </li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
+        aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+        <i class="uil-user-plus"></i>
+        <span class="badge bg-success float-end"></span>
+        <span> Users </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarDashboards" style="">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="admin_addAccount.php">Admin</a>
+            </li>
+            <li>
+                <a href="admin_student.php">Student</a>
+            </li>
+            <li>
+                <a href="admin_teacher.php">Teacher</a>
+            </li>
 
-                                                </ul>
-                                            </div>
-                                        </li>
+        </ul>
+    </div>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_manage_lesson.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
-                                                <span>Manage Lesson</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_manage_lesson.php" class="side-nav-link">
+        <i class="fa fa-book"></i>
+        <span>Manage Lesson</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                                                <i class="uil-user-plus"></i>
-                                                <span class="badge bg-success float-end"></span>
-                                                <span> Manage Lessons </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarDashboardsLessons" style="">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="admin_accepted_lessons.php">Accepted Lessons</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_pending_lessons.php">Pending Lessons</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_archive_lessons.php">Archive Lessons</a>
-                                                    </li>                            
-                                                    
-                                                </ul>
-                                            </div>
-                                        </li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+        <i class="uil-user-plus"></i>
+        <span class="badge bg-success float-end"></span>
+        <span> Manage Request Lessons </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarDashboardsLessons" style="">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="admin_accepted_lessons.php">Accepted Lessons</a>
+            </li>
+            <li>
+                <a href="admin_pending_lessons.php">Pending Lessons</a>
+            </li>
+            <li>
+                <a href="admin_archive_lessons.php">Archive Lessons</a>
+            </li>                            
+            
+        </ul>
+    </div>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_quiz.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
-                                                <span>Manage Quiz</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_quiz.php" class="side-nav-link">
+        <i class="fa fa-book"></i>
+        <span>Manage Quiz</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Assign Lesson to Teacher</span>
-                                            </a>
-                                        </li>
-                                        <li class="side-nav-item">
-                                            <a href="admin_manage_area.php" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Manage Area</span>
-                                            </a>
-                                        </li>
-                                        <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Progress</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_assign_lesson_to_teacher.php " class="side-nav-link">
+        <i class="uil-user-plus"></i>
+        <span>Assign Lesson to Teacher</span>
+    </a>
+</li>
+<li class="side-nav-item">
+    <a href="admin_manage_area.php" class="side-nav-link">
+        <i class="uil-user-plus"></i>
+        <span>Manage Area</span>
+    </a>
+</li>
+<li class="side-nav-item">
+    <a href="#" class="side-nav-link">
+        <i class="uil-user-plus"></i>
+        <span>Progress</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
-                                                aria-controls="sidebarEmail" class="side-nav-link">
-                                                <i class="uil-folder-plus"></i>
-                                                <span> Reports </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarEmail">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="#">List of Teacher</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Admin</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Learners</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Lesson w/Content</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
+        aria-controls="sidebarEmail" class="side-nav-link">
+        <i class="uil-folder-plus"></i>
+        <span> Reports </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarEmail">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="#">List of Teacher</a>
+            </li>
+            <li>
+                <a href="#">List of Admin</a>
+            </li>
+            <li>
+                <a href="#">List of Learners</a>
+            </li>
+            <li>
+                <a href="#">List of Lesson w/Content</a>
+            </li>
+        </ul>
+    </div>
+</li>
 
-                                    </ul>
-
-
+</ul>
 
 
-                                    <!-- End Sidebar -->
+<!-- End Sidebar -->
+
 
                                     <div class="clearfix"></div>
 
@@ -590,451 +593,108 @@
                     </div>
                 </div>
                 <!-- end Topbar -->
-
-                <!-- Start Content-->
-                <div class="container-fluid">
-
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="Teacher_Module.html">Home</a></li>
-
-                                        <li class="breadcrumb-item active">Upload Resources</li>
-                                    </ol>
-                                </div>
-                                <h4 class="page-title">Resources</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end page title -->
-
-                </div> <!-- container -->
-
-            </div> <!-- content -->
-
-            <div class="modal-header">
-
-                <!-- Standard modal -->
-                <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                    data-bs-target="#standard-modal-add"><i class="mdi mdi-plus-circle me-2"></i>Add</button>
-                <div id="standard-modal-add" class="modal fade" tabindex="-1" role="dialog"
-                    aria-labelledby="standard-modalLabel-add" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="standard-modalLabel-add">Modal Heading</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-hidden="true"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="list-group">
-
-
-                                    <button type="button" class="list-group-item list-group-item-action">
-
-                                        <i class="uil-users-alt"></i>
-                                        <h6 class="text-primary"> &emsp13; Attendance</h6>
-                                        <span>Award points base on attendance</span>
-
-                                    </button>
-
-                                    <button type="button" class="list-group-item list-group-item-action">
-
-                                        <i class="uil-wifi"></i>
-                                        <h6 class="text-primary">&emsp13; Offline Quiz</h6>
-                                        <span>Take an Online Quiz</span>
-
-                                    </button>
-
-                                    <button type="button" class="list-group-item list-group-item-action">
-
-                                        <i class="uil-wifi-slash"></i>
-                                        <h6 class="text-primary">&emsp13; Quiz</h6>
-                                        <span>Take an Offline Quiz</span>
-
-                                    </button>
-
-
-
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
+<!-- Start Content -->
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <h4 class="page-title">Quiz</h4>
             </div>
-
-
-
-            <ul class="nav nav-tabs nav-justified nav-bordered mb-3">
-                <li class="nav-item">
-                    <a href="#Assignment" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                        <i class="mdi mdi-home-variant d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Assignment</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Questions" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                        <i class="mdi mdi-account-circle d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Questions</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#Grades" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Grades</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="#Submission" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                        <i class="mdi mdi-settings-outline d-md-none d-block"></i>
-                        <span class="d-none d-md-block">Submission Status</span>
-                    </a>
-                </li>
-
-
-            </ul>
-
-            <div class="tab-content">
-                <!-- Assignment -->
-                <div class="tab-pane  show active" id="Assignment">
-
-
-
-
-
-                    <table class="table table-centered mb-0">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" class="form-check-input" id="customCheckcolor1"> &emsp; All
-                                </th>
-                                <th>Assignment</th>
-                                <th>Start date</th>
-                                <th>Due</th>
-                                <th>Status</th>
-                                <th>Max score</th>
-                                <th>%Of Overall</th>
-                                <th>To Grade/Submitted</th>
-                                <th>Grade Release</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="form-check-input" id="customCheckcolor1"></td>
-                                <td>
-                                    <h6>
-                                        <Span>08 Quiz 1</Span>
-                                    </h6>
-                                    <Span>Literacy</Span>
-                                </td>
-                                <td>Apr 12</td>
-                                <td>Apr 10</td>
-                                <td><span><i class="uil-check-circle"></i></span></td>
-                                <td><span>100</span></td>
-                                <td><span>6.7</span></td>
-                                <td><span>17</span></td>
-                                <td><span>Instant</span></td>
-
-
-                        </tbody>
-                    </table>
-
-
-
-
-
-                </div>
-                <!-- Questions -->
-                <div class="tab-pane" id="Questions">
-
-
-
-
-                    <!-- Center modal -->
-                    <div class="col- float-end modal-header">
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                            data-bs-target="#centermodal">Add quiz assignment</button>
-                        <div class="modal fade" id="centermodal" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="myCenterModalLabel">Add quiz Assignment</h4>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-hidden="true"></button>
-                                    </div>
-                                    <form method="POST" action="teacher_add_quiz.php">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-
-
-
-                                                            <ul class="nav nav-tabs nav-bordered mb-3">
-                                                                <li class="nav-item">
-                                                                    <a href="#display-headings-preview"
-                                                                        data-bs-toggle="tab" aria-expanded="false"
-                                                                        class="nav-link active">Overview</a>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <a href="#display-headings-code"
-                                                                        data-bs-toggle="tab" aria-expanded="true"
-                                                                        class="nav-link">Options</a>
-                                                                </li>
-                                                            </ul> <!-- end nav-->
-                                                            <div class="tab-content">
-                                                                <div class="tab-pane show active"
-                                                                    id="display-headings-preview">
-                                                                    <div class="row g-2">
-                                                                        <div class="mb-3 col-">
-                                                                            <label for="inpuTtitle"
-                                                                                class="form-label">Title</label>
-                                                                            <input type="text" class="form-control"
-                                                                                id="inputTtile" name="title">
-                                                                        </div>
-                                                                        <div class="mb-3 col-md-2">
-                                                                            <label for="inputZip" class="form-label">Max Score</label>
-                                                                            <input type="text" class="form-control" id="inputscore" name="max-score">
-                                                                        </div>
-                                                                        <div>
-                                                                            <label for="allow" class="form-label">Allow late?</label>
-                                                                            <input type="checkbox" class="form-check-input" id="allow" name="allow">
-                                                                        </div>
-
-
-                                                                        <div class="mb-3 col-md-3">
-                                                                            <div class="mb-3 col-md-8">
-                                                                                <label for="Category"
-                                                                                    class="form-label">Category</label>
-                                                                                <select id="Category" name="category"
-                                                                                    class="form-select">
-                                                                                    <option>None</option>
-                                                                                    <option>Literacy</option>
-                                                                                    <option>Numeracy</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="mb-3 col-md-8">
-                                                                                <label for="Grading"
-                                                                                    class="form-label">Grading</label>
-                                                                                <select id="Grading" name="grading"
-                                                                                    class="form-select">
-                                                                                    <option>None</option>
-                                                                                    <option>Normal</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="mb-3 col-sm-3">
-                                                                            <div class="mb-3">
-                                                                                <label for="example-date"
-                                                                                    class="form-label">Start</label>
-                                                                                <input class="form-control"
-                                                                                    id="example-date" type="datetime-local"
-                                                                                    name="date-start">
-                                                                            </div>
-                                                                            <div class="mb-3">
-                                                                                <label for="example-date"
-                                                                                    class="form-label">Due</label>
-                                                                                <input class="form-control"
-                                                                                    id="example-date" type="datetime-local"
-                                                                                    name="date-due">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="mb-3 col-md-3">
-                                                                            <div class="mb-3 col-md-8">
-                                                                                <label for="Module"
-                                                                                    class="form-label">Module</label>
-                                                                                <select id="Module" name="module" class="form-select">
-                                                                                    <option>None</option>
-                                                                                    <option>Literacy</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <div class="mb-3 col-md-8">
-                                                                                <label for="Grading"
-                                                                                    class="form-label">Grading
-                                                                                    Score</label>
-                                                                                <select id="Grading" name="grading-score"
-                                                                                    class="form-select">
-                                                                                    <option>None</option>
-                                                                                    <option>Default</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-
-
-                                                                        
-                                                                       
-                                                                        <p>Instructions</p>
-                                                                        <div id="snow-editor" style="height: 300px;"></div>
-
-
-                                                                    </div>
-                                                                </div> <!-- end preview-->
-
-                                                                <div class="tab-pane" id="display-headings-code">
-                                                                    <div class="mt-2">
-                                                                        <span>Release Grade &nbsp; &nbsp; &nbsp;
-                                                                            &nbsp;</span>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio3"
-                                                                                name="release_grade"
-                                                                                class="form-check-input" value="Instant">
-                                                                            <label class="form-check-label"
-                                                                                for="customRadio3">Instant</label>
-                                                                        </div>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio4"
-                                                                                name="release_grade"
-                                                                                class="form-check-input"  value="Manual">
-                                                                            <label class="form-check-label"
-                                                                                for="customRadio4">Manual</label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="mt-2">
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox"
-                                                                                class="form-check-input"
-                                                                                id="customCheck3" name="time">
-                                                                            <label class="form-check-label"
-                                                                                for="customCheck3">Timed</label>
-                                                                        </div>
-
-
-                                                                        <div
-                                                                            class="form-check form-check-inline float-end">
-                                                                            <input type="checkbox"
-                                                                                class="form-check-input"
-                                                                                id="customCheck4" name="random">
-                                                                            <label class="form-check-label"
-                                                                                for="customCheck4">Randomize
-                                                                                Order</label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="mt-2">
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="checkbox"
-                                                                                class="form-check-input"
-                                                                                id="customCheck3" name="feedback">
-                                                                            <label class="form-check-label"
-                                                                                for="customCheck3">Instant
-                                                                                Feedback</label>
-                                                                        </div>
-
-
-                                                                        <div
-                                                                            class="form-check form-check-inline float-end">
-                                                                            <input type="checkbox"
-                                                                                class="form-check-input"
-                                                                                id="customCheck4" name="allow-review">
-                                                                            <label class="form-check-label"
-                                                                                for="customCheck4">Allow Review</label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="mt-2">
-                                                                    <span>Grading &nbsp; &nbsp; &nbsp; &nbsp;</span>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input type="radio" id="customRadio3" name="grading-radio" class="form-check-input" value="Use Latest Score">
-                                                                        <label class="form-check-label" for="customRadio3">Use Latest Score</label>
-                                                                    </div>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input type="radio" id="customRadio4" name="grading-radio" class="form-check-input" value="Use Best Score">
-                                                                        <label class="form-check-label" for="customRadio4">Use Best Score</label>
-                                                                    </div>
-                                                                    </div>
-
-                                                                    <!-- end highlight-->
-                                                                </div> <!-- end preview code-->
-                                                            </div> <!-- end tab-content-->
-                                                        </div> <!-- end card-body -->
-                                                    </div> <!-- end card-->
-                                                </div> <!-- end col -->
-                                            </div>
-
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-light"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-primary" name="btnSave">Save changes</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                        </div><!-- /.modal -->
-                    </div>
-
-
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                Multiple Choice
-                            </div>
-                            <div class="card-body">
-                                <blockquote class="card-bodyquote col-md-3">
-                                    <img class="card-img-top " src="assets/images/multiple.png" alt="Card image cap">
-                                </blockquote>
-                            </div> <!-- end card-body-->
-                        </div> <!-- end card-->
-                    </div>
-
-
-
-
-
-
-
-
-
-                </div>
-                <!-- Grades -->
-                <div class="tab-pane" id="Grades">
-                    <p>...</p>
-                </div>
-
-                <div class="tab-pane" id="Submission">
-                    <p>...</p>
-                </div>
-            </div>
-
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>2023 © Hyper - Coderthemes.com
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-md-end footer-links d-none d-md-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- end Footer -->
-
         </div>
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
-
-
     </div>
-    <!-- END wrapper -->
+    <div class="row">
+        <div class="col-sm-12">
+            <a href="#" style="position: relative; display: inline-block;">
+                <button type="button" class="btn btn-success mb-2" id="add-lesson-btn" data-toggle="modal"
+                    data-target="#add-quiz-modal"><i class="uil-edit-alt"></i>Add Quiz</button>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- end page title -->
 
+<div class="row">
+    <div class="col-md-6 col-lg-3">
+        <!-- Simple card -->
+        <div class="card d-block">
+            <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Literacy</h5>
+                <h3 class="card-choice">True or False</h3>
+                <div class="d-flex justify-content-between gap-1">
+                    <a class="btn btn-primary" href="#">View</a>
+                    <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a>
+                    <a class="btn btn-warning" href="#">Archive</a>
+                </div>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div><!-- end col -->
+
+    <div class="col-md-6 col-lg-3">
+        <!-- Simple card -->
+        <div class="card d-block">
+            <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Numeracy</h5>
+                <h3 class="card-choice">Multiple Choice</h3>
+                <div class="d-flex justify-content-between gap-1">
+                    <a class="btn btn-primary" href="#">View</a>
+                    <a class="btn btn-success" href="admin_manage_lesson_update.php">Update</a>
+                    <a class="btn btn-warning" href="#">Archive</a>
+                </div>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div><!-- end col -->
+</div>
+</div> <!-- container -->
+
+<!-- Add Quiz Modal -->
+<div class="modal fade" id="add-quiz-modal" tabindex="-1" role="dialog" aria-labelledby="add-quiz-modal-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="add-quiz-modal-label">Add Quiz</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="quiz-type">Quiz Type:</label>
+                    <div class="btn-group" role="group" aria-label="Quiz Type">
+                        <a href="admin_true_false.php" class="btn btn-primary" role="button" data-choice="true-false">True or False</a><br>
+                        <a href="admin_multiple_choice.php" class="btn btn-primary" role="button" data-choice="multiple-choice">Multiple Choice</a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Ud0QD2JyKn2tv8U+X9s70gcS4lSAwiGgFA1fJp6jRX4UX5"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8+ua9bmDXzKrQl/Mv6D5stvOBbhddb5y3p4e9fJ8D4w5erhPvj6M2ybp7l3b"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#add-lesson-btn').click(function () {
+                $('#add-quiz-modal').modal('show');
+            });
+        });
+    </script>
 
     <!-- Right Sidebar -->
     <div class="end-bar">

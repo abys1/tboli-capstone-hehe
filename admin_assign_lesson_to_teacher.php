@@ -72,126 +72,127 @@
                             <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;">
                                 <div class="simplebar-content" style="padding: 0px;">
 
-                                    <!--- Sidemenu -->
-                                    <ul class="side-nav">
+                                <!--- Sidemenu -->
+                                <ul class="side-nav">
 
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_dashboard.php" class="side-nav-link">
-                                                <i class="uil-home"></i>
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_dashboard.php" class="side-nav-link">
+        <i class="uil-home"></i>
+        <span>Dashboard</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
-                                                aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                                                <i class="uil-user-plus"></i>
-                                                <span class="badge bg-success float-end"></span>
-                                                <span> Users </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarDashboards" style="">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="admin_addAccount.php">Admin</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_student.php">Student</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_teacher.php">Teacher</a>
-                                                    </li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false"
+        aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+        <i class="uil-user-plus"></i>
+        <span class="badge bg-success float-end"></span>
+        <span> Users </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarDashboards" style="">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="admin_addAccount.php">Admin</a>
+            </li>
+            <li>
+                <a href="admin_student.php">Student</a>
+            </li>
+            <li>
+                <a href="admin_teacher.php">Teacher</a>
+            </li>
 
-                                                </ul>
-                                            </div>
-                                        </li>
+        </ul>
+    </div>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_manage_lesson.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
-                                                <span>Manage Lesson</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_manage_lesson.php" class="side-nav-link">
+        <i class="fa fa-book"></i>
+        <span>Manage Lesson</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
-                                                <i class="uil-user-plus"></i>
-                                                <span class="badge bg-success float-end"></span>
-                                                <span> Manage Request Lessons </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarDashboardsLessons" style="">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="admin_accepted_lessons.php">Accepted Lessons</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_pending_lessons.php">Pending Lessons</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="admin_archive_lessons.php">Archive Lessons</a>
-                                                    </li>                            
-                                                    
-                                                </ul>
-                                            </div>
-                                        </li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+        <i class="uil-user-plus"></i>
+        <span class="badge bg-success float-end"></span>
+        <span> Manage Request Lessons </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarDashboardsLessons" style="">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="admin_accepted_lessons.php">Accepted Lessons</a>
+            </li>
+            <li>
+                <a href="admin_pending_lessons.php">Pending Lessons</a>
+            </li>
+            <li>
+                <a href="admin_archive_lessons.php">Archive Lessons</a>
+            </li>                            
+            
+        </ul>
+    </div>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_quiz.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
-                                                <span>Manage Quiz</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_quiz.php" class="side-nav-link">
+        <i class="fa fa-book"></i>
+        <span>Manage Quiz</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a href="admin_assign_lesson_to_teacher.php" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Assign Lesson to Teacher</span>
-                                            </a>
-                                        </li>
-                                        <li class="side-nav-item">
-                                            <a href="admin_manage_area.php" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Manage Area</span>
-                                            </a>
-                                        </li>
-                                        <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Progress</span>
-                                            </a>
-                                        </li>
+<li class="side-nav-item">
+    <a href="admin_assign_lesson_to_teacher.php " class="side-nav-link">
+        <i class="uil-user-plus"></i>
+        <span>Assign Lesson to Teacher</span>
+    </a>
+</li>
+<li class="side-nav-item">
+    <a href="admin_manage_area.php" class="side-nav-link">
+        <i class="uil-user-plus"></i>
+        <span>Manage Area</span>
+    </a>
+</li>
+<li class="side-nav-item">
+    <a href="#" class="side-nav-link">
+        <i class="uil-user-plus"></i>
+        <span>Progress</span>
+    </a>
+</li>
 
-                                        <li class="side-nav-item">
-                                            <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
-                                                aria-controls="sidebarEmail" class="side-nav-link">
-                                                <i class="uil-folder-plus"></i>
-                                                <span> Reports </span>
-                                                <span class="menu-arrow"></span>
-                                            </a>
-                                            <div class="collapse" id="sidebarEmail">
-                                                <ul class="side-nav-second-level">
-                                                    <li>
-                                                        <a href="#">List of Teacher</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Admin</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Learners</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">List of Lesson w/Content</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false"
+        aria-controls="sidebarEmail" class="side-nav-link">
+        <i class="uil-folder-plus"></i>
+        <span> Reports </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarEmail">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="#">List of Teacher</a>
+            </li>
+            <li>
+                <a href="#">List of Admin</a>
+            </li>
+            <li>
+                <a href="#">List of Learners</a>
+            </li>
+            <li>
+                <a href="#">List of Lesson w/Content</a>
+            </li>
+        </ul>
+    </div>
+</li>
 
-                                    </ul>
+</ul>
 
 
-                                    <!-- End Sidebar -->
+<!-- End Sidebar -->
+
 
                                     <div class="clearfix"></div>
 
@@ -365,7 +366,7 @@
                   </div>
                   <div class="col-sm-8">
                     <div class="text-sm-end">
-                      <button type="button" class="btn btn-info mb-2">Assign Teacher</button>
+                    <button type="button" class="btn btn-info mb-2" data-bs-toggle="modal" data-bs-target="#assignTeacherModal">Assign Teacher</button>
                     </div>
                   </div>
                   <!-- end col -->
@@ -430,6 +431,50 @@
           <!-- end col -->
         </div>
         <!-- end row -->
+
+
+        <!-- Assign Teacher Modal -->
+<div class="modal fade" id="assignTeacherModal" tabindex="-1" role="dialog" aria-labelledby="assignTeacherModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="assignTeacherModalLabel">Assign Teacher</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="topicTitle" class="form-label">Topic Title</label>
+                        <select class="form-select" id="topicTitle">
+                            <option value="literacy">Literacy</option>
+                            <option value="numeracy">Numeracy</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="levelLearning" class="form-label">Level of Learning</label>
+                        <select class="form-select" id="levelLearning">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teacher" class="form-label">Teacher</label>
+                        <select class="form-select" id="teacher">
+                            <option value="teacher1">Teacher 1</option>
+                            <option value="teacher2">Teacher 2</option>
+                            <option value="teacher3">Teacher 3</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Assign</button>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <!-- Right Sidebar -->
                 <div class="end-bar">
