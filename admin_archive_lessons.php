@@ -419,7 +419,7 @@
                     FROM tbl_lesson
                     JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
                     JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
-                    WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_lesson_files.status = 3";
+                    WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_lesson_files.status IN (3, 0)";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -447,15 +447,14 @@
                             <a href="admin_lesson_unarchive.php?lesson=<?php echo $row['lesson'] ?>" class="accept">
                                 <button type="button" class="btn btn-primary"><i class="mdi mdi-restore"></i> </button>
                             </a>
-                            <a href="admin_lesson_decline.php?lesson=<?php echo $row['lesson'] ?>" class="decline">
-                                <button type="button" class="btn btn-danger"><i class="uil-trash"></i></button>
-                            </a>
                             </td>
                             <td>
                                 <?php
                                 if ($row['status'] == 3) {
                                     echo '<span class="badge bg-danger">Archived</span>';
-                                } 
+                                } elseif($row['status'] == 0) {
+                                    echo '<span class="badge bg-danger">Deleted</span>';
+                                }
                                  else {
                                     echo "<tr><td colspan='6'>No records found</td></tr>";
                                 }
