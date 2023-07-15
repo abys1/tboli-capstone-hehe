@@ -68,7 +68,7 @@
             }
         }
         ?>
-
+        <form action="" method="POST">
         <div class="wrapper rounded bg-white">
             <div class="h3">Add Admin</div>
 
@@ -76,29 +76,29 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>First Name</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" name="firstname" required>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Middle Name</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" name="middlename" required>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" required>
+                        <input type="text" class="form-control" name="lastname" required>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Phone Number</label>
-                        <input type="tel" class="form-control" required>
+                        <input type="tel" class="form-control" name="phone" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Birthday</label>
-                        <input type="date" class="form-control" required>
+                        <input type="date" class="form-control" name="birthday" required>
                     </div>
                     <div class=" col-md-6 mt-md-0 mt-3">
                         <label>Gender</label>
-                        <select id="sub" required>
+                        <select id="sub" name="gender" required>
                             <option value="" selected hidden>Choose Option</option>
                             <option value="female">Female</option>
                             <option value="male">Male</option>
@@ -108,16 +108,17 @@
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Email</label>
-                        <input type="email" class="form-control" required>
+                        <input type="email" class="form-control" name="email" required>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Full Address (street, barangay, city)</label>
-                        <input type="address" class="form-control" required>
+                        <input type="address" class="form-control" name="address" required>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary mt-3" value="Add Admin">
+                <input type="submit" class="btn btn-primary mt-3" value="Add Admin" name="btnAdd">
             </div>
         </div>
+        </form>
     </div>
 </body>
 </html>

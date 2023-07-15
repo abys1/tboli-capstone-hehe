@@ -13,6 +13,16 @@
     <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
     <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" disabled="disabled">
 
+    <style>
+    .error {
+    text-align: center;
+    background: #f59595fb;
+    color: #b92c2c;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    }
+    </style>
 </head>
 
 <body class="authentication-bg pb-0" data-layout-config="{&quot;darkMode&quot;:false}" style="visibility: visible;">
@@ -91,13 +101,19 @@
                                         }
                                     }
                                 }
-                                $mailError = "Invalid email or password";
+                               header("Location: Teacher_Login.php?error=Invalid email or password");
+                               exit();
                             }
 
                         }
 
                         ?>
                         <div class="mb-3">
+                            <?php if (isset($_GET['error'])) { ?>
+                            <p class="error">
+                                <?php echo $_GET['error']; ?>
+                            </p>
+                            <?php } ?>
                             <label for="emailaddress" class="form-label">Email</label>
                             <input class="form-control" type="email" id="emailaddress" name="email"  placeholder="Enter your email">
                         </div>
@@ -110,8 +126,6 @@
                                 <span class="password-eye"></span>
                             </div>
                             </div>
-
-                            <div id="password-error" class="h4 text-center"><span class="badge bg-danger" ><?php echo $mailError  ?></span> </div>
                             
                         </div>
                         
