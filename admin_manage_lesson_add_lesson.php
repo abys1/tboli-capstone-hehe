@@ -18,14 +18,24 @@
     <form method="post" action="/">
     <div>
         <label for="title">
-            <span class="required">Title: *</span>
+            <span class="required">Module/Lesson Name: *</span>
             <input type="text" id="title" name="title" value="" placeholder="Title" required="required" tabindex="1" autofocus="autofocus" />
         </label>
     </div>
     <div>
         <label for="objective">
-            <span class="required">Lesson Objective: *</span>
+            <span class="required">Lesson Description: *</span>
             <textarea id="objective" name="objective" placeholder="Please write objectives here." tabindex="5" required="required"></textarea>
+        </label>
+    </div>
+    <div>
+        <label for="category">
+            <span>Category: </span>
+            <select id="category" name="level" tabindex="4">
+                <option value="literacy">Literacy</option>
+                <option value="numeracy">Numeracy</option>
+ 
+            </select>
         </label>
     </div>
     <div>
@@ -38,7 +48,7 @@
             </select>
         </label>
     </div>
-    <div>
+    <!-- <div>
         <label for="video">
             <span>Upload Video:</span>
             <input type="file" id="video" name="video" accept="video/*" tabindex="6">
@@ -55,11 +65,11 @@
             <span>Upload Files:</span>
             <input type="file" id="files" name="files" accept=".pdf,.doc,.docx" tabindex="8" multiple>
         </label>
-    </div>
+    </div> -->
 </form>
 
       <div>              
-          <button name="upload" type="upload" id="upload" >Upload</button> 
+          <button name="create" type="create" id="create" >Create Module</button> 
       </div>
        </form>
 

@@ -221,8 +221,8 @@
 
         <div class="content-page">
             <div class="content">
-                <!-- Topbar Start -->
-                <div class="navbar-custom">
+                    <!-- Topbar Start -->
+                    <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
@@ -237,42 +237,9 @@
                             </div>
                         </li>
 
-                        <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
-                                <i class="dripicons-bell noti-icon"></i>
-                                <span class="noti-icon-badge"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
-
-                                <!-- item-->
-                                <div class="dropdown-item noti-title">
-                                    <h5 class="m-0">
-                                        <span class="float-end">
-                                            <a href="javascript: void(0);" class="text-dark">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </span>Notification
-                                    </h5>
-                                </div>
+                  
 
 
-                                <!-- All-->
-                                <a href="javascript:void(0);"
-                                    class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
-
-                            </div>
-                        </li>
-
-
-
-                        <li class="notification-list">
-                            <a class="nav-link end-bar-toggle" href="javascript: void(0);">
-                                <i class="dripicons-gear noti-icon"></i>
-                            </a>
-                        </li>
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
@@ -319,7 +286,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <a href="admin_profile.php" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
@@ -335,18 +302,7 @@
                     <button class="button-menu-mobile open-left">
                         <i class="mdi mdi-menu"></i>
                     </button>
-                    <div class="app-search dropdown d-none d-lg-block">
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
-                                    id="top-search">
-                                <span class="mdi mdi-magnify search-icon"></span>
-                                <button class="input-group-text btn-primary" type="submit">Search</button>
-                            </div>
-                        </form>
-
-
-                    </div>
+                   
                 </div>
                 <!-- end Topbar -->
 
