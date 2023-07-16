@@ -31,7 +31,7 @@
                     </form>
                     <div class="form-group text-center">
     <div class="col-md-12">
-        <button type="submit" class="btn btn-primary" name="btnAdd">Add Admin</button>
+        <button type="submit" class="btn btn-primary" name="btnAdd">Add Area</button>
     </div>
 </div>
 
