@@ -96,92 +96,8 @@
 
             </div> <!-- content -->
 
-            
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Lesson 1-Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview1">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample1" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#" download>01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#" download>01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end preview-->
-            
-                                    <div class="tab-pane" id="collapse-code1">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Lesson 2-Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview2">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample2" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#">01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end preview-->
-            
-                                    <div class="tab-pane" id="collapse-code2">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+            <?php include('Teacher_addquiz.php'); ?>
 
-                        
-            
-
-            
 
             <!-- Footer Start -->
             <footer class="footer">
@@ -213,9 +129,9 @@
     <!-- END wrapper -->
 
 
-     <!-- Start right sidebar -->
-     <?php include('Teacher_Settings.php'); ?>
-    <!-- End right side bar -->
+    <!-- Start right sidebar -->
+    <?php include('Teacher_Settings.php'); ?>
+         <!-- End right side bar -->
 
 
     <!-- bundle -->

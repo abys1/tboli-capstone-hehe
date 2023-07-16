@@ -96,92 +96,61 @@
 
             </div> <!-- content -->
 
-            
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Lesson 1-Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview1">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample1" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#" download>01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#" download>01 Quiz 1</a>
-                                                </span>
+            <div class="row justify-content-md-center mt-4">
+                <div class="card col-sm-10">
+                    <div class="card-body">
+                        <h5 class="card-title">Question 1</h5>
+                        <p class="mt-2">What is the purpose of a loop in programming?</p>
+                        <div class="list-group">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio1" name="customRadio1" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio1">To display error messages</label>
                                             </div>
-                                        </div>
-                                    </div> <!-- end preview-->
-            
-                                    <div class="tab-pane" id="collapse-code1">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio2" name="customRadio1" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio2">To repeat a set of instructions</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio3">To declare variables</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
+                                                <label class="form-check-label" for="customRadio4">To perform mathematical calculations</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary">Prev</button>
+                            </div>
+                            <div class="col-sm-6 text-md-end">
+                                <button class="btn btn-primary">Next</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Lesson 2-Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview2">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample2" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#">01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end preview-->
-            
-                                    <div class="tab-pane" id="collapse-code2">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
 
-                        
-            
-
-            
 
             <!-- Footer Start -->
             <footer class="footer">
@@ -213,9 +182,9 @@
     <!-- END wrapper -->
 
 
-     <!-- Start right sidebar -->
-     <?php include('Teacher_Settings.php'); ?>
-    <!-- End right side bar -->
+    <!-- Start right sidebar -->
+    <?php include('Teacher_Settings.php'); ?>
+         <!-- End right side bar -->
 
 
     <!-- bundle -->

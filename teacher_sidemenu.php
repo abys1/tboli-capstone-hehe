@@ -19,9 +19,9 @@
     <div class="collapse" id="sidebarUsers" style="">
         <ul class="side-nav-second-level">
 
-            <li>
+            <!-- <li>
                 <a href="Teacher_Learners.php"> <i class=" uil-user-circle" ></i> Learner</a>
-            </li>
+            </li> -->
             
 
             <li>
@@ -62,30 +62,36 @@
     <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
         <i class="dripicons-document-edit"></i>
         <span class="badge bg-success float-end"></span>
-        <span> Manage Content </span>
+        <span> Manage Lesson </span>
         <span class="menu-arrow"></span>
     </a>
     <div class="collapse" id="sidebarLessons" style="">
         <ul class="side-nav-second-level">
 
             <li>
-                <a href="Teacher_uploadlesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
+                <a href="Teacher_Add_QuizMultipleC.php"><i class=" uil-plus-circle"></i> Add Quiz</a>
             </li>
+
             <li>
                 <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
             </li>
 
-            <li>
+            <!-- <li>
                 <a href="Teacher_CreateModule.php"><i class=" uil-plus-circle"></i> Add Module</a>
-            </li>
+            </li> -->
 
             <li>
                 <a href="Teacher_Manage_Quiz.php"><i class=" uil-plus-circle"></i> Add quiz assignment</a>
             </li>
 
             <li>
-                <a href="Teacher_ManageLesson.php"><i class=" uil-plus-circle"></i> Manage Lessons</a>
+                <a href="Teacher_ManageLesson.php"><i class=" uil-plus-circle"></i> Upload Lesson</a>
             </li>
+
+            <li>
+                <a href="Teacher_QuizView.php"><i class=" uil-eye"></i> Quiz View</a>
+            </li>
+
 
             
             

@@ -54,16 +54,9 @@
 
                             
                         
-                            if (empty($password)) {
-                                $mailError = "Your password is empty";
-                            } elseif (empty($email)) {
-                                $mailError = "Your email is empty";
-                            } 
-                        
-                        
-                            
-                            
-                             else {
+                            if (empty($password) || empty($email)) {
+                                $mailError = "Oops! It seems that the email and/or password fields have been left empty.";
+                            } else {
                                 $sql = "SELECT tbl_userinfo.user_id, tbl_accounts.email, tbl_accounts.password, tbl_user_level.level, tbl_user_status.status
                                 FROM tbl_teachers 
                                 JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
@@ -91,12 +84,14 @@
                                         }
                                     }
                                 }
-                                $mailError = "Invalid email or password";
+                                $mailError = "The email or password provided is incorrect.";
                             }
 
                         }
 
                         ?>
+                        
+                        
                         <div class="mb-3">
                             <label for="emailaddress" class="form-label">Email</label>
                             <input class="form-control" type="email" id="emailaddress" name="email"  placeholder="Enter your email">
@@ -111,7 +106,9 @@
                             </div>
                             </div>
 
-                            <div id="password-error" class="h4 text-center"><span class="badge bg-danger" ><?php echo $mailError  ?></span> </div>
+                            <div id="password-error" class="h4 text-center"><span class="badge bg-danger  text-wrap" ><?php echo $mailError  ?></span> </div>
+
+                            
                             
                         </div>
                         
