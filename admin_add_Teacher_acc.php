@@ -239,6 +239,11 @@ if (isset($_POST['btnAdd'])) {
 
 <div class="form">
     <div class="row">
+
+    <div class="col-md-6 mt-md-0 mt-3">
+            <label for="teacher-id">Teacher ID</label>
+            <input type="text" id="teacher-id" class="form-control" required>
+        </div>
   
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="first-name">First Name</label>
@@ -260,10 +265,7 @@ if (isset($_POST['btnAdd'])) {
             <label for="email">Email</label>
             <input type="email" id="email" class="form-control" required>
         </div>
-        <div class="col-md-6 mt-md-0 mt-3">
-                <label for="valid-id">Valid ID</label>
-                <input type="file" id="valid-id" class="form-control" required>
-            </div>
+        
     </div>
     <div class="row">
         <div class="col-md-6 mt-md-0 mt-3">
@@ -284,6 +286,12 @@ if (isset($_POST['btnAdd'])) {
             <label for="full-address">Full Address (street, barangay, city)</label>
             <input type="address" id="full-address" class="form-control" required>
         </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6 mt-md-0 mt-3">
+                <label for="valid-id">Valid ID</label>
+                <input type="file" id="valid-id" class="form-control" required>
+            </div>
     </div>
     <input type="submit" class="btn btn-primary mt-3" value="Add Account">
 </div>

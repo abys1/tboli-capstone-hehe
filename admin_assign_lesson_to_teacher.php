@@ -151,11 +151,24 @@
     </a>
 </li>
 <li class="side-nav-item">
-    <a href="admin_manage_area.php" class="side-nav-link">
-        <i class="uil-user-plus"></i>
-        <span>Manage Area</span>
-    </a>
-</li>
+                        <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+                            <i class="uil-user-plus"></i>
+                            <span class="badge bg-success float-end"></span>
+                            <span> Manage Area </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarDashboards" style="">
+                            <ul class="side-nav-second-level">
+                                <li>
+                                    <a href="admin_manage_area.php">Create/Register Area</a>
+                                </li>
+                                <li>
+                                    <a href="admin_assign_teacher_area.php">Assign Teacher to Area</a>
+                                </li>                           
+                                
+                            </ul>
+                        </div>
+                    </li>
 <li class="side-nav-item">
     <a href="#" class="side-nav-link">
         <i class="uil-user-plus"></i>

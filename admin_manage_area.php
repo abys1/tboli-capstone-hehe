@@ -131,10 +131,43 @@
     </a>
 </li>
 <li class="side-nav-item">
-    <a href="admin_manage_area.php" class="side-nav-link">
-        <i class="uil-user-plus"></i>
-        <span>Manage Area</span>
+    <a data-bs-toggle="collapse" href="#sidebarclass" aria-expanded="false"
+        aria-controls="sidebarclass" class="side-nav-link">
+        <i class="uil-folder-plus"></i>
+        <span> Manage Class/Section </span>
+        <span class="menu-arrow"></span>
     </a>
+    <div class="collapse" id="sidebarclass">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="admin_class.php">Create Class/Section</a>
+            </li>
+            <li>
+                <a href="admin_assign_teacher_class.php">Assign Teacher to Class</a>
+            </li>
+        </ul>
+    </div>
+</li>
+<li class="side-nav-item">
+    <a data-bs-toggle="collapse" href="#sidebarArea" aria-expanded="false"
+        aria-controls="sidebarArea" class="side-nav-link">
+        <i class="uil-folder-plus"></i>
+        <span> Manage Area </span>
+        <span class="menu-arrow"></span>
+    </a>
+    <div class="collapse" id="sidebarArea">
+        <ul class="side-nav-second-level">
+            <li>
+                <a href="admin_manage_area.php">Create/Register Area</a>
+            </li>
+            <li>
+                <a href="admin_assign_teacher_lesson.php">Assign Teacher to Area</a>
+            </li>
+            <li>
+                <a href="admin_assign_class_area.php">Assign Class to Area</a>
+            </li>
+        </ul>
+    </div>
 </li>
 <li class="side-nav-item">
     <a href="#" class="side-nav-link">
@@ -169,7 +202,6 @@
 </li>
 
 </ul>
-
 
 <!-- End Sidebar -->
 
