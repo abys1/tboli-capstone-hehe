@@ -94,7 +94,7 @@
                                         }
                                     }
                                 }
-                                $mailError = "Invalid email or password";
+                                $mailError = "Login failed: incorrect email or password";
                             }
 
                         }
@@ -121,7 +121,7 @@
                             </div>
                             </div>
 
-                            <div id="password-error" class="h4 text-center"><span class="badge bg-danger" ><?php echo $mailError  ?></span> </div>
+                            <div id="password-error" class=" mt-3 text-center"><span class=" text-danger text-wrap" ><?php echo $mailError  ?></span> </div>
                             
                         </div>
                         
