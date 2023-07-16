@@ -104,7 +104,7 @@
                         <div class="row mb-4">
                             
                             <div class="col-sm-9">
-                            <h5 class="card-title">Question 1</h5>
+                            
                             </div>
 
                             <div class="col-sm-3 text-sm-end">
@@ -114,6 +114,15 @@
                         </div>
 
                         <form action=""  method="POST" >
+
+                        <div class="mb-3">
+                            <label for="simpleinput" class="form-label">Quiz Title</label>
+                            <input type="text" id="simpleinput" class="form-control">
+                        </div>
+
+                        <div class="mb-2" >
+                            <label>Question #1</label>
+                        </div>
 
                         <textarea class="form-control mb-3" name="" id="" cols="130" rows="5" placeholder="Enter your Questions here" ></textarea>
                         <div class="list-group"></div>

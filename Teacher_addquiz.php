@@ -20,11 +20,11 @@
                             
                         
                         <div class="mb-3">
-                            <label for="simpleinput" class="form-label h3">Quiz Title</label>
+                            <label for="simpleinput" class="form-label">Quiz Title</label>
                             <input type="text" id="simpleinput" class="form-control">
                         </div>
 
-                        <div class="mb-2 mt-4" >
+                        <div class="mb-2" >
                             <label>Question #1</label>
                         </div>
 
