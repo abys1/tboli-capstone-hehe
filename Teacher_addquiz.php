@@ -5,12 +5,18 @@
 
                         <div class="row mb-4">
                             
-                            <div class="col-sm-9">
-                            
-                            </div>
+                        <div class="col-sm-9">
+                            <label for="project-overview" class="form-label">Please select subject</label>
+                            <select class="form-control select2" data-toggle="select2">
+                                <option>Select Category</option>
+                                <option value="AZ">Literacy</option>
+                                <option value="CO">Numeracy</option>
+                            </select>
+                        </div>
+
                             
 
-                            <div class="col-sm-3 text-sm-end">
+                            <div class="col-sm-3 text-sm-end mt-3">
                                 <input type="button" class="btn btn-primary" value="Add Question" >
                             </div>
                             
