@@ -17,42 +17,88 @@
 
                         <form action=""  method="POST" >
 
-                        <textarea class="form-control" name="" id="" cols="130" rows="5"></textarea>
+                        <textarea class="form-control mb-3" name="" id="" cols="130" rows="5" placeholder="Enter your Questions here" ></textarea>
                         <div class="list-group"></div>
 
-                        <div class="row ms-0 mt-4" >
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="customRadio1" name="customRadio1" class="form-check-input">
-                                <label class="form-check-label" for="customRadio1">is correct?</label>
-                                <input class="form-control" type="text" name="" id="">
-
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="customRadio1" name="customRadio1" class="form-check-input">
-                                <label class="form-check-label" for="customRadio1">is correct?</label>
-                                <input class="form-control" type="text" name="" id="">
-
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="customRadio1" name="customRadio1" class="form-check-input">
-                                <label class="form-check-label" for="customRadio1">is correct?</label>
-                                <input class="form-control" type="text" name="" id="">
-
-                            </div>
-
-                            <div class="form-check form-check-inline">
-                                <input type="radio" id="customRadio1" name="customRadio1" class="form-check-input">
-                                <label class="form-check-label" for="customRadio1">is correct?</label>
-                                <input class="form-control" type="text" name="" id="">
-
-                            </div>
-                        </div>
+                        
+                        <div class="list-group">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="row" >
+                                                <div class="col-sm-1" >
+                                                    <div class="form-check form-check-inline mt-1">
+                                                        <input type="radio" id="customRadio1" name="customRadio1" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio1">Correct?</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-11" >
+                                                    <div>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="row" >
+                                                <div class="col-sm-1" >
+                                                    <div class="form-check form-check-inline mt-1">
+                                                        <input type="radio" id="customRadio2" name="customRadio1" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio2">Correct?</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-11" >
+                                                    <div>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="row" >
+                                                <div class="col-sm-1" >
+                                                    <div class="form-check form-check-inline mt-1">
+                                                        <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio3">Correct?</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-11" >
+                                                    <div>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="row" >
+                                                <div class="col-sm-1" >
+                                                    <div class="form-check form-check-inline mt-1">
+                                                        <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
+                                                        <label class="form-check-label" for="customRadio4">Correct?</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-11" >
+                                                    <div>
+                                                        <input type="text" class="form-control" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
 
                         <div class="row mt-4">
                             <div class="col-sm-6">
-                                <input type="button" class="btn btn-primary" value="create" >
+                                <input type="button" class="btn btn-primary" value="Create Quiz" >
                             </div>
                             
                         </div>

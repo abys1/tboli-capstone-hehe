@@ -66,7 +66,7 @@
                 <a href="Teacher_Add_QuizMultipleC.php"><i class=" uil-list-ul"></i> Multiple Choice</a>
               </li>
               <li>
-                <a href="#"><i class=" uil-check-circle"></i> <i class="uil-times-circle"></i> True or False</a>
+                <a href="Teacher_Add_QuizTrueOrfalse.php"><i class=" uil-check-circle"></i> <i class="uil-times-circle"></i> True or False</a>
               </li>
               <li>
                 <a href="Teacher_QuizView.php"><i class="uil-eye"></i> Quiz View</a>
