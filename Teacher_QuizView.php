@@ -86,7 +86,7 @@
                                         <li class="breadcrumb-item active">Module</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Module</h4>
+                                <h4 class="page-title">Quiz View</h4>
                             </div>
                         </div>
                     </div>     
