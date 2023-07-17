@@ -108,8 +108,7 @@
                       </div>
                       <div class="col">
                         <div>
-                          <h4 class="mt-1 mb-1 text-white">Jillian Ward</h4>
-                          <p class="font-13 text-white-50"> Authorised Teacher</p>
+                          <h4 class="mt-1 mb-1 text-white"><?php echo $row ['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']?></h4>
                         </div>
                       </div>
                     </div>
@@ -117,7 +116,7 @@
                   <!-- end col-->
                   <div class="col-sm-4">
                     <div class="text-center mt-sm-0 mt-3 text-sm-end">
-                      <span class="badge badge-outline-info">Teacher</span>
+                      <span class="badge badge-outline-info"><?php echo $row ['level'] ?></span>
                       <br>
                       <br>
                       <br>
