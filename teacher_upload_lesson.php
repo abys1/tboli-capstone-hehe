@@ -33,7 +33,7 @@ if (isset($_SESSION['user_id'])) {
             die("File size is too big.");
         }
 
-        $lesson_name = uniqid() . "_" . $file_name;
+        $lesson_name = $file_name;
 
         $target_dir = "teachers/lessons/";
         $target_path = $target_dir . $lesson_name;
@@ -42,12 +42,12 @@ if (isset($_SESSION['user_id'])) {
             die("Error moving the uploaded file.");
         }
 
-        $sql = "INSERT INTO tbl_lesson_files (lesson) VALUES ('$lesson_name')";
+        $sql = "INSERT INTO tbl_lesson_files (lesson, added_by, status) VALUES ('$lesson_name', '$user_id', 2)";
 
         if ($conn->query($sql) === TRUE) {
             $lesson_files_ids[] = $conn->insert_id;
         } else {
-            die("Error inserting data into tbl_lesson_files.");
+            die("Error inserting data into tbl_lesson_files: " . $conn->error);
         }
     }
 
@@ -61,21 +61,22 @@ if (isset($_SESSION['user_id'])) {
 
             $sql = "INSERT INTO tbl_module (module_name, module_description, category) VALUES (' ', ' ', ' ')";
 
-            if ($conn->query($sql) === TRUE) {
-                $module_id = $conn->insert_id;
-                $sql = "INSERT INTO tbl_content (lesson_id, module_id) VALUES ('$lesson_id', '$module_id')";
+                if ($conn->query($sql) === TRUE) {
+                    $module_id = $conn->insert_id;
+
+                    $sql = "INSERT INTO tbl_content (lesson_id, module_id) VALUES ('$lesson_id', '$module_id')";
 
                 if ($conn->query($sql) === TRUE) {
                     header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
                     exit();
                 } else {
-                    die("Error inserting data into tbl_content: ");
+                    die("Error inserting data into tbl_content: " . $conn->error);
                 }
             } else {
-                die("Error inserting data into tbl_module: ");
+                die("Error inserting data into tbl_module: " . $conn->error);
             }
         } else {
-            die("Error inserting data into tbl_lesson: ");
+            die("Error inserting data into tbl_lesson: " . $conn->error);
         }
     } else {
         die("Please select at least one file.");
