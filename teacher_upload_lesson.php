@@ -69,13 +69,13 @@ if (isset($_SESSION['user_id'])) {
                     header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
                     exit();
                 } else {
-                    die("Error inserting data into tbl_content: " . $conn->error);
+                    die("Error inserting data into tbl_content: ");
                 }
             } else {
-                die("Error inserting data into tbl_module: " . $conn->error);
+                die("Error inserting data into tbl_module: ");
             }
         } else {
-            die("Error inserting data into tbl_lesson: " . $conn->error);
+            die("Error inserting data into tbl_lesson: ");
         }
     } else {
         die("Please select at least one file.");
