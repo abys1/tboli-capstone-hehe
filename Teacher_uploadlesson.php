@@ -167,7 +167,7 @@ $user_id = $_SESSION['user_id'];
 
                                         <div class="mb-3">
                                             <label for="project-type" class="form-label">Level of learning</label>
-                                            <select class="form-control" name="type" id="project-type" required>
+                                            <select class="form-control" name="level" id="project-type" required>
                                                 <option>Select</option>
                                                 <option value="Literacy">Basic</option>
                                                 <option value="Intermediate">Intermediate</option>

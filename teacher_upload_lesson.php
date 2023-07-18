@@ -8,6 +8,7 @@ if (isset($_SESSION['user_id'])) {
     $name = $_POST['name'];
     $objective = $_POST['objective'];
     $type = $_POST['type'];
+    $level = $_POST['level'];
     $files = $_FILES['lesson'];
 
     // Ensure $files is an array
@@ -54,7 +55,7 @@ if (isset($_SESSION['user_id'])) {
     if (!empty($lesson_files_ids)) {
         $lesson_files_ids_str = implode(",", $lesson_files_ids);
 
-        $sql = "INSERT INTO tbl_lesson (name, objective, type, lesson_files_id, added_by) VALUES ('$name', '$objective', '$type', '$lesson_files_ids_str', '$user_id')";
+        $sql = "INSERT INTO tbl_lesson (name, objective, level, type, lesson_files_id, added_by) VALUES ('$name', '$objective', '$level', '$type', '$lesson_files_ids_str', '$user_id')";
 
         if ($conn->query($sql) === TRUE) {
             $lesson_id = $conn->insert_id;

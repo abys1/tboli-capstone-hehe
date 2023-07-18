@@ -370,7 +370,7 @@
                     FROM tbl_lesson
                     JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
                     JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
-                    WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_lesson_files.status IN (3, 0)";
+                    WHERE tbl_lesson_files.status IN (3, 0)";
 
                     $result = mysqli_query($conn, $sql);
 
