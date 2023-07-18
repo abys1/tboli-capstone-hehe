@@ -1,115 +1,117 @@
-<?php 
-    session_start();
-    $user_id = $_SESSION['user_id'];
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
-        <meta content="Coderthemes" name="author">
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- App css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
-        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
-        <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
+<head>
+    <meta charset="utf-8">
+    <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
+    <meta content="Coderthemes" name="author">
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-                <!-- Quill css -->
-        <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
-        <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
+    <!-- App css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="light-style">
+    <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style">
 
-    </head>
+    <!-- Quill css -->
+    <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
 
-    <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": false}'>
-        <!-- Begin page -->
-        <div class="wrapper">
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="leftside-menu">
-    
-                <!-- LOGO -->
-                <a href="index.html" class="logo text-center logo-light">
-                    <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="" height="16">
-                    </span>
-                    <span class="logo-sm">
-                        <img src="assets/images/logo_sm.png" alt="" height="16">
-                    </span>
-                </a>
+</head>
 
-                <!-- LOGO -->
-                <a href="index.html" class="logo text-center logo-dark">
-                    <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="16">
-                    </span>
-                    <span class="logo-sm">
-                        <img src="assets/images/logo_sm_dark.png" alt="" height="16">
-                    </span>
-                </a>
-    
-                <div class="h-100" id="leftside-menu-container" data-simplebar="">
+<body class="loading"
+    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": false}'>
+    <!-- Begin page -->
+    <div class="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="leftside-menu">
 
-                    <!--- Sidemenu -->
-                    <?php include('teacher_sidemenu.php')?>
+            <!-- LOGO -->
+            <a href="index.html" class="logo text-center logo-light">
+                <span class="logo-lg">
+                    <img src="assets/images/logo.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm.png" alt="" height="16">
+                </span>
+            </a>
 
-                    
-                    <!-- End Sidebar -->
+            <!-- LOGO -->
+            <a href="index.html" class="logo text-center logo-dark">
+                <span class="logo-lg">
+                    <img src="assets/images/logo-dark.png" alt="" height="16">
+                </span>
+                <span class="logo-sm">
+                    <img src="assets/images/logo_sm_dark.png" alt="" height="16">
+                </span>
+            </a>
 
-                    <div class="clearfix"></div>
+            <div class="h-100" id="leftside-menu-container" data-simplebar="">
 
-                </div>
-                <!-- Sidebar -left -->
+                <!--- Sidemenu -->
+                <?php include('teacher_sidemenu.php') ?>
+
+
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
 
             </div>
-            <!-- Left Sidebar End -->
+            <!-- Sidebar -left -->
 
-            <!-- ============================================================== -->
-            <!-- Start Page Content here -->
-            <!-- ============================================================== -->
+        </div>
+        <!-- Left Sidebar End -->
 
-            <div class="content-page">
-                <div class="content">
-                    <!-- Topbar Start -->
-            <?php include('teacher_topbar.php')?>
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
 
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                            <li class="breadcrumb-item active">Starter</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Add quiz assignment</h4>
+        <div class="content-page">
+            <div class="content">
+                <!-- Topbar Start -->
+                <?php include('teacher_topbar.php') ?>
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                        <li class="breadcrumb-item active">Starter</li>
+                                    </ol>
                                 </div>
+                                <h4 class="page-title">Add quiz assignment</h4>
                             </div>
-                        </div>     
-                        <!-- end page title --> 
-                        
-                    </div> <!-- container -->
+                        </div>
+                    </div>
+                    <!-- end page title -->
 
-                </div> <!-- content -->
+                </div> <!-- container -->
 
-                
-
+            </div> <!-- content -->
 
 
-                            <div class="row">
-                
+
+
+
+            <div class="row">
+
                 <div class="card">
-                <div class="card-header mb-3">
-                    <h4>Add Assignment</h4>
-                </div>
+                    <div class="card-header mb-3">
+                        <h4>Add Assignment</h4>
+                    </div>
                     <form action="#">
                         <div class="mb-3 me-5 ms-4">
                             <label for="simpleinput" class="form-label">Title</label>
@@ -136,7 +138,8 @@
                             <div class="col-lg-3">
                                 <div class="mb-3 position-relative" id="datepicker1">
                                     <label class="form-label">Start</label>
-                                    <input type="text" class="form-control" data-provide="datepicker" data-date-container="#datepicker1">
+                                    <input type="text" class="form-control" data-provide="datepicker"
+                                        data-date-container="#datepicker1">
                                 </div>
                             </div>
                             <div class="col-lg-2 me-5">
@@ -172,7 +175,8 @@
                             <div class="col-lg-3">
                                 <div class="mb-3 position-relative" id="datepicker1">
                                     <label class="form-label">Due</label>
-                                    <input type="text" class="form-control" data-provide="datepicker" data-date-container="#datepicker1">
+                                    <input type="text" class="form-control" data-provide="datepicker"
+                                        data-date-container="#datepicker1">
                                 </div>
                             </div>
                             <div class="col-lg-2 me-4">
@@ -238,63 +242,64 @@
 
 
 
-                                
-                                <!-- end content here -->
-                            </div>
-                            <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+
+            <!-- end content here -->
+        </div>
+        <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                 <p class="mb-0">...</p>
                             </div> -->
-                        </div> <!-- end tab-content-->
-                    </div> <!-- end col-->
+    </div> <!-- end tab-content-->
+    </div> <!-- end col-->
+    </div>
+    <!-- end row-->
+
+
+
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
                 </div>
-                <!-- end row-->
-
-
-
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> © Hyper - Coderthemes.com
-                            </div>
-                            <div class="col-md-6">
-                                <div class="text-md-end footer-links d-none d-md-block">
-                                    <a href="javascript: void(0);">About</a>
-                                    <a href="javascript: void(0);">Support</a>
-                                    <a href="javascript: void(0);">Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-6">
+                    <div class="text-md-end footer-links d-none d-md-block">
+                        <a href="javascript: void(0);">About</a>
+                        <a href="javascript: void(0);">Support</a>
+                        <a href="javascript: void(0);">Contact Us</a>
                     </div>
-                </footer>
-                <!-- end Footer -->
-
+                </div>
             </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-
         </div>
-        <!-- END wrapper -->
+    </footer>
+    <!-- end Footer -->
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
 
 
-         <!-- Start right sidebar -->
-        <?php include('Teacher_Settings.php'); ?>
-         <!-- End right side bar -->
+    </div>
+    <!-- END wrapper -->
 
 
-        <!-- bundle -->
-        <script src="assets/js/vendor.min.js"></script>
-        <script src="assets/js/app.min.js"></script>
+    <!-- Start right sidebar -->
+    <?php include('Teacher_Settings.php'); ?>
+    <!-- End right side bar -->
 
-        <!-- quill js -->
-        <script src="assets/js/vendor/quill.min.js"></script>
-        <!-- quill Init js-->
-        <script src="assets/js/pages/demo.quilljs.js"></script>
-        
-    </body>
+
+    <!-- bundle -->
+    <script src="assets/js/vendor.min.js"></script>
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- quill js -->
+    <script src="assets/js/vendor/quill.min.js"></script>
+    <!-- quill Init js-->
+    <script src="assets/js/pages/demo.quilljs.js"></script>
+
+</body>
+
 </html>

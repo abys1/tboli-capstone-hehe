@@ -1,9 +1,11 @@
-<?php 
-    session_start();
-    $user_id = $_SESSION['user_id'];
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
-<html lang="en" class="menuitem-active"><head>
+<html lang="en" class="menuitem-active">
+
+<head>
     <meta charset="utf-8">
     <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +21,9 @@
 
 </head>
 
-<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}" style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
+<body class="show"
+    data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}"
+    style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
@@ -45,20 +49,41 @@
                 </span>
             </a>
 
-            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: 0px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;">
+                                <div class="simplebar-content" style="padding: 0px;">
 
-              <!--- Side Menu -->
+                                    <!--- Side Menu -->
 
-              <?php include('teacher_sidemenu.php')?>
+                                    <?php include('teacher_sidemenu.php') ?>
 
-                <!-- Help Box -->
-                
-                <!-- end Help Box -->
-                <!-- End Sidebar -->
+                                    <!-- Help Box -->
 
-                <div class="clearfix"></div>
+                                    <!-- end Help Box -->
+                                    <!-- End Sidebar -->
 
-            </div></div></div></div><div class="simplebar-required placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+                                    <div class="clearfix"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-required placeholder" style="width: 260px; height: 234px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div>
+                </div>
+            </div>
             <!-- Sidebar -left -->
 
         </div>
@@ -71,15 +96,15 @@
         <div class="content-page">
             <div class="content">
 
-            
 
-             <!-- Topbar Start -->
-            <?php include('teacher_topbar.php')?>
+
+                <!-- Topbar Start -->
+                <?php include('teacher_topbar.php') ?>
 
 
                 <!-- Start Content-->
                 <div class="container-fluid">
-                    
+
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
@@ -87,7 +112,7 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="Teacher_index.php">Dashboard</a></li>
-                                        
+
                                         <li class="breadcrumb-item active">Enrollment Services</li>
                                         <li class="breadcrumb-item active">Add Student</li>
                                     </ol>
@@ -95,44 +120,49 @@
                                 <h4 class="page-title">Student Account Registration</h4>
                             </div>
                         </div>
-                    </div>     
-                    <!-- end page title --> 
-                    
+                    </div>
+                    <!-- end page title -->
+
                 </div> <!-- container -->
 
             </div> <!-- content -->
 
-                
+
             <div class="col-">
                 <div class="card">
                     <div class="card-body">
-                        
+
                         <h3>Student Information</h3>
 
-                        <form    method="POST">
+                        <form method="POST">
                             <div class="row g-2">
-                                
+
                                 <div class="mb-3">
                                     <label for="InputID" class="form-label">LRN<sup>*</sup></label>
-                                    <input type="text" class="form-control" id="InputID" required placeholder="02000221026" name="lrn">
+                                    <input type="text" class="form-control" id="InputID" required
+                                        placeholder="02000221026" name="lrn">
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
+                                    <input type="text" class="form-control" id="FName" required placeholder="First Name"
+                                        name="firstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
+                                    <input type="text" class="form-control" id="MiddleName" required
+                                        placeholder="MiddleName" name="midname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
+                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name"
+                                        name="lastname">
                                 </div>
-                                
+
                                 <div class="mb-3 col-md-6">
                                     <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name"
+                                        name="sufname">
                                 </div>
                             </div>
 
@@ -146,19 +176,21 @@
                                     <select id="inputGender" class="form-select" name="gender">
                                         <option>Choose</option>
                                         <option>Female</option>
-                                        <option>Male</option> 
+                                        <option>Male</option>
                                     </select>
                                 </div>
                             </div>
 
                             <h4>Location</h4>
-                                        
+
                             <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Full address (street, barangay, city) <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required placeholder="Enter Address" name="address">
+                                <label for="inputAddress" class="form-label">Full address (street, barangay, city)
+                                    <sup>*</sup></label>
+                                <input type="text" class="form-control" id="inputAddress" required
+                                    placeholder="Enter Address" name="address">
                             </div>
-                            
-                            <h4>Contact Information</h4>     
+
+                            <h4>Contact Information</h4>
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
                                     <label for="inputCity" class="form-label">Email Address <sup>*</sup></label>
@@ -168,33 +200,37 @@
                                     <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
                                     <input type="text" class="form-control" id="inputBarangay" name="barrgy">
                                 </div>
-                            </div> 
-                            
-                            
+                            </div>
+
+
 
 
                             <h3>Parents Information</h3>
 
                             <div class="row g-2">
-                                
-                                
+
+
 
                                 <div class="mb-3 col-md-6">
                                     <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required placeholder="First Name" name="firstname">
+                                    <input type="text" class="form-control" id="FName" required placeholder="First Name"
+                                        name="firstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required placeholder="MiddleName" name="midname">
+                                    <input type="text" class="form-control" id="MiddleName" required
+                                        placeholder="MiddleName" name="midname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name" name="lastname">
+                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name"
+                                        name="lastname">
                                 </div>
-                                
+
                                 <div class="mb-3 col-md-6">
                                     <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name" name="sufname">
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name"
+                                        name="sufname">
                                 </div>
                             </div>
 
@@ -208,54 +244,57 @@
                                     <select id="inputGender" class="form-select" name="gender">
                                         <option>Choose</option>
                                         <option>Female</option>
-                                        <option>Male</option> 
+                                        <option>Male</option>
                                     </select>
                                 </div>
                             </div>
 
                             <h4>Location</h4>
-                                        
+
                             <div class="mb-3">
-                                <label for="inputAddress" class="form-label">Full address (street, barangay, city) <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required placeholder="Enter Address" name="address">
+                                <label for="inputAddress" class="form-label">Full address (street, barangay, city)
+                                    <sup>*</sup></label>
+                                <input type="text" class="form-control" id="inputAddress" required
+                                    placeholder="Enter Address" name="address">
                             </div>
-                            
-                            <h4>Contact Information</h4>     
+
+                            <h4>Contact Information</h4>
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email Address  <sup>Optional</sup></label>
+                                    <label for="inputCity" class="form-label">Email Address <sup>Optional</sup></label>
                                     <input type="text" class="form-control" id="inputCity" name="city">
                                 </div>
                                 <div class="mb-3 col-md-5">
                                     <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
                                     <input type="text" class="form-control" id="inputBarangay" name="barrgy">
                                 </div>
-                            </div> 
+                            </div>
                             <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
                         </form>
 
-                        
+
 
                         <div class="table-responsive">
-                            
+
                         </div> <!-- end table-responsive-->
 
                     </div> <!-- end card body-->
                 </div> <!-- end card -->
             </div>
-            
 
-                        
-            
 
-            
+
+
+
+
 
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>202320232023202320232023 © Hyper - Coderthemes.com
+                            <script>document.write(new Date().getFullYear())</script>202320232023202320232023 © Hyper -
+                            Coderthemes.com
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">
@@ -269,27 +308,27 @@
             </footer>
             <!-- end Footer -->
 
-        
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
 
 
-    
-    <!-- END wrapper -->
-
-    <!-- Start right sidebar -->
-    <?php include('Teacher_Settings.php'); ?>
-    <!-- End right side bar -->
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
 
 
-    <!-- bundle -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
 
-</div>
+            <!-- END wrapper -->
+
+            <!-- Start right sidebar -->
+            <?php include('Teacher_Settings.php'); ?>
+            <!-- End right side bar -->
+
+
+            <!-- bundle -->
+            <script src="assets/js/vendor.min.js"></script>
+            <script src="assets/js/app.min.js"></script>
+
+        </div>
     </div>
-        </body>
-    
-    </html>
+</body>
+
+</html>

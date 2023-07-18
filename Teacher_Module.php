@@ -1,9 +1,11 @@
-<?php 
-    session_start();
-    $user_id = $_SESSION['user_id'];
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
-<html lang="en" class="menuitem-active"><head>
+<html lang="en" class="menuitem-active">
+
+<head>
     <meta charset="utf-8">
     <!-- <title>Starter Page | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +21,9 @@
 
 </head>
 
-<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}" style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
+<body class="show"
+    data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}"
+    style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
@@ -45,19 +49,40 @@
                 </span>
             </a>
 
-            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+            <div class="h-100 show" id="leftside-menu-container" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: 0px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;">
+                                <div class="simplebar-content" style="padding: 0px;">
 
-               <!--- Sidemenu -->
-               <?php include('teacher_sidemenu.php')?>
+                                    <!--- Sidemenu -->
+                                    <?php include('teacher_sidemenu.php') ?>
 
-                <!-- Help Box -->
-                
-                <!-- end Help Box -->
-                <!-- End Sidebar -->
+                                    <!-- Help Box -->
 
-                <div class="clearfix"></div>
+                                    <!-- end Help Box -->
+                                    <!-- End Sidebar -->
 
-            </div></div></div></div><div class="simplebar-placeholder" style="width: 260px; height: 234px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div></div></div>
+                                    <div class="clearfix"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simplebar-placeholder" style="width: 260px; height: 234px;"></div>
+                </div>
+                <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
+                </div>
+                <div class="simplebar-track simplebar-vertical" style="visibility: hidden;">
+                    <div class="simplebar-scrollbar"
+                        style="height: 0px; transform: translate3d(0px, 0px, 0px); display: none;"></div>
+                </div>
+            </div>
             <!-- Sidebar -left -->
 
         </div>
@@ -70,11 +95,11 @@
         <div class="content-page">
             <div class="content">
                 <!-- Topbar Start -->
-            <?php include('teacher_topbar.php')?>
+                <?php include('teacher_topbar.php') ?>
 
                 <!-- Start Content-->
                 <div class="container-fluid">
-                    
+
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
@@ -82,21 +107,21 @@
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Dashbaord</a></li>
-                                        
+
                                         <li class="breadcrumb-item active">Module</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Module</h4>
                             </div>
                         </div>
-                    </div>     
-                    <!-- end page title --> 
-                    
+                    </div>
+                    <!-- end page title -->
+
                 </div> <!-- container -->
 
             </div> <!-- content -->
 
-            
+
             <div class="col-">
                 <div class="card">
                     <div class="row g-0 align-items-center">
@@ -110,7 +135,9 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="collapse-preview1">
                                         <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
+                                                href="#collapseExample1" aria-expanded="false"
+                                                aria-controls="collapseExample1">
                                                 View Content
                                             </a>
                                         </p>
@@ -125,7 +152,7 @@
                                             </div>
                                         </div>
                                     </div> <!-- end preview-->
-            
+
                                     <div class="tab-pane" id="collapse-code1">
                                         <pre class="mb-0">                                            <!-- Your code here -->
                                         </pre>
@@ -136,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-">
                 <div class="card">
                     <div class="row g-0 align-items-center">
@@ -150,7 +177,9 @@
                                 <div class="tab-content">
                                     <div class="tab-pane show active" id="collapse-preview2">
                                         <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
+                                                href="#collapseExample2" aria-expanded="false"
+                                                aria-controls="collapseExample2">
                                                 View Content
                                             </a>
                                         </p>
@@ -165,7 +194,7 @@
                                             </div>
                                         </div>
                                     </div> <!-- end preview-->
-            
+
                                     <div class="tab-pane" id="collapse-code2">
                                         <pre class="mb-0">                                            <!-- Your code here -->
                                         </pre>
@@ -176,19 +205,20 @@
                     </div>
                 </div>
             </div>
-            
 
-                        
-            
 
-            
+
+
+
+
 
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper - Coderthemes.com
+                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper -
+                            Coderthemes.com
                         </div>
                         <div class="col-md-6">
                             <div class="text-md-end footer-links d-none d-md-block">
@@ -202,26 +232,28 @@
             </footer>
             <!-- end Footer -->
 
-        
-
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
 
 
-    
-    <!-- END wrapper -->
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
 
 
-     <!-- Start right sidebar -->
-     <?php include('Teacher_Settings.php'); ?>
-    <!-- End right side bar -->
+
+            <!-- END wrapper -->
 
 
-    <!-- bundle -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
-    
+            <!-- Start right sidebar -->
+            <?php include('Teacher_Settings.php'); ?>
+            <!-- End right side bar -->
 
 
-</body></html>
+            <!-- bundle -->
+            <script src="assets/js/vendor.min.js"></script>
+            <script src="assets/js/app.min.js"></script>
+
+
+
+</body>
+
+</html>

@@ -8,7 +8,8 @@
   </li>
 
   <li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers" class="side-nav-link collapsed">
+    <a data-bs-toggle="collapse" href="#sidebarUsers" aria-expanded="false" aria-controls="sidebarUsers"
+      class="side-nav-link collapsed">
       <i class="uil-user-plus"></i>
       <span class="badge bg-success float-end"></span>
       <span>Manage Users</span>
@@ -27,7 +28,8 @@
   </li>
 
   <li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+    <a data-bs-toggle="collapse" href="#sidebarDashboards" aria-expanded="false" aria-controls="sidebarDashboards"
+      class="side-nav-link collapsed">
       <i class="uil-user-plus"></i>
       <span class="badge bg-success float-end"></span>
       <span>Enrolment Services</span>
@@ -46,7 +48,8 @@
   </li>
 
   <li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons" class="side-nav-link collapsed">
+    <a data-bs-toggle="collapse" href="#sidebarLessons" aria-expanded="false" aria-controls="sidebarLessons"
+      class="side-nav-link collapsed">
       <i class="dripicons-document-edit"></i>
       <span class="badge bg-success float-end"></span>
       <span>Manage Lesson</span>
@@ -55,7 +58,8 @@
     <div class="collapse" id="sidebarLessons">
       <ul class="side-nav-second-level">
         <li class="side-nav-item">
-          <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false" aria-controls="sidebarSecondLevel">
+          <a data-bs-toggle="collapse" href="#sidebarSecondLevel" aria-expanded="false"
+            aria-controls="sidebarSecondLevel">
             <i class="uil-plus-circle"></i>
             <span>Add quiz</span>
             <span class="menu-arrow"></span>
@@ -66,7 +70,8 @@
                 <a href="Teacher_Add_QuizMultipleC.php"><i class=" uil-list-ul"></i> Multiple Choice</a>
               </li>
               <li>
-                <a href="Teacher_Add_QuizTrueOrfalse.php"><i class=" uil-check-circle"></i> <i class="uil-times-circle"></i> True or False</a>
+                <a href="Teacher_Add_QuizTrueOrfalse.php"><i class=" uil-check-circle"></i> <i
+                    class="uil-times-circle"></i> True or False</a>
               </li>
               <li>
                 <a href="Teacher_QuizView.php"><i class="uil-eye"></i> Quiz View</a>
@@ -112,7 +117,8 @@
   </li>
 
   <li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail" class="side-nav-link">
+    <a data-bs-toggle="collapse" href="#sidebarEmail" aria-expanded="false" aria-controls="sidebarEmail"
+      class="side-nav-link">
       <i class="uil-folder-plus"></i>
       <span>Reports</span>
       <span class="menu-arrow"></span>
