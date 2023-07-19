@@ -1,33 +1,7 @@
 <?php
 session_start();
 $user_id = $_SESSION['user_id'];
-
-include 'dbcon.php';
-
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-
-    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-            FROM tbl_admin
-            JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-            JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-            WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
-            LIMIT 1;";
-
-    $result = mysqli_query($conn, $sql);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-
-
-    } else {
-        echo "No records found in tbl_admin";
-    }
-} else {
-    echo "No user ID provided";
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>
     <meta charset="utf-8">
@@ -50,7 +24,7 @@ if (isset($_SESSION['user_id'])) {
 
 </head>
 
-<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed" style="visibility: visible;">
+<body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: true}" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed" style="visibility: visible;">
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
@@ -78,8 +52,8 @@ if (isset($_SESSION['user_id'])) {
 
             <div class="h-100 show" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
 
-                <!--- Sidemenu -->
-                <ul class="side-nav">
+               <!--- Sidemenu -->
+               <ul class="side-nav">
 
 
 <li class="side-nav-item">
@@ -254,9 +228,8 @@ if (isset($_SESSION['user_id'])) {
 
 
 
+<!-- End Sidebar -->
 
-              
-                <!-- End Sidebar -->
 
                 <div class="clearfix"></div>
 
@@ -272,8 +245,8 @@ if (isset($_SESSION['user_id'])) {
 
         <div class="content-page">
             <div class="content">
-                     <!-- Topbar Start -->
-                     <div class="navbar-custom">
+                   <!-- Topbar Start -->
+                   <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
@@ -381,21 +354,18 @@ if (isset($_SESSION['user_id'])) {
             <table id="basic-datatable" class="table table-centered mb-0">
               <div class="row mb-2">
            
-                <div class="col-sm-12">
-                    <div class="text-sm-end">
-                     
-                      <a href="javascript:void(0);">
-                       <button type="button"class="btn btn-success mb-2"><i class="uil-edit-alt"></i>Approve</button>
-                    </a>
-                    <a href="javascript:void(0);">
-                    <button type="button" class="btn btn-danger mb-2"><i class="uil-edit-alt"></i>Decline</button>
-                    </a>
-
-                    </div>
-                </div><!-- end col-->
+             
+            </div>
+            <table id="basic-datatable" class="table table-centered mb-0">
+              <div class="row mb-2">
+                <div class="col-sm-4">
+                    <a href="admin_add_new_class.php" class="btn btn-danger mb-2"><i class="mdi mdi-plus-circle me-2"></i> Add Class</a>
+                </div>
+             
             </div>
              
             </div>
+            
                 <thead>
                     <tr>
                         <th class="">
@@ -405,70 +375,80 @@ if (isset($_SESSION['user_id'])) {
                             </div>
                         </th>
                         <th>ID</th>
-                        <th>Lesson Name</th>
-                        <th>Objective</th>
-                        <th>Type of Lesson</th>
-                        <th>Lesson</th>
-                        <th>Added by</th>
+                        <th>Class/Section</th>
                         <th>Action</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                    include 'dbcon.php';
+                    <tr>
+                        <td>
+                            <div class="form-check form-checkbox-success">
+                                <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
+                                <label class="form-check-label" for="customCheckcolor2">Select</label>
+                            </div>
+                        </td>
+                        <td>001</td>
+                        <td>Grade 1</td>
+              
+                        <td>
+    <button type="button" class="btn btn-info"><i class="mdi mdi-pencil"></i> </button>
+    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
 
-                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.type, tbl_lesson.added_by,
-                    tbl_lesson_files.lesson, tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
-                    FROM tbl_lesson
-                    JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
-                    JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
-                    WHERE tbl_lesson_files.status = 1";
+</td>
 
-                    $result = mysqli_query($conn, $sql);
 
-                    if (!$result) {
-                        die("Error executing the query: " . mysqli_error($conn));
-                    }
 
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            ?>
-                                                    <tr>
-                            <td>
-                                <div class="form-check form-checkbox-success">
-                                    <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
-                                    <label class="form-check-label" for="customCheckcolor2"></label>
-                                </div>
-                            </td>
-                            <td><?php echo $row['lesson_id']; ?></td>
-                            <td><?php echo $row['name']; ?></td>
-                            <td><?php echo $row['objective']; ?></td>
-                            <td><?php echo $row['type']; ?></td>
-                            <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a></td>
-                            <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
-                            <td>
-                            <a href="admin_lesson_archive.php?lesson=<?php echo $row['lesson'] ?>" class="archive">
-                                <button type="button" class="btn btn-warning"><i class="uil-archive"></i> </button>
-                            </a>
-                            </td>
-                            <td>
-                                <?php
-                                if ($row['status'] == 1) {
-                                    echo '<span class="badge bg-success">Active</span>';
-                                } else {
-                                    echo "<tr><td colspan='6'>No records found</td></tr>";
-                                }
-                                ?>
-                            </td>
-                        </tr>
-                        <?php
-                        }
-                    } else {
-                        echo "<tr><td colspan='6'>No records found</td></tr>";
-                    }
-                    ?>
-                    </td>
+                        <td>
+                            <div>
+                                <span class="badge bg-success">Approved</span>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                          <div class="form-check form-checkbox-success mb-2">
+                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor5">
+                            <label class="form-check-label" for="customCheckcolor5">Select</label>
+                          </div>
+                        </td>
+                        <td>0003</td>
+                        <td>Grade 5</td>
+
+                        <td>
+    <button type="button" class="btn btn-info"><i class="mdi mdi-pencil"></i> </button>
+    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+
+</td>
+
+                        <td>
+                          <span class="badge bg-success">Approved</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="form-check form-checkbox-success mb-2">
+                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor6">
+                            <label class="form-check-label" for="customCheckcolor6">Select</label>
+                          </div>
+                        </td>
+                        <td>0004</td>
+                        <td>Grade 3</td>
+
+                        <td>
+    <button type="button" class="btn btn-info"><i class="mdi mdi-pencil"></i> </button>
+    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+
+</td>
+
+
+                        <td>
+                          <span class="badge bg-danger">Decline</span>
+                        </td>
+                      </tr>
+
+                 
                 </tbody>
             </table>
 

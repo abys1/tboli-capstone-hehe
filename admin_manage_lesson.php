@@ -132,7 +132,9 @@ if (isset($_SESSION['user_id'])) {
 </li>
 
 <li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+    <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons"
+        aria-expanded="false" aria-controls="sidebarDashboards"
+        class="side-nav-link collapsed">
         <i class="uil-user-plus"></i>
         <span class="badge bg-success float-end"></span>
         <span> Manage Request Lessons </span>
@@ -148,17 +150,36 @@ if (isset($_SESSION['user_id'])) {
             </li>
             <li>
                 <a href="admin_archive_lessons.php">Archive Lessons</a>
-            </li>                            
-            
+            </li>
+
         </ul>
     </div>
 </li>
 
 <li class="side-nav-item">
-    <a href="admin_quiz.php" class="side-nav-link">
-        <i class="fa fa-book"></i>
-        <span>Manage Quiz</span>
+    <a data-bs-toggle="collapse" href="#sidebarquiz"
+        aria-expanded="false" aria-controls="sidebarquiz"
+        class="side-nav-link collapsed">
+        <i class="uil-user-plus"></i>
+        <span class="badge bg-success float-end"></span>
+        <span> Manage Quiz </span>
+        <span class="menu-arrow"></span>
     </a>
+    <div class="collapse" id="sidebarquiz">
+            <ul class="side-nav-third-level">
+              <li>
+                <a href="admin_Add_QuizMultiple.php"><i class=" uil-list-ul"></i> Multiple Choice</a>
+              </li>
+              <li>
+                <a href="admin_Add_QuizTrueOrfalse.php"><i class=" uil-check-circle"></i> <i
+                    class="uil-times-circle"></i> True or False</a>
+              </li>
+              <li>
+                <a href="admin_QuizView.php"><i class="uil-eye"></i> Quiz View</a>
+              </li>
+
+        </ul>
+    </div>
 </li>
 
 <li class="side-nav-item">
@@ -180,7 +201,8 @@ if (isset($_SESSION['user_id'])) {
                 <a href="admin_class.php">Create Class/Section</a>
             </li>
             <li>
-                <a href="admin_assign_teacher_class.php">Assign Teacher to Class</a>
+                <a href="admin_assign_teacher_class.php">Assign Teacher to
+                    Class</a>
             </li>
         </ul>
     </div>
@@ -198,7 +220,8 @@ if (isset($_SESSION['user_id'])) {
                 <a href="admin_manage_area.php">Create/Register Area</a>
             </li>
             <li>
-                <a href="admin_assign_teacher_lesson.php">Assign Teacher to Area</a>
+                <a href="admin_assign_teacher_lesson.php">Assign Teacher to
+                    Area</a>
             </li>
             <li>
                 <a href="admin_assign_class_area.php">Assign Class to Area</a>
@@ -298,7 +321,7 @@ if (isset($_SESSION['user_id'])) {
                                 </span>
                                 <span>
                                     <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level'];?></span>
+                                    <span class="account-position"><?php echo $row['level']; ?></span>
                                     </span>
                             </a>
                             <div
