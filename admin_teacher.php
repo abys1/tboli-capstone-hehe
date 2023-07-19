@@ -402,7 +402,7 @@ if (isset($_SESSION['user_id'])) {
                 include "dbcon.php";
 
                 // SQL query
-                $sql = "SELECT tbl_teachers.teacher_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
+                $sql = "SELECT tbl_teachers.teacher_id, tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
                             tbl_usercredentials.email, tbl_usercredentials.contact, tbl_user_level.level, tbl_user_status.status
                         FROM tbl_teachers
                         JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
@@ -435,7 +435,7 @@ if (isset($_SESSION['user_id'])) {
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['contact']; ?></td>
                 <td>
-                            <a href="admin_subject_edit.php?teacher_id=<?php echo $row['teacher_id'] ?>">
+                            <a href="admin_edit_teacher_acc.php?user_id=<?php echo $row['user_id'] ?>">
                                 <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
                             </a>
                             <a href="admin_teacher_deactivate.php?teacher_id=<?php echo $row['teacher_id'] ?>" class="decline">
