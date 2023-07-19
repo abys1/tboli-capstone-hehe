@@ -1,6 +1,7 @@
-
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <!-- <title>Project Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,42 +54,19 @@
                 </span>
             </a>
 
-            <div class="h-100" id="leftside-menu-container" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px;">
+            <div class="h-100" id="leftside-menu-container" data-simplebar="init">
+                <div class="simplebar-wrapper" style="margin: 0px;">
+                    <div class="simplebar-height-auto-observer-wrapper">
+                        <div class="simplebar-height-auto-observer"></div>
+                    </div>
+                    <div class="simplebar-mask">
+                        <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                            <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
+                                <div class="simplebar-content" style="padding: 0px;">
 
                                     <!--- Sidemenu -->
-                                    <ul class="side-nav">
+                                    <?php include('learnerSideMenu.php'); ?>
 
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_dashboard.php" class="side-nav-link">
-                                                <i class="uil-home"></i>
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_access_lesson.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
-                                                <span>Access Lesson</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_answer_activity.php" class="side-nav-link">
-                                                <i class="fa fa-book"></i>
-                                                <span>Answer Activity</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_progress.php" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Progress</span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-        
                                     <!-- End Sidebar -->
 
                                     <div class="clearfix"></div>
@@ -115,10 +93,10 @@
         <!-- Start Page Content here -->
         <!-- ============================================================== -->
 
-        
+
         <div class="content-page">
             <div class="content">
-            <div class="navbar-custom">
+                <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
@@ -132,7 +110,7 @@
                                 </form>
                             </div>
                         </li>
-                       
+
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
                                 role="button" aria-haspopup="false" aria-expanded="false">
@@ -146,11 +124,11 @@
                                     <h5 class="m-0">
                                         <span class="float-end">
                                             <a href="javascript: void(0);" class="text-dark">
-                                            <small>Clear All</small>
-                                        </a>
-                                    </span>Notification
-                                </h5>
-                            </div>
+                                                <small>Clear All</small>
+                                            </a>
+                                        </span>Notification
+                                    </h5>
+                                </div>
 
                                 <div style="max-height: 230px;" data-simplebar="init">
                                     <div class="simplebar-wrapper" style="margin: 0px;">
@@ -162,7 +140,7 @@
                                                 <div class="simplebar-content-wrapper"
                                                     style="height: auto; overflow: hidden;">
                                                     <div class="simplebar-content" style="padding: 0px;">
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -177,146 +155,149 @@
                                     </div>
                                 </div>
 
-                            <!-- All-->
-                            <a href="javascript:void(0);"
-                                class="dropdown-item text-center text-primary notify-item notify-all">
-                                View All
-                            </a>
+                                <!-- All-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item text-center text-primary notify-item notify-all">
+                                    View All
+                                </a>
 
                             </div>
                         </li>
 
-                    <li class="dropdown notification-list">
-                        <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
-                            href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="account-user-avatar">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
-                            </span>
-                            <span>
-                                <span class="account-user-name">Ann Watapampam</span>
-                                <span class="account-position">IT student 77%</span>
-                            </span>
-                        </a>
-                        <div
-                            class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                            <!-- item-->
-                            <div class=" dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">HI LEARNER</h6>
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
+                                href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+                                <span>
+                                    <span class="account-user-name">Ann Watapampam</span>
+                                    <span class="account-position">IT student 77%</span>
+                                </span>
+                            </a>
+                            <div
+                                class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <div class=" dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">HI LEARNER</h6>
+                                </div>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle me-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-edit me-1"></i>
+                                    <span>Settings</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-lifebuoy me-1"></i>
+                                    <span>Support</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout me-1"></i>
+                                    <span>Logout</span>
+                                </a>
                             </div>
+                        </li>
 
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-account-circle me-1"></i>
-                                <span>My Account</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-account-edit me-1"></i>
-                                <span>Settings</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-lifebuoy me-1"></i>
-                                <span>Support</span>
-                            </a>
-
-                            <!-- item-->
-                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                <i class="mdi mdi-logout me-1"></i>
-                                <span>Logout</span>
-                            </a>
-                        </div>
-                    </li>
-
-                </ul>
-                <button class="button-menu-mobile open-left">
-                    <i class="mdi mdi-menu"></i>
-                </button>
-                <div class="app-search dropdown d-none d-lg-block">
-                    <form>
-                        <div class="input-group">
-                            <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
-                                id="top-search">
-                            <span class="mdi mdi-magnify search-icon"></span>
-                            <button class="input-group-text btn-primary" type="submit">Search</button>
-                        </div>
-                    </form>
+                    </ul>
+                    <button class="button-menu-mobile open-left">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <div class="app-search dropdown d-none d-lg-block">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
+                                    id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <button class="input-group-text btn-primary" type="submit">Search</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Topbar End -->
+            <!-- Topbar End -->
 
-                        <div class="scrollable-content">
-                        <div class="column g-0 align-items-center">
-                                        <div class="col-md-3">
-                                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                <a href="learner_access_lesson.php" class="btn btn-primary btn-sm">Button</a>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end col -->
-                                    </div>
-                                    <br>
-                                    <div class="column g-0 align-items-center">
-                                        <div class="col-md-3">
-                                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Card title</h5>
-                                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                                <a  href="learner_access_lesson.php" class="btn btn-primary btn-sm">Button</a>
-                                            </div> <!-- end card-body-->
-                                        </div> <!-- end col -->
-                                    </div>
+            <div class="scrollable-content">
+                <div class="column g-0 align-items-center">
+                    <div class="col-md-3">
+                        <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <a href="learner_access_lesson.php" class="btn btn-primary btn-sm">Button</a>
+                        </div> <!-- end card-body-->
+                    </div> <!-- end col -->
+                </div>
+                <br>
+                <div class="column g-0 align-items-center">
+                    <div class="col-md-3">
+                        <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <a href="learner_access_lesson.php" class="btn btn-primary btn-sm">Button</a>
+                        </div> <!-- end card-body-->
+                    </div> <!-- end col -->
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="col-md-3">
+                    <h4 class="header-title">ASSIGNMENTS</h4>
+                    <p class="text-muted font-14">Add <code>.list-group-flush</code> to remove some borders and rounded
+                        corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
+
+                    <ul class="nav nav-tabs nav-bordered mb-3">
+                        <li class="nav-item">
+                            <a href="#flush-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
+                                Preview
+                            </a>
+                        </li>
+                    </ul> <!-- end nav-->
+                    <div class="tab-content">
+                        <div class="tab-pane show active" id="flush-preview">
+                            <ul class="list-group list-group-flush">
+                                <span>
+                                    <a href="learner_access_module" download="">01 Handout</a>
+                                </span>
+                                <br>
+                                <span>
+                                    <a href="#" download="">01 Handout</a>
+                                </span>
+                                <br>
+                                <span>
+                                    <a href="#" download="">01 Handout</a>
+                                </span>
+                                <br>
+                                <span>
+                                    <a href="#" download="">01 Handout</a>
+                                </span>
+                            </ul>
                         </div>
-                                        <div class="card-body">
-                                        <div class="col-md-3">
-                                        <h4 class="header-title">ASSIGNMENTS</h4>
-                                        <p class="text-muted font-14">Add <code>.list-group-flush</code> to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
-                        
-                                        <ul class="nav nav-tabs nav-bordered mb-3">
-                                            <li class="nav-item">
-                                                <a href="#flush-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                                                    Preview
-                                                </a>
-                                            </li>
-                                        </ul> <!-- end nav-->
-                                        <div class="tab-content">
-                                            <div class="tab-pane show active" id="flush-preview">
-                                                <ul class="list-group list-group-flush">
-                                                <span>
-                                                    <a href="learner_access_module" download="">01 Handout</a>
-                                                </span>
-                                                <br>
-                                                <span>
-                                                    <a href="#" download="">01 Handout</a>
-                                                </span>
-                                                <br>
-                                                <span>
-                                                    <a href="#" download="">01 Handout</a>
-                                                </span>
-                                                <br>
-                                                <span>
-                                                    <a href="#" download="">01 Handout</a>
-                                                </span>
-                                                </ul>
-                                            </div>
-</div>
+                    </div>
 
-</div><!-- end preview-->
+                </div><!-- end preview-->
                 <!-- Right Sidebar -->
 
-    <!-- bundle -->
-    <script src="assets/js/vendor.min.js"></script>
-    <script src="assets/js/app.min.js"></script>
+                <!-- bundle -->
+                <script src="assets/js/vendor.min.js"></script>
+                <script src="assets/js/app.min.js"></script>
 
                 <!-- quill js -->
                 <script src="assets/js/vendor/quill.min.js"></script>

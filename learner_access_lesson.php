@@ -61,36 +61,7 @@
                                 <div class="simplebar-content" style="padding: 0px;">
 
                                     <!--- Sidemenu -->
-                                    <ul class="side-nav">
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_dashboard.php" class="side-nav-link">
-                                                <i class="uil-home"></i>
-                                                <span>Dashboard</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_access_lesson.php" class="side-nav-link">
-                                                <i class="uil-notebooks"></i>
-                                                <span>Access Lesson</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="learner_answer_activity.php" class="side-nav-link">
-                                                <i class="uil-notebooks"></i>
-                                                <span>Answer Activity</span>
-                                            </a>
-                                        </li>
-
-                                        <li class="side-nav-item">
-                                            <a href="#" class="side-nav-link">
-                                                <i class="uil-user-plus"></i>
-                                                <span>Progress</span>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <?php include('learnerSideMenu.php'); ?>
 
 
                                     <!-- End Sidebar -->
@@ -167,14 +138,14 @@
                                                 <div class="simplebar-content-wrapper"
                                                     style="height: auto; overflow: hidden;">
                                                     <div class="simplebar-content" style="padding: 0px;">
-                                                        
-                                <!-- All-->
-                                <a href="javascript:void(0);"
-                                    class="dropdown-item text-center text-primary notify-item notify-all">
-                                    View All
-                                </a>
 
-                            </div>
+                                                        <!-- All-->
+                                                        <a href="javascript:void(0);"
+                                                            class="dropdown-item text-center text-primary notify-item notify-all">
+                                                            View All
+                                                        </a>
+
+                                                    </div>
                         </li>
 
 
@@ -240,107 +211,109 @@
                         <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
 
                             <!-- item-->
-                            
+
 
                             <div class="notification-list">
                                 <!-- item-->
 
 
-                                
-                                    </div>
-                                </a>
+
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- end Topbar -->
+            </div>
+            <!-- end Topbar -->
 
-                <!-- Start Content-->
-                <div class="container-fluid">
-                    
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Tboli</a></li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                        <li class="breadcrumb-item active">Learner Modules</li>
-                                    </ol>
-                                </div>
-                                <h4 class="page-title">Modules</h4>
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Tboli</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                    <li class="breadcrumb-item active">Learner Modules</li>
+                                </ol>
                             </div>
+                            <h4 class="page-title">Modules</h4>
                         </div>
                     </div>
-                    <!-- end page title -->
+                </div>
+                <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3">
-            
-                            <!-- Simple card -->
-                            <div class="card d-block">
-                                <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Literacy</h5>
-                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="true" aria-controls="collapseExample1">
-                                                View Contents
-                                            </a>
-                                            <div class="collapse" id="collapseExample1" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#">01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                            
-                                </div> <!-- end card-body-->
-                            </div> <!-- end card-->
-                        </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
 
-                        <div class="col-md-6 col-lg-3">
-            
-                            <!-- Simple card -->
-                            <div class="card d-block">
-                                <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h5 class="card-title">Numeracy</h5>
-                                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="true" aria-controls="collapseExample2">
-                                                View Contents
-                                            </a>
-                                            <div class="collapse" id="collapseExample2" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#">01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                </div> <!-- end card-body-->
-                                
-                            </div> <!-- end card-->
-                        </div><!-- end col -->
+                        <!-- Simple card -->
+                        <div class="card d-block">
+                            <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Literacy</h5>
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1"
+                                    aria-expanded="true" aria-controls="collapseExample1">
+                                    View Contents
+                                </a>
+                                <div class="collapse" id="collapseExample1" style="">
+                                    <div class="card card-body mb-0">
+                                        <span>
+                                            <a href="#">01 Handout</a>
+                                        </span>
+                                        <span>
+                                            <a href="#">01 Quiz 1</a>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
                     </div>
 
-                    
-                </div> <!-- container -->
+                    <div class="col-md-6 col-lg-3">
 
-            </div> <!-- content -->
+                        <!-- Simple card -->
+                        <div class="card d-block">
+                            <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Numeracy</h5>
+                                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2"
+                                    aria-expanded="true" aria-controls="collapseExample2">
+                                    View Contents
+                                </a>
+                                <div class="collapse" id="collapseExample2" style="">
+                                    <div class="card card-body mb-0">
+                                        <span>
+                                            <a href="#">01 Handout</a>
+                                        </span>
+                                        <span>
+                                            <a href="#">01 Quiz 1</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div> <!-- end card-body-->
+
+                        </div> <!-- end card-->
+                    </div><!-- end col -->
+                </div>
 
 
-                <!-- bundle -->
-                <script src="assets/js/vendor.min.js"></script>
-                <script src="assets/js/app.min.js"></script>
+            </div> <!-- container -->
 
-                <!-- quill js -->
-                <script src="assets/js/vendor/quill.min.js"></script>
-                <!-- quill Init js-->
-                <script src="assets/js/pages/demo.quilljs.js"></script>
+        </div> <!-- content -->
+
+
+        <!-- bundle -->
+        <script src="assets/js/vendor.min.js"></script>
+        <script src="assets/js/app.min.js"></script>
+
+        <!-- quill js -->
+        <script src="assets/js/vendor/quill.min.js"></script>
+        <!-- quill Init js-->
+        <script src="assets/js/pages/demo.quilljs.js"></script>
 
 
 

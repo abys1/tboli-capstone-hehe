@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
     <!------ Include the above in your HEAD tag ---------->
+    <style>
+    .error {
+    text-align: center;
+    background: #f59595fb;
+    color: #b92c2c;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+  </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -43,57 +53,71 @@
         }
 
         if (isset($_POST['btnAdd'])) {
-            $firstname = $_POST['firstname'];
-            $middlename = $_POST['middlename'];
-            $lastname = $_POST['lastname'];
-            $birthday = $_POST['birthday'];
-            $gender = $_POST['gender'];
-            $email = $_POST['email'];
-            $contact = $_POST['phone'];
-            $address = $_POST['address'];
             $password = $_POST['password'];
             $cfpassword = $_POST['cfpassword'];
             $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
-
-            $sql = "UPDATE tbl_userinfo SET firstname = '$firstname', middlename = '$middlename', lastname = '$lastname', birthday = '$birthday', gender = '$gender' WHERE user_id = '$user_id'";
-
-            if ($conn->query($sql) === TRUE) {
-                $sql = "UPDATE tbl_usercredentials SET email = '$email', contact = '$contact' WHERE usercredentials_id = '$user_id'";
+            if ($password == $cfpassword) {
+                $sql = "UPDATE tbl_accounts SET password = '$encrypted' WHERE account_id = '$user_id'";
 
                 if ($conn->query($sql) === TRUE) {
-                    $sql = "UPDATE tbl_address SET address = '$address' WHERE address_id = '$user_id'";
-
-                    if ($conn->query($sql) === TRUE) {
-                        $sql = "UPDATE tbl_accounts SET email = '$email', password = '$encrypted' WHERE account_id = '$user_id'";
-
-                        if ($conn->query($sql) === TRUE) {
-                            header("Location: admin_addAccount.php?msg=Account updated successfully");
-                            exit();
-                        }
-                    }
+                    header("Location: admin_addAccount.php?msg=Account updated successfully");
+                    exit();
                 }
+            } else {
+                header("Location: admin_edit_admin_acc.php?user_id=$user_id&error=PASSWORD DOESN'T MATCH");
+                exit();
             }
         }
         ?>
         <form action="" method="POST">
         <div class="wrapper rounded bg-white">
-            <div class="h3">Add Admin</div>
+            <div class="h3">Update user account</div>
 
             <div class="form">
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>First Name</label>
-                        <input type="text" class="form-control" name="firstname" value="<?php echo $row ['firstname']?>" required >
+                        <input type="text" class="form-control" name="firstname" value="<?php echo $row ['firstname']?>" readonly required >
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Middle Name</label>
-                        <input type="text" class="form-control" name="middlename" value="<?php echo $row ['middlename']?>" required>
+                        <input type="text" class="form-control" name="middlename" value="<?php echo $row ['middlename']?>" readonly required>
                     </div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Last Name</label>
-                        <input type="text" class="form-control" name="lastname" value="<?php echo $row ['lastname']?>" required>
+                        <input type="text" class="form-control" name="lastname" value="<?php echo $row ['lastname']?>" readonly required>
                     </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Phone Number</label>
+                        <input type="tel" class="form-control" name="phone" value="<?php echo $row ['contact']?>" readonly required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Birthday</label>
+                        <input type="date" class="form-control" name="birthday" value="<?php echo $row ['birthday']?>" readonly required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>gender</label>
+                        <input type="text" class="form-control" name="gender" value="<?php echo $row ['gender']?>" readonly required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" value="<?php echo $row ['email']?>" readonly required>
+                    </div>
+                    <div class="col-md-6 mt-md-0 mt-3">
+                        <label>Full Address (street, barangay, city)</label>
+                        <input type="address" class="form-control" name="address" value="<?php echo $row ['address']?>" readonly required>
+                    </div>
+                    <?php if (isset($_GET['error'])) { ?>
+                        <p class="error">
+                            <?php echo $_GET['error']; ?>
+                        </p>
+                    <?php } ?>
+                    <div class="h3" style="margin-top: 20px;">Update user password</div>
                     <div class="col-md-6 mt-md-0 mt-3">
                         <label>Password</label>
                         <input type="password" class="form-control" name="password" value="<?php echo $row['lastname'] . $row['birthday']?>" required>
@@ -102,36 +126,13 @@
                         <label>Confirm Password</label>
                         <input type="password" class="form-control" name="cfpassword" required>
                     </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Phone Number</label>
-                        <input type="tel" class="form-control" name="phone" value="<?php echo $row ['contact']?>" required>
-                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Birthday</label>
-                        <input type="date" class="form-control" name="birthday" value="<?php echo $row ['birthday']?>" required>
-                    </div>
-                    <div class=" col-md-6 mt-md-0 mt-3">
-                        <label>Gender</label>
-                        <select id="sub" name="gender" value="<?php echo $row ['gender']?>" required>
-                            <option value="" selected hidden>Choose Option</option>
-                            <option value="female">Female</option>
-                            <option value="male">Male</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo $row ['email']?>" required>
-                    </div>
-                    <div class="col-md-6 mt-md-0 mt-3">
-                        <label>Full Address (street, barangay, city)</label>
-                        <input type="address" class="form-control" name="address" value="<?php echo $row ['address']?>" required>
-                    </div>
-                </div>
-                <input type="submit" class="btn btn-primary mt-3" value="Add Admin" name="btnAdd">
+                <input type="submit" class="btn btn-primary mt-3" value="Update" name="btnAdd">
+            </div>
+            <div>
+            </div>
+            <div>
+                
             </div>
         </div>
         </form>

@@ -426,7 +426,7 @@ if (isset($_SESSION['user_id'])) {
                 include "dbcon.php";
 
                 // SQL query
-                $sql = "SELECT tbl_teachers.teacher_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
+                $sql = "SELECT tbl_teachers.teacher_id, tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
                             tbl_usercredentials.email, tbl_usercredentials.contact, tbl_user_level.level, tbl_user_status.status
                         FROM tbl_teachers
                         JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
@@ -444,8 +444,48 @@ if (isset($_SESSION['user_id'])) {
                 }
 
 
+<<<<<<< HEAD
                 if ($result && mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
+=======
+     if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+            <tr>
+                <td>
+                    <div class="form-check form-checkbox-success">
+                        <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
+                        <label class="form-check-label" for="customCheckcolor2"></label>
+                    </div>
+                </td>
+                <td><?php echo $row['teacher_id']; ?></td>
+                <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
+                <td><?php echo $row['email']; ?></td>
+                <td><?php echo $row['contact']; ?></td>
+                <td>
+                            <a href="admin_edit_teacher_acc.php?user_id=<?php echo $row['user_id'] ?>">
+                                <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
+                            </a>
+                            <a href="admin_teacher_deactivate.php?teacher_id=<?php echo $row['teacher_id'] ?>" class="decline">
+                                <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                            </a>
+                            </td>
+                            <td>
+                                <?php
+                                if ($row['status'] == 1) {
+                                    echo '<span class="badge bg-success">Active</span>';
+                                } else {
+                                    echo '<span class="badge bg-success">Inactive</span>';
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        } else {
+                            echo "<tr><td colspan='6'>No records found</td></tr>";
+                        }
+>>>>>>> 73886daa26a3dd66fa5f9cccd965d652865d4378
                         ?>
                         <tr>
                             <td>
