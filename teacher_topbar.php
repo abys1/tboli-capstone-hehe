@@ -1,3 +1,30 @@
+                    <?php
+
+                    include 'dbcon.php';
+
+                    if (isset($_SESSION['user_id'])) {
+                        $user_id = $_SESSION['user_id'];
+
+                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                FROM tbl_teachers
+                                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                                                WHERE tbl_user_level.level = 'TEACHER' AND tbl_userinfo.user_id = '$user_id'
+                                                LIMIT 1;";
+
+                        $result = mysqli_query($conn, $sql);
+
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            $row = mysqli_fetch_assoc($result);
+
+
+                        } else {
+                            echo "No records found in tbl_admin";
+                        }
+                    } else {
+                        echo "No user ID provided";
+                    }
+                    ?>
 <!-- Topbar Start -->
 <div class="navbar-custom">
     <ul class="list-unstyled topbar-menu float-end mb-0">
@@ -26,32 +53,6 @@
                     <img src="assets/images/users/Jillian-Ward.jpg" alt="user-image" class="rounded-circle">
                 </span>
                 <span>
-                    <?php
-                    include 'dbcon.php';
-
-                    if (isset($_SESSION['user_id'])) {
-                        $user_id = $_SESSION['user_id'];
-
-                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_teachers
-                                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'TEACHER' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
-
-                        $result = mysqli_query($conn, $sql);
-
-                        if ($result && mysqli_num_rows($result) > 0) {
-                            $row = mysqli_fetch_assoc($result);
-
-
-                        } else {
-                            echo "No records found in tbl_admin";
-                        }
-                    } else {
-                        echo "No user ID provided";
-                    }
-                    ?>
                     <span class="account-user-name">
                         <?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?>
                     </span>

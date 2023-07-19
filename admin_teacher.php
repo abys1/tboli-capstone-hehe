@@ -1,6 +1,30 @@
 <?php
       session_start();
       $user_id = $_SESSION['user_id'];
+      include 'dbcon.php';
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+
+    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+            FROM tbl_admin
+            JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+            JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+            WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
+            LIMIT 1;";
+
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+
+    } else {
+        echo "No records found in tbl_admin";
+    }
+} else {
+    echo "No user ID provided";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active"><head>

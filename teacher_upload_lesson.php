@@ -8,6 +8,7 @@ if (isset($_SESSION['user_id'])) {
     $name = $_POST['name'];
     $objective = $_POST['objective'];
     $type = $_POST['type'];
+    $level = $_POST['level'];
     $files = $_FILES['lesson'];
 
     // Ensure $files is an array
@@ -54,7 +55,7 @@ if (isset($_SESSION['user_id'])) {
     if (!empty($lesson_files_ids)) {
         $lesson_files_ids_str = implode(",", $lesson_files_ids);
 
-        $sql = "INSERT INTO tbl_lesson (name, objective, type, lesson_files_id, added_by) VALUES ('$name', '$objective', '$type', '$lesson_files_ids_str', '$user_id')";
+        $sql = "INSERT INTO tbl_lesson (name, objective, level, type, lesson_files_id, added_by) VALUES ('$name', '$objective', '$level', '$type', '$lesson_files_ids_str', '$user_id')";
 
         if ($conn->query($sql) === TRUE) {
             $lesson_id = $conn->insert_id;
@@ -66,22 +67,22 @@ if (isset($_SESSION['user_id'])) {
 
                     $sql = "INSERT INTO tbl_content (lesson_id, module_id) VALUES ('$lesson_id', '$module_id')";
 
-                    if ($conn->query($sql) === TRUE) {
-                        header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
-                        exit();
-                    } else {
-                        die("Error inserting data into tbl_content: " . $conn->error);
-                    }
+                if ($conn->query($sql) === TRUE) {
+                    header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
+                    exit();
                 } else {
-                    die("Error inserting data into tbl_module: " . $conn->error);
+                    die("Error inserting data into tbl_content: " . $conn->error);
                 }
             } else {
-                die("Error inserting data into tbl_lesson: " . $conn->error);
+                die("Error inserting data into tbl_module: " . $conn->error);
             }
         } else {
-            die("Please select at least one file.");
+            die("Error inserting data into tbl_lesson: " . $conn->error);
         }
     } else {
-        echo "No user ID provided";
+        die("Please select at least one file.");
+    }
+} else {
+    echo "No user ID provided";
 }
 ?>

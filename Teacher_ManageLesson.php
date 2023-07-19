@@ -237,7 +237,7 @@ $user_id = $_SESSION['user_id'];
                                     <p class="card-text">Some quick example text to build on the card title and make
                                         up the bulk of the card's content. </p>
                                     <a href="Teacher_ManageLessonView.php" class="btn btn-info">View</a>
-                                    <a href="Teacher_ManageLessonUpload.php" class="btn btn-info">Upload</a>
+                                    <a href="Teacher_uploadlesson.php" class="btn btn-info">Upload</a>
                                     <a href="javascript: void(0);" class="btn btn-info">Archive</a>
                                 </div> <!-- end card-body-->
                             </div> <!-- end card-->
