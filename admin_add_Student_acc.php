@@ -73,7 +73,7 @@ if (isset($_POST['btnAdd'])) {
                         
                                     if ($conn->query($sql) === TRUE) {
                                         $account_id = $conn->insert_id;
-                                        $sql = "INSERT INTO tbl_learner (lrn, user_id, guardian_info_id, guardian_contact_id, address_id, level_id, status_id, account_id) VALUES ('$learner_id', '$user_info_id', '$guardian_info_id', '$guardian_contact_id', '$address_id', '$level_id', '$status_id', '$account_id')";
+                                        $sql = "INSERT INTO tbl_learner (lrn, user_id, guardian_info_id, guardian_contact_id, address_id, level_id, status_id, account_id, usercredentials_id) VALUES ('$learner_id', '$user_info_id', '$guardian_info_id', '$guardian_contact_id', '$address_id', '$level_id', '$status_id', '$account_id', '$usercredentials_id')";
 
                                         if ($conn->query($sql) === TRUE) {
                                             header("Location:admin_student.php?msg=Account added successfully");

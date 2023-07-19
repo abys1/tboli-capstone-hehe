@@ -66,11 +66,11 @@
                             $email = $_POST['email'];
                             $password = $_POST['password'];
 
-
-
                             if (empty($password) || empty($email)) {
-                                $mailError = "Oops! It seems that the email and/or password fields have been left empty.";
-                            } else {
+                                header("Location: Teacher_Login.php?error=Email and password should not be empty!");
+                                exit();
+                            }
+                            else {
                                 $sql = "SELECT tbl_userinfo.user_id, tbl_accounts.email, tbl_accounts.password, tbl_user_level.level, tbl_user_status.status
                                 FROM tbl_teachers 
                                 JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
@@ -98,11 +98,10 @@
                                         }
                                     }
                                 }
-                                $mailError = "Login failed: incorrect email or password";
+                                header("Location: Teacher_Login.php?error=Invalid email or password");
+                                exit();
                             }
-
                         }
-
                         ?>
 
 
@@ -127,10 +126,6 @@
                                     <span class="password-eye"></span>
                                 </div>
                             </div>
-
-                            <div id="password-error" class=" mt-3 text-center"><span class=" text-danger text-wrap">
-                                    <?php echo $mailError ?>
-                                </span> </div>
 
                         </div>
 
