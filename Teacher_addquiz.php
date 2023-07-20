@@ -11,27 +11,24 @@
                     <div class="row mb-4">
                         <div class="col-sm-9">
                             <label for="project-overview" class="form-label">Please select subject</label>
-                            <select class="form-control select2" data-toggle="select2">
+                            <select class="form-control select2" data-toggle="select2" name="category">
                                 <option>Select Category</option>
                                 <option value="AZ">Literacy</option>
                                 <option value="CO">Numeracy</option>
                             </select>
-                        </div>
-                        <div class="col-sm-3 text-sm-end mt-3">
-                            <input type="button" class="btn btn-primary add-question-btn" value="Add Question">
                         </div>
                     </div>
 
                     <form action="" method="POST">
                         <div class="mb-3">
                             <label for="simpleinput" class="form-label">Quiz Title</label>
-                            <input type="text" id="simpleinput" class="form-control">
+                            <input type="text" id="simpleinput" name="title" class="form-control">
                         </div>
 
                         <div class="question-list">
                             <div class="question-container mb-2">
                                 <label>Question #1</label>
-                                <textarea class="form-control mb-3" name="" id="" cols="130" rows="5"
+                                <textarea class="form-control mb-3" name="question" id="" cols="130" rows="5"
                                     placeholder="Enter your Questions here"></textarea>
                                 <table class="table table-hover">
                                     <tbody>
@@ -118,8 +115,12 @@
 
                         <div class="row mt-4">
                             <div class="col-sm-6">
+                                <input type="button" class="btn btn-primary add-question-btn" value="Add Question">
+                            </div>
+                            <div class="col-sm-6 text-sm-end mt-3">
                                 <input type="button" class="btn btn-primary" value="Create Quiz">
                             </div>
+                            
                         </div>
                     </form>
                 </div>
