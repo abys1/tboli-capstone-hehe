@@ -160,15 +160,17 @@ $user_id = $_SESSION['user_id'];
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                    <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name"
+                                        name="sufname">
                                 </div>
-
-
                             </div>
 
                             <div class="row g-2">
-
+                                <div class="mb-3 col-md-6">
+                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
+                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                </div>
                                 <div class="mb-3 col-md-4">
                                     <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
                                     <select id="inputGender" class="form-select" name="gender">
@@ -226,15 +228,17 @@ $user_id = $_SESSION['user_id'];
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                    <label for="SuffiName" class="form-label">Suffix Name <sup>Optional</sup></label>
+                                    <input type="text" class="form-control" id="SuffiName" placeholder="Suffix name"
+                                        name="sufname">
                                 </div>
-
-
                             </div>
 
                             <div class="row g-2">
-
+                                <div class="mb-3 col-md-6">
+                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
+                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                </div>
                                 <div class="mb-3 col-md-4">
                                     <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
                                     <select id="inputGender" class="form-select" name="gender">
