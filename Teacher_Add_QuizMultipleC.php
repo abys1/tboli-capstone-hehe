@@ -104,13 +104,6 @@ $user_id = $_SESSION['user_id'];
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashbaord</a></li>
-
-                                        <li class="breadcrumb-item active">Module</li>
-                                    </ol>
-                                </div>
                                 <h4 class="page-title">Multiple Choice</h4>
                             </div>
                         </div>

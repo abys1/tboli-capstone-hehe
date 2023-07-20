@@ -112,7 +112,7 @@
                                 </p>
                             <?php } ?>
                             <label for="emailaddress" class="form-label">Email</label>
-                            <input class="form-control" type="email" id="emailaddress" name="email"
+                            <input class="form-control" type="text" id="emailaddress" name="email"
                                 placeholder="Enter your email">
                         </div>
                         <div class="mb-3">
