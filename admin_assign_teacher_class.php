@@ -397,7 +397,7 @@ if (isset($_GET['logout'])) {
                         <th>Teacher Name</th>
                         <th>Full Address</th>
                         <th>Email</th>
-                        <th>Lesson</th>
+                        <th>Class/Section</th>
                         <th>Action</th>
                         <th>Status</th>
                       </tr>
@@ -417,7 +417,7 @@ if (isset($_GET['logout'])) {
                         </td>
                         <td>gensan city</td>
                         <td>jvlaroco@gmail.com</td>
-                        <td>Numeracy</td>
+                        <td>Grade 4</td>
                         <td>
                           <a href="javascript:void(0);" class="action-icon">
                             <i class="uil-eye"></i>
@@ -457,28 +457,17 @@ if (isset($_GET['logout'])) {
             <div class="modal-body">
                 <form>
                     <div class="mb-3">
-                        <label for="topicTitle" class="form-label">Topic Title</label>
+                        <label for="topicTitle" class="form-label">Class/Section</label>
                         <select class="form-select" id="topicTitle">
-                            <option value="literacy">Literacy</option>
-                            <option value="numeracy">Numeracy</option>
+                            <option value="grade1">Grade 1</option>
+                            <option value="grade2">Grade 2</option>
+                            <option value="grade3">Grade 3</option>
+                            <option value="grade4">Grade 4</option>
+                            <option value="grade5">Grade 5</option>
+                            <option value="grade6">Grade 6</option>
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="levelLearning" class="form-label">Level of Learning</label>
-                        <select class="form-select" id="levelLearning">
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="teacher" class="form-label">Teacher</label>
-                        <select class="form-select" id="teacher">
-                            <option value="teacher1">Teacher 1</option>
-                            <option value="teacher2">Teacher 2</option>
-                            <option value="teacher3">Teacher 3</option>
-                        </select>
-                    </div>
+                    
                 </form>
             </div>
             <div class="modal-footer">

@@ -1,6 +1,6 @@
 <?php
-      session_start();
-      $user_id = $_SESSION['user_id'];
+session_start();
+$user_id = $_SESSION['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +96,9 @@
 </li>
 
 <li class="side-nav-item">
-    <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link collapsed">
+    <a data-bs-toggle="collapse" href="#sidebarDashboardsLessons"
+        aria-expanded="false" aria-controls="sidebarDashboards"
+        class="side-nav-link collapsed">
         <i class="uil-user-plus"></i>
         <span class="badge bg-success float-end"></span>
         <span> Manage Request Lessons </span>
@@ -112,17 +114,36 @@
             </li>
             <li>
                 <a href="admin_archive_lessons.php">Archive Lessons</a>
-            </li>                            
-            
+            </li>
+
         </ul>
     </div>
 </li>
 
 <li class="side-nav-item">
-    <a href="admin_quiz.php" class="side-nav-link">
-        <i class="fa fa-book"></i>
-        <span>Manage Quiz</span>
+    <a data-bs-toggle="collapse" href="#sidebarquiz"
+        aria-expanded="false" aria-controls="sidebarquiz"
+        class="side-nav-link collapsed">
+        <i class="uil-user-plus"></i>
+        <span class="badge bg-success float-end"></span>
+        <span> Manage Quiz </span>
+        <span class="menu-arrow"></span>
     </a>
+    <div class="collapse" id="sidebarquiz">
+            <ul class="side-nav-third-level">
+              <li>
+                <a href="admin_Add_QuizMultiple.php"><i class=" uil-list-ul"></i> Multiple Choice</a>
+              </li>
+              <li>
+                <a href="admin_Add_QuizTrueOrfalse.php"><i class=" uil-check-circle"></i> <i
+                    class="uil-times-circle"></i> True or False</a>
+              </li>
+              <li>
+                <a href="admin_QuizView.php"><i class="uil-eye"></i> Quiz View</a>
+              </li>
+
+        </ul>
+    </div>
 </li>
 
 <li class="side-nav-item">
@@ -144,7 +165,8 @@
                 <a href="admin_class.php">Create Class/Section</a>
             </li>
             <li>
-                <a href="admin_assign_teacher_class.php">Assign Teacher to Class</a>
+                <a href="admin_assign_teacher_class.php">Assign Teacher to
+                    Class</a>
             </li>
         </ul>
     </div>
@@ -162,7 +184,8 @@
                 <a href="admin_manage_area.php">Create/Register Area</a>
             </li>
             <li>
-                <a href="admin_assign_teacher_lesson.php">Assign Teacher to Area</a>
+                <a href="admin_assign_teacher_lesson.php">Assign Teacher to
+                    Area</a>
             </li>
             <li>
                 <a href="admin_assign_class_area.php">Assign Class to Area</a>
@@ -202,7 +225,9 @@
     </div>
 </li>
 
-</ul>     
+</ul>
+
+
                 <!-- End Sidebar -->
 
                 <div class="clearfix"></div>
@@ -247,33 +272,33 @@
                                 </span>
                                 <span>
                                 <?php
-                                    include 'dbcon.php';
+                                include 'dbcon.php';
 
-                                    if (isset($_SESSION['user_id'])) {
-                                        $user_id = $_SESSION['user_id'];
-                                    
-                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                if (isset($_SESSION['user_id'])) {
+                                    $user_id = $_SESSION['user_id'];
+
+                                    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
                                                 FROM tbl_admin
                                                 JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
                                                 JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
                                                 WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
                                                 LIMIT 1;";
-                                    
-                                        $result = mysqli_query($conn, $sql);
-                                    
-                                        if ($result && mysqli_num_rows($result) > 0) {
-                                            $row = mysqli_fetch_assoc($result);
-                                    
-                                    
-                                        } else {
-                                            echo "No records found in tbl_admin";
-                                        }
+
+                                    $result = mysqli_query($conn, $sql);
+
+                                    if ($result && mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result);
+
+
                                     } else {
-                                        echo "No user ID provided";
+                                        echo "No records found in tbl_admin";
                                     }
-                                    ?>
+                                } else {
+                                    echo "No user ID provided";
+                                }
+                                ?>
                                     <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level'];?></span>
+                                    <span class="account-position"><?php echo $row['level']; ?></span>
                                     </span>
                             </a>
                             <div
@@ -352,7 +377,7 @@
                 <tbody>
                 <?php
                 include "dbcon.php";
-                
+
                 $sql = "SELECT tbl_admin.admin_id, tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
                         tbl_usercredentials.email, tbl_usercredentials.contact, tbl_address.address,
                         tbl_user_level.level, tbl_user_status.status
@@ -363,49 +388,49 @@
                         JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
                         JOIN tbl_user_status ON tbl_admin.status_id = tbl_user_status.status_id
                         WHERE tbl_user_level.level = 'ADMIN' AND tbl_user_status.status = 1";
-                
-                
+
+
                 $result = mysqli_query($conn, $sql);
-                        
-    if ($result && mysqli_num_rows($result) > 0) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            ?>
-            <tr>
-                <td>
-                    <div class="form-check form-checkbox-success">
-                        <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
-                        <label class="form-check-label" for="customCheckcolor2"></label>
-                    </div>
-                </td>
-                <td><?php echo $row['admin_id']; ?></td>
-                <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
-                <td><?php echo $row['email']; ?></td>
-                <td><?php echo $row['contact']; ?></td>
-                <td><?php echo $row['address']; ?></td>
-                <td>
-                <a href="admin_edit_admin_acc.php?user_id=<?php echo $row['user_id'] ?>">
-                    <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
-                </a>
-                <a href="admin_account_deactivate.php?user_id=<?php echo $row['user_id'] ?>" class="decline">
-                    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-                </a>
-                </td>
-                <td>
-                    <?php
-                    if ($row['status'] == 1) {
-                        echo '<span class="badge bg-success">Active</span>';
-                    } else {
-                        echo '<span class="badge bg-success">Inactive</span>';
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <tr>
+                            <td>
+                                <div class="form-check form-checkbox-success">
+                                    <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
+                                    <label class="form-check-label" for="customCheckcolor2"></label>
+                                </div>
+                            </td>
+                            <td><?php echo $row['admin_id']; ?></td>
+                            <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['contact']; ?></td>
+                            <td><?php echo $row['address']; ?></td>
+                            <td>
+                            <a href="admin_edit_admin_acc.php?user_id=<?php echo $row['user_id'] ?>">
+                                <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
+                            </a>
+                            <a href="admin_account_deactivate.php?user_id=<?php echo $row['user_id'] ?>" class="decline">
+                                <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                            </a>
+                            </td>
+                            <td>
+                                <?php
+                                if ($row['status'] == 1) {
+                                    echo '<span class="badge bg-success">Active</span>';
+                                } else {
+                                    echo '<span class="badge bg-success">Inactive</span>';
+                                }
+                                ?>
+                            </td>
+                        </tr>
+                        <?php
                     }
-                    ?>
-                </td>
-            </tr>
-            <?php
-        }
-    } else {
-        echo "<tr><td colspan='6'>No records found</td></tr>";
-    }
-    ?>
+                } else {
+                    echo "<tr><td colspan='6'>No records found</td></tr>";
+                }
+                ?>
                 </tbody>
             </table>
 

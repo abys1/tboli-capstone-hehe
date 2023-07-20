@@ -15,14 +15,14 @@
 include 'dbcon.php';
 
 if (isset($_POST['btnAdd'])) {
-
+    $teacher_id = $_POST['teacher_id'];
     $firstname = $_POST['firstname'];
     $middlename = $_POST['middlename'];
     $lastname = $_POST['lastname'];
     $birthday = $_POST['birthday'];
     $gender = $_POST['gender'];
     $email = $_POST['email'];
-    $contact = $_POST['phoneNumber'];
+    $contact = $_POST['contact'];
     $address = $_POST['address'];
 
     $valid = $_FILES['valid'];
@@ -42,11 +42,10 @@ if (isset($_POST['btnAdd'])) {
             die ("File size is too big");
         }
 
-        // Generate a unique name for the uploaded image
-        $image_name = uniqid() . "_" . $file_name;
+        $image_name = $file_name;
 
         // Move the uploaded image to the desired directory
-        $target_dir = "images/";
+        $target_dir = "teachers/valid/";
         $target_path = $target_dir . $image_name;
         if (!move_uploaded_file($file_tmp, $target_path)) {
             die ("Error moving the uploaded image. Please try again.");
@@ -99,8 +98,8 @@ if (isset($_POST['btnAdd'])) {
                                 $account_id = $conn->insert_id;
 
                                 // Insert teacher
-                                $sql = "INSERT INTO tbl_teachers (user_id, credentials_id, address_id, level_id, status_id, account_id, valid_id) 
-                                        VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id', '$valid_id')";
+                                $sql = "INSERT INTO tbl_teachers (teacher_id, user_id, credentials_id, address_id, level_id, status_id, account_id, valid_id) 
+                                        VALUES ('$teacher_id', '$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id', '$valid_id')";
                                 if ($conn->query($sql) === TRUE) {
                                     header("Location: admin_teacher.php?msg=Account added successfully");
                                     exit();
@@ -115,126 +114,8 @@ if (isset($_POST['btnAdd'])) {
 }
 ?>
 
-<!-- Your HTML code here -->
-
-<!-- 
-    <table class="table table-striped">
-        <tbody>
-            <tr>
-                <td colspan="1">
-                    <form class="well form-horizontal" method="POST" enctype="multipart/form-data">
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">First Name</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span><input id="fullName"
-                                            name="firstname" placeholder="First Name" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Last Name</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span><input id="fullName"
-                                            name="lastname" placeholder="Last Name" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Gender</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-venus-mars"></i>
-                                        </span>
-                                        <select id="gender" name="gender" class="form-control" required="true">
-                                            <option value="">Select Gender</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Phone Number</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber"
-                                            name="phoneNumber" placeholder="Phone Number" class="form-control"
-                                            required="true" value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                            <label class="col-md-4 control-label">Upload Valid ID</label>
-                            <div class="col-md-8 inputGroupContainer">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="fa fa-file-upload"></i>
-                                    </span>
-                                    <input id="valid" name="valid" type="file" class="form-control" required="true">
-                                </div>
-                            </div>
-                        </div>
-                        </td>
-                        <td colspan="1">
-                        <fieldset>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Middle Name</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-user"></i></span><input id="fullName"
-                                            name="middlename" placeholder="Middle Name" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Birthday</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                        <input id="birthday" name="birthday" placeholder="Select Birthday"
-                                            class="form-control" required="true" type="date">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Email Address</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-envelope"></i></span><input id="email"
-                                            name="email" placeholder="Email" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-4 control-label">Full address (street, barangay, city)</label>
-                                <div class="col-md-8 inputGroupContainer">
-                                    <div class="input-group"><span class="input-group-addon"><i
-                                                class="glyphicon glyphicon-home"></i></span><input id="address"
-                                            name="address" placeholder="address" class="form-control" required="true"
-                                            value="" type="text"></div>
-                                </div>
-                            </div>
-                        </fieldset>
-                        <div class="form-group text-center">
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary" name="btnAdd">Add Teacher</button>
-                    </div>
-                </div>
-                    </form>
-                </td>
-            </tr>
-        </tbody>
-    </table> -->
-
     <div class="wrapper rounded bg-white">
+        <form action="" method="POST" enctype="multipart/form-data">
     <div class="h3" id="teacher-info">Teacher Information</div>
 
 <div class="form">
@@ -242,39 +123,39 @@ if (isset($_POST['btnAdd'])) {
 
     <div class="col-md-6 mt-md-0 mt-3">
             <label for="teacher-id">Teacher ID</label>
-            <input type="text" id="teacher-id" class="form-control" required>
+            <input type="text" id="teacher-id" class="form-control" name="teacher_id" required>
         </div>
   
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="first-name">First Name</label>
-            <input type="text" id="first-name" class="form-control" required>
+            <input type="text" id="first-name" class="form-control" name="firstname" required>
         </div>
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="middle-name">Middle Name</label>
-            <input type="text" id="middle-name" class="form-control" required>
+            <input type="text" id="middle-name" class="form-control" name="middlename" required>
         </div>
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" class="form-control" required>
+            <input type="text" id="last-name" class="form-control" name="lastname" required>
         </div>
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="phone-number">Phone Number</label>
-            <input type="tel" id="phone-number" class="form-control" required>
+            <input type="tel" id="phone-number" class="form-control" name="contact" required>
         </div>
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="email">Email</label>
-            <input type="email" id="email" class="form-control" required>
+            <input type="email" id="email" class="form-control" name="email" required>
         </div>
         
     </div>
     <div class="row">
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="birthday">Birthday</label>
-            <input type="date" id="birthday" class="form-control" required>
+            <input type="date" id="birthday" class="form-control" name="birthday" required>
         </div>
         <div class="col-md-6 mt-md-0 mt-3">
             <label for="gender">Gender</label>
-            <select id="gender" class="form-control" required>
+            <select id="gender" class="form-control" name="gender" required>
                 <option value="" selected hidden>Choose Option</option>
                 <option value="female">Female</option>
                 <option value="male">Male</option>
@@ -284,17 +165,18 @@ if (isset($_POST['btnAdd'])) {
     <div class="row">
         <div class="my-md-2 my-3">
             <label for="full-address">Full Address (street, barangay, city)</label>
-            <input type="address" id="full-address" class="form-control" required>
+            <input type="address" id="full-address" class="form-control" name="address" required>
         </div>
     </div>
     <div class="row">
     <div class="col-md-6 mt-md-0 mt-3">
                 <label for="valid-id">Valid ID</label>
-                <input type="file" id="valid-id" class="form-control" required>
+                <input type="file" id="valid-id" class="form-control" name="valid" required>
             </div>
     </div>
-    <input type="submit" class="btn btn-primary mt-3" value="Add Account">
+    <input type="submit" class="btn btn-primary mt-3" value="Add Account" name="btnAdd">
 </div>
+</form>
 </div>
 </div>
 
