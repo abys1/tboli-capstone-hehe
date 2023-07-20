@@ -25,9 +25,7 @@ $user_id = $_SESSION['user_id'];
     <link href="assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="dark-style" />
 </head>
 
-<body class="show"
-    data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": false}'
-    style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
+<body <?php include('dataconfig.php') ?>>
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
