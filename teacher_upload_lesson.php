@@ -18,8 +18,18 @@ if (isset($_SESSION['user_id'])) {
 
     $file_count = count($files['name']);
 
-    $lesson_files_ids = [];
+    $lesson_ids = []; // Store lesson_ids for each file
 
+    // First, insert data into tbl_lesson
+    $sql = "INSERT INTO tbl_lesson (name, objective, level, type, added_by) VALUES ('$name', '$objective', '$level', '$type', '$user_id')";
+
+    if ($conn->query($sql) === TRUE) {
+        $lesson_id = $conn->insert_id; // Get the lesson_id of the newly inserted row
+    } else {
+        die("Error inserting data into tbl_lesson: " . $conn->error);
+    }
+
+    // Insert data into tbl_lesson_files for each file
     for ($i = 0; $i < $file_count; $i++) {
         $file_name = $files['name'][$i];
         $file_tmp = $files['tmp_name'][$i];
@@ -43,42 +53,28 @@ if (isset($_SESSION['user_id'])) {
             die("Error moving the uploaded file.");
         }
 
-        $sql = "INSERT INTO tbl_lesson_files (lesson, added_by, status) VALUES ('$lesson_name', '$user_id', 2)";
+        $sql = "INSERT INTO tbl_lesson_files (lesson_id, lesson, added_by, status) VALUES ('$lesson_id', '$lesson_name', '$user_id', 2)";
 
         if ($conn->query($sql) === TRUE) {
-            $lesson_files_ids[] = $conn->insert_id;
+            $lesson_files_id = $conn->insert_id;
+            $lesson_ids[] = $lesson_files_id;
         } else {
             die("Error inserting data into tbl_lesson_files: " . $conn->error);
         }
     }
 
-    if (!empty($lesson_files_ids)) {
-        $lesson_files_ids_str = implode(",", $lesson_files_ids);
+    // Insert data into tbl_content
+    if (!empty($lesson_ids)) {
+        foreach ($lesson_ids as $lesson_files_id) {
+            $sql = "INSERT INTO tbl_content (lesson_id, lesson_files_id) VALUES ('$lesson_id', '$lesson_files_id')";
 
-        $sql = "INSERT INTO tbl_lesson (name, objective, level, type, lesson_files_id, added_by) VALUES ('$name', '$objective', '$level', '$type', '$lesson_files_ids_str', '$user_id')";
-
-        if ($conn->query($sql) === TRUE) {
-            $lesson_id = $conn->insert_id;
-
-            $sql = "INSERT INTO tbl_module (module_name, module_description, category) VALUES (' ', ' ', ' ')";
-
-                if ($conn->query($sql) === TRUE) {
-                    $module_id = $conn->insert_id;
-
-                    $sql = "INSERT INTO tbl_content (lesson_id, module_id) VALUES ('$lesson_id', '$module_id')";
-
-                if ($conn->query($sql) === TRUE) {
-                    header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
-                    exit();
-                } else {
-                    die("Error inserting data into tbl_content: " . $conn->error);
-                }
-            } else {
-                die("Error inserting data into tbl_module: " . $conn->error);
+            if ($conn->query($sql) !== TRUE) {
+                die("Error inserting data into tbl_content: " . $conn->error);
             }
-        } else {
-            die("Error inserting data into tbl_lesson: " . $conn->error);
         }
+
+        header("Location: Teacher_uploadlesson.php?msg=Lesson uploaded successfully");
+        exit();
     } else {
         die("Please select at least one file.");
     }

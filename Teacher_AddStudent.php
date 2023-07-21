@@ -132,7 +132,7 @@ $user_id = $_SESSION['user_id'];
 
                         <h3>Student Information</h3>
 
-                        <form method="POST">
+                        <form action="teacher_add_student.php" method="POST">
                             <div class="row g-2">
 
                                 <div class="mb-3">
@@ -265,11 +265,7 @@ $user_id = $_SESSION['user_id'];
                             </div>
                             <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
                         </form>
-
-
-
                         <div class="table-responsive">
-
                         </div> <!-- end table-responsive-->
 
                     </div> <!-- end card body-->

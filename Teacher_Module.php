@@ -122,92 +122,82 @@ $user_id = $_SESSION['user_id'];
 
             <div class="col-">
                 <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Lesson 1-Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview1">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
-                                                href="#collapseExample1" aria-expanded="false"
-                                                aria-controls="collapseExample1">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample1" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#" download>01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#" download>01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end preview-->
+                    <?php
+                    include 'dbcon.php';
 
-                                    <div class="tab-pane" id="collapse-code1">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
+                    $sql = "SELECT 
+                    tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, 
+                    GROUP_CONCAT(DISTINCT tbl_lesson_files.lesson) AS lesson_files, tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
+                    FROM tbl_content
+                    JOIN tbl_lesson ON tbl_content.lesson_id = tbl_lesson.lesson_id
+                    JOIN tbl_lesson_files ON tbl_content.lesson_files_id = tbl_lesson_files.lesson_files_id
+                    JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
+                    WHERE tbl_lesson_files.status = 1
+                    GROUP BY tbl_lesson.lesson_id, 
+                    tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.status, tbl_userinfo.firstname,  tbl_userinfo.middlename, tbl_userinfo.lastname";
+
+                    $result = mysqli_query($conn, $sql);
+
+                    if (!$result) {
+                        die("Error executing the query: " . mysqli_error($conn));
+                    }
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-2">
+                                    <!-- Use the appropriate image source from the database if available, otherwise use a default image -->
+                                    <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <?php if ($row['type'] == 'Literacy') { ?>
+                                            <h5 class="card-title">Literacy: <?php echo $row['name']; ?></h5>
+                                        <?php } else { ?>
+                                            <h5 class="card-title">Numeracy: <?php echo $row['name']; ?></h5>
+                                        <?php } ?>
+                                        <p><b>Objective: </b> <?php echo $row['objective']; ?></p>
+                                        <p><b>Level: </b> <?php echo $row['level']; ?></p>
+                                        <div class="tab-content">
+                                            <?php
+                                            // Generate a unique ID for the collapse element based on the lesson_id
+                                            $collapseID = "collapseExample" . $row['lesson_id'];
+                                            ?>
+                                            <div class="tab-pane show active" id="collapse-preview<?php echo $row['lesson_id']; ?>">
+                                                <p>
+                                                    <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
+                                                    href="#<?php echo $collapseID; ?>" aria-expanded="false"
+                                                    aria-controls="<?php echo $collapseID; ?>">
+                                                        Manage Lesson
+                                                    </a>
+                                                </p>
+                                                <div class="collapse" id="<?php echo $collapseID; ?>" style="">
+                                                    <div class="card card-body mb-0">
+                                                        <span>
+                                                            <a href="Teacher_Add_QuizMultipleC.php?lesson_id=<?php echo $row['lesson_id']?>">Upload Quiz</a>
+                                                        </span>
+                                                        <span>
+                                                            <a href="#">01 Quiz 1</a>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end preview-->
+
+                                            <div class="tab-pane" id="collapse-code2">
+                                                <pre class="mb-0"> <!-- Your code here -->
+                                                </pre>
+                                            </div> <!-- end preview code-->
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                            <?php
+                        }
+                    }
+                    ?>
                 </div>
             </div>
-
-            <div class="col-">
-                <div class="card">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2">
-                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title">Lesson 2-Literacy</h3>
-                                <p class="card-text">Modules and sections can be completed in any order.</p>
-                                <div class="tab-content">
-                                    <div class="tab-pane show active" id="collapse-preview2">
-                                        <p>
-                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
-                                                href="#collapseExample2" aria-expanded="false"
-                                                aria-controls="collapseExample2">
-                                                View Content
-                                            </a>
-                                        </p>
-                                        <div class="collapse" id="collapseExample2" style="">
-                                            <div class="card card-body mb-0">
-                                                <span>
-                                                    <a href="#">01 Handout</a>
-                                                </span>
-                                                <span>
-                                                    <a href="#">01 Quiz 1</a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div> <!-- end preview-->
-
-                                    <div class="tab-pane" id="collapse-code2">
-                                        <pre class="mb-0">                                            <!-- Your code here -->
-                                        </pre>
-                                    </div> <!-- end preview code-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-
 
 
             <!-- Footer Start -->

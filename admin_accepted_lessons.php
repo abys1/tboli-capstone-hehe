@@ -418,11 +418,12 @@ if (isset($_SESSION['user_id'])) {
                     <?php
                     include 'dbcon.php';
 
-                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.type, tbl_lesson.added_by,
-                    tbl_lesson_files.lesson, tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
-                    FROM tbl_lesson
+                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson_files_id, tbl_lesson_files.lesson, 
+                    tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
+                    FROM tbl_content
+                    JOIN tbl_lesson ON tbl_content.lesson_id = tbl_lesson.lesson_id
+                    JOIN tbl_lesson_files ON tbl_content.lesson_files_id = tbl_lesson_files.lesson_files_id
                     JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
-                    JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
                     WHERE tbl_lesson_files.status = 1";
 
                     $result = mysqli_query($conn, $sql);
@@ -448,7 +449,7 @@ if (isset($_SESSION['user_id'])) {
                             <td><a href="teachers/lessons/<?php echo $row['lesson']; ?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a></td>
                             <td><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?></td>
                             <td>
-                            <a href="admin_lesson_archive.php?lesson=<?php echo $row['lesson'] ?>" class="archive">
+                            <a href="admin_lesson_archive.php?lesson_files_id=<?php echo $row['lesson_files_id'] ?>" class="archive">
                                 <button type="button" class="btn btn-warning"><i class="uil-archive"></i> </button>
                             </a>
                             </td>

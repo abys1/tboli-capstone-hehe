@@ -19,7 +19,7 @@
     padding: 10px;
     width: 100%;
     border-radius: 5px;
-}
+    }
   </style>
 </head>
 <body>
@@ -85,8 +85,6 @@
                         }
                     }
                     ?>
-
-
                 <div class="card2 card border-0 px-4 py-5">
                     <?php if (isset($_GET['error'])) { ?>
                         <p class="error">

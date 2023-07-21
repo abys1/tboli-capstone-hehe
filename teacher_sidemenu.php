@@ -82,12 +82,6 @@
         <li>
           <a href="Teacher_manage_lesson.php"><i class="uil-edit-alt"></i> Edit Lesson</a>
         </li>
-        <!-- <li>
-          <a href="Teacher_CreateModule.php"><i class="uil-plus-circle"></i> Add Module</a>
-        </li> -->
-        <li>
-          <a href="Teacher_Manage_Quiz.php"><i class="uil-plus-circle"></i> Add quiz assignment</a>
-        </li>
         <li>
           <a href="Teacher_ManageLesson.php"><i class="uil-plus-circle"></i> Upload Lesson</a>
         </li>
