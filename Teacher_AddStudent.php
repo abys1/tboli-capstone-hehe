@@ -21,9 +21,7 @@ $user_id = $_SESSION['user_id'];
 
 </head>
 
-<body class="show"
-    data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}"
-    style="visibility: visible;" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed">
+<body <?php include('dataconfig.php') ?>>
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Left Sidebar Start ========== -->
@@ -151,7 +149,7 @@ $user_id = $_SESSION['user_id'];
                                 <div class="mb-3 col-md-6">
                                     <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
                                     <input type="text" class="form-control" id="MiddleName" required
-                                        placeholder="MiddleName" name="midname">
+                                        placeholder="MiddleName" name="middlename">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="LName" class="form-label">Last Name <sup>*</sup></label>
@@ -161,7 +159,7 @@ $user_id = $_SESSION['user_id'];
 
                                 <div class="mb-3 col-md-6">
                                     <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                    <input type="date" class="form-control" id="inputbday" name="birthday">
                                 </div>
 
 
@@ -192,11 +190,11 @@ $user_id = $_SESSION['user_id'];
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
                                     <label for="inputCity" class="form-label">Email Address <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputCity" name="city">
+                                    <input type="text" class="form-control" id="inputCity" name="email">
                                 </div>
                                 <div class="mb-3 col-md-5">
                                     <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
+                                    <input type="text" class="form-control" id="inputBarangay" name="phone">
                                 </div>
                             </div>
 
@@ -212,22 +210,22 @@ $user_id = $_SESSION['user_id'];
                                 <div class="mb-3 col-md-6">
                                     <label for="FName" class="form-label">First Name <sup>*</sup></label>
                                     <input type="text" class="form-control" id="FName" required placeholder="First Name"
-                                        name="firstname">
+                                        name="gfirstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
                                     <input type="text" class="form-control" id="MiddleName" required
-                                        placeholder="MiddleName" name="midname">
+                                        placeholder="MiddleName" name="gmiddlename">
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="LName" class="form-label">Last Name <sup>*</sup></label>
                                     <input type="text" class="form-control" id="LName" required placeholder="Last Name"
-                                        name="lastname">
+                                        name="glastname">
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
-                                    <input type="date" class="form-control" id="inputbday" name="bday">
+                                    <input type="date" class="form-control" id="inputbday" name="gbirthday">
                                 </div>
 
 
@@ -237,7 +235,7 @@ $user_id = $_SESSION['user_id'];
 
                                 <div class="mb-3 col-md-4">
                                     <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
-                                    <select id="inputGender" class="form-select" name="gender">
+                                    <select id="inputGender" class="form-select" name="ggender">
                                         <option>Choose</option>
                                         <option>Female</option>
                                         <option>Male</option>
@@ -251,18 +249,18 @@ $user_id = $_SESSION['user_id'];
                                 <label for="inputAddress" class="form-label">Full address (street, barangay, city)
                                     <sup>*</sup></label>
                                 <input type="text" class="form-control" id="inputAddress" required
-                                    placeholder="Enter Address" name="address">
+                                    placeholder="Enter Address" name="gaddress">
                             </div>
 
                             <h4>Contact Information</h4>
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email Address <sup>Optional</sup></label>
-                                    <input type="text" class="form-control" id="inputCity" name="city">
+                                    <label for="inputCity" class="form-label">Email Address <sup>*</sup></label>
+                                    <input type="text" class="form-control" id="inputCity" name="gemail">
                                 </div>
                                 <div class="mb-3 col-md-5">
                                     <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="inputBarangay" name="barrgy">
+                                    <input type="text" class="form-control" id="inputBarangay" name="gphoneNumber">
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
