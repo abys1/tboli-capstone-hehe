@@ -20,6 +20,7 @@ if (isset($_POST['btnAdd'])) {
     $middlename = $_POST['middlename'];
     $lastname = $_POST['lastname'];
     $birthday = $_POST['birthday'];
+    $password_birthday = preg_replace("/[^a-zA-Z0-9]/", "", $birthday);
     $gender = $_POST['gender'];
     $email = $_POST['email'];
     $contact = $_POST['contact'];
@@ -52,7 +53,7 @@ if (isset($_POST['btnAdd'])) {
         }
     } 
 
-    $password = $lastname . $birthday;
+    $password = $lastname . $password_birthday;
     $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
     // Insert user info
