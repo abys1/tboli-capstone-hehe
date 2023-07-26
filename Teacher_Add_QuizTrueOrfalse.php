@@ -27,6 +27,15 @@ $user_id = $_SESSION['user_id'];
     <!-- Add this inside your <head> tag -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery (required for Select2) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Select2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
+
 
 </head>
 
@@ -115,41 +124,40 @@ $user_id = $_SESSION['user_id'];
                                 <label for="simpleinput" class="form-label">Title</label>
                                 <input type="text" id="simpleinput" class="form-control" name="title">
                                 <div class="col-lg-3 me-4">
-                                    <?php
-                                    include 'dbcon.php';
+                                <?php
+                                include 'dbcon.php';
 
-                                    $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, GROUP_CONCAT(DISTINCT tbl_lesson_files.status) AS status
-                                            FROM tbl_content
-                                            JOIN tbl_lesson ON tbl_lesson.lesson_id = tbl_content.lesson_id
-                                            JOIN tbl_lesson_files ON tbl_lesson_files.lesson_files_id = tbl_content.lesson_files_id
-                                            WHERE tbl_lesson_files.status = 1
-                                            GROUP BY tbl_lesson.name";
+                                $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, tbl_lesson.level, tbl_lesson_files.status 
+                                FROM tbl_lesson
+                                JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
+                                WHERE tbl_lesson_files.status = 1 
+                                GROUP BY tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, tbl_lesson.level, tbl_lesson_files.status";
 
-                                    $result = mysqli_query($conn, $sql);
+                                $result = mysqli_query($conn, $sql);
 
-                                    if ($result && mysqli_num_rows($result) > 0) {
-                                        // No need to fetch the first row here
-                                    } else {
-                                        echo "No records found in tbl_admin";
-                                    }
-                                    ?>
-                                    <div class="mb-3">
-                                        <label for="inputState" class="form-label">Select Lesson</label>
-                                        <select id="inputState" class="form-select" name="lesson">
-                                            <option selected disabled>Select Lesson</option>
-                                            <?php
-                                            if (mysqli_num_rows($result) > 0) {
-                                                while ($row = mysqli_fetch_assoc($result)) {
-                                                    $lesson_id = $row['lesson_id'];
-                                                    $name = $row['name'];
-                                                    $type = $row['type'];
-                                                    echo "<option value='$lesson_id'>$type: $name</option>";
-                                                }
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    // No need to fetch the first row here
+                                } else {
+                                    echo "No records found in tbl_admin";
+                                }
+                                ?>
+                                <div class="mb-3" style="width: 300px;">
+                                    <label for="inputState" class="form-label">Select Lesson</label>
+                                    <select id="inputState" class="form-select" name="lesson">
+                                        <option selected disabled></option>
+                                        <?php
+                                        if (mysqli_num_rows($result) > 0) {
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                $name = $row['name'];
+                                                $type = $row['type'];
+                                                $level = $row['level'];
+                                                echo "<option value='$name'>$type: $name - $level</option>";
                                             }
-                                            ?>
-                                        </select>
-                                    </div>
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
+                            </div>
                             </div>
                             <h3 class="ms-4 mt-3 mb-3">Options</h3>
                             <div class="row">
@@ -199,57 +207,68 @@ $user_id = $_SESSION['user_id'];
                                         </select>
                                     </div>
                                 </div>
+                                <div class="col-lg-2">
+                                    <div class="mb-3">
+                                        <label for="attempts" class="form-label">Attempts</label>
+                                        <select id="attempts" class="form-select" name="attempts">
+                                            <option selected disabled>Select attempts</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row me-5 ms-4">
                                 <h3 class="mt-4 mb-4">Instructions</h3>
                                 <div class="instructions" id="snow-editor" style="height: 300px;" name="instructions"></div>
                             </div>
                             <div class="row justify-content-md-center mt-4">
-                                <div class="card col-sm-11">
-                                    <div class="card-body">
-                                        <div class="question-list">
-                                            <div class="question-container mb-4">
-                                                <label>Question #1</label>
-                                                <textarea class="form-control mb-3" name="questions[]" cols="130" rows="5" placeholder="Enter your Questions here" required></textarea>
-                                                <table class="table table-hover">
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input type="radio" id="customRadio1a" name="correct_choice[0]" class="form-check-input" value="true">
-                                                                    <label class="form-check-label" for="customRadio1a">True</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-check form-check-inline">
-                                                                    <input type="radio" id="customRadio1b" name="correct_choice[0]" class="form-check-input" value="false">
-                                                                    <label class="form-check-label" for="customRadio1b">False</label>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                            <div class="card col-sm-11">
+                                <div class="card-body">
+                                <div class="question-list">
+                                    <div class="question-container mb-4">
+                                        <label>Question #1</label>
+                                        <textarea class="form-control mb-3" name="question[]" cols="130" rows="5" placeholder="Enter your Questions here" required></textarea>
+                                        <table class="table table-hover">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="customRadio1a" name="choices[0][correct]" class="form-check-input" value="true" required>
+                                                            <label class="form-check-label" for="customRadio1a">True</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="customRadio1b" name="choices[0][correct]" class="form-check-input" value="false" required>
+                                                            <label class="form-check-label" for="customRadio1b">False</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                    <div class="row mt-4">
+                                        <div class="col-sm-6">
+                                            <input type="submit" class="btn btn-primary" value="Create Quiz" name="createquiz">
                                         </div>
-                                        <div class="row mt-4">
-                                            <div class="col-sm-6">
-                                                <input type="submit" class="btn btn-primary" value="Create Quiz" name="createquiz">
-                                            </div>
-                                            <div class="col-sm-6 text-sm-end">
-                                                <input type="button" class="btn btn-primary add-question-btn" value="Add Question"
-                                                    name="addquestion">
-                                            </div>
+                                        <div class="col-sm-6 text-sm-end">
+                                            <input type="button" class="btn btn-primary add-question-btn" value="Add Question"
+                                                name="addquestion">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         </form>
                     </div>
                 </div>
         
-        <!-- JavaScript to add more questions dynamically -->
+<!-- JavaScript to add more questions dynamically -->
         <script>
             var questionCounter = 1;
 
@@ -260,13 +279,13 @@ $user_id = $_SESSION['user_id'];
                 questionDiv.classList.add('question-container', 'mb-4');
                 questionDiv.innerHTML = `
                     <label>Question #${questionCounter}</label>
-                    <textarea class="form-control mb-3" name="questions[${questionCounter - 1}][question]" cols="130" rows="5" placeholder="Enter your Question here" required></textarea>
+                    <textarea class="form-control mb-3" name="question[]" cols="130" rows="5" placeholder="Enter your Questions here" required></textarea>
                     <table class="table table-hover">
                         <tbody>
                             <tr>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="customRadio${questionCounter}a" name="choices[${questionCounter - 1}][correct]" class="form-check-input" value="true">
+                                        <input type="radio" id="customRadio${questionCounter}a" name="choices[${questionCounter - 1}][correct]" class="form-check-input" value="true" required>
                                         <label class="form-check-label" for="customRadio${questionCounter}a">True</label>
                                     </div>
                                 </td>
@@ -274,7 +293,7 @@ $user_id = $_SESSION['user_id'];
                             <tr>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="customRadio${questionCounter}b" name="choices[${questionCounter - 1}][correct]" class="form-check-input" value="false">
+                                        <input type="radio" id="customRadio${questionCounter}b" name="choices[${questionCounter - 1}][correct]" class="form-check-input" value="false" required>
                                         <label class="form-check-label" for="customRadio${questionCounter}b">False</label>
                                     </div>
                                 </td>
@@ -344,7 +363,11 @@ $user_id = $_SESSION['user_id'];
 
     </div>
     <!-- END wrapper -->
-
+    <script>
+    $(document).ready(function() {
+        $('#inputState').select2();
+    });
+    </script>
 
     <!-- Start right sidebar -->
     <?php include('Teacher_Settings.php'); ?>

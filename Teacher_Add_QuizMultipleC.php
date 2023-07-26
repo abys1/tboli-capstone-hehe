@@ -27,6 +27,14 @@ $user_id = $_SESSION['user_id'];
 
     <!-- Add this inside your <head> tag -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/css/select2.min.css" rel="stylesheet" />
+
+    <!-- jQuery (required for Select2) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Select2 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>
 
 
 </head>
@@ -119,12 +127,9 @@ $user_id = $_SESSION['user_id'];
                                 <?php
                                 include 'dbcon.php';
 
-                                $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, GROUP_CONCAT(DISTINCT tbl_lesson_files.status) AS status
-                                        FROM tbl_content
-                                        JOIN tbl_lesson ON tbl_lesson.lesson_id = tbl_content.lesson_id
-                                        JOIN tbl_lesson_files ON tbl_lesson_files.lesson_files_id = tbl_content.lesson_files_id
-                                        WHERE tbl_lesson_files.status = 1
-                                        GROUP BY tbl_lesson.name";
+                                $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, tbl_lesson.level, tbl_lesson_files.status FROM tbl_lesson
+                                JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
+                                WHERE tbl_lesson_files.status = 1";
 
                                 $result = mysqli_query($conn, $sql);
 
@@ -134,17 +139,18 @@ $user_id = $_SESSION['user_id'];
                                     echo "No records found in tbl_admin";
                                 }
                                 ?>
-                                <div class="mb-3">
+                                <div class="mb-3" style="width: 300px;">
                                     <label for="inputState" class="form-label">Select Lesson</label>
                                     <select id="inputState" class="form-select" name="lesson">
-                                        <option selected disabled>Select Lesson</option>
+                                        <option selected disabled></option>
                                         <?php
                                         if (mysqli_num_rows($result) > 0) {
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 $lesson_id = $row['lesson_id'];
                                                 $name = $row['name'];
                                                 $type = $row['type'];
-                                                echo "<option value='$lesson_id'>$type: $name</option>";
+                                                $level = $row['level'];
+                                                echo "<option value='$lesson_id'>$type: $level - $name</option>";
                                             }
                                         }
                                         ?>
@@ -199,6 +205,17 @@ $user_id = $_SESSION['user_id'];
                                         <option value="latest score">Latest Score</option>
                                     </select>
                                 </div>
+                            </div>
+                            <div class="col-lg-2">
+                                    <div class="mb-3" style="width: 170px">
+                                        <label for="attempts" class="form-label">Attempts</label>
+                                        <select id="attempts" class="form-select" name="attempts">
+                                            <option selected disabled>Select attempts</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
                             </div>
                         </div>
                         <div class="row me-5 ms-4">
@@ -400,6 +417,11 @@ $user_id = $_SESSION['user_id'];
 
     </div>
     <!-- END wrapper -->
+    <script>
+    $(document).ready(function() {
+        $('#inputState').select2();
+    });
+    </script>
 
 
     <!-- Start right sidebar -->

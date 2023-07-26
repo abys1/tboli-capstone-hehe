@@ -127,7 +127,8 @@ $user_id = $_SESSION['user_id'];
 
                     $sql = "SELECT 
                     tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, 
-                    GROUP_CONCAT(DISTINCT tbl_lesson_files.lesson) AS lesson_files, tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
+                    GROUP_CONCAT(DISTINCT tbl_lesson_files.lesson) AS lesson_files, tbl_lesson_files.status, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
+                    
                     FROM tbl_content
                     JOIN tbl_lesson ON tbl_content.lesson_id = tbl_lesson.lesson_id
                     JOIN tbl_lesson_files ON tbl_content.lesson_files_id = tbl_lesson_files.lesson_files_id
@@ -152,11 +153,8 @@ $user_id = $_SESSION['user_id'];
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <?php if ($row['type'] == 'Literacy') { ?>
-                                            <h5 class="card-title">Literacy: <?php echo $row['name']; ?></h5>
-                                        <?php } else { ?>
-                                            <h5 class="card-title">Numeracy: <?php echo $row['name']; ?></h5>
-                                        <?php } ?>
+                                      
+                                            <h5 class="card-title"><?php echo $row['type']. ': ' . $row['name']; ?></h5>
                                         <p><b>Objective: </b> <?php echo $row['objective']; ?></p>
                                         <p><b>Level: </b> <?php echo $row['level']; ?></p>
                                         <div class="tab-content">
@@ -175,7 +173,7 @@ $user_id = $_SESSION['user_id'];
                                                 <div class="collapse" id="<?php echo $collapseID; ?>" style="">
                                                     <div class="card card-body mb-0">
                                                         <span>
-                                                            <a href="Teacher_Add_QuizMultipleC.php?lesson_id=<?php echo $row['lesson_id']?>">Upload Quiz</a>
+                                                            <a href="teachers/lessons/<?php echo $row['lesson'];?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a>
                                                         </span>
                                                         <span>
                                                             <a href="#">01 Quiz 1</a>

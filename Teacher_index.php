@@ -15,6 +15,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="utf-8">
     <!-- <title>Project Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
     <meta content="Coderthemes" name="author">
@@ -114,7 +115,16 @@ if (isset($_GET['logout'])) {
 
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Mudules</h4>
+                                <h4 class="page-title">Modules</h4>
+                                <?php
+                                if (isset($_GET["msg"])) {
+                                    $msg = $_GET["msg"];
+                                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    ' . $msg . '
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>';
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -187,7 +197,7 @@ if (isset($_GET['logout'])) {
 
     </div>
     <!-- END wrapper -->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <!-- Start right sidebar -->
     <?php include('Teacher_Settings.php'); ?>

@@ -9,15 +9,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lesson = $_POST['lesson'];
     $maxScore = $_POST['max'];
     $dateStart = $_POST['date_start'];
-    $allowLate = isset($_POST['allow']) ? 1 : 0; 
+    $allowLate = isset($_POST['allow']) ? 1 : 0;
     $grading = $_POST['grading'];
     $due = $_POST['due'];
     $gradingScore = $_POST['grading_score'];
+    $attempts = $_POST['attempts'];
     $instructions = $_POST['instructions'];
-    $questions = $_POST['question']; 
-    $choices = $_POST['choices']; 
+    $questions = $_POST['question'];
+    $choices = $_POST['choices'];
 
-    $sql = "INSERT INTO tbl_quiz_options (added_by, title, lesson, max_score, date_start, allow_late, grading, due, grading_score, instructions) VALUES ('$user_id', '$title', '$lesson', '$maxScore', '$dateStart', $allowLate, '$grading', '$due', '$gradingScore', '$instructions')";
+    $sql = "INSERT INTO tbl_quiz_options (added_by, title, lesson, max_score, date_start, allow_late, grading, due, grading_score, attempts, instructions) VALUES ('$user_id', '$title', '$lesson', '$maxScore', '$dateStart', $allowLate, '$grading', '$due', '$gradingScore', '$attempts', '$instructions')";
 
     if ($conn->query($sql) === TRUE) {
         $quiz_options_id = mysqli_insert_id($conn);
@@ -35,22 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sql = "INSERT INTO tbl_quiz_multiple_choice (quiz_options_id, question, choiceA, choiceB, choiceC, choiceD, correct_answer) VALUES ($quiz_options_id, '$question', '$choiceA', '$choiceB', '$choiceC', '$choiceD', '$correctAnswer')";
 
             // Execute the query
-            if ($conn->query($sql) === TRUE) {
-                $multiple_choice_id = mysqli_insert_id($conn);
-                
-                $sql = "INSERT INTO tbl_quiz (quiz_options_id, quiz_multiple_choice_id) VALUES ('$quiz_options_id', '$multiple_choice_id')";
-
-                if ($conn->query($sql) === TRUE) {
-                    echo "Data inserted successfully into tbl_quiz_options and tbl_quiz_multiple_choice!";
-                }else {
-                    // Error occurred
-                    echo "Error: " . mysqli_error($conn);
-                }
-            } else {
+            if ($conn->query($sql) !== TRUE) {
                 // Error occurred
                 echo "Error: " . mysqli_error($conn);
+                exit();
             }
         }
+        header("Location: Teacher_index.php?msg=Quiz - multiple choice added successfully");
+        exit();
     } else {
         // Error occurred
         echo "Error: " . mysqli_error($conn);
