@@ -128,7 +128,7 @@ $user_id = $_SESSION['user_id'];
                                 include 'dbcon.php';
 
                                 $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, tbl_lesson.level, tbl_lesson_files.status FROM tbl_lesson
-                                JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
+                                JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_files_id
                                 WHERE tbl_lesson_files.status = 1";
 
                                 $result = mysqli_query($conn, $sql);

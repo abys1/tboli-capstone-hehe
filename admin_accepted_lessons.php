@@ -435,7 +435,7 @@ if (isset($_SESSION['user_id'])) {
                     if ($result && mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
-                                                    <tr>
+                        <tr>
                             <td>
                                 <div class="form-check form-checkbox-success">
                                     <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
