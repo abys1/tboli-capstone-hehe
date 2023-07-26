@@ -125,17 +125,15 @@ $user_id = $_SESSION['user_id'];
                     <?php
                     include 'dbcon.php';
 
-                    $sql = "SELECT 
-                    tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, 
-                    GROUP_CONCAT(DISTINCT tbl_lesson_files.lesson) AS lesson_files, tbl_lesson_files.status, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
-                    
-                    FROM tbl_content
-                    JOIN tbl_lesson ON tbl_content.lesson_id = tbl_lesson.lesson_id
-                    JOIN tbl_lesson_files ON tbl_content.lesson_files_id = tbl_lesson_files.lesson_files_id
-                    JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
-                    WHERE tbl_lesson_files.status = 1
-                    GROUP BY tbl_lesson.lesson_id, 
-                    tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.status, tbl_userinfo.firstname,  tbl_userinfo.middlename, tbl_userinfo.lastname";
+                    $sql = "SELECT DISTINCT lesson_id, name, objective, level, type, added_by, lesson_files, status, lesson, firstname, middlename, lastname, title
+                    FROM (
+                        SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson AS lesson_files,
+                        tbl_lesson_files.status, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_quiz_options.title
+                        FROM tbl_lesson
+                        LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_files_id AND tbl_lesson_files.status = 1
+                        LEFT JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
+                        LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.quiz_options_id
+                    ) AS MergedData";
 
                     $result = mysqli_query($conn, $sql);
 
@@ -143,7 +141,7 @@ $user_id = $_SESSION['user_id'];
                         die("Error executing the query: " . mysqli_error($conn));
                     }
 
-                    if ($result && mysqli_num_rows($result) > 0) {
+                    if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                             <div class="row g-0 align-items-center">
@@ -153,10 +151,9 @@ $user_id = $_SESSION['user_id'];
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                      
-                                            <h5 class="card-title"><?php echo $row['type']. ': ' . $row['name']; ?></h5>
-                                        <p><b>Objective: </b> <?php echo $row['objective']; ?></p>
-                                        <p><b>Level: </b> <?php echo $row['level']; ?></p>
+                                        <h5 class="card-title"><?php echo $row['type'] . ': ' . $row['name']; ?></h5>
+                                        <p><b>Objective: </b><?php echo $row['objective']; ?></p>
+                                        <p><b>Level: </b><?php echo $row['level']; ?></p>
                                         <div class="tab-content">
                                             <?php
                                             // Generate a unique ID for the collapse element based on the lesson_id
@@ -171,14 +168,36 @@ $user_id = $_SESSION['user_id'];
                                                     </a>
                                                 </p>
                                                 <div class="collapse" id="<?php echo $collapseID; ?>" style="">
-                                                    <div class="card card-body mb-0">
-                                                        <span>
-                                                            <a href="teachers/lessons/<?php echo $row['lesson'];?>" target="_blank"><?php echo substr($row['lesson'], 0, 15); ?></a>
-                                                        </span>
-                                                        <span>
-                                                            <a href="#">01 Quiz 1</a>
-                                                        </span>
-                                                    </div>
+                                                    <?php
+                                                    $lesson_id = $row['lesson_id'];
+                                                    $inner_sql = "SELECT tbl_lesson.lesson_id, tbl_quiz_options.title, tbl_lesson_files.lesson
+                                                    FROM tbl_lesson
+                                                    LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.lesson
+                                                    LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
+                                                    WHERE tbl_lesson.lesson_id = '$lesson_id' AND tbl_lesson_files.status = 1";
+
+                                                    $inner_result = mysqli_query($conn, $inner_sql);
+
+                                                    if (!$inner_result) {
+                                                        die("Error" . mysqli_error($conn));
+                                                    }
+
+                                                    if (mysqli_num_rows($inner_result) > 0) {
+                                                        while ($inner_row = mysqli_fetch_assoc($inner_result)) {
+                                                            ?>
+                                                            <div class="card card-body mb-0">
+                                                                <span>
+                                                                    <a href="teachers/lessons/<?php echo $inner_row['lesson']; ?>"
+                                                                    target="_blank"><?php echo substr($inner_row['lesson'], 0, 15); ?></a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#"><?php echo $inner_row['title']; ?></a>
+                                                                </span>
+                                                            </div>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
                                                 </div>
                                             </div> <!-- end preview-->
 
@@ -196,6 +215,11 @@ $user_id = $_SESSION['user_id'];
                     ?>
                 </div>
             </div>
+
+
+
+
+
 
 
             <!-- Footer Start -->
