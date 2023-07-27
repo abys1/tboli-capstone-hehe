@@ -299,8 +299,22 @@ $user_id = $_SESSION['user_id'];
                                         echo '</a>';
                                         echo '</div>';
                                     } else {
-                                        echo "No records found";
-                                        exit();
+                                        $sql = "SELECT tbl_quiz_options.quiz_options_id, tbl_quiz_options.instructions, tbl_quiz_true_or_false.true_or_false_id
+                                        FROM tbl_quiz_options
+                                        JOIN tbl_quiz_true_or_false ON tbl_quiz_options.quiz_options_id = tbl_quiz_true_or_false.quiz_options_id
+                                        WHERE tbl_quiz_options.quiz_options_id = $quiz_options_id";
+
+                                        $result = mysqli_query($conn, $sql);
+                                        
+                                        if($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                            echo '<p>' . $row['instructions'] . '</p>';
+                                            echo '<div class="card-footer text-md-end">';
+                                            echo '<a href="Learner_Quiz.php?quiz_options_id=' . $row['quiz_options_id'] . '">';
+                                            echo '<button type="button" class="btn btn-info">Take the quiz</button>';
+                                            echo '</a>';
+                                            echo '</div>';
+                                        }
                                     }
 
                                 } else {
