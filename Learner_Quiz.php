@@ -274,47 +274,49 @@ $user_id = $_SESSION['user_id'];
                                             $questionNumber = 1; // Initialize the question number counter for multiple-choice questions
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 ?>
-                                                <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
-                                                <p class="mt-2"><?php echo $row['question'] ?></p>
-                                                <div class="list-group">
-                                                    <table class="table table-hover">
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
-                                                                        <label class="form-check-label" for="customRadio1"><?php echo $row['choiceA'] ?></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
-                                                                        <label class="form-check-label" for="customRadio2"><?php echo $row['choiceB'] ?></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input type="radio" id="customRadio3" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
-                                                                        <label class="form-check-label" for="customRadio3"><?php echo $row['choiceC'] ?></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="form-check form-check-inline">
-                                                                        <input type="radio" id="customRadio4" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
-                                                                        <label class="form-check-label" for="customRadio4"><?php echo $row['choiceD'] ?></label>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                <div class="card card-body mb-0">
+                                                    <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
+                                                    <p class="mt-2"><?php echo $row['question'] ?></p>
+                                                    <div class="list-group">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <label class="form-check-label" for="customRadio1"><?php echo $row['choiceA'] ?></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <label class="form-check-label" for="customRadio2"><?php echo $row['choiceB'] ?></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input type="radio" id="customRadio3" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <label class="form-check-label" for="customRadio3"><?php echo $row['choiceC'] ?></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input type="radio" id="customRadio4" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <label class="form-check-label" for="customRadio4"><?php echo $row['choiceD'] ?></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                                <?php
+                                                <?php 
                                                 $questionNumber++; // Increment the question number for the next iteration
                                             }
                                         } else {
@@ -330,29 +332,31 @@ $user_id = $_SESSION['user_id'];
                                                 $questionNumber = 1; // Initialize the question number counter for true/false questions
                                                 while ($row = mysqli_fetch_assoc($result)) {
                                                     ?>
-                                                    <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
-                                                    <p class="mt-2"><?php echo $row['question'] ?></p>
-                                                    <div class="list-group">
-                                                        <table class="table table-hover">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
-                                                                            <label class="form-check-label" for="customRadio1">True</label>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
-                                                                            <label class="form-check-label" for="customRadio2">False</label>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                    <div class="card card-body mb-0">
+                                                        <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
+                                                        <p class="mt-2"><?php echo $row['question'] ?></p>
+                                                        <div class="list-group">
+                                                            <table class="table table-hover">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                                <label class="form-check-label" for="customRadio1">True</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="form-check form-check-inline">
+                                                                                <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                                <label class="form-check-label" for="customRadio2">False</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                     <?php
                                                     $questionNumber++; // Increment the question number for the next iteration
