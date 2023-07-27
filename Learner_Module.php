@@ -159,36 +159,53 @@
                                                             </a>
                                                         </p>
                                                         <div class="collapse" id="<?php echo $collapseID; ?>" style="">
-                                                            <?php
-                                                            $lesson_id = $row['lesson_id'];
-                                                            $inner_sql = "SELECT tbl_lesson.lesson_id, tbl_quiz_options.quiz_options_id, tbl_quiz_options.title, tbl_lesson_files.lesson
-                                                            FROM tbl_lesson
-                                                            LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.lesson
-                                                            LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
-                                                            WHERE tbl_lesson.lesson_id = '$lesson_id' AND tbl_lesson_files.status = 1";
+                                                        <?php
+                                                        $lesson_id = $row['lesson_id'];
+                                                        $lesson = "SELECT tbl_lesson.lesson_id, tbl_lesson_files.lesson
+                                                                            FROM tbl_lesson
+                                                                            LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
+                                                                            WHERE tbl_lesson_files.lesson_id = $lesson_id";
 
-                                                            $inner_result = mysqli_query($conn, $inner_sql);
+                                                        $quiz = "SELECT DISTINCT tbl_lesson.lesson_id, tbl_quiz_options.quiz_options_id, tbl_quiz_options.title
+                                                                            FROM tbl_lesson
+                                                                            LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.lesson
+                                                                            WHERE tbl_quiz_options.lesson = $lesson_id";
 
-                                                            if (!$inner_result) {
-                                                                die("Error" . mysqli_error($conn));
+                                                        $lesson_result = mysqli_query($conn, $lesson);
+                                                        $quiz_result = mysqli_query($conn, $quiz);
+
+                                                        if (!$lesson_result || !$quiz_result) {
+                                                            die("Error" . mysqli_error($conn));
+                                                        }
+
+                                                        if (mysqli_num_rows($lesson_result) > 0) {
+                                                            while ($lesson_row = mysqli_fetch_assoc($lesson_result)) {
+                                                                ?>
+                                                                <div class="mb-1">
+                                                                    <span>
+                                                                        <a href="teachers/lessons/<?php echo $lesson_row['lesson']; ?>" target="_blank">
+                                                                            <?php echo substr($lesson_row['lesson'], 0, 15); ?>
+                                                                        </a>
+                                                                    </span>
+                                                                </div>
+                                                                <?php
                                                             }
+                                                        }
 
-                                                            if (mysqli_num_rows($inner_result) > 0) {
-                                                                while ($inner_row = mysqli_fetch_assoc($inner_result)) {
-                                                                    ?>
-                                                                    <div class="card card-body mb-0">
-                                                                        <span>
-                                                                            <a href="teachers/lessons/<?php echo $inner_row['lesson']; ?>"
-                                                                            target="_blank"><?php echo substr($inner_row['lesson'], 0, 15); ?></a>
-                                                                        </span>
-                                                                        <span>
-                                                                            <a href="Learner_InstructionsQuiz.php?quiz_options_id=<?php echo $inner_row['quiz_options_id']?>"><?php echo $inner_row['title']; ?></a>
-                                                                        </span>
-                                                                    </div>
-                                                                    <?php
-                                                                }
+                                                        if (mysqli_num_rows($quiz_result) > 0) {
+                                                            while ($quiz_row = mysqli_fetch_assoc($quiz_result)) {
+                                                                ?>
+                                                                <div class="mb-1">
+                                                                    <span>
+                                                                        <a href="Learner_InstructionsQuiz.php?quiz_options_id=<?php echo $quiz_row['quiz_options_id']?>">
+                                                                            <?php echo $quiz_row['title']; ?>
+                                                                        </a>
+                                                                    </span>
+                                                                </div>
+                                                                <?php
                                                             }
-                                                            ?>
+                                                        }
+                                                        ?>
                                                         </div>
                                                     </div> <!-- end preview-->
 
