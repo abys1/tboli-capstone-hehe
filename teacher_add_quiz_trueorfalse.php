@@ -5,7 +5,6 @@ $user_id = $_SESSION['user_id'];
 require_once 'dbcon.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Process form data
     $title = $_POST['title'];
     $lesson = $_POST['lesson'];
     $maxScore = $_POST['max'];
@@ -19,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $questions = $_POST['question'];
     $correctChoices = $_POST['choices'];
 
-    // Insert quiz options into the database
     $sql = "INSERT INTO tbl_quiz_options (added_by, title, lesson, max_score, date_start, allow_late, grading, due, grading_score, attempts, instructions) VALUES ('$user_id', '$title', '$lesson', '$maxScore', '$dateStart', $allowLate, '$grading', '$due', '$gradingScore', '$attempts', '$instructions')";
 
     if ($conn->query($sql) === TRUE) {

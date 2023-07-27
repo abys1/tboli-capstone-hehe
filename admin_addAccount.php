@@ -23,6 +23,17 @@ $user_id = $_SESSION['user_id'];
     <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
 
+    <style>
+    .error {
+    text-align: center;
+    background: #f59595fb;
+    color: #b92c2c;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    }
+  </style>
+
 </head>
 
 <body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed" style="visibility: visible;">
@@ -341,6 +352,11 @@ $user_id = $_SESSION['user_id'];
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Manage Admin</h4>
+                                <?php if (isset($_GET['error'])) { ?>
+                                    <p class="error">
+                                        <?php echo $_GET['error']; ?>
+                                    </p>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>     

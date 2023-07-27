@@ -1,3 +1,7 @@
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,7 +93,145 @@
         <div class="content-page">
             <div class="content">
                 <!-- Topbar Start -->
-                <?php include('learnerTopBar.php') ?>
+                <div class="navbar-custom">
+                    <ul class="list-unstyled topbar-menu float-end mb-0">
+                        <li class="dropdown notification-list d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-bell noti-icon"></i>
+                                <span class="noti-icon-badge"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg">
+
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5 class="m-0">
+                                        <span class="float-end">
+                                            <a href="javascript: void(0);" class="text-dark">
+                                                <small>Clear All</small>
+                                            </a>
+                                        </span>Notification
+                                    </h5>
+                                </div>
+
+                                <div style="max-height: 230px;" data-simplebar="init">
+                                    <div class="simplebar-wrapper" style="margin: 0px;">
+                                        <div class="simplebar-height-auto-observer-wrapper">
+                                            <div class="simplebar-height-auto-observer"></div>
+                                        </div>
+                                        <div class="simplebar-mask">
+                                            <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+                                                <div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;">
+                                                    <div class="simplebar-content" style="padding: 0px;">
+
+                                                        <!-- All-->
+                                                        <a href="javascript:void(0);"
+                                                            class="dropdown-item text-center text-primary notify-item notify-all">
+                                                            View All
+                                                        </a>
+
+                                                    </div>
+                        </li>
+
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                                </span>
+
+                                <?php
+                                    include 'dbcon.php';
+
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
+
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                FROM tbl_learner
+                                                JOIN tbl_userinfo ON tbl_learner.user_id = tbl_userinfo.user_id
+                                                JOIN tbl_user_level ON tbl_learner.level_id = tbl_user_level.level_id
+                                                WHERE tbl_user_level.level = 'LEARNER' AND tbl_userinfo.user_id = '$user_id'
+                                                LIMIT 1;";
+
+                                        $result = mysqli_query($conn, $sql);
+
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                            ?>
+                                            <span>
+                                                <span class="account-user-name">
+                                                    <?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?>
+                                                </span>
+                                                <span class="account-position">
+                                                    <?php echo $row['level']; ?>
+                                                </span>
+                                            </span>
+                                            <?php
+                                        } else {
+                                            echo "No records found in tbl_learner";
+                                        }
+                                    } else {
+                                        echo "No user ID provided";
+                                    }
+                                ?>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-account-circle me-1"></i>
+                                    <span>My Account</span>
+                                </a>
+                                <!-- item-->
+                                <a href="learner_login.php?logout=true" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                    <button class="button-menu-mobile open-left">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                    <div class="app-search dropdown d-none d-lg-block">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                <span class="mdi mdi-magnify search-icon"></span>
+                                <button class="input-group-text btn-primary" type="submit">Search</button>
+                            </div>
+                        </form>
+
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
+
+                            <!-- item-->
+
+
+                            <div class="notification-list">
+                                <!-- item-->
+
+
+
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!-- end Topbar -->
 
                 <!-- Start Content-->
                 <div class="container-fluid">
@@ -110,72 +252,124 @@
                         </div>
                     </div>
                     <!-- end page title -->
+                    <form action="learner_submit_quiz.php" method="post">
+                        <div class="row justify-content-md-center mt-4">
+                            <div class="card col-sm-10">
+                                <div class="card-body">
+                                    <?php
+                                    include 'dbcon.php';
+                                    if (isset($_GET['quiz_options_id'])) {
+                                        $quiz_options_id = $_GET['quiz_options_id'];
 
-                    <div class="row justify-content-md-center mt-4">
-                        <div class="card col-sm-10">
-                            <div class="card-body">
-                                <h5 class="card-title">Question 1</h5>
-                                <p class="mt-2">What is the purpose of a loop in programming?</p>
-                                <div class="list-group">
-                                    <table class="table table-hover">
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio1" name="customRadio1"
-                                                            class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio1">To display
-                                                            error
-                                                            messages</label>
+                                        $sql = "SELECT tbl_quiz_options.quiz_options_id, tbl_quiz_multiple_choice.multiple_choice_id, tbl_quiz_multiple_choice.quiz_options_id, 
+                                        tbl_quiz_multiple_choice.question, tbl_quiz_multiple_choice.choiceA, tbl_quiz_multiple_choice.choiceB, tbl_quiz_multiple_choice.choiceC, 
+                                        tbl_quiz_multiple_choice.choiceD, tbl_quiz_multiple_choice.correct_answer
+                                        FROM tbl_quiz_options
+                                        JOIN tbl_quiz_multiple_choice ON tbl_quiz_options.quiz_options_id = tbl_quiz_multiple_choice.quiz_options_id
+                                        WHERE tbl_quiz_options.quiz_options_id = $quiz_options_id";
+
+                                        $result = mysqli_query($conn, $sql);
+
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $questionNumber = 1; // Initialize the question number counter for multiple-choice questions
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                ?>
+                                                <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
+                                                <p class="mt-2"><?php echo $row['question'] ?></p>
+                                                <div class="list-group">
+                                                    <table class="table table-hover">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                        <label class="form-check-label" for="customRadio1"><?php echo $row['choiceA'] ?></label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                        <label class="form-check-label" for="customRadio2"><?php echo $row['choiceB'] ?></label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="radio" id="customRadio3" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                        <label class="form-check-label" for="customRadio3"><?php echo $row['choiceC'] ?></label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="form-check form-check-inline">
+                                                                        <input type="radio" id="customRadio4" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                        <label class="form-check-label" for="customRadio4"><?php echo $row['choiceD'] ?></label>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <?php
+                                                $questionNumber++; // Increment the question number for the next iteration
+                                            }
+                                        } else {
+                                            // If there are no multiple-choice questions, check for true/false questions
+                                            $sql = "SELECT tbl_quiz_options.quiz_options_id, tbl_quiz_true_or_false.true_or_false_id, tbl_quiz_true_or_false.quiz_options_id,tbl_quiz_true_or_false.question, tbl_quiz_true_or_false.correct_choice
+                                            FROM tbl_quiz_options
+                                            JOIN tbl_quiz_true_or_false ON tbl_quiz_options.quiz_options_id = tbl_quiz_true_or_false.quiz_options_id
+                                            WHERE tbl_quiz_options.quiz_options_id = $quiz_options_id";
+
+                                            $result = mysqli_query($conn, $sql);
+
+                                            if ($result && mysqli_num_rows($result) > 0) {
+                                                $questionNumber = 1; // Initialize the question number counter for true/false questions
+                                                while ($row = mysqli_fetch_assoc($result)) {
+                                                    ?>
+                                                    <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
+                                                    <p class="mt-2"><?php echo $row['question'] ?></p>
+                                                    <div class="list-group">
+                                                        <table class="table table-hover">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <label class="form-check-label" for="customRadio1">True</label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <div class="form-check form-check-inline">
+                                                                            <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <label class="form-check-label" for="customRadio2">False</label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio2" name="customRadio1"
-                                                            class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio2">To repeat a
-                                                            set of
-                                                            instructions</label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio3" name="customRadio1"
-                                                            class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio3">To declare
-                                                            variables</label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check form-check-inline">
-                                                        <input type="radio" id="customRadio4" name="customRadio1"
-                                                            class="form-check-input">
-                                                        <label class="form-check-label" for="customRadio4">To perform
-                                                            mathematical calculations</label>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <button class="btn btn-primary">Prev</button>
-                                    </div>
-                                    <div class="col-sm-6 text-md-end">
-                                        <button class="btn btn-primary">Next</button>
+                                                    <?php
+                                                    $questionNumber++; // Increment the question number for the next iteration
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                    <div class="row">
+                                        <div class="col-sm-6 text-md-end">
+                                            <button class="btn btn-primary" name="btnSubmit">Submit</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </form>
 
 
 

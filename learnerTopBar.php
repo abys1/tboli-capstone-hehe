@@ -58,10 +58,41 @@
                 <span class="account-user-avatar">
                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                 </span>
-                <span>
-                    <span class="account-user-name">Ann Watapampam</span>
-                    <span class="account-position">IT student 77%</span>
-                </span>
+
+                <?php
+                    include 'dbcon.php';
+
+                    if (isset($_SESSION['user_id'])) {
+                        $user_id = $_SESSION['user_id'];
+
+                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                FROM tbl_learner
+                                JOIN tbl_userinfo ON tbl_learner.user_id = tbl_userinfo.user_id
+                                JOIN tbl_user_level ON tbl_learner.level_id = tbl_user_level.level_id
+                                WHERE tbl_user_level.level = 'LEARNER' AND tbl_userinfo.user_id = '$user_id'
+                                LIMIT 1;";
+
+                        $result = mysqli_query($conn, $sql);
+
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            $row = mysqli_fetch_assoc($result);
+                            ?>
+                            <span>
+                                <span class="account-user-name">
+                                    <?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?>
+                                </span>
+                                <span class="account-position">
+                                    <?php echo $row['level']; ?>
+                                </span>
+                            </span>
+                            <?php
+                        } else {
+                            echo "No records found in tbl_learner";
+                        }
+                    } else {
+                        echo "No user ID provided";
+                    }
+                ?>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                 <!-- item-->
