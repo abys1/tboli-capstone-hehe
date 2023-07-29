@@ -306,18 +306,20 @@ $user_id = $_SESSION['user_id'];
                                         $user_id = $_SESSION['user_id'];
 
                                         $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_admin
-                                                JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
+                                                    FROM tbl_admin
+                                                    JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+                                                    JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+                                                    WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
+                                                    LIMIT 1;";
 
                                         $result = mysqli_query($conn, $sql);
 
                                         if ($result && mysqli_num_rows($result) > 0) {
                                             $row = mysqli_fetch_assoc($result);
-
-
+                                            ?>
+                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                            <?php
                                         } else {
                                             echo "No records found in tbl_admin";
                                         }
@@ -325,12 +327,6 @@ $user_id = $_SESSION['user_id'];
                                         echo "No user ID provided";
                                     }
                                     ?>
-                                    <span class="account-user-name">
-                                        <?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?>
-                                    </span>
-                                    <span class="account-position">
-                                        <?php echo $row['level']; ?>
-                                    </span>
                                 </span>
                             </a>
                             <div
