@@ -204,17 +204,6 @@ $user_id = $_SESSION['user_id'];
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
             <!-- Footer Start -->
             <footer class="footer">
                 <div class="container-fluid">

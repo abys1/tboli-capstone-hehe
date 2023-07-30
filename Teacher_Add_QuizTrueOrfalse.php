@@ -260,13 +260,13 @@ $user_id = $_SESSION['user_id'];
                 questionDiv.classList.add('question-container', 'mb-4');
                 questionDiv.innerHTML = `
                     <label>Question #${questionCounter}</label>
-                    <textarea class="form-control mb-3" name="questions[${questionCounter - 1}][question]" cols="130" rows="5" placeholder="Enter your Question here" required></textarea>
+                    <textarea class="form-control mb-3" name="questions[]" cols="130" rows="5" placeholder="Enter your Question here" required></textarea>
                     <table class="table table-hover">
                         <tbody>
                             <tr>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="customRadio${questionCounter}a" name="choices[${questionCounter - 1}][correct]" class="form-check-input" value="true">
+                                        <input type="radio" id="customRadio${questionCounter}a" name="correct_choice[${questionCounter - 1}]" class="form-check-input" value="true">
                                         <label class="form-check-label" for="customRadio${questionCounter}a">True</label>
                                     </div>
                                 </td>
@@ -274,7 +274,7 @@ $user_id = $_SESSION['user_id'];
                             <tr>
                                 <td>
                                     <div class="form-check form-check-inline">
-                                        <input type="radio" id="customRadio${questionCounter}b" name="choices[${questionCounter - 1}][correct]" class="form-check-input" value="false">
+                                        <input type="radio" id="customRadio${questionCounter}b" name="correct_choice[${questionCounter - 1}]" class="form-check-input" value="false">
                                         <label class="form-check-label" for="customRadio${questionCounter}b">False</label>
                                     </div>
                                 </td>
@@ -290,7 +290,6 @@ $user_id = $_SESSION['user_id'];
             var addQuestionBtn = document.querySelector('.add-question-btn');
             addQuestionBtn.addEventListener('click', addQuestionField);
         </script>
-
 
         <script>
             $(document).ready(function(){

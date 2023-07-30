@@ -2,29 +2,6 @@
 session_start();
 $user_id = $_SESSION['user_id'];
 include 'dbcon.php';
-
-if (isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-
-    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-            FROM tbl_admin
-            JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-            JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-            WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
-            LIMIT 1;";
-
-    $result = mysqli_query($conn, $sql);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-
-
-    } else {
-        echo "No records found in tbl_admin";
-    }
-} else {
-    echo "No user ID provided";
-}
 ?>
 
 <!DOCTYPE html>
@@ -320,9 +297,35 @@ if (isset($_SESSION['user_id'])) {
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level']; ?></span>
-                                    </span>
+                                    <?php
+                                    include 'dbcon.php';
+
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
+
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                    FROM tbl_admin
+                                                    JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+                                                    JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+                                                    WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
+                                                    LIMIT 1;";
+
+                                        $result = mysqli_query($conn, $sql);
+
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                            ?>
+                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                            <?php
+                                        } else {
+                                            echo "No records found in tbl_admin";
+                                        }
+                                    } else {
+                                        echo "No user ID provided";
+                                    }
+                                    ?>
+                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -380,12 +383,10 @@ if (isset($_SESSION['user_id'])) {
         <?php
         include 'dbcon.php';
 
-        $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.type, tbl_lesson.added_by,
-                tbl_lesson_files.lesson, tbl_lesson_files.status, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname
-                FROM tbl_lesson
-                JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
-                JOIN tbl_lesson_files ON tbl_lesson.added_by = tbl_lesson_files.added_by
-                WHERE tbl_lesson.added_by = tbl_lesson_files.added_by AND tbl_lesson_files.status = 1";
+        $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.level, tbl_lesson.type, tbl_lesson_files.lesson, tbl_lesson_files.status
+        FROM tbl_lesson
+        LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
+        WHERE tbl_lesson_files.lesson_files_id = tbl_lesson.lesson_id AND tbl_lesson_files.status = 1";
 
         $result = mysqli_query($conn, $sql);
 

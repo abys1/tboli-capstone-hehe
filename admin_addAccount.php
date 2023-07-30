@@ -23,6 +23,17 @@ $user_id = $_SESSION['user_id'];
     <link href="assets/css/vendor/quill.core.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/vendor/quill.snow.css" rel="stylesheet" type="text/css" />
 
+    <style>
+    .error {
+    text-align: center;
+    background: #f59595fb;
+    color: #b92c2c;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    }
+  </style>
+
 </head>
 
 <body class="show" data-layout-config="{&quot;leftSideBarTheme&quot;:&quot;dark&quot;,&quot;layoutBoxed&quot;:false, &quot;leftSidebarCondensed&quot;:false, &quot;leftSidebarScrollable&quot;:false,&quot;darkMode&quot;:false, &quot;showRightSidebarOnStart&quot;: false}" data-leftbar-theme="dark" data-leftbar-compact-mode="condensed" style="visibility: visible;">
@@ -271,35 +282,35 @@ $user_id = $_SESSION['user_id'];
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                <?php
-                                include 'dbcon.php';
+                                    <?php
+                                    include 'dbcon.php';
 
-                                if (isset($_SESSION['user_id'])) {
-                                    $user_id = $_SESSION['user_id'];
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
 
-                                    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_admin
-                                                JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                    FROM tbl_admin
+                                                    JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+                                                    JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+                                                    WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
+                                                    LIMIT 1;";
 
-                                    $result = mysqli_query($conn, $sql);
+                                        $result = mysqli_query($conn, $sql);
 
-                                    if ($result && mysqli_num_rows($result) > 0) {
-                                        $row = mysqli_fetch_assoc($result);
-
-
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                            ?>
+                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                            <?php
+                                        } else {
+                                            echo "No records found in tbl_admin";
+                                        }
                                     } else {
-                                        echo "No records found in tbl_admin";
+                                        echo "No user ID provided";
                                     }
-                                } else {
-                                    echo "No user ID provided";
-                                }
-                                ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level']; ?></span>
-                                    </span>
+                                    ?>
+                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -341,6 +352,11 @@ $user_id = $_SESSION['user_id'];
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Manage Admin</h4>
+                                <?php if (isset($_GET['error'])) { ?>
+                                    <p class="error">
+                                        <?php echo $_GET['error']; ?>
+                                    </p>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>     

@@ -1,6 +1,35 @@
 <?php
 session_start();
 $user_id = $_SESSION['user_id'];
+
+
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $lrn = empty($_POST["lrn"]) ? "Please provide your LRN." : null;
+    $fname = empty($_POST["firstname"]) ? "Input field is empty! Please enter your first name." : null;
+    $md = empty($_POST["middlename"]) ? "Input field is empty! Please enter your middle name." : null;
+    $lastn = empty($_POST["lastname"]) ? "Input field is empty! Please enter your last name." : null;
+    $bday = empty($_POST["birthday"]) ? "Please select your birthday." : null;
+    $gen = ($_POST["gender"] !== "Chose") ? "Please select your gender." : null;
+    $emil = empty($_POST["email"]) ? "Input field is empty! Please enter your email address." : null;
+    $address = empty($_POST["address"]) ? "Input field is empty! Please enter your address." : null;
+    $phone = (!preg_match('/^[0-9]+$/', $_POST["phone"])) ? "Please enter a valid phone number, e.g., 09123456789." : null;
+    $gfirstname = empty($_POST["gfirstname"]) ? "Input field is empty! Please enter the first name." : null;
+    $gmiddlename = empty($_POST["gmiddlename"]) ? "Input field is empty! Please enter the middle name." : null;
+    $glastname = empty($_POST["glastname"]) ? "Input field is empty! Please enter the last name." : null;
+    $gbirthday = empty($_POST["gbirthday"]) ? "Please select the birthday." : null;
+    $gemail = empty($_POST["gemail"]) ? "Input field is empty! Please enter the email." : null;
+    $gaddress = empty($_POST["gaddress"]) ? "Input field is empty! Please enter the address." : null;
+    $gphoneNumber = empty($_POST["gphoneNumber"]) ? "Input field is empty! Please enter the phone number, e.g., 09123456789." : null;
+}
+
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en" class="menuitem-active">
@@ -72,7 +101,7 @@ $user_id = $_SESSION['user_id'];
                             </div>
                         </div>
                     </div>
-                    <div class="simplebar-required placeholder" style="width: 260px; height: 234px;"></div>
+                    <div class="simplebar- placeholder" style="width: 260px; height: 234px;"></div>
                 </div>
                 <div class="simplebar-track simplebar-horizontal" style="visibility: hidden;">
                     <div class="simplebar-scrollbar" style="width: 0px; display: none;"></div>
@@ -132,33 +161,43 @@ $user_id = $_SESSION['user_id'];
 
                         <h3>Student Information</h3>
 
-                        <form action="teacher_add_student.php" method="POST">
+                        <form method="POST">
                             <div class="row g-2">
 
                                 <div class="mb-3">
-                                    <label for="InputID" class="form-label">LRN<sup>*</sup></label>
-                                    <input type="text" class="form-control" id="InputID" required
-                                        placeholder="02000221026" name="lrn">
+                                    <label for="InputID" class="form-label">LRN<sup>*
+                                            <?php echo $lrn ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="InputID" placeholder="02000221026"
+                                        name="lrn">
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required placeholder="First Name"
+                                    <label for="FName" class="form-label">First Name <sup>*
+                                            <?php echo $fname ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="FName" placeholder="First Name"
                                         name="firstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required
-                                        placeholder="MiddleName" name="middlename">
+                                    <label for="MiddleName" class="form-label">Middle Name <sup>*
+                                            <?php echo $md ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="MiddleName" placeholder="MiddleName"
+                                        name="middlename">
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name"
+                                    <label for="LName" class="form-label">Last Name <sup>*
+                                            <?php echo $lastn ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="LName" placeholder="Last Name"
                                         name="lastname">
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
+                                    <label for="inputbday" class="form-label">Birthdate <sup>*
+                                            <?php echo $bday ?? ''; ?>
+                                        </sup></label>
                                     <input type="date" class="form-control" id="inputbday" name="birthday">
                                 </div>
 
@@ -168,7 +207,9 @@ $user_id = $_SESSION['user_id'];
                             <div class="row g-2">
 
                                 <div class="mb-3 col-md-4">
-                                    <label for="inputGender" class="form-label">Gender <sup>*</sup></label>
+                                    <label for="inputGender" class="form-label">Gender <sup>*
+                                            <?php echo $gen ?? ''; ?>
+                                        </sup></label>
                                     <select id="inputGender" class="form-select" name="gender">
                                         <option>Choose</option>
                                         <option>Female</option>
@@ -181,19 +222,25 @@ $user_id = $_SESSION['user_id'];
 
                             <div class="mb-3">
                                 <label for="inputAddress" class="form-label">Full address (street, barangay, city)
-                                    <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required
-                                    placeholder="Enter Address" name="address">
+                                    <sup>*
+                                        <?php echo $address ?? ''; ?>
+                                    </sup></label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address"
+                                    name="address">
                             </div>
 
                             <h4>Contact Information</h4>
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email Address <sup>*</sup></label>
+                                    <label for="inputCity" class="form-label">Email Address <sup>*
+                                            <?php echo $emil ?? ''; ?>
+                                        </sup></label>
                                     <input type="text" class="form-control" id="inputCity" name="email">
                                 </div>
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
+                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*
+                                            <?php echo $phone ?? ''; ?>
+                                        </sup></label>
                                     <input type="text" class="form-control" id="inputBarangay" name="phone">
                                 </div>
                             </div>
@@ -208,23 +255,31 @@ $user_id = $_SESSION['user_id'];
 
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="FName" class="form-label">First Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="FName" required placeholder="First Name"
+                                    <label for="FName" class="form-label">First Name <sup>*
+                                            <?php echo $gfirstname ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="FName" placeholder="First Name"
                                         name="gfirstname">
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="MiddleName" class="form-label">Middle Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="MiddleName" required
-                                        placeholder="MiddleName" name="gmiddlename">
+                                    <label for="MiddleName" class="form-label">Middle Name <sup>*
+                                            <?php echo $gmiddlename ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="MiddleName" placeholder="MiddleName"
+                                        name="gmiddlename">
                                 </div>
                                 <div class="mb-3 col-md-6">
-                                    <label for="LName" class="form-label">Last Name <sup>*</sup></label>
-                                    <input type="text" class="form-control" id="LName" required placeholder="Last Name"
+                                    <label for="LName" class="form-label">Last Name <sup>*
+                                            <?php echo $glastname ?? ''; ?>
+                                        </sup></label>
+                                    <input type="text" class="form-control" id="LName" placeholder="Last Name"
                                         name="glastname">
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="inputbday" class="form-label">Birthdate <sup>*</sup></label>
+                                    <label for="inputbday" class="form-label">Birthdate <sup>*
+                                            <?php echo $gbirthday ?? ''; ?>
+                                        </sup></label>
                                     <input type="date" class="form-control" id="inputbday" name="gbirthday">
                                 </div>
 
@@ -247,25 +302,35 @@ $user_id = $_SESSION['user_id'];
 
                             <div class="mb-3">
                                 <label for="inputAddress" class="form-label">Full address (street, barangay, city)
-                                    <sup>*</sup></label>
-                                <input type="text" class="form-control" id="inputAddress" required
-                                    placeholder="Enter Address" name="gaddress">
+                                    <sup>*
+                                        <?php echo $gaddress ?? ''; ?>
+                                    </sup></label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Enter Address"
+                                    name="gaddress">
                             </div>
 
                             <h4>Contact Information</h4>
                             <div class="row g-2">
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputCity" class="form-label">Email Address <sup>*</sup></label>
+                                    <label for="inputCity" class="form-label">Email Address <sup>*
+                                            <?php echo $gemail ?? ''; ?>
+                                        </sup></label>
                                     <input type="text" class="form-control" id="inputCity" name="gemail">
                                 </div>
                                 <div class="mb-3 col-md-5">
-                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*</sup></label>
+                                    <label for="inputBarangay" class="form-label">Phone Number <sup>*
+                                            <?php echo $gphoneNumber ?? ''; ?>
+                                        </sup></label>
                                     <input type="text" class="form-control" id="inputBarangay" name="gphoneNumber">
                                 </div>
                             </div>
                             <input type="submit" class="btn btn-primary" value="Create Account" name="submit"></input>
                         </form>
+
+
+
                         <div class="table-responsive">
+
                         </div> <!-- end table-responsive-->
 
                     </div> <!-- end card body-->

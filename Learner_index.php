@@ -1,3 +1,14 @@
+<?php
+session_start();
+$user_id = $_SESSION['user_id'];
+
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: Teacher_Login.php?Logout");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,7 +121,6 @@
                         </div>
                     </div>
                     <!-- end page title -->
-
                     <div class="row">
                         <div class="col-md-6 col-lg-4">
 
@@ -124,12 +134,6 @@
                                 </div> <!-- end card-body-->
                             </div> <!-- end card-->
                         </div>
-
-
-
-
-
-
                         <div class="col-md-6 col-lg-4">
 
                             <!-- Simple card -->
@@ -195,9 +199,6 @@
     <!-- demo app -->
     <script src="assets/js/pages/demo.dashboard-projects.js"></script>
     <!-- end demo js-->
-
-
-
 
 
 
