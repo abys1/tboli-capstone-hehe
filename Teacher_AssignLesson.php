@@ -154,40 +154,68 @@ $user_id = $_SESSION['user_id'];
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="customCheck2">
-                          <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                        </div>
-                      </td>
-                      <td>02000221026</td>
-                      <td class="table-user">
-                        <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
-                        <a href="javascript:void(0);" class="text-body fw-semibold">Paul J. Friend</a>
-                      </td>
-                      <td>
-                        <span class="fw-semibold"> 09/04/2001</span>
-                      </td>
-                      <td>male</td>
-                      <td>gensan city</td>
-                      <td>09217381873</td>
-                      <td>jvlaroco@gmail.com</td>
-                      <td>
-                        <a href="javascript:void(0);" class="action-icon">
-                          <i class="uil-eye"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="action-icon">
-                          <i class="mdi mdi-square-edit-outline"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="action-icon">
-                          <i class="mdi mdi-delete"></i>
-                        </a>
-                      </td>
-                      <td>
-                        <span class="badge bg-success">Active</span>
-                      </td>
-                    </tr>
+                  <?php 
+                  include 'dbcon.php';
+
+                  $sql = "SELECT tbl_userinfo.user_id, tbl_learner.learner_id, tbl_learner.level_id, tbl_user_level.level, tbl_userinfo.firstname,
+                  tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_userinfo.birthday, tbl_userinfo.gender, tbl_user_status.status,
+                  tbl_learner_id.lrn, tbl_address.address, tbl_usercredentials.contact, tbl_usercredentials.email
+                  FROM tbl_learner
+                  JOIN tbl_user_level ON tbl_learner.level_id = tbl_user_level.level_id
+                  JOIN tbl_userinfo ON tbl_learner.user_id = tbl_userinfo.user_id
+                  JOIN tbl_learner_id ON tbl_learner.learner_id = tbl_learner_id.learner_id
+                  JOIN tbl_user_status ON tbl_learner.status_id = tbl_user_status.status_id
+                  JOIN tbl_address ON tbl_learner.address_id = tbl_address.address_id
+                  JOIN tbl_usercredentials ON tbl_learner.usercredentials_id = tbl_usercredentials.usercredentials_id
+                  WHERE tbl_user_level.level = 'LEARNER' AND tbl_user_status.status = 1";
+
+                  $result = mysqli_query($conn,$sql);
+
+                  if($result && mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                      ?>
+                      <tr>
+                        <td>
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="customCheck2">
+                            <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                          </div>
+                        </td>
+                        <td><?php echo $row['lrn'] ?></td>
+                        <td class="table-user">
+                          <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                          <a href="javascript:void(0);" class="text-body fw-semibold"><?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname'] ?></a>
+                        </td>
+                        <td>
+                          <span class="fw-semibold"><?php echo $row['birthday']?></span>
+                        </td>
+                        <td><?php echo $row['gender'] ?></td>
+                        <td><?php echo $row['address'] ?></td>
+                        <td><?php echo $row['contact'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td>
+                          <a href="teacher_view_student.php?user_id=<?php echo $row['user_id'] ?>" class="action-icon">
+                            <i class="uil-eye"></i>
+                          </a>
+                        </td>
+                        <td>
+                          <?php
+                          if($row['status'] == 1){
+                            ?> 
+                            <span class="badge bg-success">Active</span>
+                            <?php
+                          } else {
+                            ?>
+                            <span class="badge bg-warning">Inactive</span>
+                            <?php
+                          }
+                          ?>
+                        </td>
+                      </tr>
+                      <?php
+                    }
+                  }
+                  ?>
                   </tbody>
                 </table>
               </div>
