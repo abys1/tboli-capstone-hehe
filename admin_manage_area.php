@@ -377,11 +377,49 @@ $user_id = $_SESSION['user_id'];
                         <th>ID</th>
                         <th>Area</th>
                         <th>Action</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                <?php
+                include 'dbcon.php';
+
+                $sql = "SELECT DISTINCT area_id, area FROM tbl_area";
+
+                $result = mysqli_query($conn, $sql);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="customCheck2">
+                                    <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="fw-semibold">
+                                    <?php echo $row['area_id'] ?>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="fw-semibold">
+                                    <?php echo $row['area'] ?>
+                                </span>
+                            </td>
+                            <td>
+                 
+                                        <a href="admin_teacher_deactivate.php?area_id=<?php echo $row['area_id'] ?>" class="decline">
+                                            <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                                        </a>
+                                        </td>
+                        </tr>
+                        <?php
+                    }
+                }
+                ?>
+
+                    <!-- <tr>
                         <td>
                             <div class="form-check form-checkbox-success">
                                 <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
@@ -446,7 +484,7 @@ $user_id = $_SESSION['user_id'];
                         <td>
                           <span class="badge bg-danger">Decline</span>
                         </td>
-                      </tr>
+                      </tr> -->
 
                  
                 </tbody>

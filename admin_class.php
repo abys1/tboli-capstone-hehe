@@ -377,78 +377,48 @@ $user_id = $_SESSION['user_id'];
                         <th>ID</th>
                         <th>Class/Section</th>
                         <th>Action</th>
-                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div class="form-check form-checkbox-success">
-                                <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor2">
-                                <label class="form-check-label" for="customCheckcolor2">Select</label>
-                            </div>
-                        </td>
-                        <td>001</td>
-                        <td>Grade 1</td>
-              
-                        <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-pencil"></i> </button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                <?php
+                include 'dbcon.php';
 
-</td>
+                $sql = "SELECT DISTINCT section_id, section FROM tbl_section";
 
+                $result = mysqli_query($conn, $sql);
 
-
-                        <td>
-                            <div>
-                                <span class="badge bg-success">Approved</span>
-                            </div>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor5">
-                            <label class="form-check-label" for="customCheckcolor5">Select</label>
-                          </div>
-                        </td>
-                        <td>0003</td>
-                        <td>Grade 5</td>
-
-                        <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-pencil"></i> </button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-
-</td>
-
-                        <td>
-                          <span class="badge bg-success">Approved</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-checkbox-success mb-2">
-                            <input type="checkbox" class="form-check-input customCheckbox" id="customCheckcolor6">
-                            <label class="form-check-label" for="customCheckcolor6">Select</label>
-                          </div>
-                        </td>
-                        <td>0004</td>
-                        <td>Grade 3</td>
-
-                        <td>
-    <button type="button" class="btn btn-info"><i class="mdi mdi-pencil"></i> </button>
-    <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
-
-</td>
-
-
-                        <td>
-                          <span class="badge bg-danger">Decline</span>
-                        </td>
-                      </tr>
-
-                 
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <tr>
+                            <td>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="customCheck2">
+                                    <label class="form-check-label" for="customCheck2">&nbsp;</label>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="fw-semibold">
+                                    <?php echo $row['section_id'] ?>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="fw-semibold">
+                                    <?php echo $row['section'] ?>
+                                </span>
+                            </td>
+                            <td>
+                            
+                                        <a href="admin_teacher_deactivate.php?section_id=<?php echo $row['section_id'] ?>" class="decline">
+                                            <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                                        </a>
+                                        </td>
+                            
+                        </tr>
+                        <?php
+                    }
+                }
+                ?>
                 </tbody>
             </table>
 

@@ -97,10 +97,22 @@
   </li>
 
   <li class="side-nav-item">
-    <a href="Teacher_AssignLesson.php" class="side-nav-link">
-      <i class="uil-user-plus"></i>
-      <span>Assign Lesson to Student</span>
+    <a data-bs-toggle="collapse" href="#sidebarAssign" aria-expanded="false" aria-controls="sidebarAssign"
+      class="side-nav-link">
+      <i class="uil-folder-plus"></i>
+      <span>Manage Assign</span>
+      <span class="menu-arrow"></span>
     </a>
+    <div class="collapse" id="sidebarAssign">
+      <ul class="side-nav-second-level">
+        <li>
+          <a href="Teacher_AssignClass.php">Assign Class to Student</a>
+        </li>
+        <li>
+          <a href="Teacher_AssignLesson.php">Assign Lesson to Student</a>
+        </li>
+      </ul>
+    </div>
   </li>
 
   <li class="side-nav-item">
