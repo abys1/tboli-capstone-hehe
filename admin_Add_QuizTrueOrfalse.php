@@ -317,8 +317,12 @@ $user_id = $_SESSION['user_id'];
                                         if ($result && mysqli_num_rows($result) > 0) {
                                             $row = mysqli_fetch_assoc($result);
                                             ?>
-                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                            <span class="account-user-name">
+                                                <?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?>
+                                            </span>
+                                            <span class="account-position">
+                                                <?php echo $row['level']; ?>
+                                            </span>
                                             <?php
                                         } else {
                                             echo "No records found in tbl_admin";
@@ -380,105 +384,243 @@ $user_id = $_SESSION['user_id'];
 
             </div> <!-- content -->
 
-            <div class="row justify-content-md-center mt-4">
-                <div class="card col-sm-10">
-                    <div class="card-body">
 
-
-
-                        <div class="row mb-4">
-
-                            <div class="col-sm-9">
-                                <label for="project-overview" class="form-label">Please select subject</label>
-                                <select class="form-control select2" data-toggle="select2">
-                                    <option>Select Category</option>
-                                    <option value="AZ">Literacy</option>
-                                    <option value="CO">Numeracy</option>
-                                </select>
-                            </div>
-
-                            <div class="col-sm-3 text-sm-end mt-3">
-                                <input type="button" class="btn btn-primary" value="Add Question">
-                            </div>
-
-                        </div>
-
-                        <form action="" method="POST">
-
-                            <div class="mb-3">
-                                <label for="simpleinput" class="form-label">Quiz Title</label>
-                                <input type="text" id="simpleinput" class="form-control">
-                            </div>
-
-                            <div class="mb-2">
-                                <label>Question #1</label>
-                            </div>
-
-                            <textarea class="form-control mb-3" name="" id="" cols="130" rows="5"
-                                placeholder="Enter your Questions here"></textarea>
-                            <div class="list-group"></div>
-
-
-                            <div class="list-group">
-                                <table class="table table-hover">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="form-check form-check-inline">
-                                                    <input type="radio" id="customRadio1" name="customRadio1"
-                                                        class="form-check-input">
-                                                    <label class="form-check-label" for="customRadio1">True</label>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="form-check form-check-inline">
-                                                    <input type="radio" id="customRadio2" name="customRadio1"
-                                                        class="form-check-input">
-                                                    <label class="form-check-label" for="customRadio2">False</label>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-
-                                <div class="row mt-4">
-                                    <div class="col-sm-6">
-                                        <input type="button" class="btn btn-primary" value="Create Quiz">
-                                    </div>
-
-                                </div>
-
-                        </form>
-
-
-
-
+            <div class="row">
+                <div class="card">
+                    <div class="card-header mb-3">
+                        <h4>Add Quiz</h4>
                     </div>
+                    <form action="teacher_add_quiz_trueorfalse.php?user_id=<?php echo $row['user_id'] ?>" method="POST"
+                        id="multiple_choice">
+                        <div class="mb-3 me-5 ms-4">
+                            <label for="simpleinput" class="form-label">Title</label>
+                            <input type="text" id="simpleinput" class="form-control" name="title">
+                            <div class="col-lg-3 me-4">
+                                <?php
+                                include 'dbcon.php';
 
+                                $sql = "SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.type, GROUP_CONCAT(DISTINCT tbl_lesson_files.status) AS status
+                                            FROM tbl_content
+                                            JOIN tbl_lesson ON tbl_lesson.lesson_id = tbl_content.lesson_id
+                                            JOIN tbl_lesson_files ON tbl_lesson_files.lesson_files_id = tbl_content.lesson_files_id
+                                            WHERE tbl_lesson_files.status = 1
+                                            GROUP BY tbl_lesson.name";
+
+                                $result = mysqli_query($conn, $sql);
+
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    // No need to fetch the first row here
+                                } else {
+                                    echo "No records found in tbl_admin";
+                                }
+                                ?>
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label">Select Lesson</label>
+                                    <select id="inputState" class="form-select" name="lesson">
+                                        <option selected disabled>Select Lesson</option>
+                                        <?php
+                                        if (mysqli_num_rows($result) > 0) {
+                                            while ($row = mysqli_fetch_assoc($result)) {
+                                                $lesson_id = $row['lesson_id'];
+                                                $name = $row['name'];
+                                                $type = $row['type'];
+                                                echo "<option value='$lesson_id'>$type: $name</option>";
+                                            }
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="ms-4 mt-3 mb-3">Options</h3>
+                        <div class="row">
+                            <div class="col-lg-2 ms-4">
+                                <div class="mb-3">
+                                    <label for="Max Score" class="form-label">Max Score</label>
+                                    <input type="text" id="Max Score" class="form-control" name="max">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="mb-3 position-relative" id="datepicker1">
+                                    <label class="form-label">Date Start</label>
+                                    <input type="datetime-local" class="form-control" name="date_start">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="mb-3 position-relative" id="datepicker1">
+                                    <label class="form-label">Due</label>
+                                    <input type="datetime-local" class="form-control" name="due">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 ms-4 mt-4">
+                                <div class="mb-3 p-0">
+                                    <input type="checkbox" class="form-check-input" id="customCheck1" name="allow">
+                                    <label for="customCheck1" class="form-check-label">Allow Late?</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="mb-3">
+                                    <label for="Grading" class="form-label">Grading</label>
+                                    <select id="Grading" class="form-select" name="grading">
+                                        <option selected disabled>Select grading options</option>
+                                        <option>Latest Grade</option>
+                                        <option>Highest Grade</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="mb-3">
+                                    <label for="inputState" class="form-label">Grading Score</label>
+                                    <select id="inputState" class="form-select" name="grading_score">
+                                        <option selected disabled>Select score options</option>
+                                        <option value="best score">Best Score</option>
+                                        <option value="latest score">Latest Score</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row me-5 ms-4">
+                            <h3 class="mt-4 mb-4">Instructions</h3>
+                            <div class="instructions" id="snow-editor" style="height: 300px;" name="instructions"></div>
+                        </div>
+                        <div class="row justify-content-md-center mt-4">
+                            <div class="card col-sm-11">
+                                <div class="card-body">
+                                    <div class="question-list">
+                                        <div class="question-container mb-4">
+                                            <label>Question #1</label>
+                                            <textarea class="form-control mb-3" name="questions[]" cols="130" rows="5"
+                                                placeholder="Enter your Questions here" required></textarea>
+                                            <table class="table table-hover">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-check-inline">
+                                                                <input type="radio" id="customRadio1a"
+                                                                    name="correct_choice[0]" class="form-check-input"
+                                                                    value="true">
+                                                                <label class="form-check-label"
+                                                                    for="customRadio1a">True</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-check-inline">
+                                                                <input type="radio" id="customRadio1b"
+                                                                    name="correct_choice[0]" class="form-check-input"
+                                                                    value="false">
+                                                                <label class="form-check-label"
+                                                                    for="customRadio1b">False</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-sm-6">
+                                            <input type="submit" class="btn btn-primary" value="Create Quiz"
+                                                name="createquiz">
+                                        </div>
+                                        <div class="col-sm-6 text-sm-end">
+                                            <input type="button" class="btn btn-primary add-question-btn"
+                                                value="Add Question" name="addquestion">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <!-- JavaScript to add more questions dynamically -->
+            <script>
+                var questionCounter = 1;
 
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+Ud0QD2JyKn2tv8U+X9s70gcS4lSAwiGgFA1fJp6jRX4UX5"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-pzjw8+ua9bmDXzKrQl/Mv6D5stvOBbhddb5y3p4e9fJ8D4w5erhPvj6M2ybp7l3b"
-            crossorigin="anonymous"></script>
-        <script>
-            $(document).ready(function () {
-                $('#add-lesson-btn').click(function () {
-                    $('#add-quiz-modal').modal('show');
+                // Function to add new question fields
+                function addQuestionField() {
+                    questionCounter++;
+                    var questionDiv = document.createElement('div');
+                    questionDiv.classList.add('question-container', 'mb-4');
+                    questionDiv.innerHTML = `
+                    <label>Question #${questionCounter}</label>
+                    <textarea class="form-control mb-3" name="questions[]" cols="130" rows="5" placeholder="Enter your Question here" required></textarea>
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" id="customRadio${questionCounter}a" name="correct_choice[${questionCounter - 1}]" class="form-check-input" value="true">
+                                        <label class="form-check-label" for="customRadio${questionCounter}a">True</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-check-inline">
+                                        <input type="radio" id="customRadio${questionCounter}b" name="correct_choice[${questionCounter - 1}]" class="form-check-input" value="false">
+                                        <label class="form-check-label" for="customRadio${questionCounter}b">False</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+                    var questionList = document.querySelector('.question-list');
+                    questionList.appendChild(questionDiv);
+                }
+
+                // Add event listener for the "Add Question" button
+                var addQuestionBtn = document.querySelector('.add-question-btn');
+                addQuestionBtn.addEventListener('click', addQuestionField);
+            </script>
+
+            <script>
+                $(document).ready(function () {
+                    $("#multiple_choice").on("submit", function () {
+                        var hvalue = $('.instructions').text();
+                        $(this).append("<input type='hidden' name='instructions' value=' " + hvalue + " '/>");
+                    });
                 });
+            </script>
+
+
+
+            <!-- end content here -->
+        </div>
+        <!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                <p class="mb-0">...</p>
+                            </div> -->
+    </div> <!-- end tab-content-->
+    </div> <!-- end col-->
+    </div>
+    <!-- end row-->
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Ud0QD2JyKn2tv8U+X9s70gcS4lSAwiGgFA1fJp6jRX4UX5"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8+ua9bmDXzKrQl/Mv6D5stvOBbhddb5y3p4e9fJ8D4w5erhPvj6M2ybp7l3b"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#add-lesson-btn').click(function () {
+                $('#add-quiz-modal').modal('show');
             });
-        </script>
+        });
+    </script>
 
 
 
