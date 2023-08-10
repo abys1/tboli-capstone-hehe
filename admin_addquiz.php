@@ -267,15 +267,3 @@
         });
     });
 </script>
-
-
-
-<!-- end content here -->
-</div>
-<!-- <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <p class="mb-0">...</p>
-                            </div> -->
-</div> <!-- end tab-content-->
-</div> <!-- end col-->
-</div>
-<!-- end row-->

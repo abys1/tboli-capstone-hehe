@@ -468,7 +468,7 @@ $user_id = $_SESSION['user_id'];
                 </div>
 
                 <!-- Settings -->
-                <h5 class="mt-3">Color Scheme</h5>
+                <!-- <h5 class="mt-3">Color Scheme</h5>
                 <hr class="mt-1">
 
                 <div class="form-check form-switch mb-1">
@@ -480,10 +480,10 @@ $user_id = $_SESSION['user_id'];
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
                     <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
                 </div>
-   
+    -->
 
                 <!-- Width -->
-                <h5 class="mt-4">Width</h5>
+                <!-- <h5 class="mt-4">Width</h5>
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked="">
@@ -493,11 +493,11 @@ $user_id = $_SESSION['user_id'];
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
                     <label class="form-check-label" for="boxed-check">Boxed</label>
-                </div>
+                </div> -->
     
 
                 <!-- Left Sidebar-->
-                <h5 class="mt-4">Left Sidebar</h5>
+                <!-- <h5 class="mt-4">Left Sidebar</h5>
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
@@ -534,12 +534,13 @@ $user_id = $_SESSION['user_id'];
         
                     <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
                 </div>
-            </div> <!-- end padding-->
+            </div>  -->
+            <!-- end padding-->
 
-        </div></div></div></div><div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+        <!-- </div></div></div></div><div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
     </div>
 
-    <div class="rightbar-overlay"></div>
+    <div class="rightbar-overlay"></div> -->
     <!-- /End-bar -->
 
 

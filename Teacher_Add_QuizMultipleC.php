@@ -119,7 +119,8 @@ $user_id = $_SESSION['user_id'];
                     <div class="card-header mb-3">
                         <h4>Add Quiz</h4>
                     </div>
-                    <form action="teacher_add_quiz_multiplec.php?user_id=<?php echo $row['user_id']?>" method="POST" id="multiple_choice">
+                    <form action="teacher_add_quiz_multiplec.php?user_id=<?php echo $row['user_id'] ?>" method="POST"
+                        id="multiple_choice">
                         <div class="mb-3 me-5 ms-4">
                             <label for="simpleinput" class="form-label">Title</label>
                             <input type="text" id="simpleinput" class="form-control" name="title">
@@ -207,15 +208,15 @@ $user_id = $_SESSION['user_id'];
                                 </div>
                             </div>
                             <div class="col-lg-2">
-                                    <div class="mb-3" style="width: 170px">
-                                        <label for="attempts" class="form-label">Attempts</label>
-                                        <select id="attempts" class="form-select" name="attempts">
-                                            <option selected disabled>Select attempts</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </select>
-                                    </div>
+                                <div class="mb-3" style="width: 170px">
+                                    <label for="attempts" class="form-label">Attempts</label>
+                                    <select id="attempts" class="form-select" name="attempts">
+                                        <option selected disabled>Select attempts</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="row me-5 ms-4">
@@ -228,50 +229,67 @@ $user_id = $_SESSION['user_id'];
                                     <div class="question-list">
                                         <div class="question-container mb-4">
                                             <label>Question #1</label>
-                                            <textarea class="form-control mb-3" name="question[]" cols="130" rows="5" placeholder="Enter your Questions here" required></textarea>
+                                            <textarea class="form-control mb-3" name="question[]" cols="130" rows="5"
+                                                placeholder="Enter your Questions here" required></textarea>
                                             <table class="table table-hover">
                                                 <tbody>
                                                     <tr>
                                                         <td>
                                                             <div class="form-check form-check-inline">
-                                                                <input type="radio" id="customRadio1a" name="choices[0][correct]" class="form-check-input" value="a">
-                                                                <label class="form-check-label" for="customRadio1a">a</label>
+                                                                <input type="radio" id="customRadio1a"
+                                                                    name="choices[0][correct]" class="form-check-input"
+                                                                    value="a">
+                                                                <label class="form-check-label"
+                                                                    for="customRadio1a">a</label>
                                                             </div>
                                                             <div>
-                                                                <input type="text" class="form-control" name="choices[0][a]" required>
+                                                                <input type="text" class="form-control"
+                                                                    name="choices[0][a]" required>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <div class="form-check form-check-inline">
-                                                                <input type="radio" id="customRadio1b" name="choices[0][correct]" class="form-check-input" value="b">
-                                                                <label class="form-check-label" for="customRadio1b">b</label>
+                                                                <input type="radio" id="customRadio1b"
+                                                                    name="choices[0][correct]" class="form-check-input"
+                                                                    value="b">
+                                                                <label class="form-check-label"
+                                                                    for="customRadio1b">b</label>
                                                             </div>
                                                             <div>
-                                                                <input type="text" class="form-control" name="choices[0][b]" required>
+                                                                <input type="text" class="form-control"
+                                                                    name="choices[0][b]" required>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <div class="form-check form-check-inline">
-                                                                <input type="radio" id="customRadio1c" name="choices[0][correct]" class="form-check-input" value="c">
-                                                                <label class="form-check-label" for="customRadio1c">c</label>
+                                                                <input type="radio" id="customRadio1c"
+                                                                    name="choices[0][correct]" class="form-check-input"
+                                                                    value="c">
+                                                                <label class="form-check-label"
+                                                                    for="customRadio1c">c</label>
                                                             </div>
                                                             <div>
-                                                                <input type="text" class="form-control" name="choices[0][c]" required>
+                                                                <input type="text" class="form-control"
+                                                                    name="choices[0][c]" required>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
                                                             <div class="form-check form-check-inline">
-                                                                <input type="radio" id="customRadio1d" name="choices[0][correct]" class="form-check-input" value="d">
-                                                                <label class="form-check-label" for="customRadio1d">d</label>
+                                                                <input type="radio" id="customRadio1d"
+                                                                    name="choices[0][correct]" class="form-check-input"
+                                                                    value="d">
+                                                                <label class="form-check-label"
+                                                                    for="customRadio1d">d</label>
                                                             </div>
                                                             <div>
-                                                                <input type="text" class="form-control" name="choices[0][d]" required>
+                                                                <input type="text" class="form-control"
+                                                                    name="choices[0][d]" required>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -281,17 +299,18 @@ $user_id = $_SESSION['user_id'];
                                     </div>
                                     <div class="row mt-4">
                                         <div class="col-sm-6">
-                                            <input type="submit" class="btn btn-primary" value="Create Quiz" name="createquiz">
+                                            <input type="submit" class="btn btn-primary" value="Create Quiz"
+                                                name="createquiz">
                                         </div>
                                         <div class="col-sm-6 text-sm-end">
-                                            <input type="button" class="btn btn-primary add-question-btn" value="Add Question"
-                                                name="addquestion">
+                                            <input type="button" class="btn btn-primary add-question-btn"
+                                                value="Add Question" name="addquestion">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                </div>
                 </form>
             </div>
         </div>
@@ -358,15 +377,15 @@ $user_id = $_SESSION['user_id'];
                     </table>
                 `;
 
-                questionList.appendChild(questionContainer);
-                questionNumber++;
+                    questionList.appendChild(questionContainer);
+                    questionNumber++;
+                });
             });
-        });
-    </script>
+        </script>
 
 
         <script>
-            $(document).ready(function(){
+            $(document).ready(function () {
                 $("#multiple_choice").on("submit", function () {
                     var hvalue = $('.instructions').text();
                     $(this).append("<input type='hidden' name='instructions' value=' " + hvalue + " '/>");
@@ -390,7 +409,7 @@ $user_id = $_SESSION['user_id'];
 
 
     <!-- Footer Start -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
@@ -405,7 +424,7 @@ $user_id = $_SESSION['user_id'];
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!-- end Footer -->
 
     </div>
@@ -418,9 +437,9 @@ $user_id = $_SESSION['user_id'];
     </div>
     <!-- END wrapper -->
     <script>
-    $(document).ready(function() {
-        $('#inputState').select2();
-    });
+        $(document).ready(function () {
+            $('#inputState').select2();
+        });
     </script>
 
 
