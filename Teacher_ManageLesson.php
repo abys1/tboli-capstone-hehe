@@ -162,7 +162,7 @@ $user_id = $_SESSION['user_id'];
                                                 <div class="mb-3">
                                                     <label for="emailaddress" class="form-label">Lesson
                                                         Objectives</label>
-                                                    <input class="form-control" type="email">
+                                                    <input class="form-control" type="text">
                                                 </div>
 
                                                 <div class="mb-3">

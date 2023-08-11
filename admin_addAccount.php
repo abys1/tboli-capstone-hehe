@@ -282,35 +282,35 @@ $user_id = $_SESSION['user_id'];
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                <?php
-                                include 'dbcon.php';
+                                    <?php
+                                    include 'dbcon.php';
 
-                                if (isset($_SESSION['user_id'])) {
-                                    $user_id = $_SESSION['user_id'];
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
 
-                                    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_admin
-                                                JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                    FROM tbl_admin
+                                                    JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+                                                    JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+                                                    WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
+                                                    LIMIT 1;";
 
-                                    $result = mysqli_query($conn, $sql);
+                                        $result = mysqli_query($conn, $sql);
 
-                                    if ($result && mysqli_num_rows($result) > 0) {
-                                        $row = mysqli_fetch_assoc($result);
-
-
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                            ?>
+                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                            <?php
+                                        } else {
+                                            echo "No records found in tbl_admin";
+                                        }
                                     } else {
-                                        echo "No records found in tbl_admin";
+                                        echo "No user ID provided";
                                     }
-                                } else {
-                                    echo "No user ID provided";
-                                }
-                                ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level']; ?></span>
-                                    </span>
+                                    ?>
+                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -468,7 +468,7 @@ $user_id = $_SESSION['user_id'];
                 </div>
 
                 <!-- Settings -->
-                <h5 class="mt-3">Color Scheme</h5>
+                <!-- <h5 class="mt-3">Color Scheme</h5>
                 <hr class="mt-1">
 
                 <div class="form-check form-switch mb-1">
@@ -480,10 +480,10 @@ $user_id = $_SESSION['user_id'];
                     <input class="form-check-input" type="checkbox" name="color-scheme-mode" value="dark" id="dark-mode-check">
                     <label class="form-check-label" for="dark-mode-check">Dark Mode</label>
                 </div>
-   
+    -->
 
                 <!-- Width -->
-                <h5 class="mt-4">Width</h5>
+                <!-- <h5 class="mt-4">Width</h5>
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="fluid" id="fluid-check" checked="">
@@ -493,11 +493,11 @@ $user_id = $_SESSION['user_id'];
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="width" value="boxed" id="boxed-check">
                     <label class="form-check-label" for="boxed-check">Boxed</label>
-                </div>
+                </div> -->
     
 
                 <!-- Left Sidebar-->
-                <h5 class="mt-4">Left Sidebar</h5>
+                <!-- <h5 class="mt-4">Left Sidebar</h5>
                 <hr class="mt-1">
                 <div class="form-check form-switch mb-1">
                     <input class="form-check-input" type="checkbox" name="theme" value="default" id="default-check">
@@ -534,12 +534,13 @@ $user_id = $_SESSION['user_id'];
         
                     <a href="../../product/hyper-responsive-admin-dashboard-template/index.htm" class="btn btn-danger mt-3" target="_blank"><i class="mdi mdi-basket me-1"></i> Purchase Now</a>
                 </div>
-            </div> <!-- end padding-->
+            </div>  -->
+            <!-- end padding-->
 
-        </div></div></div></div><div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+        <!-- </div></div></div></div><div class="simplebar-placeholder" style="width: 280px; height: 755px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 671px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
     </div>
 
-    <div class="rightbar-overlay"></div>
+    <div class="rightbar-overlay"></div> -->
     <!-- /End-bar -->
 
 

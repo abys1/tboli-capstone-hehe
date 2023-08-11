@@ -189,30 +189,12 @@ $user_id = $_SESSION['user_id'];
                                 ?>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                                <!-- item-->
-                                <div class=" dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">HI LEARNER</h6>
-                                </div>
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="mdi mdi-account-circle me-1"></i>
                                     <span>My Account</span>
                                 </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-account-edit me-1"></i>
-                                    <span>Settings</span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <i class="mdi mdi-lifebuoy me-1"></i>
-                                    <span>Support</span>
-                                </a>
-
-
                                 <!-- item-->
                                 <a href="learner_login.php?logout=true" class="dropdown-item notify-item">
                                     <i class="mdi mdi-logout me-1"></i>
@@ -320,10 +302,10 @@ $user_id = $_SESSION['user_id'];
                                                         <div class="collapse" id="<?php echo $collapseID; ?>" style="">
                                                         <?php
                                                         $lesson_id = $row['lesson_id'];
-                                                        $lesson = "SELECT tbl_lesson.lesson_id, tbl_lesson_files.lesson
+                                                        $lesson = "SELECT tbl_lesson.lesson_id, tbl_lesson_files.lesson, tbl_lesson_files.status
                                                                             FROM tbl_lesson
                                                                             LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_id
-                                                                            WHERE tbl_lesson_files.lesson_id = $lesson_id";
+                                                                            WHERE tbl_lesson_files.lesson_id = $lesson_id AND tbl_lesson_files.status = 1";
 
                                                         $quiz = "SELECT DISTINCT tbl_lesson.lesson_id, tbl_quiz_options.quiz_options_id, tbl_quiz_options.title
                                                                             FROM tbl_lesson

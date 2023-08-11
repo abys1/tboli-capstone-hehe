@@ -271,11 +271,11 @@ $user_id = $_SESSION['user_id'];
                                         $result = mysqli_query($conn, $sql);
 
                                         if ($result && mysqli_num_rows($result) > 0) {
-                                            $questionNumber = 1; // Initialize the question number counter for multiple-choice questions
+                                            $questionNumber = 1; 
                                             while ($row = mysqli_fetch_assoc($result)) {
                                                 ?>
                                                 <div class="card card-body mb-0">
-                                                    <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> <!-- Display the question number -->
+                                                    <h5 class="card-title">Question <?php echo $questionNumber; ?></h5> 
                                                     <p class="mt-2"><?php echo $row['question'] ?></p>
                                                     <div class="list-group">
                                                         <table class="table table-hover">
@@ -283,7 +283,7 @@ $user_id = $_SESSION['user_id'];
                                                                 <tr>
                                                                     <td>
                                                                         <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input" required>
                                                                             <label class="form-check-label" for="customRadio1"><?php echo $row['choiceA'] ?></label>
                                                                         </div>
                                                                     </td>
@@ -291,7 +291,7 @@ $user_id = $_SESSION['user_id'];
                                                                 <tr>
                                                                     <td>
                                                                         <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input" required>
                                                                             <label class="form-check-label" for="customRadio2"><?php echo $row['choiceB'] ?></label>
                                                                         </div>
                                                                     </td>
@@ -299,7 +299,7 @@ $user_id = $_SESSION['user_id'];
                                                                 <tr>
                                                                     <td>
                                                                         <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio3" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <input type="radio" id="customRadio3" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input" required>
                                                                             <label class="form-check-label" for="customRadio3"><?php echo $row['choiceC'] ?></label>
                                                                         </div>
                                                                     </td>
@@ -307,7 +307,7 @@ $user_id = $_SESSION['user_id'];
                                                                 <tr>
                                                                     <td>
                                                                         <div class="form-check form-check-inline">
-                                                                            <input type="radio" id="customRadio4" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                            <input type="radio" id="customRadio4" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input" required>
                                                                             <label class="form-check-label" for="customRadio4"><?php echo $row['choiceD'] ?></label>
                                                                         </div>
                                                                     </td>
@@ -341,7 +341,7 @@ $user_id = $_SESSION['user_id'];
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-check form-check-inline">
-                                                                                <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                                <input type="radio" id="customRadio1" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input" required>
                                                                                 <label class="form-check-label" for="customRadio1">True</label>
                                                                             </div>
                                                                         </td>
@@ -349,7 +349,7 @@ $user_id = $_SESSION['user_id'];
                                                                     <tr>
                                                                         <td>
                                                                             <div class="form-check form-check-inline">
-                                                                                <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input">
+                                                                                <input type="radio" id="customRadio2" name="customRadio<?php echo $questionNumber; ?>" class="form-check-input" required>
                                                                                 <label class="form-check-label" for="customRadio2">False</label>
                                                                             </div>
                                                                         </td>

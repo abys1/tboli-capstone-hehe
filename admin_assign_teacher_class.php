@@ -305,35 +305,35 @@ if (isset($_GET['logout'])) {
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
                                 <span>
-                                <?php
-                                include 'dbcon.php';
+                                    <?php
+                                    include 'dbcon.php';
 
-                                if (isset($_SESSION['user_id'])) {
-                                    $user_id = $_SESSION['user_id'];
+                                    if (isset($_SESSION['user_id'])) {
+                                        $user_id = $_SESSION['user_id'];
 
-                                    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
-                                                FROM tbl_admin
-                                                JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-                                                JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-                                                WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
-                                                LIMIT 1;";
+                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                                    FROM tbl_admin
+                                                    JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
+                                                    JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
+                                                    WHERE tbl_user_level.level = 'ADMIN' AND tbl_userinfo.user_id = '$user_id'
+                                                    LIMIT 1;";
 
-                                    $result = mysqli_query($conn, $sql);
+                                        $result = mysqli_query($conn, $sql);
 
-                                    if ($result && mysqli_num_rows($result) > 0) {
-                                        $row = mysqli_fetch_assoc($result);
-
-
+                                        if ($result && mysqli_num_rows($result) > 0) {
+                                            $row = mysqli_fetch_assoc($result);
+                                            ?>
+                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                            <?php
+                                        } else {
+                                            echo "No records found in tbl_admin";
+                                        }
                                     } else {
-                                        echo "No records found in tbl_admin";
+                                        echo "No user ID provided";
                                     }
-                                } else {
-                                    echo "No user ID provided";
-                                }
-                                ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level']; ?></span>
-                                    </span>
+                                    ?>
+                                </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
@@ -370,7 +370,7 @@ if (isset($_GET['logout'])) {
               <div class="card-body">
                 <div class="row mb-2">
                   <div class="col-sm-4">
-                    <!-- Single Select -->
+                 
                     <select class="form-control select2" data-toggle="select2">
                       <option>Select</option>
                       <option value="AK">Literacy</option>
@@ -395,28 +395,87 @@ if (isset($_GET['logout'])) {
                           </div>
                         </th>
                         <th>Teacher Name</th>
-                        <th>Full Address</th>
-                        <th>Email</th>
+                        <th>Teacher ID</th>
                         <th>Class/Section</th>
                         <th>Action</th>
                         <th>Status</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          <div class="form-check">
+
+                    <?php
+                    include 'dbcon.php';
+
+                    $sql = "SELECT tbl_teachers.teacher_id, tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname,
+                    tbl_usercredentials.email, tbl_usercredentials.contact, tbl_user_level.level, tbl_user_status.status
+                FROM tbl_teachers
+                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                JOIN tbl_usercredentials ON tbl_teachers.credentials_id = tbl_usercredentials.usercredentials_id
+                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                JOIN tbl_user_status ON tbl_teachers.status_id = tbl_user_status.status_id
+                WHERE tbl_user_level.level = 'TEACHER' AND tbl_user_status.status = 1";
+
+                    $result = mysqli_query($conn, $sql);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            ?>
+                            <tr>
+                             <td>
+                            <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="customCheck2">
                             <label class="form-check-label" for="customCheck2">&nbsp;</label>
-                          </div>
-                        </td>
+                             </div>
+                             </td>
+
+                                                               
+                           <td class="table-user">
+                           <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
+                           <a href="javascript:void(0);" class="text-body fw-semibold">
+                           <?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname'] ?>
+                           </a>
+                           </td>
+                           <td>
+                           <?php echo $row['teacher_id'] ?>
+                           </td>
+                           <td>
+                            <!-- <span class="fw-semibold">
+                  <?php echo $row['birthday'] ?>
+                  </span> -->
+                            </td>
+
+                            <td>
+                                          <a href="admin_edit_teacher_acc.php?user_id=<?php echo $row['user_id'] ?>">
+                                              <button type="button" class="btn btn-primary"><i class="mdi mdi-pencil"></i> </button>
+                                          </a>
+                                          <a href="admin_teacher_deactivate.php?teacher_id=<?php echo $row['teacher_id'] ?>" class="decline">
+                                              <button type="button" class="btn btn-danger"><i class="mdi mdi-archive"></i> </button>
+                                          </a>
+                                          </td>
+                            <td>
+                            <?php
+                            if ($row['status'] == 1) {
+                                ?>
+                                <span class="badge bg-success">Active</span>
+                                <?php
+                            } else {
+                                ?>
+                                    <span class="badge bg-warning">Inactive</span>
+                                    <?php
+                            }
+                            ?>
+                            </td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    ?>
  
-                        <td class="table-user">
+                        <!-- <td class="table-user">
                           <img src="assets/images/users/avatar-4.jpg" alt="table-user" class="me-2 rounded-circle">
                           <a href="javascript:void(0);" class="text-body fw-semibold">Paul J. Friend</a>
                         </td>
                         <td>gensan city</td>
-                        <td>jvlaroco@gmail.com</td>
                         <td>Grade 4</td>
                         <td>
                           <a href="javascript:void(0);" class="action-icon">
@@ -432,7 +491,7 @@ if (isset($_GET['logout'])) {
                         <td>
                           <span class="badge bg-success">Active</span>
                         </td>
-                      </tr>
+                      </tr> -->
                     </tbody>
                   </table>
                 </div>
