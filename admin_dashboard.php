@@ -318,20 +318,21 @@ if (isset($_GET['logout'])) {
 
                                         $result = mysqli_query($conn, $sql);
 
-                                        if ($result && mysqli_num_rows($result) > 0) {
-                                            $row = mysqli_fetch_assoc($result);
-                                            ?>
-                                            <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                    if ($result && mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result);
+                                        ?>
+                                           <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
                                             <span class="account-position"><?php echo $row['level']; ?></span>
-                                            <?php
-                                        } else {
-                                            echo "No records found in tbl_admin";
-                                        }
+                                        <?php
                                     } else {
-                                        echo "No user ID provided";
+                                        echo "No records found in tbl_admin";
                                     }
-                                    ?>
-                                </span>
+                                } else {
+                                    echo "No user ID provided";
+                                }
+                                ?>
+                                 
+                                    </span>
                             </a>
                             <div
                                 class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
