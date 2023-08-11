@@ -320,8 +320,10 @@ if (isset($_GET['logout'])) {
 
                                     if ($result && mysqli_num_rows($result) > 0) {
                                         $row = mysqli_fetch_assoc($result);
-
-
+                                        ?>
+                                           <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
+                                            <span class="account-position"><?php echo $row['level']; ?></span>
+                                        <?php
                                     } else {
                                         echo "No records found in tbl_admin";
                                     }
@@ -329,8 +331,7 @@ if (isset($_GET['logout'])) {
                                     echo "No user ID provided";
                                 }
                                 ?>
-                                    <span class="account-user-name"><?php echo $row['firstname'] . ' ' . $row['lastname'] . ' ' . $row['lastname']; ?></span>
-                                    <span class="account-position"><?php echo $row['level']; ?></span>
+                                 
                                     </span>
                             </a>
                             <div
