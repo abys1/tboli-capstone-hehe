@@ -21,6 +21,13 @@
         include 'dbcon.php';
 
         if (isset($_POST['btnAdd'])) {
+            // Determine the next available admin_auto_id
+            $result = $conn->query("SELECT MAX(SUBSTRING(admin_auto_id, 3)) AS max_id FROM tbl_admin");
+            $row = $result->fetch_assoc();
+            $next_id = intval($row['max_id']) + 1;
+            $admin_auto_id = 'ad' . sprintf('%03d', $next_id); // Format ID with leading zeros
+        
+            // Collect form data
             $firstname = $_POST['firstname'];
             $middlename = $_POST['middlename'];
             $lastname = $_POST['lastname'];
@@ -29,35 +36,42 @@
             $email = $_POST['email'];
             $contact = $_POST['phone'];
             $address = $_POST['address'];
-            $password = $lastname . $birthday;
+            $password = $lastname . $gender;
             $encrypted = password_hash($password, PASSWORD_DEFAULT);
 
+            // Insert data into tbl_userinfo
             $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday', '$gender')";
-
             if ($conn->query($sql) === TRUE) {
                 $user_info_id = $conn->insert_id;
-                $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$contact')";
 
+                // Insert data into tbl_usercredentials
+                $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$contact')";
                 if ($conn->query($sql) === TRUE) {
                     $credentials_id = $conn->insert_id;
-                    $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
 
+                    // Insert data into tbl_address
+                    $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
                     if ($conn->query($sql) === TRUE) {
                         $address_id = $conn->insert_id;
-                        $sql = "INSERT INTO tbl_user_level (level) VALUES ('ADMIN')";
 
+                        // Insert data into tbl_user_level
+                        $sql = "INSERT INTO tbl_user_level (level) VALUES ('ADMIN')";
                         if ($conn->query($sql) === TRUE) {
                             $level_id = $conn->insert_id;
-                            $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
 
+                            // Insert data into tbl_user_status
+                            $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
                             if ($conn->query($sql) === TRUE) {
                                 $status_id = $conn->insert_id;
-                                $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
 
+                                // Insert data into tbl_accounts
+                                $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
                                 if ($conn->query($sql) === TRUE) {
                                     $account_id = $conn->insert_id;
-                                    $sql = "INSERT INTO tbl_admin (user_id, credentials_id, address_id, level_id, status_id, account_id) VALUES ('$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id')";
 
+                                    // Insert data into tbl_admin with generated admin_auto_id
+                                    $sql = "INSERT INTO tbl_admin (admin_auto_id, user_id, credentials_id, address_id, level_id, status_id, account_id) 
+                                    VALUES ('$admin_auto_id', '$user_info_id', '$credentials_id', '$address_id', '$level_id', '$status_id', '$account_id')";
                                     if ($conn->query($sql) === TRUE) {
                                         header("Location:admin_addAccount.php?msg=Account added successfully");
                                         exit();
@@ -70,6 +84,7 @@
             }
         }
         ?>
+
         <form action="" method="POST">
             <div class="wrapper rounded bg-white">
                 <div class="h3">Add Admin</div>

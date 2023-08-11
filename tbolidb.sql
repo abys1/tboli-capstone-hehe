@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2023 at 06:37 PM
+-- Generation Time: Aug 10, 2023 at 07:09 PM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -66,7 +66,18 @@ INSERT INTO `tbl_accounts` (`account_id`, `email`, `password`) VALUES
 (14, '2231', '$2y$10$ED5.yCWhLG8sSaVrOBvyU.aGOy6.2gujB2MHN/ISZ7mwEMJglE58C'),
 (15, '2222', '$2y$10$9UoUNZw.hFfxTgUDv/V21.gXWF0TxeUBjM.Pqnkk96vfsMIn7p/PS'),
 (16, '1111', '$2y$10$l5R1njg/4C4kCUnvXBlgU.1ZxNQYNIzlDfSJDLSkZ5vt2o6bYIDS.'),
-(17, 'mynftacc269@gmail.com', '$2y$10$vrZZ43PS2GWs3D6TZl.pDerUPitSa2wTZSqTwE0mjZkgW3CtGQ.Ym');
+(17, 'mynftacc269@gmail.com', '$2y$10$vrZZ43PS2GWs3D6TZl.pDerUPitSa2wTZSqTwE0mjZkgW3CtGQ.Ym'),
+(26, 'pink@gmail.com', '$2y$10$YesJ5ps5u2h6HMy9LBYYO.OkBFrsFtWLPZwWThwB4sT/G0Gta5AGK'),
+(27, '09352034159', '$2y$10$OYiCQVM4k.jXEdAWNGGHhubd5Jbt9ydPAvAIrT3QA3glxm0kggR4G'),
+(28, 'pink@gmail.com', '$2y$10$SCAQ187xpAtARNjp23.9E.sEu5ZtAyG7BF8hPV0xBIPdR9To0mdoy'),
+(29, 'pink@gmail.com', '$2y$10$B4mRrZdcvqEmhJRH4Ey5Tu57s064xccUcJ4Ep.Mwmggx70aP3m9u6'),
+(30, 'lawyerpink@gmail.com', '$2y$10$lgx7tIxlHhMwjluk/J8C5.kXqz0adahgKVoxmJqCUYnvdAN6vAiq6'),
+(31, 'pink@gmail.com', '$2y$10$8r.IbFRxZ/jYsGr9twPLLeDScttDHThuVSH1vd7Yjd6q7KV/C3W.O'),
+(32, '', '$2y$10$zGVN/Jtq81oJOb0.qLpYLu6e4O2sRxgIHDUx14l7OkB.YFELUd9Dq'),
+(33, 'red@gmail.com', '$2y$10$1o/ox1Hsts3iaFt.zPDEH.MLDsXe5JqCMyRA/VGKj7ZMNpTboyqU.'),
+(34, 'hakdog@gmail.com', '$2y$10$DOiDuzd67yuAxBURrVPKg.bnW9hnnhMtBwJqJEcJTze5.WpU5EggC'),
+(35, 'hakdog@gmail.com', '$2y$10$SErg0z1YMqEQNflvIZ9Msu6zXzF7pydfaeA.m0X6AZP6RhG0BNSP2'),
+(36, 'pink@gmail.com', '$2y$10$nmmVk0Z93oj6ZDiyXRudLuB2V5nU9QGbfGy2tswN9BZnb7I/2iPs6');
 
 -- --------------------------------------------------------
 
@@ -100,7 +111,30 @@ INSERT INTO `tbl_address` (`address_id`, `address`) VALUES
 (14, 'general santos city'),
 (15, 'general santos city'),
 (16, 'general santos city'),
-(17, 'general santos city');
+(17, 'general santos city'),
+(18, 'seoul'),
+(19, 'seoul'),
+(20, 'seoul'),
+(21, 'seoul'),
+(22, 'seoul'),
+(23, 'seoul'),
+(24, 'seoul'),
+(25, 'seoul'),
+(26, 'Hakdog'),
+(27, 'Hakdog'),
+(28, 'seoul'),
+(29, 'seoul'),
+(30, 'seoul'),
+(31, 'seoul'),
+(32, 'seoul'),
+(33, 'seoul'),
+(34, 'seoul'),
+(35, 'seoul'),
+(36, ''),
+(37, 'saway hakdog'),
+(38, 'Dragon'),
+(39, 'Dragon'),
+(40, 'seoul');
 
 -- --------------------------------------------------------
 
@@ -110,6 +144,7 @@ INSERT INTO `tbl_address` (`address_id`, `address`) VALUES
 
 CREATE TABLE `tbl_admin` (
   `admin_id` int(11) NOT NULL,
+  `admin_auto_id` varchar(99) NOT NULL,
   `user_id` int(11) NOT NULL,
   `credentials_id` int(11) NOT NULL,
   `address_id` int(11) NOT NULL,
@@ -122,11 +157,34 @@ CREATE TABLE `tbl_admin` (
 -- Dumping data for table `tbl_admin`
 --
 
-INSERT INTO `tbl_admin` (`admin_id`, `user_id`, `credentials_id`, `address_id`, `level_id`, `status_id`, `account_id`) VALUES
-(1, 2, 2, 2, 2, 2, 2),
-(2, 4, 3, 4, 4, 4, 4),
-(3, 5, 4, 5, 5, 5, 5),
-(4, 7, 6, 7, 7, 7, 7);
+INSERT INTO `tbl_admin` (`admin_id`, `admin_auto_id`, `user_id`, `credentials_id`, `address_id`, `level_id`, `status_id`, `account_id`) VALUES
+(1, '', 2, 2, 2, 2, 2, 2),
+(2, '', 4, 3, 4, 4, 4, 4),
+(3, '', 5, 4, 5, 5, 5, 5),
+(4, '', 7, 6, 7, 7, 7, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_area`
+--
+
+CREATE TABLE `tbl_area` (
+  `area_id` int(11) NOT NULL,
+  `area` varchar(90) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_area`
+--
+
+INSERT INTO `tbl_area` (`area_id`, `area`) VALUES
+(1, 'Red'),
+(2, 'Red'),
+(3, 'Blue'),
+(4, 'Deer'),
+(5, 'maasim'),
+(6, '123');
 
 -- --------------------------------------------------------
 
@@ -136,6 +194,17 @@ INSERT INTO `tbl_admin` (`admin_id`, `user_id`, `credentials_id`, `address_id`, 
 
 CREATE TABLE `tbl_assignment` (
   `assignment_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_auto_id`
+--
+
+CREATE TABLE `tbl_auto_id` (
+  `id` int(11) NOT NULL,
+  `auto_admin_id` varchar(99) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -162,7 +231,8 @@ INSERT INTO `tbl_content` (`content_id`, `lesson_id`, `lesson_files_id`) VALUES
 (5, 5, 5),
 (6, 6, 6),
 (7, 7, 7),
-(8, 7, 8);
+(8, 7, 8),
+(9, 8, 9);
 
 -- --------------------------------------------------------
 
@@ -189,7 +259,8 @@ CREATE TABLE `tbl_learner` (
 
 INSERT INTO `tbl_learner` (`learner_id`, `lrn`, `user_id`, `guardian_info_id`, `guardian_contact_id`, `address_id`, `level_id`, `status_id`, `account_id`, `usercredentials_id`) VALUES
 (1, 2, 8, 2, 2, 8, 8, 8, 8, 7),
-(2, 3, 17, 3, 3, 17, 17, 17, 17, 16);
+(2, 3, 17, 3, 3, 17, 17, 17, 17, 16),
+(5, 6, 40, 6, 6, 40, 40, 40, 36, 39);
 
 -- --------------------------------------------------------
 
@@ -211,7 +282,10 @@ CREATE TABLE `tbl_learner_guardian_contact` (
 INSERT INTO `tbl_learner_guardian_contact` (`guardian_contact_id`, `contact_num`, `email`, `address`) VALUES
 (1, 0, '', ''),
 (2, 2147483647, 'student@gmail.com', 'student2122student2122'),
-(3, 2147483647, 'student@gmail.com', 'student2122student2122');
+(3, 2147483647, 'student@gmail.com', 'student2122student2122'),
+(4, 2147483647, 'pink@gmail.com', 'seoul'),
+(5, 2147483647, 'lawyerpink@gmail.com', 'seoul'),
+(6, 2147483647, 'pink@gmail.com', 'seoul');
 
 -- --------------------------------------------------------
 
@@ -235,7 +309,10 @@ CREATE TABLE `tbl_learner_guardian_info` (
 INSERT INTO `tbl_learner_guardian_info` (`guardian_info_id`, `firstname`, `middlename`, `lastname`, `birthday`, `gender`) VALUES
 (1, '', '', '', '', ''),
 (2, 'ga', 'test', 'awda', '2023-07-20', 'female'),
-(3, 'student', 'student', 'student', '2221-02-22', 'Male');
+(3, 'student', 'student', 'student', '2221-02-22', 'Male'),
+(4, 'black', 'r', 'pink', '2023-07-31', 'female'),
+(5, 'black lawyer', 'r', 'pink', '2023-07-31', 'male'),
+(6, 'black', 'r', 'pink', '2023-08-10', 'female');
 
 -- --------------------------------------------------------
 
@@ -255,7 +332,10 @@ CREATE TABLE `tbl_learner_id` (
 INSERT INTO `tbl_learner_id` (`learner_id`, `lrn`) VALUES
 (1, 123121),
 (2, 1),
-(3, 222221);
+(3, 222221),
+(4, 2147483647),
+(5, 2147483647),
+(6, 2147483647);
 
 -- --------------------------------------------------------
 
@@ -283,7 +363,8 @@ INSERT INTO `tbl_lesson` (`lesson_id`, `name`, `objective`, `level`, `type`, `ad
 (4, 'Lesson 1', 'boboka', 'Advance', 'Numeracy', 16),
 (5, 'Lesson 3', 'aaa', 'Advance', 'Numeracy', 16),
 (6, 'Lesson 4', 'aaaa', 'Intermediate', 'Numeracy', 16),
-(7, 'multi', 'test', 'Advance', 'Literacy', 11);
+(7, 'multi', 'test', 'Advance', 'Literacy', 11),
+(8, 'Blackpink', 'Hakdog', 'Advance', 'Numeracy', 1);
 
 -- --------------------------------------------------------
 
@@ -304,14 +385,15 @@ CREATE TABLE `tbl_lesson_files` (
 --
 
 INSERT INTO `tbl_lesson_files` (`lesson_files_id`, `lesson_id`, `lesson`, `added_by`, `status`) VALUES
-(1, 1, 'a.png', 16, 1),
+(1, 1, 'a.png', 16, 3),
 (2, 2, 'check.png', 16, 1),
 (3, 3, 'tbolidb (3).sql', 16, 1),
 (4, 4, 'exempted.txt', 16, 1),
 (5, 5, 'noticeboardphp.txt', 16, 1),
 (6, 6, 'noticeboardcss.txt', 16, 1),
 (7, 7, 'cred.png', 11, 1),
-(8, 7, 'spicyuuu1.jpg', 11, 1);
+(8, 7, 'spicyuuu1.jpg', 11, 1),
+(9, 8, 'barcode.png', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -397,6 +479,26 @@ INSERT INTO `tbl_quiz_true_or_false` (`true_or_false_id`, `quiz_options_id`, `qu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_section`
+--
+
+CREATE TABLE `tbl_section` (
+  `section_id` int(11) NOT NULL,
+  `section` varchar(90) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_section`
+--
+
+INSERT INTO `tbl_section` (`section_id`, `section`) VALUES
+(1, 'Grade 1'),
+(2, 'Grade 5'),
+(3, 'Grade 2');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_teachers`
 --
 
@@ -425,7 +527,8 @@ INSERT INTO `tbl_teachers` (`teacher_id`, `user_id`, `credentials_id`, `address_
 (2132, 13, 12, 13, 13, 13, 13, 7),
 (2231, 14, 13, 14, 14, 14, 14, 8),
 (2222, 15, 14, 15, 15, 15, 15, 9),
-(1111, 16, 15, 16, 16, 16, 16, 10);
+(1111, 16, 15, 16, 16, 16, 16, 10),
+(9352034159, 31, 30, 31, 31, 31, 27, 12);
 
 -- --------------------------------------------------------
 
@@ -452,7 +555,9 @@ INSERT INTO `tbl_teacher_valid` (`valid_id`, `id`) VALUES
 (7, 'asdw.jpg'),
 (8, 'Untitled.png'),
 (9, 'cred.png'),
-(10, 'spicyuuu1.jpg');
+(10, 'spicyuuu1.jpg'),
+(11, 'key.png'),
+(12, 'bg-auth.jpg');
 
 -- --------------------------------------------------------
 
@@ -486,7 +591,30 @@ INSERT INTO `tbl_usercredentials` (`usercredentials_id`, `email`, `contact`) VAL
 (13, 'mynftacc269@gmail.com', 231121),
 (14, 'awdawd@gmail.com', 12312321),
 (15, 'zas@gmail.com', 2311),
-(16, 'mynftacc269@gmail.com', 9088123812);
+(16, 'mynftacc269@gmail.com', 9088123812),
+(17, 'pink@gmail.com', 9583545376),
+(18, 'pink@gmail.com', 9583545376),
+(19, 'lawyerpink@gmail.com', 9583545376),
+(20, 'pink123@gmail.com', 9583545376),
+(21, 'bluepink@gmail.com', 9583545376),
+(22, 'bluepink@gmail.com', 9583545376),
+(23, 'pink@gmail.com', 9583545376),
+(24, 'pink@gmail.com', 9583545376),
+(25, 'blue@gmail.com', 94567216341),
+(26, 'blue@gmail.com', 94567216341),
+(27, 'pink@gmail.com', 9583545376),
+(28, 'pink@gmail.com', 9583545376),
+(29, 'pink@gmail.com', 9583545376),
+(30, 'pink@gmail.com', 9583545376),
+(31, 'pink@gmail.com', 9583545376),
+(32, 'pink@gmail.com', 9583545376),
+(33, 'lawyerpink@gmail.com', 9583545376),
+(34, 'pink@gmail.com', 9583545376),
+(35, '', 9583545376),
+(36, 'red@gmail.com', 32342314546333),
+(37, 'hakdog@gmail.com', 6742364873248),
+(38, 'hakdog@gmail.com', 6742364873248),
+(39, 'pink@gmail.com', 9583545376);
 
 -- --------------------------------------------------------
 
@@ -524,7 +652,19 @@ INSERT INTO `tbl_userinfo` (`user_id`, `firstname`, `middlename`, `lastname`, `b
 (14, 'ayjoke', 'lang', 'ayjoke', '2023-07-20', 'female'),
 (15, 'moka', 'jv', 'oy', '2023-07-20', 'female'),
 (16, 'za', 'za', 'za', '2023-07-20', 'female'),
-(17, 'awd', 'd', 'zas', '2222-02-22', 'Male');
+(17, 'awd', 'd', 'zas', '2222-02-22', 'Male'),
+(18, 'Lalisa', 'G', 'Manoban', '2023-07-30', 'female'),
+(19, 'black', 'r', 'pink', '2023-07-31', 'male'),
+(31, 'black', 'r', 'pink', '2023-08-03', 'male'),
+(32, 'black', 'r', 'pink', '2023-08-03', 'female'),
+(33, 'black', 'r', 'pink', '2023-08-03', 'female'),
+(34, 'black lawyer', 'r', 'pink', '2023-08-03', 'female'),
+(35, 'black', 'r', 'pink', '2023-08-04', 'female'),
+(36, 'black', 'r', 'pink', '0000-00-00', ''),
+(37, 'Nar', 'f', 'vbb', '2023-08-04', 'female'),
+(38, 'Love', 'M', 'Kol', '2023-08-04', 'female'),
+(39, 'Love', 'M', 'Kol', '2023-08-04', 'female'),
+(40, 'black', 'r', 'pink', '2023-08-10', 'female');
 
 -- --------------------------------------------------------
 
@@ -558,7 +698,30 @@ INSERT INTO `tbl_user_level` (`level_id`, `level`) VALUES
 (14, 'TEACHER'),
 (15, 'TEACHER'),
 (16, 'TEACHER'),
-(17, 'LEARNER');
+(17, 'LEARNER'),
+(18, 'TEACHER'),
+(19, 'LEARNER'),
+(20, 'LEARNER'),
+(21, 'ADMIN'),
+(22, 'ADMIN'),
+(23, 'ADMIN'),
+(24, 'ADMIN'),
+(25, 'ADMIN'),
+(26, 'ADMIN'),
+(27, 'ADMIN'),
+(28, 'ADMIN'),
+(29, 'ADMIN'),
+(30, 'ADMIN'),
+(31, 'TEACHER'),
+(32, 'ADMIN'),
+(33, 'ADMIN'),
+(34, 'ADMIN'),
+(35, 'ADMIN'),
+(36, 'ADMIN'),
+(37, 'ADMIN'),
+(38, 'ADMIN'),
+(39, 'ADMIN'),
+(40, 'LEARNER');
 
 -- --------------------------------------------------------
 
@@ -592,7 +755,30 @@ INSERT INTO `tbl_user_status` (`status_id`, `status`) VALUES
 (14, 1),
 (15, 1),
 (16, 1),
-(17, 1);
+(17, 1),
+(18, 1),
+(19, 1),
+(20, 1),
+(21, 1),
+(22, 1),
+(23, 1),
+(24, 1),
+(25, 1),
+(26, 1),
+(27, 1),
+(28, 1),
+(29, 1),
+(30, 1),
+(31, 1),
+(32, 1),
+(33, 1),
+(34, 1),
+(35, 1),
+(36, 1),
+(37, 1),
+(38, 1),
+(39, 1),
+(40, 1);
 
 -- --------------------------------------------------------
 
@@ -628,14 +814,25 @@ ALTER TABLE `tbl_admin`
   ADD KEY `credentials_id` (`credentials_id`),
   ADD KEY `address_id` (`address_id`),
   ADD KEY `level_id` (`level_id`),
-  ADD KEY `status_id` (`status_id`),
-  ADD KEY `account_id` (`account_id`);
+  ADD KEY `status_id` (`status_id`);
+
+--
+-- Indexes for table `tbl_area`
+--
+ALTER TABLE `tbl_area`
+  ADD PRIMARY KEY (`area_id`);
 
 --
 -- Indexes for table `tbl_assignment`
 --
 ALTER TABLE `tbl_assignment`
   ADD PRIMARY KEY (`assignment_id`);
+
+--
+-- Indexes for table `tbl_auto_id`
+--
+ALTER TABLE `tbl_auto_id`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_content`
@@ -716,6 +913,12 @@ ALTER TABLE `tbl_quiz_true_or_false`
   ADD KEY `quiz_options_id` (`quiz_options_id`);
 
 --
+-- Indexes for table `tbl_section`
+--
+ALTER TABLE `tbl_section`
+  ADD PRIMARY KEY (`section_id`);
+
+--
 -- Indexes for table `tbl_teachers`
 --
 ALTER TABLE `tbl_teachers`
@@ -765,19 +968,25 @@ ALTER TABLE `tbl_user_status`
 -- AUTO_INCREMENT for table `tbl_accounts`
 --
 ALTER TABLE `tbl_accounts`
-  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tbl_address`
 --
 ALTER TABLE `tbl_address`
-  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `address_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `tbl_area`
+--
+ALTER TABLE `tbl_area`
+  MODIFY `area_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_assignment`
@@ -786,46 +995,52 @@ ALTER TABLE `tbl_assignment`
   MODIFY `assignment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tbl_auto_id`
+--
+ALTER TABLE `tbl_auto_id`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tbl_content`
 --
 ALTER TABLE `tbl_content`
-  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `content_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_learner`
 --
 ALTER TABLE `tbl_learner`
-  MODIFY `learner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `learner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_learner_guardian_contact`
 --
 ALTER TABLE `tbl_learner_guardian_contact`
-  MODIFY `guardian_contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `guardian_contact_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_learner_guardian_info`
 --
 ALTER TABLE `tbl_learner_guardian_info`
-  MODIFY `guardian_info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `guardian_info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_learner_id`
 --
 ALTER TABLE `tbl_learner_id`
-  MODIFY `learner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `learner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_lesson`
 --
 ALTER TABLE `tbl_lesson`
-  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_lesson_files`
 --
 ALTER TABLE `tbl_lesson_files`
-  MODIFY `lesson_files_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `lesson_files_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_quiz_multiple_choice`
@@ -846,34 +1061,40 @@ ALTER TABLE `tbl_quiz_true_or_false`
   MODIFY `true_or_false_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `tbl_section`
+--
+ALTER TABLE `tbl_section`
+  MODIFY `section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `tbl_teacher_valid`
 --
 ALTER TABLE `tbl_teacher_valid`
-  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `valid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_usercredentials`
 --
 ALTER TABLE `tbl_usercredentials`
-  MODIFY `usercredentials_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `usercredentials_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tbl_userinfo`
 --
 ALTER TABLE `tbl_userinfo`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_level`
 --
 ALTER TABLE `tbl_user_level`
-  MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `level_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `tbl_user_status`
 --
 ALTER TABLE `tbl_user_status`
-  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- Constraints for dumped tables
