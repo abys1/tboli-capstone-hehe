@@ -96,20 +96,21 @@ $user_id = $_SESSION['user_id'];
                 <div class="navbar-custom">
                     <ul class="list-unstyled topbar-menu float-end mb-0">
                         <li class="dropdown notification-list d-lg-none">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-search noti-icon"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                                 <form class="p-3">
-                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
                                 </form>
                             </div>
                         </li>
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
+                                role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="dripicons-bell noti-icon"></i>
                                 <span class="noti-icon-badge"></span>
                             </a>
@@ -133,7 +134,8 @@ $user_id = $_SESSION['user_id'];
                                         </div>
                                         <div class="simplebar-mask">
                                             <div class="simplebar-offset" style="right: 0px; bottom: 0px;">
-                                                <div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;">
+                                                <div class="simplebar-content-wrapper"
+                                                    style="height: auto; overflow: hidden;">
                                                     <div class="simplebar-content" style="padding: 0px;">
 
                                                         <!-- All-->
@@ -147,48 +149,49 @@ $user_id = $_SESSION['user_id'];
 
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-haspopup="false" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown"
+                                href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
                                 </span>
 
                                 <?php
-                                    include 'dbcon.php';
+                                include 'dbcon.php';
 
-                                    if (isset($_SESSION['user_id'])) {
-                                        $user_id = $_SESSION['user_id'];
+                                if (isset($_SESSION['user_id'])) {
+                                    $user_id = $_SESSION['user_id'];
 
-                                        $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
+                                    $sql = "SELECT tbl_userinfo.user_id, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_user_level.level
                                                 FROM tbl_learner
                                                 JOIN tbl_userinfo ON tbl_learner.user_id = tbl_userinfo.user_id
                                                 JOIN tbl_user_level ON tbl_learner.level_id = tbl_user_level.level_id
                                                 WHERE tbl_user_level.level = 'LEARNER' AND tbl_userinfo.user_id = '$user_id'
                                                 LIMIT 1;";
 
-                                        $result = mysqli_query($conn, $sql);
+                                    $result = mysqli_query($conn, $sql);
 
-                                        if ($result && mysqli_num_rows($result) > 0) {
-                                            $row = mysqli_fetch_assoc($result);
-                                            ?>
-                                            <span>
-                                                <span class="account-user-name">
-                                                    <?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?>
-                                                </span>
-                                                <span class="account-position">
-                                                    <?php echo $row['level']; ?>
-                                                </span>
+                                    if ($result && mysqli_num_rows($result) > 0) {
+                                        $row = mysqli_fetch_assoc($result);
+                                        ?>
+                                        <span>
+                                            <span class="account-user-name">
+                                                <?php echo $row['firstname'] . ' ' . $row['middlename'] . ' ' . $row['lastname']; ?>
                                             </span>
-                                            <?php
-                                        } else {
-                                            echo "No records found in tbl_learner";
-                                        }
+                                            <span class="account-position">
+                                                <?php echo $row['level']; ?>
+                                            </span>
+                                        </span>
+                                        <?php
                                     } else {
-                                        echo "No user ID provided";
+                                        echo "No records found in tbl_learner";
                                     }
+                                } else {
+                                    echo "No user ID provided";
+                                }
                                 ?>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                            <div
+                                class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
 
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -210,7 +213,8 @@ $user_id = $_SESSION['user_id'];
                     <div class="app-search dropdown d-none d-lg-block">
                         <form>
                             <div class="input-group">
-                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..." id="top-search">
+                                <input type="text" class="form-control dropdown-toggle" placeholder="Search..."
+                                    id="top-search">
                                 <span class="mdi mdi-magnify search-icon"></span>
                                 <button class="input-group-text btn-primary" type="submit">Search</button>
                             </div>
@@ -231,75 +235,83 @@ $user_id = $_SESSION['user_id'];
                         </div>
                     </div>
                 </div>
-                </div>
-                <!-- end Topbar -->
+            </div>
+            <!-- end Topbar -->
 
-                <!-- Start Content-->
-                <div class="container-fluid">
+            <!-- Start Content-->
+            <div class="container-fluid">
 
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
 
-                                        <!-- <li class="breadcrumb-item"><a href="Teacher_index.php">Dashboard</a></li> -->
+                                    <!-- <li class="breadcrumb-item"><a href="Teacher_index.php">Dashboard</a></li> -->
 
-                                    </ol>
-                                </div>
-                                <!-- <h4 class="page-title">TOPICS</h4> -->
+                                </ol>
                             </div>
+                            <!-- <h4 class="page-title">TOPICS</h4> -->
                         </div>
                     </div>
-                    <!-- end page title -->
+                </div>
+                <!-- end page title -->
 
-                    <div class="col-">
-                        <div class="card">
-                            <?php
-                            include 'dbcon.php';
+                <div class="col-">
+                    <div class="card">
+                        <?php
+                        include 'dbcon.php';
 
-                            $sql = "SELECT DISTINCT lesson_id, name, objective, level, type, added_by, lesson_files, status, lesson, firstname, middlename, lastname, title
-                            FROM (
-                                SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson AS lesson_files,
-                                tbl_lesson_files.status, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_quiz_options.title
-                                FROM tbl_lesson
-                                LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_files_id AND tbl_lesson_files.status = 1
-                                LEFT JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
-                                LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.quiz_options_id
-                            ) AS MergedData";
+                        $sql = "SELECT DISTINCT lesson_id, name, objective, level, type, added_by, lesson_files, status, lesson, firstname, middlename, lastname, title
+                        FROM (
+                            SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson AS lesson_files,
+                            tbl_lesson_files.status, tbl_lesson_files.lesson, tbl_userinfo.firstname, tbl_userinfo.middlename, tbl_userinfo.lastname, tbl_quiz_options.title
+                            FROM tbl_lesson
+                            LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_files_id AND tbl_lesson_files.status = 1
+                            LEFT JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
+                            LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.quiz_options_id
+                        ) AS MergedData
+                        WHERE type = 'Numeracy'";
 
-                            $result = mysqli_query($conn, $sql);
+                        $result = mysqli_query($conn, $sql);
 
-                            if (!$result) {
-                                die("Error executing the query: " . mysqli_error($conn));
-                            }
+                        if (!$result) {
+                            die("Error executing the query: " . mysqli_error($conn));
+                        }
 
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-md-2">
-                                            <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title"><?php echo $row['type'] . ': ' . $row['name']; ?></h5>
-                                                <p><b>Objective: </b><?php echo $row['objective']; ?></p>
-                                                <p><b>Level: </b><?php echo $row['level']; ?></p>
-                                                <div class="tab-content">
-                                                    <?php
-                                                    $collapseID = "collapseExample" . $row['lesson_id'];
-                                                    ?>
-                                                    <div class="tab-pane show active" id="collapse-preview<?php echo $row['lesson_id']; ?>">
-                                                        <p>
-                                                            <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                ?>
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-2">
+                                        <img src="assets/images/small/small-4.jpg" class="card-img" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                                <?php echo $row['type'] . ': ' . $row['name']; ?>
+                                            </h5>
+                                            <p><b>Objective: </b>
+                                                <?php echo $row['objective']; ?>
+                                            </p>
+                                            <p><b>Level: </b>
+                                                <?php echo $row['level']; ?>
+                                            </p>
+                                            <div class="tab-content">
+                                                <?php
+                                                $collapseID = "collapseExample" . $row['lesson_id'];
+                                                ?>
+                                                <div class="tab-pane show active"
+                                                    id="collapse-preview<?php echo $row['lesson_id']; ?>">
+                                                    <p>
+                                                        <a class="btn btn-primary collapsed" data-bs-toggle="collapse"
                                                             href="#<?php echo $collapseID; ?>" aria-expanded="false"
                                                             aria-controls="<?php echo $collapseID; ?>">
-                                                                Manage Lesson
-                                                            </a>
-                                                        </p>
-                                                        <div class="collapse" id="<?php echo $collapseID; ?>" style="">
+                                                            Manage Lesson
+                                                        </a>
+                                                    </p>
+                                                    <div class="collapse" id="<?php echo $collapseID; ?>" style="">
                                                         <?php
                                                         $lesson_id = $row['lesson_id'];
                                                         $lesson = "SELECT tbl_lesson.lesson_id, tbl_lesson_files.lesson, tbl_lesson_files.status
@@ -324,7 +336,8 @@ $user_id = $_SESSION['user_id'];
                                                                 ?>
                                                                 <div class="mb-1">
                                                                     <span>
-                                                                        <a href="teachers/lessons/<?php echo $lesson_row['lesson']; ?>" target="_blank">
+                                                                        <a href="teachers/lessons/<?php echo $lesson_row['lesson']; ?>"
+                                                                            target="_blank">
                                                                             <?php echo substr($lesson_row['lesson'], 0, 15); ?>
                                                                         </a>
                                                                     </span>
@@ -338,7 +351,8 @@ $user_id = $_SESSION['user_id'];
                                                                 ?>
                                                                 <div class="mb-1">
                                                                     <span>
-                                                                        <a href="Learner_InstructionsQuiz.php?quiz_options_id=<?php echo $quiz_row['quiz_options_id']?>">
+                                                                        <a
+                                                                            href="Learner_InstructionsQuiz.php?quiz_options_id=<?php echo $quiz_row['quiz_options_id'] ?>">
                                                                             <?php echo $quiz_row['title']; ?>
                                                                         </a>
                                                                     </span>
@@ -347,56 +361,38 @@ $user_id = $_SESSION['user_id'];
                                                             }
                                                         }
                                                         ?>
-                                                        </div>
-                                                    </div> <!-- end preview-->
+                                                    </div>
+                                                </div> <!-- end preview-->
 
-                                                    <div class="tab-pane" id="collapse-code2">
-                                                        <pre class="mb-0"> <!-- Your code here -->
-                                                        </pre>
-                                                    </div> <!-- end preview code-->
-                                                </div>
+                                                <div class="tab-pane" id="collapse-code2">
+                                                    <pre class="mb-0"> <!-- Your code here -->
+                                                                                                </pre>
+                                                </div> <!-- end preview code-->
                                             </div>
                                         </div>
                                     </div>
-                                    <?php
-                                }
+                                </div>
+                                <?php
                             }
-                            ?>
-                        </div>
-                    </div>
-
-
-
-
-                </div> <!-- container -->
-
-            </div> <!-- content -->
-
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper -
-                            Coderthemes.com
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-md-end footer-links d-none d-md-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
+                        }
+                        ?>
                     </div>
                 </div>
-            </footer>
-            <!-- end Footer -->
 
-        </div>
 
-        <!-- ============================================================== -->
-        <!-- End Page content -->
-        <!-- ============================================================== -->
+
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
 
 
     </div>
