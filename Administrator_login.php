@@ -34,10 +34,11 @@
                     <div class="card">
 
                         <!-- Logo -->
-                        <div class="card-header pt-4 pb-4 text-center bg-Primary">
-                            <a href="index.html">
+                        <div class="card-header text-center bg-white">
+                            <a href="Administrator_login.php">
                                 <span>
-                                    <h1 class="text-white">Administrator Login</h1>
+                                    <span><img src="assets/images/tboli.jpg" alt="" height="150" width="250"></span>
+                                    <h1 class="text-black">Administrator Login</h1>
                                 </span>
                             </a>
                         </div>
@@ -50,48 +51,50 @@
                             </div>
                             <form action="#" method="POST">
                                 <?php
+
+                                $mailError = "";
+
                                 session_start();
                                 include 'dbcon.php';
+
+
 
                                 if (isset($_POST['btnLogin'])) {
                                     $email = $_POST['email'];
                                     $password = $_POST['password'];
 
-                                    if (empty($email)) {
-                                        header("Location: login.php?error=Email must be filled");
-                                        exit();
-                                    } elseif (empty($password)) {
-                                        header("Location: login.php?error=Password must be filled");
+                                    if (empty($password) || empty($email)) {
+                                        header("Location: Teacher_Login.php?error=Email and password should not be empty!");
                                         exit();
                                     } else {
                                         $sql = "SELECT tbl_userinfo.user_id, tbl_accounts.email, tbl_accounts.password, tbl_user_level.level, tbl_user_status.status
-                            FROM tbl_admin 
-                            JOIN tbl_userinfo ON tbl_admin.user_id = tbl_userinfo.user_id
-                            JOIN tbl_accounts ON tbl_admin.account_id = tbl_accounts.account_id
-                            JOIN tbl_user_level ON tbl_admin.level_id = tbl_user_level.level_id
-                            JOIN tbl_user_status ON tbl_admin.status_id = tbl_user_status.status_id
-                            WHERE tbl_accounts.email = '$email'
-                            AND tbl_user_status.status = 1 AND tbl_user_level.level = 'ADMIN'";
+                                FROM tbl_teachers 
+                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                                JOIN tbl_accounts ON tbl_teachers.account_id = tbl_accounts.account_id
+                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                                JOIN tbl_user_status ON tbl_teachers.status_id = tbl_user_status.status_id
+                                WHERE tbl_accounts.email = '$email'
+                                AND tbl_user_status.status = 1 AND tbl_user_level.level = 'TEACHER'";
 
                                         $result = mysqli_query($conn, $sql);
 
                                         if ($result && mysqli_num_rows($result) > 0) {
                                             $row = mysqli_fetch_assoc($result);
-                                            $storedPasswordHash = $row['password'];
+                                            $storedPassword = $row['password'];
                                             $level = $row['level'];
 
-                                            if (password_verify($password, $storedPasswordHash) && $row['status'] == 1) {
+                                            if (password_verify($password, $storedPassword) && $row['status'] == 1) {
                                                 $_SESSION['user_id'] = $row['user_id'];
                                                 $_SESSION['email'] = $email;
                                                 $_SESSION['user_level'] = $level;
 
-                                                if ($level === 'ADMIN') {
-                                                    header("Location: admin_dashboard.php?Login Successfully");
+                                                if ($level === 'TEACHER') {
+                                                    header("Location: Teacher_index.php?Login Sucessfully");
                                                     exit();
                                                 }
                                             }
                                         }
-                                        header("Location: login.php?error=Invalid email or password");
+                                        header("Location: Teacher_Login.php?error=Invalid email or password");
                                         exit();
                                     }
                                 }
