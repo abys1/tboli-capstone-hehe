@@ -95,6 +95,13 @@
       <span>Grade Book</span>
     </a>
   </li>
+  
+  <li class="side-nav-item">
+    <a href="Teacher_quizMultiple.php" class="side-nav-link">
+      <i class="dripicons-document-edit"></i>
+      <span>Quiz</span>
+    </a>
+  </li>
 
   <li class="side-nav-item">
     <a data-bs-toggle="collapse" href="#sidebarAssign" aria-expanded="false" aria-controls="sidebarAssign"
