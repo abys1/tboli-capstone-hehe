@@ -129,8 +129,8 @@ if (isset($_GET['logout'])) {
                                 <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Literacy</h5>
-                                    <p class="card-text">When: Feb 13 - June 2024</p><a href="Learner_Module.php"
-                                        class="btn btn-primary">View Module</a>
+                                    <p class="card-text">When: Feb 13 - June 2024</p><a
+                                        href="Learner_Literacy_Module.php" class="btn btn-primary">View Module</a>
                                 </div> <!-- end card-body-->
                             </div> <!-- end card-->
                         </div>
@@ -141,8 +141,8 @@ if (isset($_GET['logout'])) {
                                 <img class="card-img-top" src="assets/images/small/small-1.jpg" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">Numeracy</h5>
-                                    <p class="card-text">When: Feb 13 - June 2024</p><a href="Learner_Module.php"
-                                        class="btn btn-primary">View Module</a>
+                                    <p class="card-text">When: Feb 13 - June 2024</p><a
+                                        href="Learner_Numeracy_Module.php" class="btn btn-primary">View Module</a>
                                 </div> <!-- end card-body-->
                             </div> <!-- end card-->
                         </div><!-- end col -->
@@ -153,25 +153,6 @@ if (isset($_GET['logout'])) {
 
             </div> <!-- content -->
 
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper -
-                            Coderthemes.com
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-md-end footer-links d-none d-md-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- end Footer -->
 
         </div>
 

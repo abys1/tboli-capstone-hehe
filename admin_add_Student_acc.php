@@ -22,76 +22,44 @@
         $next_id = intval($row['max_id']) + 1;
         $learner_auto_id = 'lrn' . sprintf('%03d', $next_id); // Format ID with leading zeros
     
-
-        $learnersid = $_POST['lrn'];
-        $firstname = $_POST['firstname'];
-        $middlename = $_POST['middlename'];
-        $lastname = $_POST['lastname'];
-        $birthday = $_POST['birthday'];
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-        $gender = $_POST['gender'];
-        $address = $_POST['address'];
-        $gfirstname = $_POST['gfirstname'];
-        $gmiddlename = $_POST['gmiddlename'];
-        $glastname = $_POST['glastname'];
-        $gbirthday = $_POST['gbirthday'];
-        $ggender = $_POST['ggender'];
-        $gnumber = $_POST['gphoneNumber'];
-        $gemail = $_POST['gemail'];
-        $gaddress = $_POST['gaddress'];
-        $password = $lastname . $birthday;
-        $encrypted = password_hash($password, PASSWORD_DEFAULT);
-
-        // $sql = "INSERT INTO tbl_learner_id (lrn) VALUES ('$learnersid')";
-        // Insert learner_auto_id
+        // Insert learner_auto_id into tbl_learner_id
         $sql = "INSERT INTO tbl_learner_id (learner_auto_id) VALUES ('$learner_auto_id')";
         if ($conn->query($sql) === TRUE) {
             $learner_id = $conn->insert_id;
 
-
+            // Insert other learner information
+            $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday' ,'$gender')";
             if ($conn->query($sql) === TRUE) {
-                $learner_id = $conn->insert_id;
-                $sql = "INSERT INTO tbl_userinfo (firstname, middlename, lastname, birthday, gender) VALUES ('$firstname', '$middlename', '$lastname', '$birthday' ,'$gender')";
-
+                $user_info_id = $conn->insert_id;
+                $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$phone')";
                 if ($conn->query($sql) === TRUE) {
-                    $user_info_id = $conn->insert_id;
-                    $sql = "INSERT INTO tbl_usercredentials (email, contact) VALUES ('$email', '$phone')";
-
+                    $usercredentials_id = $conn->insert_id;
+                    $sql = "INSERT INTO tbl_learner_guardian_info (firstname, middlename, lastname, birthday, gender) VALUES ('$gfirstname', '$gmiddlename', '$glastname', '$gbirthday', '$ggender')";
                     if ($conn->query($sql) === TRUE) {
-                        $usercredentials_id = $conn->insert_id;
-                        $sql = "INSERT INTO tbl_learner_guardian_info (firstname, middlename, lastname, birthday, gender) VALUES ('$gfirstname', '$gmiddlename', '$glastname', '$gbirthday', '$ggender')";
-
+                        $guardian_info_id = $conn->insert_id;
+                        $sql = "INSERT INTO tbl_learner_guardian_contact (contact_num, email, address) VALUES ('$gnumber', '$gemail', '$gaddress')";
                         if ($conn->query($sql) === TRUE) {
-                            $guardian_info_id = $conn->insert_id;
-                            $sql = "INSERT INTO tbl_learner_guardian_contact (contact_num, email, address) VALUES ('$gnumber', '$gemail', '$gaddress')";
-
+                            $guardian_contact_id = $conn->insert_id;
+                            $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
                             if ($conn->query($sql) === TRUE) {
-                                $guardian_contact_id = $conn->insert_id;
-                                $sql = "INSERT INTO tbl_address (address) VALUES ('$address')";
-
+                                $address_id = $conn->insert_id;
+                                $sql = "INSERT INTO tbl_user_level (level) VALUES ('LEARNER')";
                                 if ($conn->query($sql) === TRUE) {
-                                    $address_id = $conn->insert_id;
-                                    $sql = "INSERT INTO tbl_user_level (level) VALUES ('LEARNER')";
-
+                                    $level_id = $conn->insert_id;
+                                    $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
                                     if ($conn->query($sql) === TRUE) {
-                                        $level_id = $conn->insert_id;
-                                        $sql = "INSERT INTO tbl_user_status (status) VALUES ('1')";
-
+                                        $status_id = $conn->insert_id;
+                                        $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
                                         if ($conn->query($sql) === TRUE) {
-                                            $status_id = $conn->insert_id;
-                                            $sql = "INSERT INTO tbl_accounts (email, password) VALUES ('$email', '$encrypted')";
-
+                                            $account_id = $conn->insert_id;
+                                            // Insert learner information into tbl_learner
+                                            $sql = "INSERT INTO tbl_learner (lrn, user_id, guardian_info_id, guardian_contact_id, address_id, level_id, status_id, account_id, usercredentials_id) 
+                                                    VALUES ('$learner_id', '$user_info_id', '$guardian_info_id', '$guardian_contact_id', '$address_id', '$level_id', '$status_id', '$account_id', '$usercredentials_id')";
                                             if ($conn->query($sql) === TRUE) {
-                                                $account_id = $conn->insert_id;
-                                                $sql = "INSERT INTO tbl_learner (lrn, user_id, guardian_info_id, guardian_contact_id, address_id, level_id, status_id, account_id, usercredentials_id) VALUES ('$learner_id', '$user_info_id', '$guardian_info_id', '$guardian_contact_id', '$address_id', '$level_id', '$status_id', '$account_id', '$usercredentials_id')";
-
-                                                $sql = "INSERT INTO tbl_learner (learner_auto_id, user_id, guardian_info_id, guardian_contact_id, address_id, level_id, status_id, account_id, usercredentials_id) 
-                                                VALUES ('$learner_auto_id', '$user_info_id', '$guardian_info_id', '$guardian_contact_id', '$address_id', '$level_id', '$status_id', '$account_id', '$usercredentials_id')";
-                                                if ($conn->query($sql) === TRUE) {
-                                                    header("Location:admin_student.php?msg=Account added successfully");
-                                                    exit();
-                                                }
+                                                header("Location: admin_student.php?msg=Account added successfully");
+                                                exit();
+                                            } else {
+                                                echo "Error: " . $sql . "<br>" . $conn->error;
                                             }
                                         }
                                     }
@@ -101,6 +69,8 @@
                     }
                 }
             }
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
     ?>

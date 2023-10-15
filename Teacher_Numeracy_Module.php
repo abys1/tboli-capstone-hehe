@@ -124,7 +124,6 @@ $user_id = $_SESSION['user_id'];
                 <div class="card">
                     <?php
                     include 'dbcon.php';
-
                     $sql = "SELECT DISTINCT lesson_id, name, objective, level, type, added_by, lesson_files, status, lesson, firstname, middlename, lastname, title
                     FROM (
                         SELECT tbl_lesson.lesson_id, tbl_lesson.name, tbl_lesson.objective, tbl_lesson.level, tbl_lesson.type, tbl_lesson.added_by, tbl_lesson_files.lesson AS lesson_files,
@@ -133,7 +132,9 @@ $user_id = $_SESSION['user_id'];
                         LEFT JOIN tbl_lesson_files ON tbl_lesson.lesson_id = tbl_lesson_files.lesson_files_id AND tbl_lesson_files.status = 1
                         LEFT JOIN tbl_userinfo ON tbl_lesson.added_by = tbl_userinfo.user_id
                         LEFT JOIN tbl_quiz_options ON tbl_lesson.lesson_id = tbl_quiz_options.quiz_options_id
-                    ) AS MergedData";
+                    ) AS MergedData
+                    WHERE type = 'Numeracy'";
+            
 
                     $result = mysqli_query($conn, $sql);
 
@@ -215,33 +216,6 @@ $user_id = $_SESSION['user_id'];
                     ?>
                 </div>
             </div>
-
-
-
-
-
-
-
-            <!-- Footer Start -->
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <script>document.write(new Date().getFullYear())</script>20232023202320232023 © Hyper -
-                            Coderthemes.com
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-md-end footer-links d-none d-md-block">
-                                <a href="javascript: void(0);">About</a>
-                                <a href="javascript: void(0);">Support</a>
-                                <a href="javascript: void(0);">Contact Us</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- end Footer -->
-
 
 
             <!-- ============================================================== -->

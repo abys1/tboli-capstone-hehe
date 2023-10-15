@@ -35,10 +35,10 @@
 
                         <!-- Logo -->
                         <div class="card-header text-center bg-white">
-                            <a href="Teacher_Login.php">
+                            <a href="Administrator_login.php">
                                 <span>
                                     <span><img src="assets/images/tboli.jpg" alt="" height="150" width="250"></span>
-                                    <h1 class="text-black">Teacher Login</h1>
+                                    <h1 class="text-black">Administrator Login</h1>
                                 </span>
                             </a>
                         </div>
@@ -68,13 +68,13 @@
                                         exit();
                                     } else {
                                         $sql = "SELECT tbl_userinfo.user_id, tbl_accounts.email, tbl_accounts.password, tbl_user_level.level, tbl_user_status.status
-        FROM tbl_teachers 
-        JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
-        JOIN tbl_accounts ON tbl_teachers.account_id = tbl_accounts.account_id
-        JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
-        JOIN tbl_user_status ON tbl_teachers.status_id = tbl_user_status.status_id
-        WHERE tbl_accounts.email = '$email'
-        AND tbl_user_status.status = 1 AND tbl_user_level.level = 'TEACHER'";
+                                FROM tbl_teachers 
+                                JOIN tbl_userinfo ON tbl_teachers.user_id = tbl_userinfo.user_id
+                                JOIN tbl_accounts ON tbl_teachers.account_id = tbl_accounts.account_id
+                                JOIN tbl_user_level ON tbl_teachers.level_id = tbl_user_level.level_id
+                                JOIN tbl_user_status ON tbl_teachers.status_id = tbl_user_status.status_id
+                                WHERE tbl_accounts.email = '$email'
+                                AND tbl_user_status.status = 1 AND tbl_user_level.level = 'TEACHER'";
 
                                         $result = mysqli_query($conn, $sql);
 
